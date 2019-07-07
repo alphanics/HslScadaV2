@@ -1,0 +1,99 @@
+﻿using AdvancedHMIControls;
+using AdvancedScada.DriverBase.Common;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using System.Xml.Linq;
+
+namespace AdvancedScada.Controls.AHMI.Components
+{
+    public class AnalogVisibilityController : DataSubscriber
+    {
+        #region Properties
+        private Control m_TargetObject;
+        //<System.ComponentModel.TypeConverter(GetType(MfgControl.AdvancedHMI.Controls.EmptyTypeConverter()))> _
+        public Control TargetObject
+        {
+            get
+            {
+                return m_TargetObject;
+            }
+            set
+            {
+                m_TargetObject = value;
+            }
+        }
+
+
+        public enum CompareTypeEnum
+        {
+            AboveTarget,
+            EqualToTarget,
+            BelowTarget
+        }
+        private CompareTypeEnum m_ValueCompareType = CompareTypeEnum.AboveTarget;
+        public CompareTypeEnum ValueCompareType
+        {
+            get
+            {
+                return m_ValueCompareType;
+            }
+            set
+            {
+                m_ValueCompareType = value;
+            }
+        }
+
+        private double m_ValueTarget = 1000;
+        public double ValueTarget
+        {
+            get
+            {
+                return m_ValueTarget;
+            }
+            set
+            {
+                m_ValueTarget = value;
+            }
+        }
+        #endregion
+
+        #region Events
+        protected override void OnDataChanged(PlcComEventArgs e)
+        {
+            base.OnDataChanged(e);
+
+            if (m_TargetObject != null)
+            {
+                if (e != null && e.Values != null && e.Values.Count > 0)
+                {
+                    double v = 0;
+                    //*V3.99y
+                    if (double.TryParse(e.Values[0], System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.CurrentInfo, out v))
+                    {
+                        if (m_ValueCompareType == CompareTypeEnum.AboveTarget)
+                        {
+                            m_TargetObject.Visible = (v > m_ValueTarget);
+                        }
+                        else if (m_ValueCompareType == CompareTypeEnum.EqualToTarget)
+                        {
+                            m_TargetObject.Visible = (v == m_ValueTarget);
+                        }
+                        else if (m_ValueCompareType == CompareTypeEnum.BelowTarget)
+                        {
+                            m_TargetObject.Visible = (v < m_ValueTarget);
+                        }
+                    }
+                }
+            }
+        }
+        #endregion
+
+    }
+
+}
