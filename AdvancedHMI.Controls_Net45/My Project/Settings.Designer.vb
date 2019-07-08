@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.AdvancedHMI.Controls_Net45.My.MySettings
+        Friend ReadOnly Property Settings() As Global.HMIControls_Net45.My.MySettings
             Get
-                Return Global.AdvancedHMI.Controls_Net45.My.MySettings.Default
+                Return Global.HMIControls_Net45.My.MySettings.Default
             End Get
         End Property
     End Module

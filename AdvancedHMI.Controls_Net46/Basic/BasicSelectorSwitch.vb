@@ -1,8 +1,9 @@
 Imports System
+Imports System.ComponentModel
 Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
-
+<ToolboxItem(False)>
 Public Class BasicSelectorSwitch
     Inherits ButtonBase
     Private outputType_0 As OutputType

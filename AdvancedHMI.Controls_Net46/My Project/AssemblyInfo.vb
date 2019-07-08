@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("AdvancedHMI.Controls_Net46")>
+<Assembly: AssemblyTitle("HMIControls_Net46")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("AdvancedHMI.Controls_Net46")>
+<Assembly: AssemblyProduct("HMIControls_Net46")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>
 

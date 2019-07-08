@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D4914EE7-6FC4-4FBB-B539-F4EA0CD0EA00}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>AdvancedHMI.Controls_Net46</RootNamespace>
-    <AssemblyName>AdvancedHMI.Controls_Net46</AssemblyName>
+    <RootNamespace>HMIControls_Net46</RootNamespace>
+    <AssemblyName>HMIControls_Net46</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
@@ -18,7 +18,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>AdvancedHMI.Controls_Net46.xml</DocumentationFile>
+    <DocumentationFile>HMIControls_Net46.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -27,7 +27,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>AdvancedHMI.Controls_Net46.xml</DocumentationFile>
+    <DocumentationFile>HMIControls_Net46.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -117,7 +117,7 @@
     </Compile>
     <Compile Include="Common\BaseEventArgs.vb" />
     <Compile Include="Class\ConnecterType.vb" />
-    <Compile Include="Controls\Control0.vb">
+    <Compile Include="Controls\ControlShapeType.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Motor\Conveyor.vb">
@@ -279,7 +279,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Controls\Odometer.vb">
+    <Compile Include="DigitalPanel\Odometer.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\OutputType.vb" />
@@ -290,14 +290,14 @@
     <Compile Include="SelectorSwitch\PilotLight3Color.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Pipe.vb">
+    <Compile Include="TankAll\Pipe.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Motor\PneumaticBallValve.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\RollingDigit.vb" />
-    <Compile Include="Controls\RotationalPositionIndicator.vb">
+    <Compile Include="Gauge\RotationalPositionIndicator.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\RotationScale.vb" />
@@ -355,10 +355,10 @@
     <Compile Include="Buttons\SquareIlluminatedButton.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\StackLight2.vb">
+    <Compile Include="TankAll\StackLight2.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Tank.vb">
+    <Compile Include="TankAll\Tank.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DigitalPanel\TempController.vb">

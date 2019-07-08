@@ -18,7 +18,7 @@ Public Class ShapeTypeEditor
         If (CObj(value.[GetType]()) = CObj(GetType(ShapeType))) Then
             Dim service As IWindowsFormsEditorService = DirectCast(provider.GetService(GetType(IWindowsFormsEditorService)), IWindowsFormsEditorService)
             If (service IsNot Nothing) Then
-                Dim control0 As Control0 = New Control0(DirectCast(Conversions.ToInteger(value), ShapeType))
+                Dim control0 As ControlShapeType = New ControlShapeType(DirectCast(Conversions.ToInteger(value), ShapeType))
                 service.DropDownControl(control0)
                 If (CObj(value.[GetType]()) <> CObj(GetType(ShapeType))) Then
                     GoTo Label1

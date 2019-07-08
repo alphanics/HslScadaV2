@@ -5,7 +5,7 @@ Imports System.Drawing
 Imports System.Windows.Forms
 
 <ToolboxItem(False)>
-Public Class Control0
+Public Class ControlShapeType
     Inherits UserControl
     Public shapeType_0 As ShapeType
 
