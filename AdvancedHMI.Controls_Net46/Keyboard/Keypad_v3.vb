@@ -523,8 +523,8 @@ Public Class Keypad_v3
         End Get
         Set
             m_Value = Value
-            If Operators.CompareString(Value, "", False) = 0 Then
-                txtValue.Text = ""
+            If Operators.CompareString(Value, String.Empty, False) = 0 Then
+                txtValue.Text = String.Empty
                 buAccept.Enabled = False
             Else
                 txtValue.Text = Value
@@ -539,7 +539,7 @@ Public Class Keypad_v3
 
     Private Sub Keypad_TDSA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        m_Value = ""
+        m_Value = String.Empty
 
         txtValue.ForeColor = Color.Black
         txtValue.BackColor = Color.WhiteSmoke
@@ -554,7 +554,7 @@ Public Class Keypad_v3
             MaxValue = 2147483647
         End If
 
-        If m_Value = "" Then
+        If m_Value = String.Empty Then
             buAccept.Enabled = False
         End If
 
@@ -685,7 +685,7 @@ Public Class Keypad_v3
         If e.KeyCode = Keys.Escape Then
             buCancel.ForeColor = Color.Black
             buCancel.BackColor = Color.FromArgb(229, 229, 229)
-            Value = ""
+            Value = String.Empty
             lblMinValue.ForeColor = Color.WhiteSmoke
             lblMaxValue.ForeColor = Color.WhiteSmoke
             mouseLeaveHandler(buCancel, e)
@@ -722,7 +722,7 @@ Public Class Keypad_v3
 
         If e.KeyCode = Keys.Back Then
             If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" And Value IsNot Nothing Then
-                Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), "")
+                Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), String.Empty)
                 Check_Limits()
             End If
             buBksp.ForeColor = Color.Black
@@ -732,7 +732,7 @@ Public Class Keypad_v3
 
         If e.KeyCode = Keys.Delete Then
             If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" Then
-                Value = ""
+                Value = String.Empty
                 txtValue.BackColor = Color.WhiteSmoke
                 txtValue.ForeColor = Color.Black
                 lblMinValue.ForeColor = Color.WhiteSmoke
@@ -786,7 +786,7 @@ Public Class Keypad_v3
                                                                            Button9.MouseUp
 
         If Value = "Enter Passcode" Or Value = "Incorrect Passcode" Then
-            Value = ""
+            Value = String.Empty
             txtValue.PasswordChar = "*"
         End If
 
@@ -795,7 +795,7 @@ Public Class Keypad_v3
         End If
 
         If sender.Text <> 0 And Operators.CompareString(Value, "0", False) = 0 Then
-            Value = ""
+            Value = String.Empty
         End If
 
         If sender.Text = 0 And Operators.CompareString(Value, "0", False) = 0 Then
@@ -828,7 +828,7 @@ Public Class Keypad_v3
     Private Sub buCancel_MouseUp(sender As Object, e As MouseEventArgs) Handles buCancel.MouseUp
         buCancel.ForeColor = Color.Black
         buCancel.BackColor = Color.FromArgb(229, 229, 229)
-        Value = ""
+        Value = String.Empty
         lblMinValue.ForeColor = Color.WhiteSmoke
         lblMaxValue.ForeColor = Color.WhiteSmoke
         Me.Close()
@@ -836,7 +836,7 @@ Public Class Keypad_v3
 
     Private Sub buClear_MouseUp(sender As Object, e As MouseEventArgs) Handles buClear.MouseUp
         If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" Then
-            Value = ""
+            Value = String.Empty
             txtValue.BackColor = Color.WhiteSmoke
             txtValue.ForeColor = Color.Black
             lblMinValue.ForeColor = Color.WhiteSmoke
@@ -848,7 +848,7 @@ Public Class Keypad_v3
 
     Private Sub buBksp_MouseUp(sender As Object, e As MouseEventArgs) Handles buBksp.MouseUp
         If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" And Value IsNot Nothing Then
-            Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), "")
+            Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), String.Empty)
             Check_Limits()
         End If
         buBksp.ForeColor = Color.Black

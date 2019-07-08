@@ -1,6 +1,4 @@
-﻿Imports System.ComponentModel
-Imports System.Drawing
-Imports System.Drawing.Drawing2D
+﻿Imports System.Drawing
 Imports System.Windows.Forms
 
 Public Class ColorPicker
@@ -105,7 +103,7 @@ Public Class ColorPicker
             If m_SelectedColor <> Color.Empty AndAlso m_SelectedColor <> Color.Transparent AndAlso ShowText Then
                 Me.Text = m_SelectedColor.ToString
             Else
-                Me.Text = ""
+                Me.Text = String.Empty
             End If
         End If
 

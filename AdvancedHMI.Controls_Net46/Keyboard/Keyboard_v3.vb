@@ -1,6 +1,5 @@
-﻿Imports System.Runtime.InteropServices
-Imports System.Drawing.Drawing2D
-Imports System.Drawing
+﻿Imports System.Drawing
+Imports System.Runtime.InteropServices
 Imports System.Windows.Forms
 Public Class Keyboard_v3
 

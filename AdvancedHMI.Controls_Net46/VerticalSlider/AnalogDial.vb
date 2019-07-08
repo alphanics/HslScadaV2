@@ -20,13 +20,13 @@ Public Class AnalogDial
 
     Private stringFormat_3 As StringFormat
 
-    Private rectangle_1 As Rectangle
+    Private TextRectangle As Rectangle
 
     Private double_0 As Double
 
     Private bitmap_0 As Bitmap
 
-    Private solidBrush_0 As SolidBrush
+    Private TextBrush As SolidBrush
 
     Private bitmap_1 As Bitmap
 
@@ -34,17 +34,17 @@ Public Class AnalogDial
 
     Private bool_1 As Boolean
 
-    Private double_1 As Double
+    Private _Minimum As Double
 
-    Private double_2 As Double
+    Private _Maximum As Double
 
     Private double_3 As Double
 
-    Private double_4 As Double
+    Private _Resolution As Double
 
-    Private bool_2 As Boolean
+    Private _ShowColorBand As Boolean
 
-    Private double_5 As Double
+    Private _RedColorBandStartValue As Double
 
     Protected Overrides ReadOnly Property CreateParams As System.Windows.Forms.CreateParams
         Get
@@ -61,65 +61,65 @@ Public Class AnalogDial
         Set(ByVal value As Color)
             If (value <> MyBase.ForeColor) Then
                 MyBase.ForeColor = value
-                Me.solidBrush_0 = New SolidBrush(MyBase.ForeColor)
-                Me.method_1()
+                Me.TextBrush = New SolidBrush(MyBase.ForeColor)
+                Me.CreateStaticImage()
             End If
         End Set
     End Property
 
     Public Property Maximum As Double
         Get
-            Return Me.double_2
+            Return Me._Maximum
         End Get
         Set(ByVal value As Double)
-            If (Me.double_2 <> value) Then
-                Me.double_2 = value
-                Me.method_1()
+            If (Me._Maximum <> value) Then
+                Me._Maximum = value
+                Me.CreateStaticImage()
             End If
         End Set
     End Property
 
     Public Property Minimum As Double
         Get
-            Return Me.double_1
+            Return Me._Minimum
         End Get
         Set(ByVal value As Double)
-            If (Me.double_1 <> value) Then
-                Me.double_1 = value
-                Me.method_1()
+            If (Me._Minimum <> value) Then
+                Me._Minimum = value
+                Me.CreateStaticImage()
             End If
         End Set
     End Property
 
     Public Property RedColorBandStartValue As Double
         Get
-            Return Me.double_5
+            Return Me._RedColorBandStartValue
         End Get
         Set(ByVal value As Double)
-            If (Me.double_5 <> value) Then
-                Me.double_5 = value
-                Me.method_1()
+            If (Me._RedColorBandStartValue <> value) Then
+                Me._RedColorBandStartValue = value
+                Me.CreateStaticImage()
             End If
         End Set
     End Property
 
     Public Property Resolution As Double
         Get
-            Return Me.double_4
+            Return Me._Resolution
         End Get
         Set(ByVal value As Double)
-            Me.double_4 = value
+            Me._Resolution = value
         End Set
     End Property
 
     Public Property ShowColorBand As Boolean
         Get
-            Return Me.bool_2
+            Return Me._ShowColorBand
         End Get
         Set(ByVal value As Boolean)
-            If (Me.bool_2 <> value) Then
-                Me.bool_2 = value
-                Me.method_1()
+            If (Me._ShowColorBand <> value) Then
+                Me._ShowColorBand = value
+                Me.CreateStaticImage()
             End If
         End Set
     End Property
@@ -143,10 +143,10 @@ Public Class AnalogDial
         Me.stringFormat_2 = New StringFormat()
         Me.stringFormat_3 = New StringFormat()
         Me.bool_1 = True
-        Me.double_2 = 100
-        Me.double_4 = 0.1
-        Me.bool_2 = True
-        Me.double_5 = 75
+        Me._Maximum = 100
+        Me._Resolution = 0.1
+        Me._ShowColorBand = True
+        Me._RedColorBandStartValue = 75
         MyBase.SetStyle(ControlStyles.UserPaint Or ControlStyles.SupportsTransparentBackColor Or ControlStyles.AllPaintingInWmPaint Or ControlStyles.OptimizedDoubleBuffer, True)
     End Sub
 
@@ -159,13 +159,13 @@ Public Class AnalogDial
         End If
         Dim num3 As Double = 180 - num2
         Dim double3 As Double = Me.double_3
-        Me.method_2((num3 + 45) / 270 * (Me.double_2 - Me.double_1) + Me.double_1, True)
+        Me.method_2((num3 + 45) / 270 * (Me._Maximum - Me._Minimum) + Me._Minimum, True)
         If (Me.double_3 <> double3) Then
             Me.OnValueChangedWithDial(EventArgs.Empty)
         End If
     End Sub
 
-    Private Sub method_1()
+    Private Sub CreateStaticImage()
         Using graphicsPath As System.Drawing.Drawing2D.GraphicsPath = New System.Drawing.Drawing2D.GraphicsPath()
             graphicsPath.AddEllipse(-1, -1, MyBase.Width + 1, MyBase.Height + 1)
             MyBase.Region = New System.Drawing.Region(graphicsPath)
@@ -180,8 +180,8 @@ Public Class AnalogDial
         If (Me.double_0 > 0) Then
             Me.stringFormat_1.Alignment = StringAlignment.Center
             Me.stringFormat_1.LineAlignment = StringAlignment.Center
-            If (Me.solidBrush_0 Is Nothing) Then
-                Me.solidBrush_0 = New SolidBrush(MyBase.ForeColor)
+            If (Me.TextBrush Is Nothing) Then
+                Me.TextBrush = New SolidBrush(MyBase.ForeColor)
             End If
             If (Me.bitmap_1 IsNot Nothing) Then
                 Me.bitmap_1.Dispose()
@@ -190,11 +190,11 @@ Public Class AnalogDial
             Using graphic As Graphics = Graphics.FromImage(Me.bitmap_1)
                 graphic.SmoothingMode = SmoothingMode.HighQuality
                 graphic.DrawImage(My.Resources.Plate, 0, 0, MyBase.Width, MyBase.Height)
-                Dim num As Integer = Convert.ToInt32((Me.double_2 - Me.double_1) / 10)
+                Dim num As Integer = Convert.ToInt32((Me._Maximum - Me._Minimum) / 10)
                 Using font As System.Drawing.Font = New System.Drawing.Font("Arial", CSng((65 * Me.double_0)), FontStyle.Regular, GraphicsUnit.Point)
-                    Dim size As System.Drawing.Size = TextRenderer.MeasureText(Conversions.ToString(Me.double_2), font)
+                    Dim size As System.Drawing.Size = TextRenderer.MeasureText(Conversions.ToString(Me._Maximum), font)
                     Dim width1 As Integer = size.Width
-                    size = TextRenderer.MeasureText(Conversions.ToString(Me.double_2), font)
+                    size = TextRenderer.MeasureText(Conversions.ToString(Me._Maximum), font)
                     Dim height1 As Integer = size.Height
                     Me.stringFormat_3.Alignment = StringAlignment.Near
                     Me.stringFormat_0.Alignment = StringAlignment.Center
@@ -210,19 +210,19 @@ Public Class AnalogDial
                         num1 = Math.Sqrt(width2 * width2 * Math.Cos(num5) * Math.Cos(num5) + height2 * height2 * Math.Sin(num5) * Math.Sin(num5)) - CDbl(width1) / 2
                         num2 = Convert.ToInt32(Math.Cos(num5) * num1 - CDbl(width1) / 2)
                         num3 = Convert.ToInt32(Math.Sin(num5) * num1 + CDbl(height1) / 2)
-                        Me.rectangle_1 = New System.Drawing.Rectangle(Convert.ToInt32(CDbl(num2) + CDbl(MyBase.Width) / 2), Convert.ToInt32(CDbl(MyBase.Height) / 2 - CDbl(num3)), width1, height1)
-                        graphic.DrawString(Convert.ToString(Me.double_1 + CDbl((num * num4))), font, Me.solidBrush_0, Me.rectangle_1, Me.stringFormat_0)
+                        Me.TextRectangle = New System.Drawing.Rectangle(Convert.ToInt32(CDbl(num2) + CDbl(MyBase.Width) / 2), Convert.ToInt32(CDbl(MyBase.Height) / 2 - CDbl(num3)), width1, height1)
+                        graphic.DrawString(Convert.ToString(Me._Minimum + CDbl((num * num4))), font, Me.TextBrush, Me.TextRectangle, Me.stringFormat_0)
                         num4 = num4 + 1
                     Loop While num4 <= 10
                 End Using
-                If (Me.bool_2) Then
+                If (Me._ShowColorBand) Then
                     Using pen As System.Drawing.Pen = New System.Drawing.Pen(Brushes.Green, CSng((CDbl(MyBase.Width) / 18)))
                         Dim rectangle As System.Drawing.Rectangle = New System.Drawing.Rectangle(CInt(Math.Round(CDbl(MyBase.Width) * 0.23)), CInt(Math.Round(CDbl(MyBase.Height) * 0.23)), CInt(Math.Round(CDbl(MyBase.Width) * 0.54)), CInt(Math.Round(CDbl(MyBase.Height) * 0.54)))
-                        graphic.DrawArc(pen, rectangle, 135!, 270!)
-                        If (Me.double_5 > Me.double_1 And Me.double_5 < Me.double_2 AndAlso Me.double_2 <> Me.double_1) Then
-                            Dim double5 As Single = CSng(((Me.double_5 - Me.double_1) / (Me.double_2 - Me.double_1) * 270))
+                        graphic.DrawArc(pen, rectangle, 135.0!, 270.0!)
+                        If (Me._RedColorBandStartValue > Me._Minimum And Me._RedColorBandStartValue < Me._Maximum AndAlso Me._Maximum <> Me._Minimum) Then
+                            Dim double5 As Single = CSng(((Me._RedColorBandStartValue - Me._Minimum) / (Me._Maximum - Me._Minimum) * 270))
                             Using pen1 As System.Drawing.Pen = New System.Drawing.Pen(Brushes.Red, CSng((CDbl(MyBase.Width) / 18)))
-                                graphic.DrawArc(pen1, rectangle, 135! + double5, 270! - double5)
+                                graphic.DrawArc(pen1, rectangle, 135.0! + double5, 270.0! - double5)
                             End Using
                         End If
                     End Using
@@ -240,15 +240,15 @@ Public Class AnalogDial
     End Sub
 
     Private Sub method_2(ByVal double_6 As Double, ByVal bool_3 As Boolean)
-        Dim num As Double = Math.Min(double_6, Me.double_2)
-        num = Math.Max(num, Me.double_1)
-        If (Me.double_4 > 0) Then
-            num = CDbl(Convert.ToInt32(num / Me.double_4)) * Me.double_4
+        Dim num As Double = Math.Min(double_6, Me._Maximum)
+        num = Math.Max(num, Me._Minimum)
+        If (Me._Resolution > 0) Then
+            num = CDbl(Convert.ToInt32(num / Me._Resolution)) * Me._Resolution
         End If
-        If (Me.double_2 = Me.double_1) Then
-            Me.float_0 = -90!
+        If (Me._Maximum = Me._Minimum) Then
+            Me.float_0 = -90.0!
         Else
-            Me.float_0 = CSng(((num - Me.Minimum) / (Me.double_2 - Me.double_1) * 270 - 135))
+            Me.float_0 = CSng(((num - Me.Minimum) / (Me._Maximum - Me._Minimum) * 270 - 135))
         End If
         If (Not bool_3) Then
             Me.double_3 = double_6
@@ -292,8 +292,8 @@ Public Class AnalogDial
         If (Me.bitmap_1 IsNot Nothing) Then
             graphics.DrawImage(Me.bitmap_1, 0, 0)
         End If
-        If (Me.solidBrush_0 IsNot Nothing) Then
-            graphics.DrawString(Me.Text, Me.Font, Me.solidBrush_0, Me.rectangle_0, Me.stringFormat_1)
+        If (Me.TextBrush IsNot Nothing) Then
+            graphics.DrawString(Me.Text, Me.Font, Me.TextBrush, Me.rectangle_0, Me.stringFormat_1)
         End If
         Using matrix As System.Drawing.Drawing2D.Matrix = New System.Drawing.Drawing2D.Matrix()
             Dim width As Double = CDbl(My.Resources.ChromeKnob.Width) / 2
@@ -317,7 +317,7 @@ Public Class AnalogDial
 
     Protected Overrides Sub OnSizeChanged(ByVal e As EventArgs)
         MyBase.OnSizeChanged(e)
-        Me.method_1()
+        Me.CreateStaticImage()
     End Sub
 
     Protected Overrides Sub OnTextChanged(ByVal e As EventArgs)
