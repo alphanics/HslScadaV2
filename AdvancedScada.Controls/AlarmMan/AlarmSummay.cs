@@ -128,7 +128,7 @@ namespace AdvancedHMIControls
                     if (SubScriptions != null)
                     {
                         SubScriptions.UnsubscribeAll();
-                        SubScriptions.Dispose ();
+                        SubScriptions.Dispose();
                     }
                     m_PLCAddressValueItems.CollectionChanged -= SubscribedItemsChanged;
                 }
@@ -150,7 +150,7 @@ namespace AdvancedHMIControls
             {
                 if (base.Site.DesignMode)
                 {
-                   
+
                 }
             }
         }
@@ -275,7 +275,7 @@ namespace AdvancedHMIControls
 
         #endregion
         #region PLC Related Properties
-       
+
         private int _PollRate;
         public int PollRate
         {
@@ -295,7 +295,7 @@ namespace AdvancedHMIControls
         //*****************************************
         private System.Collections.ObjectModel.ObservableCollection<PLCAddressItem> m_PLCAddressValueItems = new System.Collections.ObjectModel.ObservableCollection<PLCAddressItem>();
         [System.ComponentModel.Category("PLC Properties"), System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public System.Collections.ObjectModel.ObservableCollection<  PLCAddressItem> PLCAddressValueItems
+        public System.Collections.ObjectModel.ObservableCollection<PLCAddressItem> PLCAddressValueItems
         {
             get
             {
@@ -407,7 +407,7 @@ namespace AdvancedHMIControls
                     SubScriptions.Parent = this;
                     SubScriptions.DisplayError += DisplaySubscribeError;
                 }
-               
+
                 m_PLCAddressValueItems.CollectionChanged += SubscribedItemsChanged;
 
                 for (var index = 0; index < m_PLCAddressValueItems.Count; index++)

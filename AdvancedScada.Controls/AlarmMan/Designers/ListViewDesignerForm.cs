@@ -66,7 +66,7 @@ namespace AdvancedHMIControls
                     {
                         inicls.SetIniValue("Display Format", "ListBoxSelected.Items" + Convert.ToString(i), m_ControlToEdit._nListViewColumns[i], path);
                     }
-                    inicls.SetIniValue("Alarm Status", ChkAlarmOff.Name,$"{ ChkAlarmOff.Checked}", path);
+                    inicls.SetIniValue("Alarm Status", ChkAlarmOff.Name, $"{ ChkAlarmOff.Checked}", path);
                     inicls.SetIniValue("Alarm Status", ChkAlarmOn.Name, $"{ChkAlarmOn.Checked}", path);
                     inicls.SetIniValue("Alarm Status", ChkAlarmVariation.Name, $"{ ChkAlarmVariation.Checked}", path);
                     inicls.SetIniValue("Alarm Status", ChkAlarmAck.Name, $"{ChkAlarmAck.Checked}", path);
@@ -205,7 +205,7 @@ namespace AdvancedHMIControls
                     Button8.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "Button8.BackColor", path)));
                     Button9.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "Button9.BackColor", path)));
                     Button5.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "BackGround.BackColor", path)));
-                    ChkAlarmOff.Checked =bool.Parse( inicls.GetIniValue("Alarm Status", "ChkAlarmOff", path));
+                    ChkAlarmOff.Checked = bool.Parse(inicls.GetIniValue("Alarm Status", "ChkAlarmOff", path));
                     ChkAlarmOn.Checked = bool.Parse(inicls.GetIniValue("Alarm Status", "ChkAlarmOn", path));
                     ChkAlarmVariation.Checked = bool.Parse(inicls.GetIniValue("Alarm Status", "ChkAlarmVariation", path));
                     ChkAlarmAck.Checked = bool.Parse(inicls.GetIniValue("Alarm Status", "ChkAlarmAck", path));

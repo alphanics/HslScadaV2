@@ -373,7 +373,7 @@ namespace AdvancedScada.Controls.AlarmMan
                         PlcComEventArgs x = new PlcComEventArgs(0, string.Empty);
                         x.PlcAddress = m_PLCAddressValueItems[index].PLCAddress;
                         OnSuccessfulSubscription(x);
-                      
+
                     }
                 }
 

@@ -2,16 +2,16 @@ Imports System
 
 Public Class KeypadEventArgs
     Inherits EventArgs
-    Private string_0 As String
+    Private m_Key As String
 
     Public ReadOnly Property Key As String
         Get
-            Return Me.string_0
+            Return Me.m_Key
         End Get
     End Property
 
     Public Sub New(ByVal Key As String)
         MyBase.New()
-        Me.string_0 = Key
+        Me.m_Key = Key
     End Sub
 End Class

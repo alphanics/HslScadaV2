@@ -292,7 +292,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SelectorSwitch\BasicSelectorSwitch.vb">
+    <Compile Include="ClassBase\BasicSelectorSwitch.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SelectorSwitch\MushroomButton.vb">
@@ -334,16 +334,16 @@
     <Compile Include="StackLight.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Tank\BarLevel.vb">
+    <Compile Include="BarLevel\BarLevel.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Tank\IllumButton.vb">
+    <Compile Include="SelectorSwitch\IllumButton.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Tank\ImageSelectByBit.vb">
+    <Compile Include="Image\ImageSelectByBit.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Tank\PilotLightEx.vb">
+    <Compile Include="SelectorSwitch\PilotLightEx.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tank\Tank.vb">
@@ -392,8 +392,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DigitalDisplay\DigitalPanelMeter.rar" />
-    <None Include="DigitalDisplay\SevenSegment2.rar" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
