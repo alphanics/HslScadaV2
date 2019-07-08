@@ -245,8 +245,6 @@ Public Class LinearMeterV
                             'INSTANT VB TODO TASK: There is no VB equivalent to 'checked' in this context:
                             'ORIGINAL LINE: point1 = new Point(checked(checked(this.BarRectangle.X + this.BarRectangle.Width) + 2), num4);
                             point1 = New Point((Me.BarRectangle.X + Me.BarRectangle.Width) + 2, num4)
-                            'INSTANT VB TODO TASK: There is no VB equivalent to 'checked' in this context:
-                            'ORIGINAL LINE: point = new Point(checked(checked(this.BarRectangle.X + this.BarRectangle.Width) + num3), num4);
                             point = New Point((Me.BarRectangle.X + Me.BarRectangle.Width) + num3, num4)
                             graphic.DrawLine(pen1, point1, point)
                             i += 1

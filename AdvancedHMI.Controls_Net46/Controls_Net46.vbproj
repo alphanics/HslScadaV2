@@ -70,6 +70,9 @@
     <Compile Include="Keyboard\AlphaKeyboard_v3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LinearM\LinearMeter.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VerticalSlider\AnalogDial.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -192,22 +195,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controls\Line.vb" />
-    <Compile Include="LinearMeter\LinearMeter.vb">
+    <Compile Include="Basic\LinearMeterBase.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LinearMeter\LinearMeterBase.vb">
+    <Compile Include="LinearM\LinearMeterH.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LinearMeter\LinearMeterH.vb">
+    <Compile Include="LinearM\LinearMeterHorizontal.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LinearMeter\LinearMeterHorizontal.vb">
+    <Compile Include="LinearM\LinearMeterV.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LinearMeter\LinearMeterV.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LinearMeter\LinearMeterVertical.vb">
+    <Compile Include="LinearM\LinearMeterVertical.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\LineDirection.vb" />
@@ -282,9 +282,6 @@
     <Compile Include="Controls\Odometer.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\OdometerTest.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Class\OutputType.vb" />
     <Compile Include="Class\PanChartEventArgs.vb" />
     <Compile Include="SelectorSwitch\PilotLight.vb">
@@ -297,9 +294,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Motor\PneumaticBallValve.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Buttons\Repeat_Button.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\RollingDigit.vb" />
@@ -367,7 +361,7 @@
     <Compile Include="Controls\Tank.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TempController.vb">
+    <Compile Include="DigitalPanel\TempController.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Thermometer\Thermometer.vb">
@@ -386,9 +380,6 @@
     <Compile Include="VerticalSlider\VerticalSlider.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VerticalSlider\VerticalSlider2.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="VerticalSlider\VerticalSlider3.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -397,6 +388,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DigitalPanel\TempController.resx">
+      <DependentUpon>TempController.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Keyboard\AlphaKeyboard3.resx">
       <DependentUpon>AlphaKeyboard3.vb</DependentUpon>
     </EmbeddedResource>

@@ -50,7 +50,7 @@ namespace AdvancedScada.HMI
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            client?.Disconnect(XCollection.CURRENT_MACHINE);
+           /// client?.Disconnect(XCollection.CURRENT_MACHINE);
         }
     }
 }

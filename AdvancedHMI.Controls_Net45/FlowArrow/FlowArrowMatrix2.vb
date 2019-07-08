@@ -212,13 +212,9 @@ Public Class FlowArrowMatrix2
              .LineAlignment = StringAlignment.Center
             }
             Dim graphics1 As Graphics = e.Graphics
-            'INSTANT VB NOTE: The variable text was renamed since Visual Basic does not handle local variables named the same as class members well:
             Dim text_Renamed As String = Me.Text
-            'INSTANT VB NOTE: The variable font was renamed since Visual Basic does not handle local variables named the same as class members well:
             Dim font_Renamed As Font = Me.Font
             Dim solidBrush As New SolidBrush(Me.ForeColor)
-            'INSTANT VB TODO TASK: There is no VB equivalent to 'checked' in this context:
-            'ORIGINAL LINE: Point point = new Point(checked((int)Math.Round((double)this.Width / 2)), checked((int)Math.Round((double)this.Height / 2)));
             Dim point As New Point(CInt(Math.Round(CDbl(Me.Width) / 2)), CInt(Math.Round(CDbl(Me.Height) / 2)))
             graphics1.DrawString(text_Renamed, font_Renamed, solidBrush, point, stringFormat)
         End If
