@@ -2,7 +2,7 @@ Imports System
 Imports System.ComponentModel
 Imports System.Drawing
 Imports System.Windows.Forms
-<ToolboxItem(False)>
+
 Public Class LinearMeterBase
     Inherits AnalogMeterBase
     Protected Friend BarRectangle As Rectangle

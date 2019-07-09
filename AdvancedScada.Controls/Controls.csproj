@@ -379,18 +379,15 @@
     <Compile Include="AHMI\SelectorSwitch\SelectorSwitch3PosByValue.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AHMI\SevenSegment\HMISevenSegment.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\SevenSegment\HMISevenSegment2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\Components\SocketClient\HMIGenericTCPClient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Components\SocketClient\GenericTCPEventArgs.cs" />
     <Compile Include="AHMI\Components\SocketClient\MessageEventArgs.cs" />
     <Compile Include="AHMI\Components\SocketClient\SocketStateObject.cs" />
+    <Compile Include="SevenSegmentLEDDigits.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Subscription\IComComponent.cs" />
     <Compile Include="Subscription\SubscriptionDetail.cs" />
     <Compile Include="Subscription\SubscriptionHandler.cs" />

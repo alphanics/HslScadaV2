@@ -16,11 +16,11 @@ Public Class Conveyor
 
     Private solidBrush_0 As SolidBrush
 
-    Private bool_0 As Boolean
+    Private m_Value As Boolean
 
-    Private rotateFlipType_0 As RotateFlipType
+    Private m_Rotation As RotateFlipType
 
-    Private outputType_0 As OutputType
+    Private m_OutputType As OutputType
 
     Private bool_1 As Boolean
 
@@ -44,20 +44,20 @@ Public Class Conveyor
 
     Public Property OutputType As OutputType
         Get
-            Return Me.outputType_0
+            Return Me.m_OutputType
         End Get
         Set(ByVal value As OutputType)
-            Me.outputType_0 = value
+            Me.m_OutputType = value
         End Set
     End Property
 
     Public Property Rotation As RotateFlipType
         Get
-            Return Me.rotateFlipType_0
+            Return Me.m_Rotation
         End Get
         Set(ByVal value As RotateFlipType)
-            If (Me.rotateFlipType_0 <> value) Then
-                Me.rotateFlipType_0 = value
+            If (Me.m_Rotation <> value) Then
+                Me.m_Rotation = value
                 Me.bool_1 = True
                 Me.method_0()
                 Me.method_1()
@@ -69,16 +69,16 @@ Public Class Conveyor
 
     Public Property Value As Boolean
         Get
-            Return Me.bool_0
+            Return Me.m_Value
         End Get
         Set(ByVal value As Boolean)
-            If (value <> Me.bool_0) Then
+            If (value <> Me.m_Value) Then
                 If (Not value) Then
                     Me.bitmap_0 = Me.bitmap_1
                 Else
                     Me.bitmap_0 = Me.bitmap_2
                 End If
-                Me.bool_0 = value
+                Me.m_Value = value
                 MyBase.Invalidate()
                 Me.OnValueChanged(EventArgs.Empty)
             End If
@@ -88,8 +88,8 @@ Public Class Conveyor
     Public Sub New()
         MyBase.New()
         Me.rectangle_0 = New Rectangle()
-        Me.rotateFlipType_0 = RotateFlipType.RotateNoneFlipNone
-        Me.outputType_0 = OutputType.MomentarySet
+        Me.m_Rotation = RotateFlipType.RotateNoneFlipNone
+        Me.m_OutputType = OutputType.MomentarySet
         Me.tmrError = New System.Windows.Forms.Timer()
         Me.decimal_1 = New Decimal(CDbl(My.Resources.ConveyorOff.Height) / CDbl(My.Resources.ConveyorOff.Width))
         Me.solidBrush_0 = New SolidBrush(MyBase.ForeColor)
@@ -101,7 +101,7 @@ Public Class Conveyor
     End Sub
 
     Private Sub method_0()
-        If (Not (Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipNone Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipNone Or Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipNone Or Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipNone)) Then
+        If (Not (Me.m_Rotation = RotateFlipType.Rotate90FlipNone Or Me.m_Rotation = RotateFlipType.Rotate270FlipNone Or Me.m_Rotation = RotateFlipType.Rotate90FlipX Or Me.m_Rotation = RotateFlipType.Rotate270FlipX Or Me.m_Rotation = RotateFlipType.Rotate270FlipX Or Me.m_Rotation = RotateFlipType.Rotate90FlipX Or Me.m_Rotation = RotateFlipType.Rotate270FlipNone Or Me.m_Rotation = RotateFlipType.Rotate90FlipNone)) Then
             Me.decimal_1 = New Decimal(CDbl(My.Resources.ConveyorOff.Height) / CDbl(My.Resources.ConveyorOff.Width))
         Else
             Me.decimal_1 = New Decimal(CDbl(My.Resources.ConveyorOff.Width) / CDbl(My.Resources.ConveyorOff.Height))
@@ -127,7 +127,7 @@ Public Class Conveyor
         Dim num As Decimal
         Dim num1 As Decimal
         If (MyBase.Width > 0 And MyBase.Height > 0) Then
-            If (Not (Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipNone Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipNone Or Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipX Or Me.rotateFlipType_0 = RotateFlipType.Rotate270FlipNone Or Me.rotateFlipType_0 = RotateFlipType.Rotate90FlipNone)) Then
+            If (Not (Me.m_Rotation = RotateFlipType.Rotate90FlipNone Or Me.m_Rotation = RotateFlipType.Rotate270FlipNone Or Me.m_Rotation = RotateFlipType.Rotate90FlipX Or Me.m_Rotation = RotateFlipType.Rotate270FlipX Or Me.m_Rotation = RotateFlipType.Rotate270FlipX Or Me.m_Rotation = RotateFlipType.Rotate90FlipX Or Me.m_Rotation = RotateFlipType.Rotate270FlipNone Or Me.m_Rotation = RotateFlipType.Rotate90FlipNone)) Then
                 Me.decimal_1 = New Decimal(CDbl(My.Resources.ConveyorOff.Height) / CDbl(My.Resources.ConveyorOff.Width))
                 num = New Decimal(CSng(MyBase.Width) / CSng(My.Resources.ConveyorOff.Width))
                 num1 = New Decimal(CSng(MyBase.Height) / CSng(My.Resources.ConveyorOff.Height))
@@ -146,9 +146,9 @@ Public Class Conveyor
             Dim graphic1 As Graphics = Graphics.FromImage(Me.bitmap_2)
             graphic.DrawImage(My.Resources.ConveyorOff, 0, 0, Me.bitmap_1.Width, Me.bitmap_1.Height)
             graphic1.DrawImage(My.Resources.ConveyorOn, 0, 0, Me.bitmap_2.Width, Me.bitmap_2.Height)
-            Me.bitmap_2.RotateFlip(Me.rotateFlipType_0)
-            Me.bitmap_1.RotateFlip(Me.rotateFlipType_0)
-            If (Not Me.bool_0) Then
+            Me.bitmap_2.RotateFlip(Me.m_Rotation)
+            Me.bitmap_1.RotateFlip(Me.m_Rotation)
+            If (Not Me.m_Value) Then
                 Me.bitmap_0 = Me.bitmap_1
             Else
                 Me.bitmap_0 = Me.bitmap_2
@@ -171,7 +171,7 @@ Public Class Conveyor
         MyBase.OnMouseDown(e)
         If (MyBase.Enabled) Then
             Me.bitmap_0 = Me.bitmap_2
-            If (Me.outputType_0 = OutputType.Toggle) Then
+            If (Me.m_OutputType = OutputType.Toggle) Then
                 Me.Value = Not Me.Value
             End If
             MyBase.Invalidate()
@@ -181,7 +181,7 @@ Public Class Conveyor
     Protected Overrides Sub OnMouseUp(ByVal mevent As MouseEventArgs)
         MyBase.OnMouseUp(mevent)
         If (MyBase.Enabled) Then
-            If (Me.outputType_0 <> OutputType.Toggle) Then
+            If (Me.m_OutputType <> OutputType.Toggle) Then
                 Me.bitmap_0 = Me.bitmap_1
             End If
             MyBase.Invalidate()

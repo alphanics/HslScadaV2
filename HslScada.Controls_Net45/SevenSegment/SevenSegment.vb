@@ -264,7 +264,7 @@ Public Class SevenSegment
                 Me.bitmap_0(num2) = New Bitmap(num, num1)
                 graphic = Graphics.FromImage(Me.bitmap_0(num2))
                 graphic.ScaleTransform(CSng((0.5 * CDbl(Me.float_0))), CSng((0.5 * CDbl(Me.float_0))))
-                SevenSegment2.smethod_7(graphic, num2, Color.Red, True)
+                SevenSegment2.FillPolygon(graphic, num2, Color.Red, True)
                 num2 = num2 + 1
             Loop While num2 <= 11
             Dim num3 As Integer = 0
@@ -275,7 +275,7 @@ Public Class SevenSegment
                 Me.bitmap_1(num3) = New Bitmap(num, num1)
                 graphic = Graphics.FromImage(Me.bitmap_1(num3))
                 graphic.ScaleTransform(CSng((0.5 * CDbl(Me.float_0))), CSng((0.5 * CDbl(Me.float_0))))
-                SevenSegment2.smethod_7(graphic, num3, Color.Green, True)
+                SevenSegment2.FillPolygon(graphic, num3, Color.Green, True)
                 num3 = num3 + 1
             Loop While num3 <= 11
             Me.bitmap_2 = New Bitmap(Convert.ToInt32(CSng(My.Resources.RedDecimal.Width) * Me.float_0), Convert.ToInt32(CSng(My.Resources.RedDecimal.Height) * Me.float_0))

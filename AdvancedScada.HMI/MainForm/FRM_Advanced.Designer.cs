@@ -357,7 +357,7 @@
             // 
             this.TabControl1.Controls.Add(this.TabPage1);
             this.TabControl1.Controls.Add(this.TabPage2);
-            this.TabControl1.Location = new System.Drawing.Point(0, 28);
+            this.TabControl1.Location = new System.Drawing.Point(0, 4);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(829, 357);
@@ -430,7 +430,7 @@
             this.TabControl2.Controls.Add(this.TabPage4);
             this.TabControl2.Controls.Add(this.TabPage5);
             this.TabControl2.Controls.Add(this.TabPage7);
-            this.TabControl2.Location = new System.Drawing.Point(3, 31);
+            this.TabControl2.Location = new System.Drawing.Point(3, 6);
             this.TabControl2.Name = "TabControl2";
             this.TabControl2.SelectedIndex = 0;
             this.TabControl2.Size = new System.Drawing.Size(815, 325);
@@ -438,6 +438,7 @@
             // 
             // TabPage3
             // 
+            this.TabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.TabPage3.Controls.Add(this.label1);
             this.TabPage3.Controls.Add(this.textBox1);
             this.TabPage3.Controls.Add(this.button3);
@@ -449,7 +450,6 @@
             this.TabPage3.Size = new System.Drawing.Size(807, 299);
             this.TabPage3.TabIndex = 0;
             this.TabPage3.Text = "TabPage3";
-            this.TabPage3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -534,7 +534,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 405);
+            this.ClientSize = new System.Drawing.Size(829, 360);
             this.Controls.Add(this.ToolStrip1);
             this.Controls.Add(this.TabControl1);
             this.Name = "FRM_Advanced";

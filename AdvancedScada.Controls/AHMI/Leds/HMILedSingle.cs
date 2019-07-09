@@ -1,5 +1,4 @@
 ﻿
-using HslScada.Controls_Net45;
 using AdvancedScada;
 using AdvancedScada.Controls.AHMI.Leds.DrawAll;
 using AdvancedScada.Controls.AHMI.Leds.DrawAll;
@@ -8,6 +7,7 @@ using AdvancedScada.Controls.Enum;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
 using AdvancedScada.Monitor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;

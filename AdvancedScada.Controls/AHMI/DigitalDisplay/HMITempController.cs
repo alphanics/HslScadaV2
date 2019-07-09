@@ -1,10 +1,10 @@
 ﻿
-using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase;
 using AdvancedScada.DriverBase.Client;
 using AdvancedScada.DriverBase.Common;
+using HslScada.Controls_Net45;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections;

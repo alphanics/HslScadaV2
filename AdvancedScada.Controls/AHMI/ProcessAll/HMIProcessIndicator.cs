@@ -1,10 +1,10 @@
 ﻿
-using HslScada.Controls_Net45;
 using AdvancedScada.Controls.AHMI.ProcessAll.DrawAll;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Enum;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
+using HslScada.Controls_Net45;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

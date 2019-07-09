@@ -2,7 +2,7 @@ Imports System
 Imports System.ComponentModel
 Imports System.Drawing
 Imports System.Windows.Forms
-<ToolboxItem(False)>
+
 Public MustInherit Class AnalogMeterBase
     Inherits Control
     Protected StaticImage As Bitmap

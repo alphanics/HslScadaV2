@@ -6,7 +6,7 @@ Imports System.Windows.Forms
 
 <ToolboxItem(False)>
 Public Class ControlShapeType
-    Inherits UserControl
+    Inherits Control
     Public shapeType_0 As ShapeType
 
     Private int_0 As Integer
@@ -40,11 +40,11 @@ Public Class ControlShapeType
         Me.int_3 = Me.int_0 * Me.int_5 + (Me.int_0 - 1) * 6 + 8
     End Sub
 
-    Protected Overrides Sub OnMouseDown(ByVal mouseEventArgs_0 As MouseEventArgs)
+    Protected Overrides Sub OnMouseDown(ByVal e As MouseEventArgs)
         Dim enumerator As IEnumerator = Nothing
-        If (mouseEventArgs_0.Button.Equals(System.Windows.Forms.MouseButtons.Left) AndAlso mouseEventArgs_0.X <= Me.int_2 AndAlso mouseEventArgs_0.Y <= Me.int_3) Then
-            Dim x As Integer = mouseEventArgs_0.X
-            Dim y As Integer = mouseEventArgs_0.Y
+        If (e.Button.Equals(System.Windows.Forms.MouseButtons.Left) AndAlso e.X <= Me.int_2 AndAlso e.Y <= Me.int_3) Then
+            Dim x As Integer = e.X
+            Dim y As Integer = e.Y
             Dim int3 As Integer = y / (Me.int_3 / Me.int_0) * Me.int_1 + x / (Me.int_2 / Me.int_1) Mod Me.int_1
             Dim num As Integer = 0
             Try
@@ -65,12 +65,12 @@ Public Class ControlShapeType
         End If
     End Sub
 
-    Protected Overrides Sub OnPaint(ByVal paintEventArgs_0 As PaintEventArgs)
+    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         Dim enumerator As IEnumerator = Nothing
-        Dim bitmap As System.Drawing.Bitmap = New System.Drawing.Bitmap(MyBase.Width, MyBase.Height, paintEventArgs_0.Graphics)
+        Dim bitmap As System.Drawing.Bitmap = New System.Drawing.Bitmap(MyBase.Width, MyBase.Height, e.Graphics)
         Dim graphic As Graphics = Graphics.FromImage(bitmap)
         graphic.FillRectangle(Brushes.LightGray, New Rectangle(0, 0, bitmap.Width, bitmap.Height))
-        paintEventArgs_0.Graphics.FillRectangle(Brushes.LightGray, New Rectangle(0, 0, MyBase.Width, MyBase.Height))
+        e.Graphics.FillRectangle(Brushes.LightGray, New Rectangle(0, 0, MyBase.Width, MyBase.Height))
         Dim int1 As Integer = 4
         Dim num As Integer = 4
         Dim num1 As Integer = 0
@@ -83,9 +83,9 @@ Public Class ControlShapeType
                 graphic.FillRectangle(Brushes.LightGray, 0, 0, bitmap.Width, bitmap.Height)
                 graphic.FillPath(Brushes.Yellow, graphicsPath)
                 graphic.DrawPath(Pens.Red, graphicsPath)
-                paintEventArgs_0.Graphics.DrawImage(bitmap, int1, num, New Rectangle(New Point(0, 0), New System.Drawing.Size(Me.int_4 + 1, Me.int_5 + 1)), GraphicsUnit.Pixel)
+                e.Graphics.DrawImage(bitmap, int1, num, New Rectangle(New Point(0, 0), New System.Drawing.Size(Me.int_4 + 1, Me.int_5 + 1)), GraphicsUnit.Pixel)
                 If (Me.shapeType_0.Equals(Me.shapeType_0)) Then
-                    paintEventArgs_0.Graphics.DrawRectangle(Pens.Red, New Rectangle(New Point(int1 - 2, num - 2), New System.Drawing.Size(Me.int_4 + 4, Me.int_5 + 4)))
+                    e.Graphics.DrawRectangle(Pens.Red, New Rectangle(New Point(int1 - 2, num - 2), New System.Drawing.Size(Me.int_4 + 4, Me.int_5 + 4)))
                 End If
                 num1 = num1 + 1
                 int1 = num1 Mod Me.int_1 * Me.int_4

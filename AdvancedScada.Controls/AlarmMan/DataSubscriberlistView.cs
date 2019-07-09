@@ -1,9 +1,9 @@
-﻿using HslScadaControls;
-using AdvancedScada.Controls;
+﻿using AdvancedScada.Controls;
 using AdvancedScada.Controls.AlarmMan.Designers;
 using AdvancedScada.Controls.Drivers;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
+using HslScadaControls;
 using System;
 using System.Collections;
 using System.Collections.Generic;

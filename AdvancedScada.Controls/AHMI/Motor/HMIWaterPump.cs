@@ -1,10 +1,10 @@
-﻿using HslScada.Controls_Net45;
-using AdvancedScada.Controls.DialogEditor;
+﻿using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase;
 using AdvancedScada.DriverBase.Client;
 using AdvancedScada.DriverBase.Common;
 using AdvancedScada.Monitor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;

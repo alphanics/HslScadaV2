@@ -7,31 +7,31 @@ Imports System.Windows.Forms
 
 Public Class AnimatingPictureBox
     Inherits PictureBox
-    Private rotationScale_0 As RotationScale
+    Private m_ImageRotationScale As RotationScale
 
-    Private float_0 As Single
+    Private m_ImageRotationValue As Single
 
-    Private translationScale_0 As TranslationScale
+    Private m_ImageTranslateXScale As TranslationScale
 
-    Private int_0 As Integer
+    Private m_ImageTranslateXValue As Integer
 
-    Private translationScale_1 As TranslationScale
+    Private m_ImageTranslateYScale As TranslationScale
 
-    Private int_1 As Integer
+    Private m_ImageTranslateYValue As Integer
 
-    Private translationScale_2 As TranslationScale
+    Private m_ImageSizeXScale As TranslationScale
 
-    Private double_0 As Double
+    Private m_ImageSizeXValue As Double
 
-    Private translationScale_3 As TranslationScale
+    Private m_ImageSizeYScale As TranslationScale
 
-    Private double_1 As Double
+    Private m_ImageSizeYValue As Double
 
-    Private point_0 As Point
+    Private m_Location As Point
 
-    Private int_2 As Integer
+    Private m_LocationOffsetX As Integer
 
-    Private int_3 As Integer
+    Private m_LocationOffsetY As Integer
 
     Private bitmap_0 As Bitmap
 
@@ -41,20 +41,20 @@ Public Class AnimatingPictureBox
 
     Public Property ImageRotationScale As RotationScale
         Get
-            Return Me.rotationScale_0
+            Return Me.m_ImageRotationScale
         End Get
         Set(ByVal value As RotationScale)
-            Me.rotationScale_0 = value
+            Me.m_ImageRotationScale = value
         End Set
     End Property
 
     Public Property ImageRotationValue As Single
         Get
-            Return Me.float_0
+            Return Me.m_ImageRotationValue
         End Get
         Set(ByVal value As Single)
-            If (Me.float_0 <> value) Then
-                Me.float_0 = value
+            If (Me.m_ImageRotationValue <> value) Then
+                Me.m_ImageRotationValue = value
                 Me.method_0()
             End If
         End Set
@@ -62,20 +62,20 @@ Public Class AnimatingPictureBox
 
     Public Property ImageSizeXScale As TranslationScale
         Get
-            Return Me.translationScale_2
+            Return Me.m_ImageSizeXScale
         End Get
         Set(ByVal value As TranslationScale)
-            Me.translationScale_2 = value
+            Me.m_ImageSizeXScale = value
         End Set
     End Property
 
     Public Property ImageSizeXValue As Double
         Get
-            Return Me.double_0
+            Return Me.m_ImageSizeXValue
         End Get
         Set(ByVal value As Double)
-            If (Me.double_0 <> value) Then
-                Me.double_0 = value
+            If (Me.m_ImageSizeXValue <> value) Then
+                Me.m_ImageSizeXValue = value
                 Me.method_0()
             End If
         End Set
@@ -83,20 +83,20 @@ Public Class AnimatingPictureBox
 
     Public Property ImageSizeYScale As TranslationScale
         Get
-            Return Me.translationScale_3
+            Return Me.m_ImageSizeYScale
         End Get
         Set(ByVal value As TranslationScale)
-            Me.translationScale_3 = value
+            Me.m_ImageSizeYScale = value
         End Set
     End Property
 
     Public Property ImageSizeYValue As Double
         Get
-            Return Me.double_1
+            Return Me.m_ImageSizeYValue
         End Get
         Set(ByVal value As Double)
-            If (Me.double_1 <> value) Then
-                Me.double_1 = value
+            If (Me.m_ImageSizeYValue <> value) Then
+                Me.m_ImageSizeYValue = value
                 Me.method_0()
             End If
         End Set
@@ -104,20 +104,20 @@ Public Class AnimatingPictureBox
 
     Public Property ImageTranslateXScale As TranslationScale
         Get
-            Return Me.translationScale_0
+            Return Me.m_ImageTranslateXScale
         End Get
         Set(ByVal value As TranslationScale)
-            Me.translationScale_0 = value
+            Me.m_ImageTranslateXScale = value
         End Set
     End Property
 
     Public Property ImageTranslateXValue As Integer
         Get
-            Return Me.int_0
+            Return Me.m_ImageTranslateXValue
         End Get
         Set(ByVal value As Integer)
-            If (Me.int_0 <> value) Then
-                Me.int_0 = value
+            If (Me.m_ImageTranslateXValue <> value) Then
+                Me.m_ImageTranslateXValue = value
                 Me.method_0()
             End If
         End Set
@@ -125,20 +125,20 @@ Public Class AnimatingPictureBox
 
     Public Property ImageTranslateYScale As TranslationScale
         Get
-            Return Me.translationScale_1
+            Return Me.m_ImageTranslateYScale
         End Get
         Set(ByVal value As TranslationScale)
-            Me.translationScale_1 = value
+            Me.m_ImageTranslateYScale = value
         End Set
     End Property
 
     Public Property ImageTranslateYValue As Integer
         Get
-            Return Me.int_1
+            Return Me.m_ImageTranslateYValue
         End Get
         Set(ByVal value As Integer)
-            If (Me.int_1 <> value) Then
-                Me.int_1 = value
+            If (Me.m_ImageTranslateYValue <> value) Then
+                Me.m_ImageTranslateYValue = value
                 Me.method_0()
             End If
         End Set
@@ -146,11 +146,11 @@ Public Class AnimatingPictureBox
 
     Public Shadows Property Location As Point
         Get
-            Return Me.point_0
+            Return Me.m_Location
         End Get
         Set(ByVal value As Point)
-            Me.point_0 = value
-            MyBase.SetBounds(Me.point_0.X + Me.int_2, Me.point_0.Y, MyBase.Width, MyBase.Height, BoundsSpecified.Location)
+            Me.m_Location = value
+            MyBase.SetBounds(Me.m_Location.X + Me.m_LocationOffsetX, Me.m_Location.Y, MyBase.Width, MyBase.Height, BoundsSpecified.Location)
         End Set
     End Property
 
@@ -158,12 +158,12 @@ Public Class AnimatingPictureBox
     <EditorBrowsable(EditorBrowsableState.Always)>
     Public Property LocationOffsetX As Integer
         Get
-            Return Me.int_2
+            Return Me.m_LocationOffsetX
         End Get
         Set(ByVal value As Integer)
-            If (Me.int_2 <> value) Then
-                Me.int_2 = value
-                MyBase.SetBounds(Me.point_0.X + Me.int_2, Me.point_0.Y, MyBase.Width, MyBase.Height, BoundsSpecified.Location)
+            If (Me.m_LocationOffsetX <> value) Then
+                Me.m_LocationOffsetX = value
+                MyBase.SetBounds(Me.m_Location.X + Me.m_LocationOffsetX, Me.m_Location.Y, MyBase.Width, MyBase.Height, BoundsSpecified.Location)
             End If
         End Set
     End Property
@@ -172,33 +172,33 @@ Public Class AnimatingPictureBox
     <EditorBrowsable(EditorBrowsableState.Always)>
     Public Property LocationOffsetY As Integer
         Get
-            Return Me.int_3
+            Return Me.m_LocationOffsetY
         End Get
         Set(ByVal value As Integer)
-            If (Me.int_3 <> value) Then
-                Me.int_3 = value
-                MyBase.SetBounds(Me.point_0.X + Me.int_2, Me.point_0.Y + Me.int_3, MyBase.Width, MyBase.Height, BoundsSpecified.Location)
+            If (Me.m_LocationOffsetY <> value) Then
+                Me.m_LocationOffsetY = value
+                MyBase.SetBounds(Me.m_Location.X + Me.m_LocationOffsetX, Me.m_Location.Y + Me.m_LocationOffsetY, MyBase.Width, MyBase.Height, BoundsSpecified.Location)
             End If
         End Set
     End Property
 
     Public Sub New()
         MyBase.New()
-        Me.rotationScale_0 = New RotationScale()
-        Me.translationScale_0 = New TranslationScale()
-        Me.translationScale_1 = New TranslationScale()
-        Me.double_0 = 1
-        Me.double_1 = 1
+        Me.m_ImageRotationScale = New RotationScale()
+        Me.m_ImageTranslateXScale = New TranslationScale()
+        Me.m_ImageTranslateYScale = New TranslationScale()
+        Me.m_ImageSizeXValue = 1
+        Me.m_ImageSizeYValue = 1
         Me.matrix_0 = New Matrix()
         Me.BackColor = Color.Transparent
         Me.BackgroundImageLayout = ImageLayout.Stretch
-        Me.translationScale_2 = New TranslationScale() With
+        Me.m_ImageSizeXScale = New TranslationScale() With
         {
             .InputMaxValue = 1,
             .OutputMaxValue = 1,
             .ErrorValue = 1
         }
-        Me.translationScale_3 = New TranslationScale() With
+        Me.m_ImageSizeYScale = New TranslationScale() With
         {
             .InputMaxValue = 1,
             .OutputMaxValue = 1,
@@ -214,25 +214,25 @@ Public Class AnimatingPictureBox
                 Me.bitmap_0 = New Bitmap(MyBase.Width, MyBase.Height)
                 Me.bitmap_0.SetResolution(MyBase.Image.HorizontalResolution, MyBase.Image.VerticalResolution)
             End If
-            If (Me.translationScale_0 IsNot Nothing) Then
-                num = CInt(Math.Round(Me.translationScale_0.GetValue(CDbl(Me.int_0))))
+            If (Me.m_ImageTranslateXScale IsNot Nothing) Then
+                num = CInt(Math.Round(Me.m_ImageTranslateXScale.GetValue(CDbl(Me.m_ImageTranslateXValue))))
             End If
-            If (Me.translationScale_1 IsNot Nothing) Then
-                num1 = CInt(Math.Round(Me.translationScale_0.GetValue(CDbl(Me.int_1))))
+            If (Me.m_ImageTranslateYScale IsNot Nothing) Then
+                num1 = CInt(Math.Round(Me.m_ImageTranslateXScale.GetValue(CDbl(Me.m_ImageTranslateYValue))))
             End If
             Me.rectangle_0 = New Rectangle(0, 0, MyBase.Width, MyBase.Height)
             Using matrix0 As Graphics = Graphics.FromImage(Me.bitmap_0)
                 Me.matrix_0.Reset()
                 matrix0.Clear(Color.Transparent)
-                Dim value As Double = Me.translationScale_2.GetValue(Me.double_0)
-                Dim value1 As Double = Me.translationScale_3.GetValue(Me.double_1)
+                Dim value As Double = Me.m_ImageSizeXScale.GetValue(Me.m_ImageSizeXValue)
+                Dim value1 As Double = Me.m_ImageSizeYScale.GetValue(Me.m_ImageSizeYValue)
                 If (value = 0) Then
                     value = 1
                 End If
                 If (value1 = 0) Then
                     value1 = 1
                 End If
-                Me.matrix_0.RotateAt(Me.ImageRotationScale.GetAngle(Me.float_0), New Point(CInt(Math.Round(CDbl(MyBase.Width) / 2 + CDbl(Me.ImageRotationScale.XPosition) * value + CDbl(num) * value)), CInt(Math.Round(CDbl(MyBase.Height) / 2 + CDbl(Me.ImageRotationScale.YPosition) * value1 + CDbl(num1) * value1))))
+                Me.matrix_0.RotateAt(Me.ImageRotationScale.GetAngle(Me.m_ImageRotationValue), New Point(CInt(Math.Round(CDbl(MyBase.Width) / 2 + CDbl(Me.ImageRotationScale.XPosition) * value + CDbl(num) * value)), CInt(Math.Round(CDbl(MyBase.Height) / 2 + CDbl(Me.ImageRotationScale.YPosition) * value1 + CDbl(num1) * value1))))
                 Me.matrix_0.Translate(CSng(((CDbl(MyBase.Width) - CDbl(MyBase.Image.Width) * value) / 2)), CSng(((CDbl(MyBase.Height) - CDbl(MyBase.Image.Height) * value1) / 2)))
                 Me.matrix_0.Scale(CSng(value), CSng(value1))
                 matrix0.Transform = Me.matrix_0
@@ -269,9 +269,8 @@ Public Class AnimatingPictureBox
             If (flag1) Then
                 painte.Graphics.DrawImage(Me.bitmap_0, Me.rectangle_0)
             End If
-        Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            ProjectData.ClearProjectError()
+        Catch ex As System.Exception
+            Console.WriteLine(ex.Message)
         End Try
     End Sub
 

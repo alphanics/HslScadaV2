@@ -1,7 +1,7 @@
-﻿using HslScada.Controls_Net45;
-using AdvancedScada.Controls.Drivers;
+﻿using AdvancedScada.Controls.Drivers;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
+using HslScada.Controls_Net45;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -623,7 +623,7 @@ namespace AdvancedScada.Controls.AHMI.Display
         #region Keypad popup for data entry
         private Keypad_v3 KeypadPopUp;
 
-       
+
         //*****************************************
         //* Property - Address in PLC to Write Data To
         //*****************************************

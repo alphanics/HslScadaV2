@@ -9,6 +9,7 @@ using AdvancedScada.Controls.AHMI.ProcessAll;
 using AdvancedScada.Controls.AHMI.SelectorSwitch;
 using AdvancedScada.Controls.AHMI.SevenSegment;
 using AdvancedScada.Controls.Enum;
+using HslScada.Controls_Net45;
 
 namespace AdvancedScada.HMI.MainForm
 {
@@ -2341,7 +2342,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSimpleLED1.MinimumHoldTime = 500;
             this.hmiSimpleLED1.MinimumSize = new System.Drawing.Size(27, 27);
             this.hmiSimpleLED1.Name = "hmiSimpleLED1";
-            this.hmiSimpleLED1.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiSimpleLED1.OutputType = OutputType.Toggle;
             this.hmiSimpleLED1.PLCAddressClick = "";
             this.hmiSimpleLED1.PLCAddressText = "";
             this.hmiSimpleLED1.PLCAddressValue = "";
@@ -2367,7 +2368,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiIndicator2.PLCAddressVisible = "";
             this.hmiIndicator2.SelectColor2 = false;
             this.hmiIndicator2.SelectColor3 = false;
-            this.hmiIndicator2.Shape = HMIIndicator.ShapeTypes.Rectangle;
+            this.hmiIndicator2.Shape = HMIIndicator.ShapeType.Rectangle;
             this.hmiIndicator2.Size = new System.Drawing.Size(131, 12);
             this.hmiIndicator2.TabIndex = 517;
             this.hmiIndicator2.Text = "hmiIndicator2";
@@ -2970,7 +2971,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSimpleLED2.MinimumHoldTime = 500;
             this.hmiSimpleLED2.MinimumSize = new System.Drawing.Size(27, 27);
             this.hmiSimpleLED2.Name = "hmiSimpleLED2";
-            this.hmiSimpleLED2.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiSimpleLED2.OutputType = OutputType.Toggle;
             this.hmiSimpleLED2.PLCAddressClick = "";
             this.hmiSimpleLED2.PLCAddressText = "";
             this.hmiSimpleLED2.PLCAddressValue = "";
@@ -3333,7 +3334,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiPilotLight4.MaximumHoldTime = 3000;
             this.hmiPilotLight4.MinimumHoldTime = 500;
             this.hmiPilotLight4.Name = "hmiPilotLight4";
-            this.hmiPilotLight4.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiPilotLight4.OutputType = OutputType.Toggle;
             this.hmiPilotLight4.PLCAddressClick = "TEST.PLC.MB.MBC";
             this.hmiPilotLight4.PLCAddressText = "";
             this.hmiPilotLight4.PLCAddressValue = "TEST.PLC.MB.MBC";
@@ -3355,7 +3356,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiPilotLight3.MaximumHoldTime = 3000;
             this.hmiPilotLight3.MinimumHoldTime = 500;
             this.hmiPilotLight3.Name = "hmiPilotLight3";
-            this.hmiPilotLight3.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiPilotLight3.OutputType = OutputType.Toggle;
             this.hmiPilotLight3.PLCAddressClick = "TEST.PLC.MB.MBC";
             this.hmiPilotLight3.PLCAddressText = "";
             this.hmiPilotLight3.PLCAddressValue = "TEST.PLC.MB.MBC";
@@ -3377,7 +3378,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiPilotLight2.MaximumHoldTime = 3000;
             this.hmiPilotLight2.MinimumHoldTime = 500;
             this.hmiPilotLight2.Name = "hmiPilotLight2";
-            this.hmiPilotLight2.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiPilotLight2.OutputType = OutputType.Toggle;
             this.hmiPilotLight2.PLCAddressClick = "TEST.PLC.MB.MB9";
             this.hmiPilotLight2.PLCAddressText = "";
             this.hmiPilotLight2.PLCAddressValue = "TEST.PLC.MB.MB9";
@@ -3399,7 +3400,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiPilotLight1.MaximumHoldTime = 3000;
             this.hmiPilotLight1.MinimumHoldTime = 500;
             this.hmiPilotLight1.Name = "hmiPilotLight1";
-            this.hmiPilotLight1.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiPilotLight1.OutputType = OutputType.Toggle;
             this.hmiPilotLight1.PLCAddressClick = "TEST.PLC.MB.MBE";
             this.hmiPilotLight1.PLCAddressText = "";
             this.hmiPilotLight1.PLCAddressValue = "TEST.PLC.MB.MBE";
@@ -3450,7 +3451,6 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMushroomButton1
             // 
-            this.hmiMushroomButton1.ButtonColor = HMIMushroomButton.ButtonColors.RedMushroom;
             this.hmiMushroomButton1.LegendPlate = HMIMushroomButton.LegendPlates.Small;
             this.hmiMushroomButton1.Location = new System.Drawing.Point(4, 433);
             this.hmiMushroomButton1.MaximumHoldTime = 3000;
@@ -3473,7 +3473,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiWaterPump1.MaximumHoldTime = 3000;
             this.hmiWaterPump1.MinimumHoldTime = 500;
             this.hmiWaterPump1.Name = "hmiWaterPump1";
-            this.hmiWaterPump1.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiWaterPump1.OutputType = OutputType.Toggle;
             this.hmiWaterPump1.PLCAddressClick = "CH2.PLC1.DataBlock2.TAG00021";
             this.hmiWaterPump1.PLCAddressText = "";
             this.hmiWaterPump1.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00005";
@@ -3500,7 +3500,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiIndicator1.PLCAddressVisible = "";
             this.hmiIndicator1.SelectColor2 = false;
             this.hmiIndicator1.SelectColor3 = false;
-            this.hmiIndicator1.Shape = HMIIndicator.ShapeTypes.Rectangle;
+            this.hmiIndicator1.Shape = HMIIndicator.ShapeType.Rectangle;
             this.hmiIndicator1.Size = new System.Drawing.Size(256, 12);
             this.hmiIndicator1.TabIndex = 516;
             this.hmiIndicator1.Text = "hmiIndicator1";
@@ -3512,7 +3512,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor8.MaximumHoldTime = 3000;
             this.hmiMotor8.MinimumHoldTime = 500;
             this.hmiMotor8.Name = "hmiMotor8";
-            this.hmiMotor8.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor8.OutputType = OutputType.Toggle;
             this.hmiMotor8.PLCAddressClick = "";
             this.hmiMotor8.PLCAddressText = "";
             this.hmiMotor8.PLCAddressValue = "";
@@ -3530,7 +3530,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor7.MaximumHoldTime = 3000;
             this.hmiMotor7.MinimumHoldTime = 500;
             this.hmiMotor7.Name = "hmiMotor7";
-            this.hmiMotor7.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor7.OutputType = OutputType.Toggle;
             this.hmiMotor7.PLCAddressClick = "";
             this.hmiMotor7.PLCAddressText = "";
             this.hmiMotor7.PLCAddressValue = "";
@@ -3548,7 +3548,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor6.MaximumHoldTime = 3000;
             this.hmiMotor6.MinimumHoldTime = 500;
             this.hmiMotor6.Name = "hmiMotor6";
-            this.hmiMotor6.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor6.OutputType = OutputType.Toggle;
             this.hmiMotor6.PLCAddressClick = "";
             this.hmiMotor6.PLCAddressText = "";
             this.hmiMotor6.PLCAddressValue = "";
@@ -3566,7 +3566,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor5.MaximumHoldTime = 3000;
             this.hmiMotor5.MinimumHoldTime = 500;
             this.hmiMotor5.Name = "hmiMotor5";
-            this.hmiMotor5.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor5.OutputType = OutputType.Toggle;
             this.hmiMotor5.PLCAddressClick = "";
             this.hmiMotor5.PLCAddressText = "";
             this.hmiMotor5.PLCAddressValue = "";
@@ -3584,7 +3584,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor4.MaximumHoldTime = 3000;
             this.hmiMotor4.MinimumHoldTime = 500;
             this.hmiMotor4.Name = "hmiMotor4";
-            this.hmiMotor4.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor4.OutputType = OutputType.Toggle;
             this.hmiMotor4.PLCAddressClick = "";
             this.hmiMotor4.PLCAddressText = "";
             this.hmiMotor4.PLCAddressValue = "";
@@ -3602,7 +3602,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor3.MaximumHoldTime = 3000;
             this.hmiMotor3.MinimumHoldTime = 500;
             this.hmiMotor3.Name = "hmiMotor3";
-            this.hmiMotor3.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor3.OutputType = OutputType.Toggle;
             this.hmiMotor3.PLCAddressClick = "";
             this.hmiMotor3.PLCAddressText = "";
             this.hmiMotor3.PLCAddressValue = "";
@@ -3620,7 +3620,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor2.MaximumHoldTime = 3000;
             this.hmiMotor2.MinimumHoldTime = 500;
             this.hmiMotor2.Name = "hmiMotor2";
-            this.hmiMotor2.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor2.OutputType = OutputType.Toggle;
             this.hmiMotor2.PLCAddressClick = "";
             this.hmiMotor2.PLCAddressText = "";
             this.hmiMotor2.PLCAddressValue = "";
@@ -3638,7 +3638,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiMotor1.MaximumHoldTime = 3000;
             this.hmiMotor1.MinimumHoldTime = 500;
             this.hmiMotor1.Name = "hmiMotor1";
-            this.hmiMotor1.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiMotor1.OutputType = OutputType.Toggle;
             this.hmiMotor1.PLCAddressClick = "";
             this.hmiMotor1.PLCAddressText = "";
             this.hmiMotor1.PLCAddressValue = "";
@@ -4011,7 +4011,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle1.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle1.OuterBorderLength = 2;
             this.hmiLedSingle1.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle1.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiLedSingle1.OutputType = OutputType.Toggle;
             this.hmiLedSingle1.PLCAddressClick = "CH2.PLC1.DataBlock1.TAG00001";
             this.hmiLedSingle1.PLCAddressText = "";
             this.hmiLedSingle1.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00001";
@@ -4061,7 +4061,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle2.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle2.OuterBorderLength = 2;
             this.hmiLedSingle2.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle2.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiLedSingle2.OutputType = OutputType.Toggle;
             this.hmiLedSingle2.PLCAddressClick = "CH2.PLC1.DataBlock1.TAG00002";
             this.hmiLedSingle2.PLCAddressText = "";
             this.hmiLedSingle2.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00002";
@@ -4111,7 +4111,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle3.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle3.OuterBorderLength = 2;
             this.hmiLedSingle3.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle3.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiLedSingle3.OutputType = OutputType.Toggle;
             this.hmiLedSingle3.PLCAddressClick = "CH1.PLC1.DataBlock2.TAG00069";
             this.hmiLedSingle3.PLCAddressText = "";
             this.hmiLedSingle3.PLCAddressValue = "CH1.PLC1.DataBlock2.TAG00069";
@@ -4161,7 +4161,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle4.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle4.OuterBorderLength = 2;
             this.hmiLedSingle4.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle4.OutputType = AdvancedHMI.Controls_Net45.OutputType.Toggle;
+            this.hmiLedSingle4.OutputType = OutputType.Toggle;
             this.hmiLedSingle4.PLCAddressClick = "CH2.PLC1.DataBlock1.TAG00003";
             this.hmiLedSingle4.PLCAddressText = "";
             this.hmiLedSingle4.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00003";
@@ -4211,7 +4211,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle5.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle5.OuterBorderLength = 2;
             this.hmiLedSingle5.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle5.OutputType = AdvancedHMI.Controls_Net45.OutputType.MomentarySet;
+            this.hmiLedSingle5.OutputType = OutputType.MomentarySet;
             this.hmiLedSingle5.PLCAddressClick = "";
             this.hmiLedSingle5.PLCAddressText = "";
             this.hmiLedSingle5.PLCAddressValue = "";
@@ -4261,7 +4261,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle6.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle6.OuterBorderLength = 2;
             this.hmiLedSingle6.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle6.OutputType = AdvancedHMI.Controls_Net45.OutputType.MomentarySet;
+            this.hmiLedSingle6.OutputType = OutputType.MomentarySet;
             this.hmiLedSingle6.PLCAddressClick = "";
             this.hmiLedSingle6.PLCAddressText = "";
             this.hmiLedSingle6.PLCAddressValue = "";
@@ -4311,7 +4311,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle7.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle7.OuterBorderLength = 2;
             this.hmiLedSingle7.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle7.OutputType = AdvancedHMI.Controls_Net45.OutputType.MomentarySet;
+            this.hmiLedSingle7.OutputType = OutputType.MomentarySet;
             this.hmiLedSingle7.PLCAddressClick = "";
             this.hmiLedSingle7.PLCAddressText = "";
             this.hmiLedSingle7.PLCAddressValue = "";
@@ -4361,7 +4361,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle8.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle8.OuterBorderLength = 2;
             this.hmiLedSingle8.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle8.OutputType = AdvancedHMI.Controls_Net45.OutputType.MomentarySet;
+            this.hmiLedSingle8.OutputType = OutputType.MomentarySet;
             this.hmiLedSingle8.PLCAddressClick = "";
             this.hmiLedSingle8.PLCAddressText = "";
             this.hmiLedSingle8.PLCAddressValue = "";

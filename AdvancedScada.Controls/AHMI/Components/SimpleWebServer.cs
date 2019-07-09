@@ -25,8 +25,6 @@ namespace AdvancedScada.Controls.AHMI.Components
         private bool StopThread;
         private System.Threading.SynchronizationContext m_synchronizationContext;
 
-
-
         #region Constructor
         public SimpleWebServer()
         {

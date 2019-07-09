@@ -9,7 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
- 
+
 namespace AdvancedScada.Controls.AHMI.Components
 {
     public class BasicDataLogger2 : DataSubscriber2

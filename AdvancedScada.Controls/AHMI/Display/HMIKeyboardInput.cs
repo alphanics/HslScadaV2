@@ -1,6 +1,6 @@
-﻿using HslScada.Controls_Net45;
-using AdvancedScada.Controls.AHMI.Licenses;
+﻿using AdvancedScada.Controls.AHMI.Licenses;
 using AdvancedScada.Controls.DialogEditor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;

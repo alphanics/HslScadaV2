@@ -102,7 +102,6 @@
     <Compile Include="Buttons\SquareIlluminatedButton.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Class1.vb" />
     <Compile Include="Class\AutoToDoubleEditor.vb" />
     <Compile Include="Class\AutoToDoubleTypeConverter%28Of T%29.vb" />
     <Compile Include="Class\AutoValueConverter.vb" />
@@ -135,7 +134,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ControlShapeType.vb">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\GroupPanel.vb">
       <SubType>Component</SubType>
@@ -144,9 +143,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Line.vb" />
-    <Compile Include="Controls\MainMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Controls\MultistateIndicator.vb">
       <SubType>Component</SubType>
     </Compile>

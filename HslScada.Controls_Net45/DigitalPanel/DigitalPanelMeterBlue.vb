@@ -41,7 +41,7 @@ Namespace DigitalPanel
                     Me.LED(index) = New Bitmap(width, height)
                     graphics = Graphics.FromImage(Me.LED(index))
                     graphics.ScaleTransform(CSng((0.27 * MyBase.ImageRatio)), CSng((0.27 * MyBase.ImageRatio)))
-                    SevenSegment2.smethod_7(graphics, index, Me.m_LEDColor, True)
+                    SevenSegment2.FillPolygon(graphics, index, Me.m_LEDColor, True)
                     index += 1
                 Loop While (index <= 11)
                 Me.DecimalImage = New Bitmap(Convert.ToInt32(CDbl(((My.Resources.BlueSevenSegmentDot.Width * MyBase.ImageRatio) * 1.3))), Convert.ToInt32(CDbl(((My.Resources.BlueSevenSegmentDot.Height * MyBase.ImageRatio) * 1.3))))

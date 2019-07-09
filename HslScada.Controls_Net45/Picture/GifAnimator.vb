@@ -6,31 +6,31 @@ Public Class GifAnimator
     Inherits Control
     Private eventHandler_0 As EventHandler
 
-    Private image_0 As System.Drawing.Image
+    Private m_Image As System.Drawing.Image
 
-    Private bool_0 As Boolean
+    Private m_Value As Boolean
 
     Public Property Image As System.Drawing.Image
         Get
-            Return Me.image_0
+            Return Me.m_Image
         End Get
         Set(ByVal value As System.Drawing.Image)
-            Me.image_0 = value
-            Me.Value = Me.bool_0
+            Me.m_Image = value
+            Me.Value = Me.m_Value
         End Set
     End Property
 
     Public Property Value As Boolean
         Get
-            Return Me.bool_0
+            Return Me.m_Value
         End Get
         Set(ByVal value As Boolean)
-            Me.bool_0 = value
-            If (If(Me.image_0 Is Nothing, False, ImageAnimator.CanAnimate(Me.image_0))) Then
-                If (Not Me.bool_0) Then
-                    ImageAnimator.StopAnimate(Me.image_0, Me.eventHandler_0)
+            Me.m_Value = value
+            If (If(Me.m_Image Is Nothing, False, ImageAnimator.CanAnimate(Me.m_Image))) Then
+                If (Not Me.m_Value) Then
+                    ImageAnimator.StopAnimate(Me.m_Image, Me.eventHandler_0)
                 Else
-                    ImageAnimator.Animate(Me.image_0, Me.eventHandler_0)
+                    ImageAnimator.Animate(Me.m_Image, Me.eventHandler_0)
                 End If
             End If
         End Set
@@ -45,11 +45,11 @@ Public Class GifAnimator
         MyBase.Invalidate()
     End Sub
 
-    Protected Overrides Sub OnPaint(ByVal painte As PaintEventArgs)
-        MyBase.OnPaint(painte)
-        If (Me.image_0 IsNot Nothing) Then
+    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
+        MyBase.OnPaint(e)
+        If (Me.m_Image IsNot Nothing) Then
             ImageAnimator.UpdateFrames()
-            painte.Graphics.DrawImage(Me.image_0, New Point(0, 0))
+            e.Graphics.DrawImage(Me.m_Image, New Point(0, 0))
         End If
     End Sub
 End Class

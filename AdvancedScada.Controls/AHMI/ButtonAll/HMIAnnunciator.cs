@@ -18,7 +18,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.ButtonAll
 {
-    public class HMIAnnunciator :  Annunciator
+    public class HMIAnnunciator : Annunciator
     {
         private string OriginalText;
         public HMIAnnunciator()
