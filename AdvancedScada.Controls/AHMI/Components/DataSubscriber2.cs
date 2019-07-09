@@ -1,17 +1,4 @@
-﻿//*****************************************************************************
-//* Data Subscriber
-//*
-//* Archie Jacobs
-//* Manufacturing Automation, LLC
-//* 03-MAR-13
-//* http://www.advancedhmi.com
-//*
-//* This component is used to simplify the creation of subscriptions
-//*
-//* 03-MAR-13 Created
-//*****************************************************************************
-
-using AdvancedHMIControls;
+﻿
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
 using System;

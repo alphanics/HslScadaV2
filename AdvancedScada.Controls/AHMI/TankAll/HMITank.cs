@@ -1,5 +1,5 @@
 ﻿////////
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
 using System;
@@ -17,7 +17,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.TankAll
 {
-    public class HMITank : AdvancedHMI.Controls_Net45.Tank
+    public class HMITank : HslScada.Controls_Net45.Tank
     {
         #region Basic Properties
         private System.Drawing.Color SavedBackColor;
@@ -306,7 +306,7 @@ namespace AdvancedScada.Controls.AHMI.TankAll
             if (this.DesignMode)
             {
                 //********************************************************
-                //* Search for AdvancedHMIDrivers.IComComponent component in parent form
+                //* Search for HslScadaDrivers.IComComponent component in parent form
                 //* If one exists, set the client of this component to it
                 //********************************************************
                 if ((this.Parent == null) || (this.Parent.Site == null))
@@ -439,7 +439,7 @@ namespace AdvancedScada.Controls.AHMI.TankAll
 
         #region Keypad popup for data entry
 
-        private Keypad KeypadPopUp;
+        private Keypad_v3 KeypadPopUp;
 
         private void KeypadPopUp_ButtonClick(object sender, KeypadEventArgs e)
         {
@@ -477,7 +477,7 @@ namespace AdvancedScada.Controls.AHMI.TankAll
             {
                 if (KeypadPopUp == null)
                 {
-                    KeypadPopUp = new Keypad();
+                    KeypadPopUp = new Keypad_v3();
                 }
 
                 KeypadPopUp.Text = m_KeypadText;

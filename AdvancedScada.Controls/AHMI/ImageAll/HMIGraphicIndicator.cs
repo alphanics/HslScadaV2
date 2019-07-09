@@ -22,7 +22,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.ImageAll
 {
-    public class HMIGraphicIndicator : AdvancedHMI.Controls_Net45.GraphicIndicator
+    public class HMIGraphicIndicator : HslScada.Controls_Net45.GraphicIndicator
     {
 
         #region Constructor/Destructor

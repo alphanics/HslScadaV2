@@ -41,30 +41,30 @@ namespace AdvancedScada.Controls.HslControls.ButtonAll
                 PLCAddressClick != null)
                 try
                 {
-                    if (OutputType == AdvancedHMI.Controls_Net45.OutputType.MomentarySet)
+                    if (OutputType == HslScada.Controls_Net45.OutputType.MomentarySet)
                     {
                         Utilities.Write(PLCAddressClick, "1");
                         if (m_MinimumHoldTime > 0) MinHoldTimer.Enabled = true;
                         if (m_MaximumHoldTime > 0) MaxHoldTimer.Enabled = true;
                     }
-                    else if (OutputType == AdvancedHMI.Controls_Net45.OutputType.MomentaryReset)
+                    else if (OutputType == HslScada.Controls_Net45.OutputType.MomentaryReset)
                     {
                         Utilities.Write(PLCAddressClick, "0");
                         if (m_MinimumHoldTime > 0) MinHoldTimer.Enabled = true;
                         if (m_MaximumHoldTime > 0) MaxHoldTimer.Enabled = true;
                     }
 
-                    else if (OutputType == AdvancedHMI.Controls_Net45.OutputType.SetTrue)
+                    else if (OutputType == HslScada.Controls_Net45.OutputType.SetTrue)
                     {
                         Utilities.Write(PLCAddressClick, "1");
                     }
 
-                    else if (OutputType == AdvancedHMI.Controls_Net45.OutputType.SetFalse)
+                    else if (OutputType == HslScada.Controls_Net45.OutputType.SetFalse)
                     {
                         Utilities.Write(PLCAddressClick, "0");
                     }
 
-                    else if (OutputType == AdvancedHMI.Controls_Net45.OutputType.Toggle)
+                    else if (OutputType == HslScada.Controls_Net45.OutputType.Toggle)
                     {
                         bool CurrentValue = Convert.ToBoolean(Value);
                         if (CurrentValue)

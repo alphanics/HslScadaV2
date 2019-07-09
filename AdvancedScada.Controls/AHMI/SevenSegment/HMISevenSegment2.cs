@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Drivers;
 using AdvancedScada.Controls.Subscription;
@@ -27,7 +27,7 @@ using System.Xml.Linq;
 namespace AdvancedScada.Controls.AHMI.SevenSegment
 {
 
-    public class HMISevenSegment2 : AdvancedHMI.Controls_Net45.SevenSegment2
+    public class HMISevenSegment2 : HslScada.Controls_Net45.SevenSegment2
     {
         #region Properties
         #endregion
@@ -290,9 +290,9 @@ namespace AdvancedScada.Controls.AHMI.SevenSegment
         #endregion
 
         #region Keypad popup for data entry
-        private Keypad KeypadPopUp;
+        private Keypad_v3 KeypadPopUp;
 
-        //Public Property KPD As MfgControl.AdvancedHMI.Controls.Keypad
+        //Public Property KPD As MfgControl.HslScada.Controls.Keypad
         //*****************************************
         //* Property - Address in PLC to Write Data To
         //*****************************************
@@ -455,7 +455,7 @@ namespace AdvancedScada.Controls.AHMI.SevenSegment
             {
                 if (KeypadPopUp == null)
                 {
-                    KeypadPopUp = new Keypad(m_KeypadWidth);
+                    KeypadPopUp = new Keypad_v3(m_KeypadWidth);
                     KeypadPopUp.ButtonClick += KeypadPopUp_ButtonClick;
                 }
 

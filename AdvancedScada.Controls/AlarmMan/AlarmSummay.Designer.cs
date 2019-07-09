@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.IO;
-using AdvancedHMIControls;
+using HslScadaControls;
  using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,22 +11,12 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace AdvancedHMIControls
+namespace AdvancedScada.Controls
 {
 	[Microsoft.VisualBasic.CompilerServices.DesignerGenerated()]
 	public partial class AlarmSummay : System.Windows.Forms.UserControl
 	{
-		//UserControl overrides dispose to clean up the component list.
-		//<System.Diagnostics.DebuggerNonUserCode()>
-		//Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-		//    Try
-		//        If disposing AndAlso components IsNot Nothing Then
-		//            components.Dispose()
-		//        End If
-		//    Finally
-		//        MyBase.Dispose(disposing)
-		//    End Try
-		//End Sub
+		 
 
 		//Required by the Windows Form Designer
 		private System.ComponentModel.IContainer components;

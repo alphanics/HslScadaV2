@@ -14,7 +14,7 @@ namespace AdvancedScada.Controls.AHMI.SelectorSwitch
 {
     [DefaultEvent("Click")]
 
-    public class HMIMushroomButton : AdvancedHMI.Controls_Net45.MushroomButton
+    public class HMIMushroomButton : HslScada.Controls_Net45.MushroomButton
     {
 
         #region PLC Related Properties

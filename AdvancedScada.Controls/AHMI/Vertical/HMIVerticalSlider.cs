@@ -21,6 +21,6 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Vertical
 {
-    public class HMIVerticalSlider : AdvancedHMI.Controls_Net45.VerticalSlider
+    public class HMIVerticalSlider : HslScada.Controls_Net45.VerticalSlider
     { }
 }

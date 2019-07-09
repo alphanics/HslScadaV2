@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.SelectorSwitch
 {
-    public class HMISelectorSwitch3Pos : AdvancedHMI.Controls_Net45.SelectorSwitch3Pos
+    public class HMISelectorSwitch3Pos : HslScada.Controls_Net45.SelectorSwitch3Pos
     {
         #region PLC Related Properties
 

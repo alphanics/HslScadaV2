@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AdvancedScada.Controls.AHMI.Thermometer
 {
-    public class HMIThermometer2 : AdvancedHMI.Controls_Net45.Thermometer2
+    public class HMIThermometer2 : HslScada.Controls_Net45.Thermometer2
     {
 
 

@@ -1,5 +1,4 @@
-﻿using AdvancedHMIControls;
-using AdvancedScada.DriverBase.Common;
+﻿using AdvancedScada.DriverBase.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,21 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
-//*****************************************************************************
-//* Simple Data Logger 2
-//*
-//* Archie Jacobs
-//* Manufacturing Automation, LLC
-//* 03-MAR-13
-//* http://www.advancedhmi.com
-//*
-//* This component subscribes to a value in the PLC through a comm driver
-//* and log it to a text file. It can log either by time interval or
-//* data change.
-//*
-//* 03-MAR-13 Created
-//*****************************************************************************
-
+ 
 namespace AdvancedScada.Controls.AHMI.Components
 {
     public class BasicDataLogger2 : DataSubscriber2

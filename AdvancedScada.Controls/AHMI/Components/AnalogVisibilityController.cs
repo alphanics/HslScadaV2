@@ -1,4 +1,4 @@
-﻿using AdvancedHMIControls;
+﻿
 using AdvancedScada.DriverBase.Common;
 using System;
 using System.Collections;
@@ -16,7 +16,6 @@ namespace AdvancedScada.Controls.AHMI.Components
     {
         #region Properties
         private Control m_TargetObject;
-        //<System.ComponentModel.TypeConverter(GetType(MfgControl.AdvancedHMI.Controls.EmptyTypeConverter()))> _
         public Control TargetObject
         {
             get

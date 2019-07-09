@@ -1,6 +1,6 @@
 ﻿
 
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.AHMI.Licenses;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
@@ -27,7 +27,7 @@ namespace AdvancedScada.Controls.AHMI.Linear
 {
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(HMILinearMeter), "HMI7Segment.ico")]
-    public class HMILinearMeter : AdvancedHMI.Controls_Net45.LinearMeter
+    public class HMILinearMeter : HslScada.Controls_Net45.LinearMeter
     {
 
         private string OriginalText;

@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
 using System;
@@ -16,7 +16,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.SelectorSwitch
 {
-    public class HMIPilotLight3Color : AdvancedHMI.Controls_Net45.PilotLight3Color
+    public class HMIPilotLight3Color : HslScada.Controls_Net45.PilotLight3Color
     {
         #region PLC Related Properties
 

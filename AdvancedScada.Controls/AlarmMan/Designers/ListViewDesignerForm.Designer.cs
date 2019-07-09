@@ -13,7 +13,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace AdvancedHMIControls
+namespace HslScadaControls
 {
 	[Microsoft.VisualBasic.CompilerServices.DesignerGenerated()]
 	public partial class ListViewDesignerForm : System.Windows.Forms.Form

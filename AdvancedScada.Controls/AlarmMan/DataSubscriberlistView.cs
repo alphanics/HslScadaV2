@@ -1,4 +1,4 @@
-﻿using AdvancedHMIControls;
+﻿using HslScadaControls;
 using AdvancedScada.Controls;
 using AdvancedScada.Controls.AlarmMan.Designers;
 using AdvancedScada.Controls.Drivers;

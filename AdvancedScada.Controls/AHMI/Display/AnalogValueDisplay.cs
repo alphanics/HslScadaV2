@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.Drivers;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
@@ -623,7 +623,7 @@ namespace AdvancedScada.Controls.AHMI.Display
         #region Keypad popup for data entry
         private Keypad_v3 KeypadPopUp;
 
-        //Public Property KPD As MfgControl.AdvancedHMI.Controls.Keypad
+       
         //*****************************************
         //* Property - Address in PLC to Write Data To
         //*****************************************
@@ -819,7 +819,7 @@ namespace AdvancedScada.Controls.AHMI.Display
             {
                 if (KeypadPopUp == null)
                 {
-                    KeypadPopUp = new Keypad_v3(m_KeypadWidth);
+                    KeypadPopUp = new Keypad_v3();
                     KeypadPopUp.MinValue = Convert.ToDecimal(m_KeypadMinValue);
                     KeypadPopUp.MaxValue = Convert.ToDecimal(m_KeypadMaxValue);
                     KeypadPopUp.ButtonClick += KeypadPopUp_ButtonClick;

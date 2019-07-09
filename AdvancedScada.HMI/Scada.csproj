@@ -153,14 +153,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdvancedHMI.Controls_Net45\Controls_Net45.vbproj">
-      <Project>{5c64046f-f9ed-46f9-8bd7-ec680a065542}</Project>
-      <Name>Controls_Net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AdvancedHMI.Controls_Net46\Controls_Net46.vbproj">
-      <Project>{d4914ee7-6fc4-4fbb-b539-f4ea0cd0ea00}</Project>
-      <Name>Controls_Net46</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AdvancedScada.BaseService\BaseService.csproj">
       <Project>{FE960C7A-E85B-48ED-9BCA-9BE1A6A1CB0B}</Project>
       <Name>BaseService</Name>
@@ -189,6 +181,10 @@
     <ProjectReference Include="..\AdvancedScada.Management\Management.csproj">
       <Project>{A6981D28-2360-4212-8EEF-F78C117EB615}</Project>
       <Name>Management</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HslScada.Controls_Net45\Controls_Net45.vbproj">
+      <Project>{6a4ea5f0-f6a7-4d58-8542-e39444a0a7c3}</Project>
+      <Name>Controls_Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

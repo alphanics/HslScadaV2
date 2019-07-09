@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Hydraulic
 {
-    public class HMIPipe : AdvancedHMI.Controls_Net45.Pipe
+    public class HMIPipe : HslScada.Controls_Net45.Pipe
     {
 
 

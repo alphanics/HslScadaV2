@@ -1,5 +1,4 @@
-﻿using AdvancedHMIControls;
-using AdvancedHMIControls.Common;
+﻿using HslScada.Controls.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,25 +9,6 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Windows.Forms;
 using System.Xml.Linq;
-//**********************************************************************************************
-//* Generic TCp Client
-//*
-//* Archie Jacobs
-//* Manufacturing Automation, LLC
-//* support@advancedhmi.com
-//* 19-JAN-18
-//*
-//* This client will connect to a TCP server and listen for data
-//* When data is received, it will buffer until receing the value
-//* specified by TerminatingByteValue. At that point it will fire the
-//* DataReceived event and send the received data
-//* 
-//* Copyright 2018 Archie Jacobs
-//* Licensed under GPL v3
-//*
-//* Reference : 
-//*
-//**********************************************************************************************
 
 namespace AdvancedScada.Controls.AHMI.Components.SocketClient
 {

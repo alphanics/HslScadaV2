@@ -1,18 +1,8 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
-using AdvancedScada;
-using AdvancedScada;
-using AdvancedScada;
-using AdvancedScada;
-using AdvancedScada.Controls;
-using AdvancedScada.Controls;
-using AdvancedScada.Controls;
-using AdvancedScada.Controls;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
-using AdvancedScada.DriverBase;
-using AdvancedScada.DriverBase.Client;
 using AdvancedScada.DriverBase.Common;
+using HslScada.Controls_Net45;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,7 +18,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.ButtonAll
 {
-    public class HMIAnnunciator : AdvancedHMI.Controls_Net45.Annunciator
+    public class HMIAnnunciator :  Annunciator
     {
         private string OriginalText;
         public HMIAnnunciator()
@@ -215,9 +205,9 @@ namespace AdvancedScada.Controls.AHMI.ButtonAll
         {
             try
             {
-                if (OutputType == OutputType.MomentarySet)
+                if (OutputTypes == OutputType.MomentarySet)
                     Utilities.Write(PLCAddressClick, "0");
-                else if (OutputType == OutputType.MomentaryReset) Utilities.Write(PLCAddressClick, "1");
+                else if (OutputTypes == OutputType.MomentaryReset) Utilities.Write(PLCAddressClick, "1");
             }
             catch (Exception ex)
             {
@@ -333,30 +323,30 @@ namespace AdvancedScada.Controls.AHMI.ButtonAll
             if (PLCAddressClick != null && string.Compare(PLCAddressClick, string.Empty) != 0 && Enabled)
                 try
                 {
-                    if (OutputType == OutputType.MomentarySet)
+                    if (OutputTypes == OutputType.MomentarySet)
                     {
                         Utilities.Write(PLCAddressClick, "1");
                         if (m_MinimumHoldTime > 0) MinHoldTimer.Enabled = true;
                         if (m_MaximumHoldTime > 0) MaxHoldTimer.Enabled = true;
                     }
-                    else if (OutputType == OutputType.MomentaryReset)
+                    else if (OutputTypes == OutputType.MomentaryReset)
                     {
                         Utilities.Write(PLCAddressClick, "0");
                         if (m_MinimumHoldTime > 0) MinHoldTimer.Enabled = true;
                         if (m_MaximumHoldTime > 0) MaxHoldTimer.Enabled = true;
                     }
 
-                    else if (OutputType == OutputType.SetTrue)
+                    else if (OutputTypes == OutputType.SetTrue)
                     {
                         Utilities.Write(PLCAddressClick, "1");
                     }
 
-                    else if (OutputType == OutputType.SetFalse)
+                    else if (OutputTypes == OutputType.SetFalse)
                     {
                         Utilities.Write(PLCAddressClick, "0");
                     }
 
-                    else if (OutputType == OutputType.Toggle)
+                    else if (OutputTypes == OutputType.Toggle)
                     {
                         var CurrentValue = Convert.ToBoolean(Value);
                         if (CurrentValue)

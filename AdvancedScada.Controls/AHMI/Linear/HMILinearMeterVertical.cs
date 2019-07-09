@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Linear
 {
-    public class HMILinearMeterVertical : AdvancedHMI.Controls_Net45.LinearMeterVertical
+    public class HMILinearMeterVertical : HslScada.Controls_Net45.LinearMeterVertical
     {
 
     }

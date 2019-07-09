@@ -9,22 +9,9 @@ using System.Net.Sockets;
 using System.Windows.Forms;
 
 using System.Xml.Linq;
-//******************************************************************************
-//* Socket Communication State Object
-//*
-//* Archie Jacobs
-//* Manufacturing Automation, LLC
-//* support@advancedhmi.com
-//* 20-JAN-18
-//*
-//* Copyright 2018 Archie Jacobs
-//*
-//* This class hold data returned from TCP socket communications
-//* It's purpose is to accumulate data when all data is not recieved
-//*  from a single DataReceived event
-//******************************************************************************
 
-namespace AdvancedHMIControls
+
+namespace HslScada.Controls
 {
     namespace Common
     {

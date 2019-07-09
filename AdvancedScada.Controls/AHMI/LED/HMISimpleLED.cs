@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
@@ -21,7 +21,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.LED
 {
-    public class HMISimpleLED : AdvancedHMI.Controls_Net45.SimpleLED
+    public class HMISimpleLED : HslScada.Controls_Net45.SimpleLED
     {
 
 

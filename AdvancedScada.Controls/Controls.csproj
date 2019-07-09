@@ -157,9 +157,6 @@
     <Compile Include="AHMI\Controls\HMIBasicNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AHMI\Controls\HMIPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\Controls\HMIGroupPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -213,13 +210,7 @@
     <Compile Include="AHMI\Hydraulic\HMIPipe.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AHMI\Hydraulic\HMIPipes.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\Hydraulic\HMIPneumaticBallVave.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\Hydraulic\HMIPump.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\ImageAll\HMIAnimatingPictureBox.cs">
@@ -235,9 +226,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\ImageAll\Symbols\GraphicIndicatorBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\Inverter\HMIInverter.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Leds\DrawAll\DrawGraphics.cs" />
@@ -257,9 +245,6 @@
     <Compile Include="AHMI\Linear\HMILinearMeterHorizontal.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AHMI\Linear\HMILinearMeterV.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\Linear\HMILinearMeterVertical.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -273,9 +258,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Motor\HMIMotor.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\Motor\HMIMotor2.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Motor\HMIMotor3Color.cs">
@@ -397,19 +379,10 @@
     <Compile Include="AHMI\SelectorSwitch\SelectorSwitch3PosByValue.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AHMI\SevenSegment\HMIDigitalDisplayControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\SevenSegment\HMILED.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\SevenSegment\HMISevenSegment.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\SevenSegment\HMISevenSegment2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\SevenSegment\HMISevenSegment3.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Components\SocketClient\HMIGenericTCPClient.cs">
@@ -429,19 +402,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\TankAll\DrawingUtils.cs" />
-    <Compile Include="AHMI\SelectorSwitch\HMIIllumButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\ImageAll\HMIImageSelectByBit.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AHMI\SelectorSwitch\HMIPilotLightEx.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AHMI\TankAll\HMITank.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\TankAll\HMITankLibrary.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Thermometer\HMIThermometer.cs">
@@ -513,14 +477,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdvancedHMI.Controls_Net45\Controls_Net45.vbproj">
-      <Project>{5c64046f-f9ed-46f9-8bd7-ec680a065542}</Project>
-      <Name>Controls_Net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AdvancedHMI.Controls_Net46\Controls_Net46.vbproj">
-      <Project>{d4914ee7-6fc4-4fbb-b539-f4ea0cd0ea00}</Project>
-      <Name>Controls_Net46</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AdvancedScada.ImagePicker\ImagePicker.csproj">
       <Project>{5931D911-82C4-4C91-A32D-94D3DC870156}</Project>
       <Name>ImagePicker</Name>
@@ -544,6 +500,10 @@
     <ProjectReference Include="..\AdvancedScada.Utils\Utils.csproj">
       <Project>{6892B89E-2CC0-4F7D-95D1-BEAA1A21C607}</Project>
       <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HslScada.Controls_Net45\Controls_Net45.vbproj">
+      <Project>{6a4ea5f0-f6a7-4d58-8542-e39444a0a7c3}</Project>
+      <Name>Controls_Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

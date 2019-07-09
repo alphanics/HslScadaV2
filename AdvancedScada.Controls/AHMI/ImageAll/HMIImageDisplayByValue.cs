@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
@@ -565,7 +565,7 @@ namespace AdvancedScada.Controls.AHMI.ImageAll
         #endregion
 
         #region Keypad popup for data entry
-        private Keypad KeypadPopUp;
+        private Keypad_v3 KeypadPopUp;
 
 
         private void KeypadPopUp_ButtonClick(object sender, KeypadEventArgs e)
@@ -611,7 +611,7 @@ namespace AdvancedScada.Controls.AHMI.ImageAll
             {
                 if (KeypadPopUp == null)
                 {
-                    KeypadPopUp = new Keypad(m_KeypadWidth);
+                    KeypadPopUp = new Keypad_v3(m_KeypadWidth);
                 }
 
                 KeypadPopUp.Text = m_KeypadText;

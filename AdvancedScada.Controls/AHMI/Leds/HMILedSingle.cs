@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada;
 using AdvancedScada.Controls.AHMI.Leds.DrawAll;
 using AdvancedScada.Controls.AHMI.Leds.DrawAll;

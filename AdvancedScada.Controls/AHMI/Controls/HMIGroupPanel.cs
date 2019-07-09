@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Controls
 {
-    public class HMIGroupPanel : AdvancedHMI.Controls_Net45.GroupPanel
+    public class HMIGroupPanel : HslScada.Controls_Net45.GroupPanel
     {
     }
 

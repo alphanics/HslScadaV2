@@ -1,4 +1,5 @@
 ﻿//INSTANT C# NOTE: Formerly VB project-level imports:
+using AdvancedScada.Controls;
 using AdvancedScada.Controls.AlarmMan.Designers;
 using System;
 using System.Collections;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace AdvancedHMIControls
+namespace HslScadaControls
 {
     public partial class ListViewDesignerForm
     {

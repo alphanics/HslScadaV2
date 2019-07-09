@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
@@ -18,7 +18,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.SelectorSwitch
 {
-    public class HMISelectorSwitch : AdvancedHMI.Controls_Net45.SelectorSwitch
+    public class HMISelectorSwitch : HslScada.Controls_Net45.SelectorSwitch
     {
 
         #region PLC Related Properties

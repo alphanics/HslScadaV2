@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.DigitalDisplay
 {
-    public class HMIOdometer : AdvancedHMI.Controls_Net45.Odometer
+    public class HMIOdometer : HslScada.Controls_Net45.Odometer
     {
 
     }

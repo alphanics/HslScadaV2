@@ -17,7 +17,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.TankAll
 {
-    public class HMIBarLevel : AdvancedHMI.Controls_Net45.BarLevel
+    public class HMIBarLevel : HslScada.Controls_Net45.BarLevel
     {
 
         #region Properties

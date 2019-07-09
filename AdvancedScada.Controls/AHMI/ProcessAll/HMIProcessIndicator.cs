@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.AHMI.ProcessAll.DrawAll;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Enum;

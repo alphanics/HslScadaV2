@@ -23,7 +23,7 @@ namespace AdvancedScada.Controls.AHMI.Linear
 {
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(HMILinearMeterH), "HMI7Segment.ico")]
-    public class HMILinearMeterH : AdvancedHMI.Controls_Net45.LinearMeterH
+    public class HMILinearMeterH : HslScada.Controls_Net45.LinearMeterH
     {
 
 

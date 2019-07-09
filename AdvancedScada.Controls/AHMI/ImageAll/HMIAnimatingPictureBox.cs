@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
 using System;
@@ -16,7 +16,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.ImageAll
 {
-    public class HMIAnimatingPictureBox : AdvancedHMI.Controls_Net45.AnimatingPictureBox
+    public class HMIAnimatingPictureBox : HslScada.Controls_Net45.AnimatingPictureBox
     {
 
         #region PLC Related Properties
@@ -319,9 +319,8 @@ namespace AdvancedScada.Controls.AHMI.ImageAll
         #endregion
 
         #region Keypad popup for data entry
-        private Keypad KeypadPopUp;
+        private Keypad_v3 KeypadPopUp;
 
-        //Public Property KPD As MfgControl.AdvancedHMI.Controls.Keypad
 
         private string m_KeypadText;
         public string KeypadText
@@ -468,7 +467,7 @@ namespace AdvancedScada.Controls.AHMI.ImageAll
             {
                 if (KeypadPopUp == null)
                 {
-                    KeypadPopUp = new Keypad(m_KeypadWidth);
+                    KeypadPopUp = new Keypad_v3(m_KeypadWidth);
                     KeypadPopUp.ButtonClick += KeypadPopUp_ButtonClick;
                 }
 

@@ -19,7 +19,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Vertical
 {
-    public class HMIVerticalSlider3 : AdvancedHMI.Controls_Net45.VerticalSlider3
+    public class HMIVerticalSlider3 : HslScada.Controls_Net45.VerticalSlider3
     {
 
 

@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.SevenSegment
 {
-    public class HMISevenSegment : AdvancedHMI.Controls_Net45.SevenSegment
+    public class HMISevenSegment : HslScada.Controls_Net45.SevenSegment
     {
 
 

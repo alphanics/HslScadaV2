@@ -1,5 +1,4 @@
-﻿//INSTANT C# NOTE: Formerly VB project-level imports:
-using AdvancedHMIControls;
+﻿using HslScadaControls;
 using AdvancedScada.Controls;
 using AdvancedScada.Controls.AlarmMan.Designers;
 using AdvancedScada.Controls.Drivers;
@@ -19,7 +18,7 @@ using System.Xml.Linq;
 
 
 
-namespace AdvancedHMIControls
+namespace AdvancedScada.Controls
 {
     [DefaultEvent("DataChanged"), Designer(typeof(ListViewDesigner))]
     public partial class AlarmSummay

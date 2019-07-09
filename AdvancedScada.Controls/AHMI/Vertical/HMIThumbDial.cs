@@ -19,7 +19,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Vertical
 {
-    public class HMIThumbDial : AdvancedHMI.Controls_Net45.ThumbDial
+    public class HMIThumbDial : HslScada.Controls_Net45.ThumbDial
     {
 
 

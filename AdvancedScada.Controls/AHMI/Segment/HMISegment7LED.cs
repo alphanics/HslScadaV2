@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.AHMI.Segment.DrawAll;
 using AdvancedScada.Controls.AHMI.Segment.DrawAll;
 using AdvancedScada.Controls.DialogEditor;
@@ -2227,7 +2227,7 @@ namespace AdvancedScada.Controls.AHMI.Segment
             if (KeypadPopUp == null)
             {
                 if (KeypadAlphaNumeric)
-                    KeypadPopUp = new AlphaKeyboard3(m_KeypadWidth);
+                    KeypadPopUp = new AlphaKeyboard_v3();
                 else
                     KeypadPopUp = new Keypad_v3(m_KeypadWidth);
                 KeypadPopUp.ButtonClick += KeypadPopUp_ButtonClick;

@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
@@ -14,7 +14,7 @@ using System.Windows.Forms.Design;
 namespace AdvancedScada.Controls.AHMI.SelectorSwitch
 {
     [DefaultEvent("Click")]
-    public class HMIPilotLight : AdvancedHMI.Controls_Net45.PilotLight
+    public class HMIPilotLight : HslScada.Controls_Net45.PilotLight
     {
         #region PLC Related Properties
 

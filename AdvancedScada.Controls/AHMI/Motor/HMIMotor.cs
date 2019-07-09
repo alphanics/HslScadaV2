@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada;
 using AdvancedScada;
 using AdvancedScada;
@@ -31,7 +31,7 @@ using System.Xml.Linq;
 namespace AdvancedScada.Controls.AHMI.Motor
 {
 
-    public class HMIMotor : AdvancedHMI.Controls_Net45.Motor
+    public class HMIMotor : HslScada.Controls_Net45.Motor
     {
 
         #region Constructor/Destructor

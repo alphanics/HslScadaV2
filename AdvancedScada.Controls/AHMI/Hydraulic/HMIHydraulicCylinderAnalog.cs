@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
@@ -19,7 +19,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Hydraulic
 {
-    public class HMIHydraulicCylinderAnalog : AdvancedHMI.Controls_Net45.HydraulicCylinderAnalog
+    public class HMIHydraulicCylinderAnalog : HslScada.Controls_Net45.HydraulicCylinderAnalog
     {
         public event EventHandler ValueChanged;
 

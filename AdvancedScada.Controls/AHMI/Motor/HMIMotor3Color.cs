@@ -15,7 +15,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Motor
 {
-    public class HMIMotor3Color : AdvancedHMI.Controls_Net45.Motor3Color
+    public class HMIMotor3Color : HslScada.Controls_Net45.Motor3Color
     {
 
 

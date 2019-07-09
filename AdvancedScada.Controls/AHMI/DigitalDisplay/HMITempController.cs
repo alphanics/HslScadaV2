@@ -1,5 +1,5 @@
 ﻿
-using AdvancedHMI.Controls_Net45;
+using HslScada.Controls_Net45;
 using AdvancedScada.Controls.DialogEditor;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase;
@@ -21,7 +21,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.DigitalDisplay
 {
-    public class HMITempController : AdvancedHMI.Controls_Net45.TempController
+    public class HMITempController : HslScada.Controls_Net45.TempController
     {
 
 

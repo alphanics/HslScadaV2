@@ -1,18 +1,4 @@
-﻿//*****************************************************************************
-//* Simple Sound Player
-//*
-//* Archie Jacobs
-//* Manufacturing Automation, LLC
-//* 26-JAN-15
-//* http://www.advancedhmi.com
-//*
-//* This component subscribes to a value in the PLC through a com driver
-//* and monitors it for a change. When it changes, it will play a WAV file
-//*
-//* 26-JAN-15 Created
-//*****************************************************************************
-
-using AdvancedHMIControls;
+﻿
 using AdvancedScada.DriverBase.Common;
 using System;
 using System.Collections;

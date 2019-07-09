@@ -1,4 +1,4 @@
-﻿using AdvancedHMI.Controls_Net45;
+﻿using HslScada.Controls_Net45;
 using AdvancedScada.Controls.AHMI.Licenses;
 using AdvancedScada.Controls.DialogEditor;
 using System;
@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdvancedScada.Controls.AHMI.Display
 {
-    public class HMIKeyboardInput : AdvancedHMI.Controls_Net45.KeyboardInput
+    public class HMIKeyboardInput : HslScada.Controls_Net45.KeyboardInput
     {
 
 

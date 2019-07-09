@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Meter
 {
-    public class HMIMeter2 : AdvancedHMI.Controls_Net45.Meter2
+    public class HMIMeter2 : HslScada.Controls_Net45.Meter2
     {
 
     }

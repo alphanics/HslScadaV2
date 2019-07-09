@@ -16,7 +16,7 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AHMI.Motor
 {
-    public class HMIFan : AdvancedHMI.Controls_Net45.Fan
+    public class HMIFan : HslScada.Controls_Net45.Fan
     {
 
 

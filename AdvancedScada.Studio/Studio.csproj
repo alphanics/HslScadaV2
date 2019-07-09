@@ -81,23 +81,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="OpcNetApi">
-      <HintPath>..\packages\OPC\OpcNetApi.dll</HintPath>
-    </Reference>
-    <Reference Include="OpcNetApi.Com">
-      <HintPath>..\packages\OPC\OpcNetApi.Com.dll</HintPath>
-    </Reference>
-    <Reference Include="OpcRcw.Comn">
-      <HintPath>..\packages\OPC\OpcRcw.Comn.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="OpcRcw.Da">
-      <HintPath>..\packages\OPC\OpcRcw.Da.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StructureMap.4.7.0\lib\net45\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
