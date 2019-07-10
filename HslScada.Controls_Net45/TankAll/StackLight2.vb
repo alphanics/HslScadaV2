@@ -1,380 +1,301 @@
-Imports Microsoft.VisualBasic.CompilerServices
-Imports System
-Imports System.ComponentModel
-Imports System.Drawing
-Imports System.Drawing.Imaging
-Imports System.Windows.Forms
+﻿Imports System.Drawing
 
-<DefaultEvent("")>
 Public Class StackLight2
-    Inherits Control
-    Private bitmap_0 As Bitmap
+    Inherits System.Windows.Forms.Control
 
-    Private bitmap_1 As Bitmap
+    Public Event LightGreenValueChanged As EventHandler
+    Public Event LightAmberValueChanged As EventHandler
+    Public Event LightRedValueChanged As EventHandler
 
-    Private bitmap_2 As Bitmap()
+    '* Images for the Base and Cap which never change
+    Private StaticImage, StaticImage2 As Bitmap
 
-    Private bitmap_3 As Bitmap
+    '* Images for each light represented as On and Off
+    Private LightImages(7) As Bitmap
+    '* Pointers to current active images
+    Private ActiveGreenImage, ActiveAmberImage, ActiveBlueImage, ActiveRedImage As Bitmap
 
-    Private bitmap_4 As Bitmap
+    '* Used for scaling the source images to the current control size
+    Private ImageRatio As Single
 
-    Private bitmap_5 As Bitmap
+    Private TextRectangle As Rectangle
+    Private sf As StringFormat
+    Private TextBrush As SolidBrush
 
-    Private bitmap_6 As Bitmap
-
-    Private float_0 As Single
-
-    Private rectangle_0 As Rectangle
-
-    Private stringFormat_0 As StringFormat
-
-    Private solidBrush_0 As SolidBrush
-
-    Private bool_0 As Boolean
-
-    Private bool_1 As Boolean
-
-    Private bool_2 As Boolean
-
-    Private bool_3 As Boolean
-
-    Private bool_4 As Boolean
-
-    Private bool_5 As Boolean
-
-    Private bool_6 As Boolean
-
-    Private bool_7 As Boolean
-
-    Private int_0 As Integer
-
-    <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
-    Public Overrides Property Font As System.Drawing.Font
-        Get
-            Return MyBase.Font
-        End Get
-        Set(ByVal value As System.Drawing.Font)
-            MyBase.Font = value
-            MyBase.Invalidate()
-        End Set
-    End Property
-
-    <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
-    Public Overrides Property ForeColor As Color
-        Get
-            Return MyBase.ForeColor
-        End Get
-        Set(ByVal value As Color)
-            If (Me.solidBrush_0 IsNot Nothing) Then
-                Me.solidBrush_0.Color = value
-            Else
-                Me.solidBrush_0 = New SolidBrush(MyBase.ForeColor)
-            End If
-            MyBase.ForeColor = value
-            MyBase.Invalidate()
-        End Set
-    End Property
-
-    Public Property LightAmberEnable As Boolean
-        Get
-            Return Me.bool_3
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_3) Then
-                Me.bool_3 = value
-                Me.method_0()
-            End If
-        End Set
-    End Property
-
-    Public Property LightAmberValue As Boolean
-        Get
-            Return Me.bool_2
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_2) Then
-                Me.bool_2 = value
-                If (Not Me.bool_2) Then
-                    Me.bitmap_4 = Me.bitmap_2(2)
-                Else
-                    Me.bitmap_4 = Me.bitmap_2(3)
-                End If
-                MyBase.Invalidate()
-                Me.OnLightAmberValueChanged(EventArgs.Empty)
-            End If
-        End Set
-    End Property
-
-    Public Property LightBlueEnable As Boolean
-        Get
-            Return Me.bool_5
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_5) Then
-                Me.bool_5 = value
-                Me.method_0()
-            End If
-        End Set
-    End Property
-
-    Public Property LightBlueValue As Boolean
-        Get
-            Return Me.bool_4
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_4) Then
-                Me.bool_4 = value
-                If (Not Me.bool_4) Then
-                    Me.bitmap_5 = Me.bitmap_2(4)
-                Else
-                    Me.bitmap_5 = Me.bitmap_2(5)
-                End If
-                MyBase.Invalidate()
-                Me.OnLightBlueValueChanged(EventArgs.Empty)
-            End If
-        End Set
-    End Property
-
-    Public Property LightGreenEnable As Boolean
-        Get
-            Return Me.bool_1
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_1) Then
-                Me.bool_1 = value
-                Me.method_0()
-            End If
-        End Set
-    End Property
-
-    Public Property LightGreenValue As Boolean
-        Get
-            Return Me.bool_0
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_0) Then
-                Me.bool_0 = value
-                If (Not Me.bool_0) Then
-                    Me.bitmap_3 = Me.bitmap_2(0)
-                Else
-                    Me.bitmap_3 = Me.bitmap_2(1)
-                End If
-                MyBase.Invalidate()
-                Me.OnLightGreenValueChanged(EventArgs.Empty)
-            End If
-        End Set
-    End Property
-
-    Public Property LightRedEnable As Boolean
-        Get
-            Return Me.bool_7
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_7) Then
-                Me.bool_7 = value
-                Me.method_0()
-            End If
-        End Set
-    End Property
-
-    Public Property LightRedValue As Boolean
-        Get
-            Return Me.bool_6
-        End Get
-        Set(ByVal value As Boolean)
-            If (value <> Me.bool_6) Then
-                Me.bool_6 = value
-                If (Not Me.bool_6) Then
-                    Me.bitmap_6 = Me.bitmap_2(6)
-                Else
-                    Me.bitmap_6 = Me.bitmap_2(7)
-                End If
-                MyBase.Invalidate()
-                Me.OnLightRedValueChanged(EventArgs.Empty)
-            End If
-        End Set
-    End Property
-
-    <Browsable(True)>
-    <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
-    Public Overrides Property Text As String
-        Get
-            Return MyBase.Text
-        End Get
-        Set(ByVal value As String)
-            MyBase.Text = value
-            MyBase.Invalidate()
-        End Set
-    End Property
-
+#Region "Constructor"
     Public Sub New()
         MyBase.New()
-        ReDim Me.bitmap_2(7)
-        Me.bool_1 = True
-        Me.bool_3 = True
-        Me.bool_5 = True
-        Me.bool_7 = True
-        Me.int_0 = 4
-        MyBase.SetStyle(ControlStyles.UserPaint Or ControlStyles.SupportsTransparentBackColor Or ControlStyles.AllPaintingInWmPaint Or ControlStyles.OptimizedDoubleBuffer, True)
-        Me.ForeColor = Color.White
-        Me.solidBrush_0 = New SolidBrush(MyBase.ForeColor)
-        Me.stringFormat_0 = New StringFormat() With
-        {
-            .Alignment = StringAlignment.Center,
-            .LineAlignment = StringAlignment.Center
-        }
-        Me.method_1()
+
+        '* reduce the flicker
+        Me.SetStyle(System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer Or
+                    System.Windows.Forms.ControlStyles.AllPaintingInWmPaint Or
+                    System.Windows.Forms.ControlStyles.UserPaint Or
+                    System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, True)
+
+
+        ForeColor = System.Drawing.Color.White
+        TextBrush = New SolidBrush(MyBase.ForeColor)
+
+        sf = New StringFormat
+        sf.Alignment = StringAlignment.Center
+        sf.LineAlignment = StringAlignment.Center
+
+        RefreshImage()
     End Sub
 
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
-            If (disposing) Then
-                Me.solidBrush_0.Dispose()
-                Me.stringFormat_0.Dispose()
-                If (Me.bitmap_1 IsNot Nothing) Then
-                    Me.bitmap_1.Dispose()
-                End If
-                If (Me.bitmap_0 IsNot Nothing) Then
-                    Me.bitmap_0.Dispose()
-                End If
-                Dim length As Integer = CInt(Me.bitmap_2.Length) - 1
-                For i As Integer = 0 To length Step 1
-                    If (Me.bitmap_2(i) IsNot Nothing) Then
-                        Me.bitmap_2(i).Dispose()
-                    End If
+            If disposing Then
+                TextBrush.Dispose()
+                sf.Dispose()
+                If StaticImage2 IsNot Nothing Then StaticImage2.Dispose()
+                If StaticImage IsNot Nothing Then StaticImage.Dispose()
+                For index = 0 To LightImages.Length - 1
+                    If LightImages(index) IsNot Nothing Then LightImages(index).Dispose()
                 Next
-
             End If
         Finally
             MyBase.Dispose(disposing)
         End Try
     End Sub
+#End Region
 
-    Private Sub method_0()
+#Region "Properties"
+    Private m_ValueGreen As Boolean
+    Public Property LightGreenValue() As Boolean
+        Get
+            Return m_ValueGreen
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_ValueGreen Then
+                m_ValueGreen = value
 
-    End Sub
+                If m_ValueGreen Then
+                    ActiveGreenImage = LightImages(1)
+                Else
+                    ActiveGreenImage = LightImages(0)
+                End If
+                Me.Invalidate()
 
-    Private Sub method_1()
-        Dim height As Single = 0!
-        Try
-            Dim width As Single = CSng(MyBase.Width) / CSng(My.Resources.StackLightBase.Width)
-            height = CSng((My.Resources.StackLightBase.Height + My.Resources.StackLightCap.Height))
-            height += CSng((My.Resources.StackLightElementGray.Height * Me.int_0))
-            Dim [single] As Single = CSng(MyBase.Height) / CSng(height)
-            If (width >= [single]) Then
-                Me.float_0 = [single]
+                OnLightGreenValueChanged(System.EventArgs.Empty)
+            End If
+        End Set
+    End Property
+
+    Private m_EnableGreen As Boolean = True
+    Public Property LightGreenEnable() As Boolean
+        Get
+            Return m_EnableGreen
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_EnableGreen Then
+                m_EnableGreen = value
+                SetLightCount()
+            End If
+        End Set
+    End Property
+
+    Private m_ValueAmber As Boolean
+    Public Property LightAmberValue() As Boolean
+        Get
+            Return m_ValueAmber
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_ValueAmber Then
+                m_ValueAmber = value
+
+                If m_ValueAmber Then
+                    ActiveAmberImage = LightImages(3)
+                Else
+                    ActiveAmberImage = LightImages(2)
+                End If
+                Me.Invalidate()
+
+                OnLightAmberValueChanged(System.EventArgs.Empty)
+            End If
+        End Set
+    End Property
+
+    Private m_EnableAmber As Boolean = True
+    Public Property LightAmberEnable() As Boolean
+        Get
+            Return m_EnableAmber
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_EnableAmber Then
+                m_EnableAmber = value
+                SetLightCount()
+            End If
+        End Set
+    End Property
+
+    Private m_ValueBlue As Boolean
+    Public Property LightBlueValue() As Boolean
+        Get
+            Return m_ValueBlue
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_ValueBlue Then
+                m_ValueBlue = value
+
+                If m_ValueBlue Then
+                    ActiveBlueImage = LightImages(5)
+                Else
+                    ActiveBlueImage = LightImages(4)
+                End If
+                Me.Invalidate()
+
+                OnLightBlueValueChanged(System.EventArgs.Empty)
+            End If
+        End Set
+    End Property
+
+    Private m_EnableBlue As Boolean = True
+    Public Property LightBlueEnable() As Boolean
+        Get
+            Return m_EnableBlue
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_EnableBlue Then
+                m_EnableBlue = value
+                SetLightCount()
+            End If
+        End Set
+    End Property
+
+    Private m_ValueRed As Boolean
+    Public Property LightRedValue() As Boolean
+        Get
+            Return m_ValueRed
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_ValueRed Then
+                m_ValueRed = value
+
+                If m_ValueRed Then
+                    ActiveRedImage = LightImages(7)
+                Else
+                    ActiveRedImage = LightImages(6)
+                End If
+                Me.Invalidate()
+
+                OnLightRedValueChanged(System.EventArgs.Empty)
+            End If
+        End Set
+    End Property
+
+    Private m_EnableRed As Boolean = True
+    Public Property LightRedEnable() As Boolean
+        Get
+            Return m_EnableRed
+        End Get
+        Set(ByVal value As Boolean)
+            If value <> m_EnableRed Then
+                m_EnableRed = value
+                SetLightCount()
+            End If
+        End Set
+    End Property
+
+
+
+    <System.ComponentModel.Browsable(True)>
+    <System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)>
+    Public Overrides Property Text() As String
+        Get
+            Return MyBase.Text
+        End Get
+        Set(ByVal value As String)
+            MyBase.Text = value
+            Me.Invalidate()
+        End Set
+    End Property
+
+    '* These next properties are overriden so that we can refresh the image when changed
+    <System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)>
+    Public Overrides Property Font() As Font
+        Get
+            Return MyBase.Font
+        End Get
+        Set(ByVal value As Font)
+            MyBase.Font = value
+            Me.Invalidate()
+        End Set
+    End Property
+
+    <System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)>
+    Public Overrides Property ForeColor() As Color
+        Get
+            Return MyBase.ForeColor
+        End Get
+        Set(ByVal value As Color)
+            If TextBrush Is Nothing Then
+                TextBrush = New SolidBrush(MyBase.ForeColor)
             Else
-                Me.float_0 = width
+                TextBrush.Color = value
             End If
-        Catch exception As System.Exception
-            ProjectData.SetProjectError(exception)
-            ProjectData.ClearProjectError()
+
+            MyBase.ForeColor = value
+            Me.Invalidate()
+        End Set
+    End Property
+#End Region
+
+#Region "Events"
+    '*************************************************************************
+    '* 
+    '**************************************************************************
+    Protected Overrides Sub OnPaint(ByVal e As System.Windows.Forms.PaintEventArgs)
+        If StaticImage Is Nothing Or StaticImage2 Is Nothing Then Exit Sub
+
+        Dim g As Graphics = e.Graphics
+
+        Dim Position As Integer
+
+        Try
+            If m_EnableRed Then
+                g.DrawImage(ActiveRedImage, 0, Convert.ToInt32(StaticImage2.Height + Position))
+                Position += ActiveRedImage.Height
+            End If
+
+            If m_EnableBlue Then
+                g.DrawImage(ActiveBlueImage, 0, Convert.ToInt32(StaticImage2.Height + Position))
+                Position += ActiveBlueImage.Height
+            End If
+
+
+            If m_EnableAmber Then
+                g.DrawImage(ActiveAmberImage, 0, Convert.ToInt32((StaticImage2.Height + Position)))
+                Position += ActiveAmberImage.Height
+            End If
+
+            If m_EnableGreen Then
+                g.DrawImage(ActiveGreenImage, 0, Convert.ToInt32((StaticImage2.Height + Position)))
+                Position += ActiveGreenImage.Height
+            End If
+
+            'Draw the base
+            g.DrawImage(StaticImage, 0, Convert.ToInt32((StaticImage2.Height + Position)))
+
+            '* Draw the cap
+            g.DrawImage(StaticImage2, 0, 0)
+
+            If MyBase.Text IsNot Nothing AndAlso (String.Compare(MyBase.Text, "") <> 0) Then
+                If TextBrush.Color <> MyBase.ForeColor Then
+                    TextBrush.Color = MyBase.ForeColor
+                End If
+
+                g.DrawString(MyBase.Text, MyBase.Font, TextBrush, TextRectangle, sf)
+                '* Debugging - draw a rectangle to see exactly where the text is to be
+                'g.DrawRectangle(Pens.Red, TextRectangle)
+            End If
+        Catch
         End Try
-        If (Me.float_0 > 0!) Then
-            If (Me.bitmap_0 IsNot Nothing) Then
-                Me.bitmap_0.Dispose()
-            End If
-            Me.bitmap_0 = New Bitmap(Convert.ToInt32(CSng(My.Resources.StackLightBase.Width) * Me.float_0), Convert.ToInt32(CSng(My.Resources.StackLightBase.Height) * Me.float_0))
-            Using graphic As Graphics = Graphics.FromImage(Me.bitmap_0)
-                graphic.DrawImage(My.Resources.StackLightBase, 0, 0, Me.bitmap_0.Width, Convert.ToInt32(CDbl(Me.bitmap_0.Width) / CDbl(My.Resources.StackLightBase.Width) * CDbl(My.Resources.StackLightBase.Height)))
-                Me.rectangle_0.X = 1
-                Me.rectangle_0.Width = Me.bitmap_0.Width - 2
-                Me.rectangle_0.Y = Convert.ToInt32(CDbl(height) * 0.82 * CDbl(Me.float_0))
-                Me.rectangle_0.Height = Convert.ToInt32(CDbl(height) * 0.16 * CDbl(Me.float_0))
-            End Using
-            If (Me.bitmap_1 IsNot Nothing) Then
-                Me.bitmap_1.Dispose()
-            End If
-            Me.bitmap_1 = New Bitmap(Convert.ToInt32(CSng(My.Resources.StackLightCap.Width) * Me.float_0), Convert.ToInt32(CSng(My.Resources.StackLightCap.Height) * Me.float_0))
-            Using graphic1 As Graphics = Graphics.FromImage(Me.bitmap_1)
-                graphic1.DrawImage(My.Resources.StackLightCap, 0, 0, Me.bitmap_0.Width, Convert.ToInt32(CDbl(Me.bitmap_0.Width) / CDbl(My.Resources.StackLightBase.Width) * CDbl(My.Resources.StackLightCap.Height)))
-            End Using
-            Dim length As Integer = CInt(Me.bitmap_2.Length) - 1
-            Dim num As Integer = 0
-            Do
-                Me.bitmap_2(num) = New Bitmap(Me.bitmap_0.Width, Convert.ToInt32(CSng(My.Resources.StackLightElementGray.Height) * Me.float_0))
-                num = num + 1
-            Loop While num <= length
-            Dim rectangle As System.Drawing.Rectangle = New System.Drawing.Rectangle(0, 0, Me.bitmap_2(0).Width, Me.bitmap_2(0).Height)
-            Using imageAttribute As ImageAttributes = New ImageAttributes()
-                Try
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {0.25!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 0.5!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.25!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic2 As Graphics = Graphics.FromImage(Me.bitmap_2(0))
-                        graphic2.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {0.25!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 2.5!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.25!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic3 As Graphics = Graphics.FromImage(Me.bitmap_2(1))
-                        graphic3.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                Catch exception1 As System.Exception
-                    ProjectData.SetProjectError(exception1)
-                    ProjectData.ClearProjectError()
-                End Try
-                Try
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {0.5!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 0.5!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.25!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic4 As Graphics = Graphics.FromImage(Me.bitmap_2(2))
-                        graphic4.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {2.5!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 2.5!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.25!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic5 As Graphics = Graphics.FromImage(Me.bitmap_2(3))
-                        graphic5.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                Catch exception2 As System.Exception
-                    ProjectData.SetProjectError(exception2)
-                    ProjectData.ClearProjectError()
-                End Try
-                Try
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {0.25!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 0.25!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.5!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic6 As Graphics = Graphics.FromImage(Me.bitmap_2(4))
-                        graphic6.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {0.25!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 0.25!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 2.5!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic7 As Graphics = Graphics.FromImage(Me.bitmap_2(5))
-                        graphic7.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                Catch exception3 As System.Exception
-                    ProjectData.SetProjectError(exception3)
-                    ProjectData.ClearProjectError()
-                End Try
-                Try
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {0.5!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 0.25!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.25!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic8 As Graphics = Graphics.FromImage(Me.bitmap_2(6))
-                        graphic8.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                    imageAttribute.SetColorMatrix(New ColorMatrix(New Single()() {New Single() {2.5!, Nothing, Nothing, Nothing, Nothing}, New Single() {Nothing, 0.25!, Nothing, Nothing, Nothing}, New Single() {Nothing, Nothing, 0.25!, Nothing, Nothing}, New Single() {Nothing, Nothing, Nothing, 1!, Nothing}, New Single() {Nothing, Nothing, Nothing, Nothing, 1!}}))
-                    Using graphic9 As Graphics = Graphics.FromImage(Me.bitmap_2(7))
-                        graphic9.DrawImage(My.Resources.StackLightElementGray, rectangle, 0, 0, My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height, GraphicsUnit.Pixel, imageAttribute)
-                    End Using
-                Catch exception4 As System.Exception
-                    ProjectData.SetProjectError(exception4)
-                    ProjectData.ClearProjectError()
-                End Try
-            End Using
-            Me.method_2()
-        End If
     End Sub
 
-    Private Sub method_2()
-        If (Not Me.bool_0) Then
-            Me.bitmap_3 = Me.bitmap_2(0)
-        Else
-            Me.bitmap_3 = Me.bitmap_2(1)
-        End If
-        If (Not Me.bool_2) Then
-            Me.bitmap_4 = Me.bitmap_2(2)
-        Else
-            Me.bitmap_4 = Me.bitmap_2(3)
-        End If
-        If (Not Me.bool_4) Then
-            Me.bitmap_5 = Me.bitmap_2(4)
-        Else
-            Me.bitmap_5 = Me.bitmap_2(5)
-        End If
-        If (Not Me.bool_6) Then
-            Me.bitmap_6 = Me.bitmap_2(6)
-        Else
-            Me.bitmap_6 = Me.bitmap_2(7)
-        End If
+
+    Protected Overridable Sub OnLightGreenValueChanged(ByVal e As EventArgs)
+        RaiseEvent LightGreenValueChanged(Me, e)
     End Sub
 
     Protected Overridable Sub OnLightAmberValueChanged(ByVal e As EventArgs)
@@ -385,61 +306,300 @@ Public Class StackLight2
         RaiseEvent LightAmberValueChanged(Me, e)
     End Sub
 
-    Protected Overridable Sub OnLightGreenValueChanged(ByVal e As EventArgs)
-        RaiseEvent LightGreenValueChanged(Me, e)
-    End Sub
-
     Protected Overridable Sub OnLightRedValueChanged(ByVal e As EventArgs)
         RaiseEvent LightRedValueChanged(Me, e)
     End Sub
 
-    Protected Overrides Sub OnPaint(ByVal painte As PaintEventArgs)
-        Dim height As Integer = 0
-        If (Me.bitmap_0 IsNot Nothing And Me.bitmap_1 IsNot Nothing) Then
-            Dim graphics As System.Drawing.Graphics = painte.Graphics
+    Protected Overrides Sub OnResize(e As EventArgs)
+        MyBase.OnResize(e)
+
+        RefreshImage()
+    End Sub
+#End Region
+
+#Region "Private Methods"
+    Private LightCount As Integer = 4
+    Private Sub SetLightCount()
+        LightCount = 0
+        If m_EnableAmber Then LightCount += 1
+        If m_EnableRed Then LightCount += 1
+        If m_EnableGreen Then LightCount += 1
+        If m_EnableBlue Then LightCount += 1
+
+
+        RefreshImage()
+        Me.Invalidate()
+    End Sub
+
+    Private Sub RefreshImage()
+        '********************************************************
+        '* Calculate the scaling for the images
+        '********************************************************
+        Dim TotalHeight As Single
+        Try
+            Dim WidthRatio As Single = CSng(Me.Width) / CSng(My.Resources.StackLightBase.Width)
+            TotalHeight = My.Resources.StackLightBase.Height + My.Resources.StackLightCap.Height
+            TotalHeight += My.Resources.StackLightElementGray.Height * LightCount
+            Dim HeightRatio As Single = CSng(Height) / CSng(TotalHeight)
+
+            If WidthRatio < HeightRatio Then
+                ImageRatio = WidthRatio
+            Else
+                ImageRatio = HeightRatio
+            End If
+        Catch
+        End Try
+
+        '* Prevent exceptions
+        If ImageRatio <= 0 Then Exit Sub
+
+        '****************************************************************
+        ' Scale the image so it will draw faster in Paint event
+        '****************************************************************
+        ' Make a bitmap for the result.
+        ' The Base image will be stored in StaticImage
+        If StaticImage IsNot Nothing Then StaticImage.Dispose()
+        StaticImage = New Bitmap(Convert.ToInt32(My.Resources.StackLightBase.Width * ImageRatio), Convert.ToInt32(My.Resources.StackLightBase.Height * ImageRatio))
+
+        ' Make a Graphics object for the result Bitmap.
+        Using gr_dest As Graphics = Graphics.FromImage(StaticImage)
+            ' Copy the source image into the destination bitmap.
+            gr_dest.DrawImage(My.Resources.StackLightBase, 0, 0, StaticImage.Width, Convert.ToInt32(StaticImage.Width / My.Resources.StackLightBase.Width * My.Resources.StackLightBase.Height))
+
+
+            TextRectangle.X = 1
+            TextRectangle.Width = StaticImage.Width - 2
+            TextRectangle.Y = Convert.ToInt32(TotalHeight * 0.82 * ImageRatio)
+            TextRectangle.Height = Convert.ToInt32(TotalHeight * 0.16 * ImageRatio)
+        End Using
+
+
+        '* Draw the cap to scaled size
+        If StaticImage2 IsNot Nothing Then StaticImage2.Dispose()
+        StaticImage2 = New Bitmap(Convert.ToInt32(My.Resources.StackLightCap.Width * ImageRatio), Convert.ToInt32(My.Resources.StackLightCap.Height * ImageRatio))
+
+        ' Make a Graphics object for the result Bitmap.
+        Using gr_dest As Graphics = Graphics.FromImage(StaticImage2)
+            ' Copy the source image into the destination bitmap.
+            gr_dest.DrawImage(My.Resources.StackLightCap, 0, 0, StaticImage.Width,
+                              Convert.ToInt32(StaticImage.Width / My.Resources.StackLightBase.Width * My.Resources.StackLightCap.Height))
+        End Using
+
+        Dim targetRectangle As Rectangle
+
+        '* Create the bitmaps to hold all On and Off images
+        For index = 0 To LightImages.Length - 1
+            LightImages(index) = New Bitmap(StaticImage.Width, Convert.ToInt32(My.Resources.StackLightElementGray.Height * ImageRatio))
+        Next
+
+        '* Create the rectangle for scaling
+        targetRectangle = New Rectangle(0, 0, LightImages(0).Width, LightImages(0).Height)
+
+        '* attributes for changing color
+        Using ColorChangeAttribute As System.Drawing.Imaging.ImageAttributes = New System.Drawing.Imaging.ImageAttributes()
+
+            '***************************
+            '* Green Light
+            '***************************
             Try
-                If (Me.bool_7) Then
-                    graphics.DrawImage(Me.bitmap_6, 0, Convert.ToInt32(Me.bitmap_1.Height + height))
-                    height = height + Me.bitmap_6.Height
-                End If
-                If (Me.bool_5) Then
-                    graphics.DrawImage(Me.bitmap_5, 0, Convert.ToInt32(Me.bitmap_1.Height + height))
-                    height = height + Me.bitmap_5.Height
-                End If
-                If (Me.bool_3) Then
-                    graphics.DrawImage(Me.bitmap_4, 0, Convert.ToInt32(Me.bitmap_1.Height + height))
-                    height = height + Me.bitmap_4.Height
-                End If
-                If (Me.bool_1) Then
-                    graphics.DrawImage(Me.bitmap_3, 0, Convert.ToInt32(Me.bitmap_1.Height + height))
-                    height = height + Me.bitmap_3.Height
-                End If
-                graphics.DrawImage(Me.bitmap_0, 0, Convert.ToInt32(Me.bitmap_1.Height + height))
-                graphics.DrawImage(Me.bitmap_1, 0, 0)
-                If (Not String.IsNullOrEmpty(MyBase.Text)) Then
-                    If (Me.solidBrush_0.Color <> MyBase.ForeColor) Then
-                        Me.solidBrush_0.Color = MyBase.ForeColor
-                    End If
-                    graphics.DrawString(MyBase.Text, MyBase.Font, Me.solidBrush_0, Me.rectangle_0, Me.stringFormat_0)
-                End If
-            Catch exception As System.Exception
-                ProjectData.SetProjectError(exception)
-                ProjectData.ClearProjectError()
+                '****************************
+                '* OFF COLOR
+                '* First row reduces red
+                '* Second row increases green
+                '* Third row reduces blue
+                Dim OffMatrix As Single()() = {New Single() {0.25, 0, 0, 0, 0},
+                                               New Single() {0, 0.5, 0, 0, 0},
+                                               New Single() {0, 0, 0.25, 0, 0},
+                                               New Single() {0, 0, 0, 1, 0},
+                                               New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OffMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(0))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+
+                '******************************
+                '* ON COLOR
+                '* First row reduces red
+                '* Second row increases green
+                '* Third row reduces blue
+                Dim OnMatrix As Single()() = {New Single() {0.25, 0, 0, 0, 0},
+                                              New Single() {0, 2.5, 0, 0, 0},
+                                              New Single() {0, 0, 0.25, 0, 0},
+                                              New Single() {0, 0, 0, 1, 0},
+                                              New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OnMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(1))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+            Catch
             End Try
+
+            '***************************
+            '* Amber Light
+            '***************************
+            Try
+                '****************************
+                '* OFF COLOR
+                '* First row increases red
+                '* Second row increases green
+                '* Third row reduces blue
+                Dim OffMatrix As Single()() = {New Single() {0.5, 0, 0, 0, 0},
+                                               New Single() {0, 0.5, 0, 0, 0},
+                                               New Single() {0, 0, 0.25, 0, 0},
+                                               New Single() {0, 0, 0, 1, 0},
+                                               New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OffMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(2))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+
+                '******************************
+                '* ON COLOR
+                '* First row increases red
+                '* Second row increases green
+                '* Third row reduces blue
+                Dim OnMatrix As Single()() = {New Single() {2.5, 0, 0, 0, 0},
+                                              New Single() {0, 2.5, 0, 0, 0},
+                                              New Single() {0, 0, 0.25, 0, 0},
+                                              New Single() {0, 0, 0, 1, 0},
+                                              New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OnMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(3))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+            Catch
+            End Try
+
+            '***************************
+            '* Blue Light
+            '***************************
+            Try
+                '****************************
+                '* OFF COLOR
+                '* First row reduces red
+                '* Second row reduces green
+                '* Third row increases blue
+                Dim OffMatrix As Single()() = {New Single() {0.25, 0, 0, 0, 0},
+                                               New Single() {0, 0.25, 0, 0, 0},
+                                               New Single() {0, 0, 0.5, 0, 0},
+                                               New Single() {0, 0, 0, 1, 0},
+                                               New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OffMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(4))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+
+                '******************************
+                '* ON COLOR
+                '* First row reduces red
+                '* Second row reduces green
+                '* Third row increases blue
+                Dim OnMatrix As Single()() = {New Single() {0.25, 0, 0, 0, 0},
+                                              New Single() {0, 0.25, 0, 0, 0},
+                                              New Single() {0, 0, 2.5, 0, 0},
+                                              New Single() {0, 0, 0, 1, 0},
+                                              New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OnMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(5))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+            Catch
+            End Try
+
+            '***************************
+            '* Red Light
+            '***************************
+            Try
+                '****************************
+                '* OFF COLOR
+                '* First row reduces red
+                '* Second row increases green
+                '* Third row reduces blue
+                Dim OffMatrix As Single()() = {New Single() {0.5, 0, 0, 0, 0},
+                                               New Single() {0, 0.25, 0, 0, 0},
+                                               New Single() {0, 0, 0.25, 0, 0},
+                                               New Single() {0, 0, 0, 1, 0},
+                                               New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OffMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(6))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+
+                '******************************
+                '* ON COLOR
+                '* First row increases red
+                '* Second row reduces green
+                '* Third row reduces blue
+                Dim OnMatrix As Single()() = {New Single() {2.5, 0, 0, 0, 0},
+                                              New Single() {0, 0.25, 0, 0, 0},
+                                              New Single() {0, 0, 0.25, 0, 0},
+                                              New Single() {0, 0, 0, 1, 0},
+                                              New Single() {0, 0, 0, 0, 1}}
+                ColorChangeAttribute.SetColorMatrix(New System.Drawing.Imaging.ColorMatrix(OnMatrix))
+
+                Using gr_dest As Graphics = Graphics.FromImage(LightImages(7))
+                    gr_dest.DrawImage(My.Resources.StackLightElementGray, targetRectangle, 0, 0,
+                                      My.Resources.StackLightElementGray.Width, My.Resources.StackLightElementGray.Height,
+                                      GraphicsUnit.Pixel, ColorChangeAttribute)
+                End Using
+            Catch
+            End Try
+
+
+        End Using
+
+        SetActiveImages()
+    End Sub
+
+    '********************************************************
+    '* Point the image variables to the correct light states
+    '********************************************************
+    Private Sub SetActiveImages()
+        '* Set active image
+        If m_ValueGreen Then
+            ActiveGreenImage = LightImages(1)
+        Else
+            ActiveGreenImage = LightImages(0)
+        End If
+
+        If m_ValueAmber Then
+            ActiveAmberImage = LightImages(3)
+        Else
+            ActiveAmberImage = LightImages(2)
+        End If
+
+        If m_ValueBlue Then
+            ActiveBlueImage = LightImages(5)
+        Else
+            ActiveBlueImage = LightImages(4)
+        End If
+
+        If m_ValueRed Then
+            ActiveRedImage = LightImages(7)
+        Else
+            ActiveRedImage = LightImages(6)
         End If
     End Sub
-
-    Protected Overrides Sub OnResize(ByVal e As EventArgs)
-        MyBase.OnResize(e)
-        Me.method_1()
-    End Sub
-
-    Public Event LightAmberValueChanged As EventHandler
-
-
-    Public Event LightGreenValueChanged As EventHandler
-
-
-    Public Event LightRedValueChanged As EventHandler
-
+#End Region
 End Class

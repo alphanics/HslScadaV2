@@ -6,7 +6,7 @@ Public Interface IKeyboard
 
     Event ButtonClick As ButtonClickEventHandler
 
-    Property Font As System.Drawing.Font
+    Property Font As Font
 
     Property ForeColor As Color
 
@@ -21,6 +21,7 @@ Public Interface IKeyboard
     Property Value As String
 
     Property Visible As Boolean
-
+    Property PassWordChar As Boolean
+    Property CurrentValue As String
     Delegate Sub ButtonClickEventHandler(ByVal sender As Object, ByVal e As KeypadEventArgs)
 End Interface

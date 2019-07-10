@@ -17,7 +17,7 @@ Namespace DigitalPanel
 
         Protected Overrides Sub CreateStaticImage()
             If Not ((MyBase.Width <= 0) Or (MyBase.Height <= 0)) Then
-                Dim graphics As Graphics
+                Dim g As Graphics
                 If (MyBase.StaticImage IsNot Nothing) Then
                     MyBase.StaticImage.Dispose()
                 End If
@@ -39,15 +39,15 @@ Namespace DigitalPanel
                         Me.LED(index).Dispose()
                     End If
                     Me.LED(index) = New Bitmap(width, height)
-                    graphics = Graphics.FromImage(Me.LED(index))
-                    graphics.ScaleTransform(CSng((0.27 * MyBase.ImageRatio)), CSng((0.27 * MyBase.ImageRatio)))
-                    SevenSegment2.FillPolygon(graphics, index, Me.m_LEDColor, True)
+                    g = Graphics.FromImage(Me.LED(index))
+                    g.ScaleTransform(CSng((0.27 * MyBase.ImageRatio)), CSng((0.27 * MyBase.ImageRatio)))
+                    SevenSegment2.FillPolygon(g, index, Me.m_LEDColor, True)
                     index += 1
                 Loop While (index <= 11)
                 Me.DecimalImage = New Bitmap(Convert.ToInt32(CDbl(((My.Resources.BlueSevenSegmentDot.Width * MyBase.ImageRatio) * 1.3))), Convert.ToInt32(CDbl(((My.Resources.BlueSevenSegmentDot.Height * MyBase.ImageRatio) * 1.3))))
-                graphics = Graphics.FromImage(Me.DecimalImage)
-                graphics.DrawImage(My.Resources.BlueSevenSegmentDot, 0, 0, Me.DecimalImage.Width, Me.DecimalImage.Height)
-                graphics.Dispose()
+                g = Graphics.FromImage(Me.DecimalImage)
+                g.DrawImage(My.Resources.BlueSevenSegmentDot, 0, 0, Me.DecimalImage.Width, Me.DecimalImage.Height)
+                g.Dispose()
                 MyBase.Invalidate()
             End If
         End Sub
@@ -74,15 +74,15 @@ Namespace DigitalPanel
 
         Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
             If (Not MyBase.StaticImage Is Nothing) Then
-                Dim graphics As Graphics = e.Graphics
-                graphics.DrawImage(MyBase.StaticImage, 0, 0)
+                Dim g As Graphics = e.Graphics
+                g.DrawImage(MyBase.StaticImage, 0, 0)
                 If Not String.IsNullOrEmpty(MyBase.Text) Then
                     If (MyBase.TextBrush Is Nothing) Then
                         MyBase.TextBrush = New SolidBrush(MyBase.ForeColor)
                     ElseIf (MyBase.TextBrush.Color <> MyBase.ForeColor) Then
                         MyBase.TextBrush.Color = MyBase.ForeColor
                     End If
-                    graphics.DrawString(MyBase.Text, MyBase.Font, MyBase.TextBrush, MyBase.TextRectangle, MyBase.stringFormat_0)
+                    g.DrawString(MyBase.Text, MyBase.Font, MyBase.TextBrush, MyBase.TextRectangle, MyBase.stringFormat_0)
                 End If
                 Dim one As Decimal = Decimal.Divide(Decimal.One, Me.m_Resolution)
                 If (Decimal.Compare(one, Decimal.Zero) = 0) Then
@@ -98,7 +98,7 @@ Namespace DigitalPanel
                     Dim i As Integer = 1
                     Do While (i <= num8)
                         If (num3 < 0) Then
-                            graphics.DrawImage(Me.LED(11), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
+                            g.DrawImage(Me.LED(11), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
                             num3 = Math.Abs(num3)
                         Else
                             Dim flag As Boolean
@@ -107,9 +107,9 @@ Namespace DigitalPanel
                                 flag = True
                             End If
                             If flag Then
-                                graphics.DrawImage(Me.LED(index), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
+                                g.DrawImage(Me.LED(index), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
                             Else
-                                graphics.DrawImage(Me.LED(10), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
+                                g.DrawImage(Me.LED(10), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
                             End If
                             num3 = CLng(Math.Round(CDbl((num3 - (index * Math.Pow(10, CDbl((num7 - i))))))))
                         End If
@@ -119,12 +119,12 @@ Namespace DigitalPanel
                     Dim num10 As Integer = num7
                     Dim i As Integer = 1
                     Do While (i <= num10)
-                        graphics.DrawImage(Me.LED(11), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
+                        g.DrawImage(Me.LED(11), (Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.1))) + (num5 * (i - 1))), y)
                         i += 1
                     Loop
                 End If
                 If (Me.m_DecimalPos > 0) Then
-                    graphics.DrawImage(Me.DecimalImage, (((num7 - Me.m_DecimalPos) * num5) + Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.072)))), Convert.ToInt32(CDbl((MyBase.Height * 0.77))))
+                    g.DrawImage(Me.DecimalImage, (((num7 - Me.m_DecimalPos) * num5) + Convert.ToInt32(CDbl((MyBase.StaticImage.Width * 0.072)))), Convert.ToInt32(CDbl((MyBase.Height * 0.77))))
                 End If
             End If
         End Sub

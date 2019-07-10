@@ -4,19 +4,16 @@ Imports System.Drawing
 Imports System.Windows.Forms
 
 Public Class Keypad_v3
-
-
     Inherits System.Windows.Forms.Form
     Implements IKeyboard
-
-    '' Public Event ButtonClick As EventHandler(Of KeypadEventArgs) Implements IKeyboard.ButtonClick
-    Public Event ButtonClick As IKeyboard.ButtonClickEventHandler Implements IKeyboard.ButtonClick
 
     Private drag As Boolean
     Private mouseX As Integer
     Private mouseY As Integer
     Public PasscodeVerify As Boolean
     Private Declare Function HideCaret Lib "user32.dll" (ByVal hwnd As Int32) As Int32
+
+    Public Event ButtonClick(ByVal sender As Object, ByVal e As KeypadEventArgs) Implements IKeyboard.ButtonClick
 
 #Region "Constructor"
 
@@ -32,16 +29,16 @@ Public Class Keypad_v3
     Friend WithEvents Button8 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Button0 As Button
-    Public WithEvents buDecimal As Button
+    Friend WithEvents buDecimal As Button
     Friend WithEvents buBksp As Button
     Friend WithEvents buClear As Button
     Friend WithEvents buCancel As Button
-    Public WithEvents buAccept As Button
-    Public WithEvents buNegative As Button
-    Public WithEvents lblMaxValue As Label
-    Public WithEvents lblMinValue As Label
-    Public WithEvents lblCurrentValue As Label
-    Public WithEvents txtValue As TextBox
+    Friend WithEvents buAccept As Button
+    Friend WithEvents buNegative As Button
+    Friend WithEvents lblMaxValue As Label
+    Friend WithEvents lblMinValue As Label
+    Friend WithEvents lblCurrentValue As Label
+    Friend WithEvents txtValue As TextBox
 
     Public Sub New()
 
@@ -53,11 +50,11 @@ Public Class Keypad_v3
 
         InitializeComponent()
     End Sub
-    Public Sub New(ByVal keypadWidth As Integer)
-        Me.New()
-        'Me.KeypadWidth = keypadWidth
 
+    Public Sub New(m_KeypadWidth As Integer)
+        Me.m_KeypadWidth = m_KeypadWidth
     End Sub
+
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -267,6 +264,7 @@ Public Class Keypad_v3
         Me.buDecimal.TabIndex = 10
         Me.buDecimal.Text = "."
         Me.buDecimal.UseVisualStyleBackColor = False
+        Me.buDecimal.Enabled = False
         '
         'buBksp
         '
@@ -316,7 +314,7 @@ Public Class Keypad_v3
         Me.buCancel.Name = "buCancel"
         Me.buCancel.Size = New System.Drawing.Size(110, 55)
         Me.buCancel.TabIndex = 13
-        Me.buCancel.Text = "Cancel"
+        Me.buCancel.Text = "Quit"
         Me.buCancel.UseVisualStyleBackColor = False
         '
         'buAccept
@@ -333,7 +331,7 @@ Public Class Keypad_v3
         Me.buAccept.Name = "buAccept"
         Me.buAccept.Size = New System.Drawing.Size(110, 55)
         Me.buAccept.TabIndex = 14
-        Me.buAccept.Text = "Accept"
+        Me.buAccept.Text = "Enter"
         Me.buAccept.UseVisualStyleBackColor = False
         '
         'buNegative
@@ -352,6 +350,7 @@ Public Class Keypad_v3
         Me.buNegative.TabIndex = 15
         Me.buNegative.Text = "-"
         Me.buNegative.UseVisualStyleBackColor = False
+        Me.buNegative.Enabled = False
         '
         'lblMaxValue
         '
@@ -496,7 +495,7 @@ Public Class Keypad_v3
         End Get
         Set(ByVal value As Boolean)
             m_AllowNegative = value
-            buNegative.Visible = value
+            buNegative.Enabled = m_AllowNegative
             Invalidate()
         End Set
     End Property
@@ -513,12 +512,12 @@ Public Class Keypad_v3
         End Get
         Set(ByVal value As Boolean)
             m_AllowDecimal = value
-            buDecimal.Visible = value
+            buDecimal.Enabled = m_AllowDecimal
             Invalidate()
         End Set
     End Property
 
-    Private m_Value As String
+    Private m_Value As String = ""
     ''' <summary>
     ''' Keypad current entered value
     ''' </summary>
@@ -528,81 +527,108 @@ Public Class Keypad_v3
         Get
             Return m_Value
         End Get
-        Set
-            m_Value = Value
-            If Operators.CompareString(Value, String.Empty, False) = 0 Then
-                txtValue.Text = String.Empty
+        Set(value As String)
+            m_Value = value
+            If Operators.CompareString(value, "", False) = 0 Then
+                txtValue.Text = ""
                 buAccept.Enabled = False
             Else
-                txtValue.Text = Value
+                txtValue.Text = value
                 buAccept.Enabled = True
             End If
-        End Set
-    End Property
-    Public Overrides Property Font As Font Implements IKeyboard.Font
-        Get
-            Return MyBase.Font
-        End Get
-        Set(ByVal value As Font)
-            MyBase.Font = value
+            Me.Invalidate()
         End Set
     End Property
 
-    Public Overrides Property ForeColor As Color Implements IKeyboard.ForeColor
+    Private m_CurrentValue As String
+    Private m_KeypadWidth As Integer
+
+    Public Property CurrentValue As String Implements IKeyboard.CurrentValue
         Get
-            Return MyBase.ForeColor
+            Return m_CurrentValue
         End Get
-        Set(ByVal value As Color)
-            MyBase.ForeColor = value
+        Set(value As String)
+            m_CurrentValue = value
         End Set
     End Property
 
-    Public Shadows Property Location As Point Implements IKeyboard.Location
-        Get
-            Return MyBase.Location
-        End Get
-        Set(ByVal value As Point)
-            MyBase.Location = value
-        End Set
-    End Property
-    Public Shadows Property StartPosition As FormStartPosition Implements IKeyboard.StartPosition
-        Get
-            Return MyBase.StartPosition
-        End Get
-        Set(ByVal value As FormStartPosition)
-            MyBase.StartPosition = DirectCast(Conversions.ToInteger(value), FormStartPosition)
-        End Set
-    End Property
-
-    Public Overrides Property Text As String Implements IKeyboard.Text
+    Public Overrides Property Text() As String Implements IKeyboard.Text
         Get
             Return MyBase.Text
         End Get
         Set(ByVal value As String)
             MyBase.Text = value
+            lblCurrentValue.Text = MyBase.Text
             Me.Invalidate()
         End Set
     End Property
 
-
-
-    Public Shadows Property TopMost As Boolean Implements IKeyboard.TopMost
+    Public Overrides Property Font As System.Drawing.Font Implements IKeyboard.Font
         Get
-            Return MyBase.TopMost
+            Return MyBase.Font
         End Get
-        Set(ByVal value As Boolean)
-            MyBase.TopMost = value
+        Set(value As System.Drawing.Font)
+            MyBase.Font = value
+            Me.Invalidate()
         End Set
     End Property
 
+    Public Shadows Property Location() As System.Drawing.Point Implements IKeyboard.Location
+        Get
+            Return MyBase.Location
+        End Get
+        Set(ByVal value As System.Drawing.Point)
+            MyBase.Location = value
+            Me.Invalidate()
+        End Set
+    End Property
 
-
-    Public Shadows Property Visible As Boolean Implements IKeyboard.Visible
+    Public Shadows Property Visible() As Boolean Implements IKeyboard.Visible
         Get
             Return MyBase.Visible
         End Get
         Set(ByVal value As Boolean)
             MyBase.Visible = value
+            Me.Invalidate()
+        End Set
+    End Property
+
+    Public Overrides Property ForeColor As System.Drawing.Color Implements IKeyboard.ForeColor
+        Get
+            Return MyBase.ForeColor
+        End Get
+        Set(value As System.Drawing.Color)
+            MyBase.ForeColor = value
+            Me.Invalidate()
+        End Set
+    End Property
+
+    Public Shadows Property TopMost As Boolean Implements IKeyboard.TopMost
+        Get
+            Return MyBase.TopMost
+        End Get
+        Set(value As Boolean)
+            MyBase.TopMost = value
+            Me.Invalidate()
+        End Set
+    End Property
+
+    Public Shadows Property StartPosition As FormStartPosition Implements IKeyboard.StartPosition
+        Get
+            Return MyBase.StartPosition
+        End Get
+        Set(value As FormStartPosition)
+            MyBase.StartPosition = value
+        End Set
+    End Property
+
+    Public Property PassWordChar As Boolean Implements IKeyboard.PassWordChar
+        Get
+            Return txtValue.UseSystemPasswordChar
+        End Get
+        Set(value As Boolean)
+            txtValue.UseSystemPasswordChar = value
+            Me.Invalidate()
         End Set
     End Property
 
@@ -611,8 +637,6 @@ Public Class Keypad_v3
 #Region "Events"
 
     Private Sub Keypad_TDSA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        m_Value = String.Empty
 
         txtValue.ForeColor = Color.Black
         txtValue.BackColor = Color.WhiteSmoke
@@ -627,197 +651,25 @@ Public Class Keypad_v3
             MaxValue = 2147483647
         End If
 
-        If m_Value = String.Empty Then
+        If m_MinValue = m_MaxValue And Not AllowNegative Then
+            MinValue = 0
+            MaxValue = 2147483647
+        ElseIf m_MinValue = m_MaxValue And AllowNegative Then
+            MinValue = -2147483648
+            MaxValue = 2147483647
+        End If
+
+        If m_MinValue < 0 And Not AllowNegative Then
+            AllowNegative = True
+        End If
+
+        If m_Value = "" Then
             buAccept.Enabled = False
         End If
 
-        Me.KeyPreview = True
+        buClear.PerformClick()
 
     End Sub
-
-    Private Sub Form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-
-        If e.KeyCode = Keys.NumPad0 Or e.KeyValue = 48 Then
-            mouseDownHandler(Button0, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad1 Or e.KeyValue = 49 Then
-            mouseDownHandler(Button1, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad2 Or e.KeyValue = 50 Then
-            mouseDownHandler(Button2, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad3 Or e.KeyValue = 51 Then
-            mouseDownHandler(Button3, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad4 Or e.KeyValue = 52 Then
-            mouseDownHandler(Button4, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad5 Or e.KeyValue = 53 Then
-            mouseDownHandler(Button5, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad6 Or e.KeyValue = 54 Then
-            mouseDownHandler(Button6, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad7 Or e.KeyValue = 55 Then
-            mouseDownHandler(Button7, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad8 Or e.KeyValue = 56 Then
-            mouseDownHandler(Button8, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad9 Or e.KeyValue = 57 Then
-            mouseDownHandler(Button9, e)
-        End If
-
-        If e.KeyCode = Keys.Escape Then
-            mouseDownHandler(buCancel, e)
-        End If
-
-        If e.KeyCode = Keys.Enter Then
-            mouseDownHandler(buAccept, e)
-        End If
-
-        If e.KeyCode = Keys.Subtract Or e.KeyValue = 189 Then
-            mouseDownHandler(buNegative, e)
-        End If
-
-        If e.KeyCode = Keys.Decimal Or e.KeyValue = 190 Then
-            mouseDownHandler(buDecimal, e)
-        End If
-
-        If e.KeyCode = Keys.Back Then
-            mouseDownHandler(buBksp, e)
-        End If
-
-        If e.KeyCode = Keys.Delete Then
-            mouseDownHandler(buClear, e)
-        End If
-
-    End Sub
-
-    Private Sub Form_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyUp
-
-        If e.KeyCode = Keys.NumPad0 Or e.KeyValue = 48 Then
-            NumericMouseUp(Button0, e)
-            mouseLeaveHandler(Button0, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad1 Or e.KeyValue = 49 Then
-            NumericMouseUp(Button1, e)
-            mouseLeaveHandler(Button1, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad2 Or e.KeyValue = 50 Then
-            NumericMouseUp(Button2, e)
-            mouseLeaveHandler(Button2, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad3 Or e.KeyValue = 51 Then
-            NumericMouseUp(Button3, e)
-            mouseLeaveHandler(Button3, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad4 Or e.KeyValue = 52 Then
-            NumericMouseUp(Button4, e)
-            mouseLeaveHandler(Button4, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad5 Or e.KeyValue = 53 Then
-            NumericMouseUp(Button5, e)
-            mouseLeaveHandler(Button5, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad6 Or e.KeyValue = 54 Then
-            NumericMouseUp(Button6, e)
-            mouseLeaveHandler(Button6, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad7 Or e.KeyValue = 55 Then
-            NumericMouseUp(Button7, e)
-            mouseLeaveHandler(Button7, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad8 Or e.KeyValue = 56 Then
-            NumericMouseUp(Button8, e)
-            mouseLeaveHandler(Button8, e)
-        End If
-
-        If e.KeyCode = Keys.NumPad9 Or e.KeyValue = 57 Then
-            NumericMouseUp(Button9, e)
-            mouseLeaveHandler(Button9, e)
-        End If
-
-        If e.KeyCode = Keys.Escape Then
-            buCancel.ForeColor = Color.Black
-            buCancel.BackColor = Color.FromArgb(229, 229, 229)
-            Value = String.Empty
-            lblMinValue.ForeColor = Color.WhiteSmoke
-            lblMaxValue.ForeColor = Color.WhiteSmoke
-            mouseLeaveHandler(buCancel, e)
-            Me.Close()
-        End If
-
-        If e.KeyCode = Keys.Enter Then
-            If buAccept.Enabled Then
-                buAccept.ForeColor = Color.Black
-                buAccept.BackColor = Color.FromArgb(229, 229, 229)
-                Accept()
-                mouseLeaveHandler(buAccept, e)
-            End If
-
-        End If
-
-        If e.KeyCode = Keys.Subtract Or e.KeyValue = 189 Then
-            Value = If(Value.Contains("-"), Value.Substring(1, Value.Length - 1), Convert.ToString("-") & Value)
-            buNegative.ForeColor = Color.Black
-            buNegative.BackColor = Color.FromArgb(229, 229, 229)
-            Check_Limits()
-            mouseLeaveHandler(buNegative, e)
-        End If
-
-        If e.KeyCode = Keys.Decimal Or e.KeyValue = 190 Then
-            If Not Value.Contains(".") Then
-                Value = Value & Convert.ToString(".")
-            End If
-            buDecimal.ForeColor = Color.Black
-            buDecimal.BackColor = Color.FromArgb(229, 229, 229)
-            Check_Limits()
-            mouseLeaveHandler(buDecimal, e)
-        End If
-
-        If e.KeyCode = Keys.Back Then
-            If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" And Value IsNot Nothing Then
-                Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), String.Empty)
-                Check_Limits()
-            End If
-            buBksp.ForeColor = Color.Black
-            buBksp.BackColor = Color.FromArgb(229, 229, 229)
-            mouseLeaveHandler(buBksp, e)
-        End If
-
-        If e.KeyCode = Keys.Delete Then
-            If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" Then
-                Value = String.Empty
-                txtValue.BackColor = Color.WhiteSmoke
-                txtValue.ForeColor = Color.Black
-                lblMinValue.ForeColor = Color.WhiteSmoke
-                lblMaxValue.ForeColor = Color.WhiteSmoke
-            End If
-            buClear.ForeColor = Color.Black
-            buClear.BackColor = Color.FromArgb(229, 229, 229)
-            mouseLeaveHandler(buClear, e)
-        End If
-
-    End Sub
-
 
     Public Sub mouseEnterHandler(sender As Object, e As EventArgs) Handles Button0.MouseEnter, Button1.MouseEnter, Button2.MouseEnter,
                                                                            Button3.MouseEnter, Button4.MouseEnter, Button5.MouseEnter,
@@ -858,17 +710,12 @@ Public Class Keypad_v3
                                                                            Button6.MouseUp, Button7.MouseUp, Button8.MouseUp,
                                                                            Button9.MouseUp
 
-        If Value = "Enter Passcode" Or Value = "Incorrect Passcode" Then
-            Value = String.Empty
-            txtValue.PasswordChar = "*"
-        End If
-
         If txtValue.TextLength >= 28 Then
             Return
         End If
 
         If sender.Text <> 0 And Operators.CompareString(Value, "0", False) = 0 Then
-            Value = String.Empty
+            Value = ""
         End If
 
         If sender.Text = 0 And Operators.CompareString(Value, "0", False) = 0 Then
@@ -889,11 +736,10 @@ Public Class Keypad_v3
     End Sub
 
     Private Sub buAccept_MouseUp(sender As Object, e As MouseEventArgs) Handles buAccept.MouseUp
-        Accept()
-    End Sub
-
-    Private Sub Accept()
-        OnButtonClick(New KeypadEventArgs("Enter"))
+        If Not PasscodeVerify Then
+            Me.DialogResult = DialogResult.OK
+            RaiseEvent ButtonClick(Me, New KeypadEventArgs("Enter"))
+        End If
         buAccept.ForeColor = Color.Black
         buAccept.BackColor = Color.FromArgb(229, 229, 229)
     End Sub
@@ -901,15 +747,14 @@ Public Class Keypad_v3
     Private Sub buCancel_MouseUp(sender As Object, e As MouseEventArgs) Handles buCancel.MouseUp
         buCancel.ForeColor = Color.Black
         buCancel.BackColor = Color.FromArgb(229, 229, 229)
-        Value = String.Empty
-        lblMinValue.ForeColor = Color.WhiteSmoke
-        lblMaxValue.ForeColor = Color.WhiteSmoke
-        Me.Close()
+        RaiseEvent ButtonClick(Me, New KeypadEventArgs("Quit"))
+        'Me.Close()
+        Me.Visible = False
     End Sub
 
     Private Sub buClear_MouseUp(sender As Object, e As MouseEventArgs) Handles buClear.MouseUp
         If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" Then
-            Value = String.Empty
+            Value = ""
             txtValue.BackColor = Color.WhiteSmoke
             txtValue.ForeColor = Color.Black
             lblMinValue.ForeColor = Color.WhiteSmoke
@@ -921,7 +766,7 @@ Public Class Keypad_v3
 
     Private Sub buBksp_MouseUp(sender As Object, e As MouseEventArgs) Handles buBksp.MouseUp
         If Value <> "Enter Passcode" AndAlso Value <> "Incorrect Passcode" And Value IsNot Nothing Then
-            Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), String.Empty)
+            Value = If(Value.Length <> 0, Value.Substring(0, Value.Length - 1), "")
             Check_Limits()
         End If
         buBksp.ForeColor = Color.Black
@@ -962,10 +807,6 @@ Public Class Keypad_v3
 
     Private Sub Keypad_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
         drag = False
-    End Sub
-
-    Protected Overridable Sub OnButtonClick(ByVal e As KeypadEventArgs)
-        RaiseEvent ButtonClick(Me, e)
     End Sub
 
     Private Sub Check_Limits()

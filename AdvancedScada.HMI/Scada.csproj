@@ -109,6 +109,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SegmentDisplay.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>

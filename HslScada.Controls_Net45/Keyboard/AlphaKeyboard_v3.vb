@@ -1228,7 +1228,14 @@ Public Class AlphaKeyboard_v3
         End Set
     End Property
 
-
+    Public Property PassWordChar As Boolean Implements IKeyboard.PassWordChar
+        Get
+            Return TextBox1.UseSystemPasswordChar
+        End Get
+        Set(value As Boolean)
+            TextBox1.UseSystemPasswordChar = value
+        End Set
+    End Property
 
     Public Overrides Property Font As System.Drawing.Font Implements IKeyboard.Font
         Get
@@ -1249,7 +1256,14 @@ Public Class AlphaKeyboard_v3
     End Property
 
     Private m_CurrentValue As String
-
+    Public Property CurrentValue As String Implements IKeyboard.CurrentValue
+        Get
+            Return m_CurrentValue
+        End Get
+        Set(value As String)
+            m_CurrentValue = value
+        End Set
+    End Property
 
     Public Shadows Property Location() As System.Drawing.Point Implements IKeyboard.Location
         Get
@@ -1488,7 +1502,7 @@ Public Class AlphaKeyboard_v3
     End Sub
 
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
-        DialogResult = DialogResult.OK
+        DialogResult = Windows.Forms.DialogResult.OK
         RaiseEvent ButtonClick(Me, New KeypadEventArgs("Enter"))
     End Sub
 

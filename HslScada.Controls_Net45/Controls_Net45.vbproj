@@ -114,6 +114,7 @@
     <Compile Include="Class\MenuPos.vb" />
     <Compile Include="Class\OutputType.vb" />
     <Compile Include="Class\PanChartEventArgs.vb" />
+    <Compile Include="Class\PanelGraphics.vb" />
     <Compile Include="Class\RollingDigit.vb" />
     <Compile Include="Class\RotationScale.vb" />
     <Compile Include="Class\RotationTypeConverter.vb" />
@@ -125,8 +126,14 @@
     <Compile Include="Class\TranslationScale.vb" />
     <Compile Include="Class\TranslationScaleTypeConverter.vb" />
     <Compile Include="Class\Utilities.vb" />
-    <Compile Include="Class\ValueChangedEventArgs.vb" />
     <Compile Include="Common\BaseEventArgs.vb" />
+    <Compile Include="Common\ValueChangedEventArgs.vb" />
+    <Compile Include="Controls\A1Panel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BasicLine.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\CircularProgressBar.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -137,6 +144,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\GroupPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HVScrollBar.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Indicator.vb">
@@ -180,9 +190,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Gauge\GaugeCompact.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Gauge\RotationalPositionIndicator.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Hydraulic\HydraulicCylinder.vb">
@@ -319,6 +326,15 @@
     <Compile Include="Picture\ImageDisplayByValue2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Picture\ImageSelectByBit.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Picture\RotatingImage2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Picture\RotationalPositionIndicator.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Picture\RotationValueEditorForm.Designer.vb">
       <DependentUpon>RotationValueEditorForm.vb</DependentUpon>
     </Compile>
@@ -343,6 +359,9 @@
     <Compile Include="SelectorSwitch\SelectorSwitch3Pos.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SevenSegment\DigitalDisplayControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SevenSegment\SevenSegment.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -358,7 +377,13 @@
     <Compile Include="TankAll\StackLight2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TankAll\StackLight5Lights.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TankAll\Tank.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TankAll\TankLibrary.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Thermometer\Thermometer.vb">
@@ -410,6 +435,108 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MotorYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Silo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiloGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiloRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiloWithLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiloWithLegsGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiloWithLegsRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank1Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank1Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank1WithLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank1WithLegsGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank1WithLegsRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vessel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VesselGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VesselRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VesselRedWithLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VesselWithLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VesselWithLegsGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrumBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrumBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrumGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DrumRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ketlle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ketlle1Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ketlle1Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KetlleLongLegsGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KetlleLongLegsRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KettleShortLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KettleShortLegsGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KettleShortLegsRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KetlleLongLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DigitalPanelMeterR1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

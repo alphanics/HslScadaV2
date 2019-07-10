@@ -27,35 +27,29 @@ Public Class ColorPicker
 
 #Region "Basic Properties"
 
-    Private m_SelectedColor As System.Drawing.Color
-    Public Property SelectedColor As System.Drawing.Color
+    Private m_BackColor As System.Drawing.Color
+    Public Shadows Property BackColor As System.Drawing.Color
         Get
-            Return m_SelectedColor
+            Return m_BackColor
         End Get
         Set(value As System.Drawing.Color)
-            If m_SelectedColor <> value Then
-                m_SelectedColor = value
+            If MyBase.BackColor <> value Then
+                MyBase.BackColor = value
+                m_BackColor = value
 
-                Me.ForeColor = Color.Black
+                If value <> Color.Empty Then
+                    Me.Text = value.ToString 'value.Name
+                Else
+                    Me.Text = ""
+                End If
 
-                Invalidate()
+                If (CInt(value.R) + CInt(value.G) + CInt(value.B)) > ((255I * 3I) \ 2I) Then
+                    Me.ForeColor = Color.Black
+                Else
+                    Me.ForeColor = Color.White
+                End If
+
                 OnValueChanged(EventArgs.Empty)
-
-            End If
-        End Set
-    End Property
-
-    Private m_ShowText As Boolean = False
-    Public Property ShowText As Boolean
-        Get
-            Return m_ShowText
-        End Get
-        Set(value As Boolean)
-            If m_ShowText <> value Then
-                m_ShowText = value
-
-                Invalidate()
-
             End If
         End Set
     End Property
@@ -67,46 +61,18 @@ Public Class ColorPicker
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles Me.Click
 
         Dim cDialog As New ColorDialog()
-
-        If SelectedColor.A <> 0 Then
-            cDialog.Color = SelectedColor
-        End If
-
-        cDialog.AllowFullOpen = True
-        cDialog.AnyColor = True
-        cDialog.SolidColorOnly = False
-        cDialog.ShowHelp = True
+        cDialog.Color = Me.BackColor
 
         If (cDialog.ShowDialog() = DialogResult.OK) Then
-            Dim c = cDialog.Color.ToArgb
-            SelectedColor = Color.FromArgb(c)
+            If Me.BackColor <> cDialog.Color Then
+                Me.BackColor = cDialog.Color
+            End If
         End If
 
     End Sub
 
     Protected Overridable Sub OnValueChanged(ByVal e As EventArgs)
         RaiseEvent ColorChanged(Me, e)
-    End Sub
-
-    Private Sub ColorPicker_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-
-        Dim c = m_SelectedColor
-        If m_SelectedColor <> Color.Empty AndAlso c.A <> 0 Then 'Don't paint if no color or transparent ("a" = 0)
-            Using myBrush As New SolidBrush(m_SelectedColor)
-                Dim SampleWidth = Me.Size.Height - 10
-                Dim SampleHeight = Me.Size.Height - 10
-                Dim Location As Integer = (Me.Size.Height - SampleHeight) / 2
-                e.Graphics.FillRectangle(myBrush, 5, Location, SampleWidth, SampleHeight)
-                e.Graphics.DrawRectangle(Pens.Black, 5, Location, SampleWidth - 1, SampleHeight)
-            End Using
-
-            If m_SelectedColor <> Color.Empty AndAlso m_SelectedColor <> Color.Transparent AndAlso ShowText Then
-                Me.Text = m_SelectedColor.ToString
-            Else
-                Me.Text = String.Empty
-            End If
-        End If
-
     End Sub
 
 #End Region

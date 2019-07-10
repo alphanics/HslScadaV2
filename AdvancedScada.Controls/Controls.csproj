@@ -84,6 +84,21 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AHMI\Controls\HMIBasicLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AHMI\Controls\HMIHVScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AHMI\Controls\NumericUpDownHMI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AHMI\RotationalIndicatorHMI..cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AHMI\StackLightHMI_5Pos.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AlarmMan\AlarmSummay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,9 +167,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Components\SoundPlayer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AHMI\Controls\HMIBasicNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Controls\HMIGroupPanel.cs">
@@ -289,14 +301,6 @@
     <Compile Include="HslControls\Gauge\HMIGauge.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HslControls\Keypad\AlphaKeyboard3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HslControls\Keypad\IKeyboard.cs" />
-    <Compile Include="HslControls\Keypad\KeyPadEventArgs.cs" />
-    <Compile Include="HslControls\Keypad\Keypad_v3.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="HslControls\Lad\HMILanternSimple.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -385,9 +389,6 @@
     <Compile Include="AHMI\Components\SocketClient\GenericTCPEventArgs.cs" />
     <Compile Include="AHMI\Components\SocketClient\MessageEventArgs.cs" />
     <Compile Include="AHMI\Components\SocketClient\SocketStateObject.cs" />
-    <Compile Include="SevenSegmentLEDDigits.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Subscription\IComComponent.cs" />
     <Compile Include="Subscription\SubscriptionDetail.cs" />
     <Compile Include="Subscription\SubscriptionHandler.cs" />
@@ -409,9 +410,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AHMI\Thermometer\HMIThermometer2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="HMITagManager.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utility\Utility.cs" />
@@ -447,9 +445,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HslControls\Gauge\HMIGauge.resx">
       <DependentUpon>HMIGauge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HslControls\Keypad\Keypad_v3.resx">
-      <DependentUpon>Keypad_v3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HslControls\Pipe\HMIPipeLine.resx">
       <DependentUpon>HMIPipeLine.cs</DependentUpon>

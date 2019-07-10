@@ -1,6 +1,5 @@
 ﻿Option Strict On
 Imports System.Drawing
-Imports System.Windows.Forms
 '****************************************************************************
 '* 12-DEC-08 Added line in OnPaint to exit is LegendText is nothing
 '* 05-OCT-09 Exit OnPaint if GrayPen is Nothing
@@ -157,7 +156,7 @@ Public Class GraphicIndicatorBase
         ValueSelect1 = Not ValueSelect1
     End Sub
 
-    Private m_SizeMode As System.Windows.Forms.PictureBoxSizeMode = PictureBoxSizeMode.StretchImage
+    Private m_SizeMode As System.Windows.Forms.PictureBoxSizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage
     Public Property SizeMode As System.Windows.Forms.PictureBoxSizeMode
         Get
             Return m_SizeMode
@@ -217,7 +216,7 @@ Public Class GraphicIndicatorBase
     '*****************************************
     '* Property - Second Text
     '*****************************************
-    Private m_Text2 As String = String.Empty
+    Private m_Text2 As String = ""
     Public Property Text2() As String
         Get
             Return m_Text2
@@ -341,7 +340,7 @@ Public Class GraphicIndicatorBase
                 Dim index As Integer = Parent.Controls.GetChildIndex(Me)
 
                 For i As Integer = Parent.Controls.Count - 1 To index + 1 Step -1
-                    Dim c As System.Windows.Forms.Control = Parent.Controls(i)
+                    Dim c As Windows.Forms.Control = Parent.Controls(i)
                     If c.Bounds.IntersectsWith(Bounds) AndAlso c.Visible Then
                         Using bmp As New Bitmap(c.Width, c.Height, pevent.Graphics)
                             c.DrawToBitmap(bmp, c.ClientRectangle)
@@ -437,24 +436,24 @@ Public Class GraphicIndicatorBase
                         'm.Translate(0, -m_GraphicAllOff.Height)
                         m.Translate(m_GraphicAllOff.Height, 0)
                         m.Rotate(90, Drawing2D.MatrixOrder.Prepend)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicAllOff.Height), Convert.ToSingle(Height / m_GraphicAllOff.Width), Drawing2D.MatrixOrder.Append)
                         End If
                     ElseIf m_RotationAngle = RotationAngleEnum.Rotate180 Then
                         m.Translate(-m_GraphicAllOff.Width, -m_GraphicAllOff.Height)
                         m.Rotate(180, Drawing2D.MatrixOrder.Append)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicAllOff.Width), Convert.ToSingle(Height / m_GraphicAllOff.Height), Drawing2D.MatrixOrder.Append)
                         End If
                     ElseIf m_RotationAngle = RotationAngleEnum.Rotate270 Then
                         m.Translate(0, m_GraphicAllOff.Width)
                         m.Rotate(270, Drawing2D.MatrixOrder.Prepend)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicAllOff.Height), Convert.ToSingle(Height / m_GraphicAllOff.Width), Drawing2D.MatrixOrder.Append)
                         End If
                     Else
                         '* No Rotaion
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicAllOff.Width), Convert.ToSingle(Height / m_GraphicAllOff.Height), Drawing2D.MatrixOrder.Append)
                         End If
 
@@ -472,24 +471,24 @@ Public Class GraphicIndicatorBase
                     If m_RotationAngle = RotationAngleEnum.Rotate90 Then
                         m.Translate(m_GraphicSelect1.Height, 0)
                         m.Rotate(90, Drawing2D.MatrixOrder.Prepend)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect1.Height), Convert.ToSingle(Height / m_GraphicSelect1.Width), Drawing2D.MatrixOrder.Append)
                         End If
                     ElseIf m_RotationAngle = RotationAngleEnum.Rotate180 Then
                         m.Translate(-m_GraphicSelect1.Width, -m_GraphicSelect1.Height)
                         m.Rotate(180, Drawing2D.MatrixOrder.Append)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect1.Width), Convert.ToInt32((Height / m_GraphicSelect1.Height)), Drawing2D.MatrixOrder.Append)
                         End If
                     ElseIf m_RotationAngle = RotationAngleEnum.Rotate270 Then
                         m.Translate(0, m_GraphicSelect1.Width)
                         m.Rotate(270, Drawing2D.MatrixOrder.Prepend)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect1.Height), Convert.ToSingle(Height / m_GraphicSelect1.Width), Drawing2D.MatrixOrder.Append)
                         End If
                     Else
                         '* No Rotaion
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect1.Width), Convert.ToSingle(Height / m_GraphicSelect1.Height), Drawing2D.MatrixOrder.Append)
                         End If
 
@@ -507,24 +506,24 @@ Public Class GraphicIndicatorBase
                     If m_RotationAngle = RotationAngleEnum.Rotate90 Then
                         m.Translate(m_GraphicSelect2.Height, 0)
                         m.Rotate(90, Drawing2D.MatrixOrder.Prepend)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect2.Height), Convert.ToSingle(Height / m_GraphicSelect2.Width), Drawing2D.MatrixOrder.Append)
                         End If
                     ElseIf m_RotationAngle = RotationAngleEnum.Rotate180 Then
                         m.Translate(-m_GraphicSelect2.Width, -m_GraphicSelect2.Height)
                         m.Rotate(180, Drawing2D.MatrixOrder.Append)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect2.Width), Convert.ToSingle(Height / m_GraphicSelect2.Height), Drawing2D.MatrixOrder.Append)
                         End If
                     ElseIf m_RotationAngle = RotationAngleEnum.Rotate270 Then
                         m.Translate(0, m_GraphicSelect2.Width)
                         m.Rotate(270, Drawing2D.MatrixOrder.Prepend)
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect2.Height), Convert.ToSingle(Height / m_GraphicSelect2.Width), Drawing2D.MatrixOrder.Append)
                         End If
                     Else
                         '* No Rotaion
-                        If SizeMode = PictureBoxSizeMode.StretchImage Then
+                        If SizeMode = Windows.Forms.PictureBoxSizeMode.StretchImage Then
                             m.Scale(Convert.ToSingle(Width / m_GraphicSelect2.Width), Convert.ToSingle(Height / m_GraphicSelect2.Height), Drawing2D.MatrixOrder.Append)
                         End If
 
