@@ -10,7 +10,7 @@
     <AssemblyName>HslScada.Controls_Net45</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,6 +46,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -66,6 +67,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlarmMan\DataSubscriberlistView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AlarmMan\Designers\iniClass.vb" />
+    <Compile Include="AlarmMan\Designers\ListViewDesigner.vb" />
+    <Compile Include="AlarmMan\Designers\ListViewDesignerForm.Designer.vb">
+      <DependentUpon>ListViewDesignerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmMan\Designers\ListViewDesignerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BarLevel\BarLevel.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -406,6 +418,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AlarmMan\Designers\ListViewDesignerForm.resx">
+      <DependentUpon>ListViewDesignerForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DigitalPanel\TempController.resx">
       <DependentUpon>TempController.vb</DependentUpon>
     </EmbeddedResource>
@@ -440,6 +455,7 @@
     <None Include="Resources\Legs.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Settings.ini" />
     <None Include="Resources\Silo.png" />
   </ItemGroup>
   <ItemGroup>

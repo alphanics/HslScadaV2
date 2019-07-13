@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseService", "AdvancedScada.BaseService\BaseService.csproj", "{FE960C7A-E85B-48ED-9BCA-9BE1A6A1CB0B}"
 EndProject
@@ -46,6 +46,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IODriver", "Drivers\AdvancedScada.IODriver\IODriver.csproj", "{09B71D40-9C34-44F8-BC1B-1B3380EAD582}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Controls_Net45", "HslScada.Controls_Net45\Controls_Net45.vbproj", "{6A4EA5F0-F6A7-4D58-8542-E39444A0A7C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraryImage", "LibraryImage", "{90A9BE0E-8B2F-4D01-AE2B-23F86332BBF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryImage", "LibraryImage\LibraryImage\LibraryImage.csproj", "{B1BDA788-9E6C-4561-991B-D9E69B227131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryImagesAPP", "LibraryImage\LibraryImagesAPP\LibraryImagesAPP.csproj", "{2A1BE896-63D8-4BC4-BECC-2209446E2939}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForm", "WinForm", "{DEA9333A-5652-41F5-863E-13DA0C93E6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +117,14 @@ Global
 		{6A4EA5F0-F6A7-4D58-8542-E39444A0A7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A4EA5F0-F6A7-4D58-8542-E39444A0A7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A4EA5F0-F6A7-4D58-8542-E39444A0A7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BDA788-9E6C-4561-991B-D9E69B227131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BDA788-9E6C-4561-991B-D9E69B227131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BDA788-9E6C-4561-991B-D9E69B227131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BDA788-9E6C-4561-991B-D9E69B227131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +144,9 @@ Global
 		{A7E14A59-51EE-4E8E-B1EE-3CB3C71DC9D3} = {8553EDAC-D314-4187-AB30-7316571029F9}
 		{09B71D40-9C34-44F8-BC1B-1B3380EAD582} = {E346CF44-B588-4C83-86B3-DC93629F6BB3}
 		{6A4EA5F0-F6A7-4D58-8542-E39444A0A7C3} = {56C1D13A-575A-413E-A56F-6EB37E978ECF}
+		{B1BDA788-9E6C-4561-991B-D9E69B227131} = {90A9BE0E-8B2F-4D01-AE2B-23F86332BBF3}
+		{2A1BE896-63D8-4BC4-BECC-2209446E2939} = {90A9BE0E-8B2F-4D01-AE2B-23F86332BBF3}
+		{DEA9333A-5652-41F5-863E-13DA0C93E6D1} = {E7C7AC43-A5DC-4CA6-A9B3-286597E30464}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C9F8F60-8BEB-4669-AAB0-02B189B54E22}

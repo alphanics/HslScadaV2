@@ -14,7 +14,7 @@ namespace AdvancedScada.BaseService
     {
         private bool RUN_APPLICATION;
 
-       
+        public IServiceCallback EventDataChanged;
         DriverHelper driverHelper = new DriverHelper();
 
         public void Connect(Machine mac)
@@ -23,7 +23,7 @@ namespace AdvancedScada.BaseService
             {
 
 
-                IServiceCallback EventDataChanged = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+                EventDataChanged = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
                 eventLoggingMessage?.Invoke(string.Format("Added Callback Channel: {0}, IP Address: {1}.", mac.MachineName, mac.IPAddress));
                 EventChannelCount?.Invoke(1, true);
                     RUN_APPLICATION = true;
@@ -78,7 +78,7 @@ namespace AdvancedScada.BaseService
             {
                 RUN_APPLICATION = false;
                 EventChannelCount?.Invoke(1, false);
-                OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+                EventDataChanged = null;
                 eventLoggingMessage?.Invoke(string.Format("Removed Callback Channel: {0}, IP Address: {1}.", mac.MachineName, mac.IPAddress));
             }
             catch (Exception ex)

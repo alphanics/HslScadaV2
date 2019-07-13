@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -1067,6 +1067,32 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("SelectorSwitchCenterNoNut", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to [Alarm Type]
+        '''BackGround.BackColor=-1
+        '''Button6.BackColor=-16711936
+        '''Button9.BackColor=-65536
+        '''Button7.BackColor=-256
+        '''Button8.BackColor=-16776961
+        '''[Display Format]
+        '''ListBoxSelectedItemsCount=4
+        '''ListBoxSelected.Items0=Time
+        '''ListBoxSelected.Items1=Tag Name
+        '''ListBoxSelected.Items2=Tag Value
+        '''ListBoxSelected.Items3=Alarm Status
+        '''[Alarm Status]
+        '''ChkAlarmOff=True
+        '''ChkAlarmOn=True
+        '''ChkAlarmVariation=True
+        '''ChkAlarmAck=True
+        '''.
+        '''</summary>
+        Friend ReadOnly Property Settings() As String
+            Get
+                Return ResourceManager.GetString("Settings", resourceCulture)
             End Get
         End Property
         

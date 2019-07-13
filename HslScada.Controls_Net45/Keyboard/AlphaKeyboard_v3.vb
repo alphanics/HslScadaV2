@@ -1502,7 +1502,7 @@ Public Class AlphaKeyboard_v3
     End Sub
 
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
-        DialogResult = Windows.Forms.DialogResult.OK
+        DialogResult = System.Windows.Forms.DialogResult.OK
         RaiseEvent ButtonClick(Me, New KeypadEventArgs("Enter"))
     End Sub
 

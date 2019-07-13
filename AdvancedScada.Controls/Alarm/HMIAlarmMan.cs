@@ -1,11 +1,12 @@
 ﻿using AdvancedScada.BaseService.Client;
-using AdvancedScada.Controls.Alarm.Designers;
+using AdvancedScada.Controls.Drivers;
 using AdvancedScada.Controls.Properties;
 using AdvancedScada.DriverBase;
 using AdvancedScada.DriverBase.Devices;
 using AdvancedScada.IBaseService;
 using AdvancedScada.IBaseService.Common;
 using AdvancedScada.Utils;
+using HslScada.Controls_Net45;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,8 @@ namespace AdvancedScada.Controls.Alarm
 {
     [CallbackBehavior]
     [DefaultEvent("DataChanged")]
-    [Designer(typeof(ListViewDesigner))]
-    public class HMIAlarmMan : ListView, IServiceCallback
+   
+    public class HMIAlarmMan : DataSubscriberlistView, IServiceCallback
     {
         private string ChannelTypes;
 
@@ -77,37 +78,7 @@ namespace AdvancedScada.Controls.Alarm
 
         #region Constructor/Destructor
 
-        public HMIAlarmMan()
-        {
-            var queryFromResourceFile = Resources.Settings;
-            path = queryFromResourceFile; // "C:\\Settings.ini";
-
-            CheckForIllegalCrossThreadCalls = false;
-            DoubleBuffered = true;
-            View = View.Details;
-            FullRowSelect = true;
-            GridLines = true;
-            Columns.Clear();
-            Items.Clear();
-            Columns.Add("Time", 130, HorizontalAlignment.Left);
-            Columns.Add("Tag Name", 130, HorizontalAlignment.Left);
-            Columns.Add("Tag Value", 130, HorizontalAlignment.Left);
-            Columns.Add("Tag Status", 320, HorizontalAlignment.Left);
-            HeaderStyle = ColumnHeaderStyle.Nonclickable;
-
-            for (var index = 0; index <= 19; index++)
-            {
-                string[] row0 = { nTime, nTagName, nTagValue, nTagStatus[intCount] };
-                var item = new ListViewItem(row0);
-                item.ForeColor = nColor[intCount];
-                Items.Insert(0, item);
-                intCount = intCount + 1;
-                if (intCount == 3)
-                    intCount = 0;
-            }
-        }
-
-
+        
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -298,7 +269,7 @@ namespace AdvancedScada.Controls.Alarm
             HeaderStyle = ColumnHeaderStyle.Nonclickable;
             BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "BackGround.BackColor", path)));
             Sorting = SortOrder.Ascending;
-            ListViewItemSorter = new ListViewItemComparer();
+           
             Sort();
 
             for (var i = 0; i < _nListViewColumns.Count; i++)

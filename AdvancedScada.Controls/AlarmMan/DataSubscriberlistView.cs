@@ -1,9 +1,7 @@
 ﻿using AdvancedScada.Controls;
-using AdvancedScada.Controls.AlarmMan.Designers;
 using AdvancedScada.Controls.Drivers;
 using AdvancedScada.Controls.Subscription;
 using AdvancedScada.DriverBase.Common;
-using HslScadaControls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,8 +15,8 @@ using System.Xml.Linq;
 
 namespace AdvancedScada.Controls.AlarmMan
 {
-    [DefaultEvent("DataChanged"), System.ComponentModel.Designer(typeof(ListViewDesigner))]
-    public class DataSubscriberlistView : ListView
+    [DefaultEvent("DataChanged")]
+    public class DataSubscriberlistView : HslScada.Controls_Net45.DataSubscriberlistView
     {
         private bool InstanceFieldsInitialized = false;
 
@@ -32,12 +30,7 @@ namespace AdvancedScada.Controls.AlarmMan
         public event EventHandler<PlcComEventArgs> DataChanged;
         public event EventHandler<PlcComEventArgs> ComError;
         public event EventHandler SuccessfulSubscription;
-        private int intCount = 0;
-        private string nTime = "2017/12/18 16:44:02";
-        private string nTagName = "TagName";
-        private string nTagValue = "15135";
-        private string[] nTagStatus = new string[4] { "Alarm On", "Alarm oFF", "Alarm Ack", "Alarm Variation" };
-        private Color[] nColor = new Color[4] { Color.Red, Color.Green, Color.Blue, Color.Yellow };
+     
         #region Constructor/Destructor
         public DataSubscriberlistView()
         {
@@ -46,31 +39,8 @@ namespace AdvancedScada.Controls.AlarmMan
                 InitializeInstanceFields();
                 InstanceFieldsInitialized = true;
             }
-            this.DoubleBuffered = true;
-            this.View = System.Windows.Forms.View.Details;
-            this.FullRowSelect = true;
-            this.GridLines = true;
-            this.Columns.Clear();
-            this.Items.Clear();
-            this.Columns.Add("Time", 130, HorizontalAlignment.Left);
-            this.Columns.Add("Tag Name", 130, HorizontalAlignment.Left);
-            this.Columns.Add("Tag Value", 130, HorizontalAlignment.Left);
-            this.Columns.Add("Tag Status", 320, HorizontalAlignment.Left);
-            this.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-
-            for (var index = 0; index <= 19; index++)
-            {
-                string[] row0 = { nTime, nTagName, nTagValue, nTagStatus[intCount] };
-                ListViewItem item = new ListViewItem(row0);
-                item.ForeColor = nColor[intCount];
-                this.Items.Insert(0, item);
-                intCount = intCount + 1;
-                if (intCount == 3)
-                {
-                    intCount = 0;
-                }
-
-            }
+           
+             
 
         }
         protected override void Dispose(bool disposing)
