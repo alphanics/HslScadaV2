@@ -6,11 +6,11 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace HslScada.Controls_Binding.Button
+namespace HslScada.Controls_Binding.ButtonAll
 {
     public class HMIAnnunciator : HslScada.Controls_Net45.Annunciator
     {
-      
+
 
 
         private string OriginalText;
@@ -286,7 +286,7 @@ namespace HslScada.Controls_Binding.Button
         protected override void OnMouseDown(MouseEventArgs mevent)
         {
             base.OnMouseDown(mevent);
-         
+
             if (PLCAddressClick != null && string.Compare(PLCAddressClick, string.Empty) != 0 && Enabled &&
                 PLCAddressClick != null)
                 try

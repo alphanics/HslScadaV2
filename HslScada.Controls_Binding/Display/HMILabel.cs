@@ -1,6 +1,7 @@
 ﻿using AdvancedScada.DriverBase;
 using AdvancedScada.Monitor;
 using HslScada.Controls_Binding.DialogEditor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;

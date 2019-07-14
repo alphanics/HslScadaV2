@@ -1,6 +1,7 @@
 ﻿using AdvancedScada.DriverBase;
 using AdvancedScada.Monitor;
 using HslScada.Controls_Binding.DialogEditor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -13,11 +14,11 @@ namespace HslScada.Controls_Binding.DigitalDisplay
 {
     public class HMIDigitalPanelMeter : HslScada.Controls_Net45.DigitalPanelMeter
     {
-        
-         
 
-         
-      
+
+
+
+
         #region propartas
 
         //*****************************************
@@ -374,7 +375,7 @@ namespace HslScada.Controls_Binding.DigitalDisplay
             frm.ShowDialog();
         }
 
-        public void SetProperty(Control control, string propertyName, object value)
+        public void SetProperty(System.Windows.Forms.Control control, string propertyName, object value)
         {
             var pd = TypeDescriptor.GetProperties(control)[propertyName];
             pd.SetValue(control, value);

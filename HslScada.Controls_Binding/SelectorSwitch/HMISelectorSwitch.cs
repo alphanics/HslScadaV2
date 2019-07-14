@@ -4,7 +4,6 @@ using HslScada.Controls_Binding.DialogEditor;
 using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
@@ -13,14 +12,14 @@ namespace HslScada.Controls_Binding.SelectorSwitch
     public class HMISelectorSwitch : HslScada.Controls_Net45.SelectorSwitch
     {
         #region تعريفات
-      
+
 
         private OutputType m_OutputType;
 
-       
+
         #endregion
 
-      
+
         #region PLC Properties
 
 
@@ -250,7 +249,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-            
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled && PLCAddressClick != null)
             {
                 try
@@ -294,7 +293,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-            
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled)
             {
                 try

@@ -5,7 +5,6 @@ using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
@@ -15,8 +14,8 @@ namespace HslScada.Controls_Binding.Motor
     [Designer(typeof(HMIWaterPumpDesigner))]
     public class HMIWaterPump : HslScada.Controls_Net45.WaterPump
     {
-         
-       
+
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;
@@ -301,7 +300,7 @@ namespace HslScada.Controls_Binding.Motor
 
         public OutputType OutputType { get; set; }
 
- 
+
         #endregion
 
         #region "Error Display"

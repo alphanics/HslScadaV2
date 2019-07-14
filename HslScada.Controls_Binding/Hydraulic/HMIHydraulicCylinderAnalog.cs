@@ -11,7 +11,7 @@ namespace HslScada.Controls_Binding.Hydraulic
 {
     public class HMIHydraulicCylinderAnalog : HslScada.Controls_Net45.HydraulicCylinderAnalog
     {
-       
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using AdvancedScada.Monitor;
+using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using TagCollectionMonitor.Monitor;
 
 namespace HslScada.Controls_Binding.DialogEditor
 {

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 //* 05-OCT-09 Exit OnPaint if GrayPen is Nothing
 //****************************************************************************
 
-namespace HslScada.Controls_Binding.Image
+namespace HslScada.Controls_Binding.ImageAll
 {
     public class HMIGraphicIndicator : HslScada.Controls_Net45.GraphicIndicator
     {
-       
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;

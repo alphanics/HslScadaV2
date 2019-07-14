@@ -3336,7 +3336,7 @@ namespace HslScada.Controls_Binding.Segment
                             }
                         }
                     }
-                    Label0:
+                Label0:
                     if (this.das_BorderStyle_0 != DAS_BorderStyle.BS_RoundRect)
                     {
                         System.Drawing.Region region = new System.Drawing.Region(base.ClientRectangle);

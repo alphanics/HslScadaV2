@@ -1,10 +1,10 @@
-﻿using DriverBase;
+﻿using AdvancedScada.DriverBase;
 using HslScada.Controls_Binding.DialogEditor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace HslScada.Controls_Binding.Thermometer
@@ -13,7 +13,7 @@ namespace HslScada.Controls_Binding.Thermometer
     {
 
 
-       
+
         private string OriginalText;
 
         #region propartas

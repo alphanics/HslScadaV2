@@ -16,11 +16,11 @@ namespace HslScada.Controls_Binding.SelectorSwitch
     [Designer(typeof(HMIPilotLightDesigner))]
     public class HMIPilotLight : HslScada.Controls_Net45.PilotLight
     {
- 
+
 
         private OutputType m_OutputType;
 
-        
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;
@@ -229,7 +229,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-            
+
 
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled && PLCAddressClick != null)
             {
@@ -274,7 +274,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-           
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled)
             {
                 try
@@ -298,9 +298,9 @@ namespace HslScada.Controls_Binding.SelectorSwitch
             }
         }
 
-       
-        
-       
+
+
+
 
         #region "Error Display"
 

@@ -1672,7 +1672,7 @@ namespace HslScada.Controls_Binding.Segment
                             goto Label0;
                         }
                     }
-                    Label6:
+                Label6:
                     if (this.das_DisplayStyle_0 == DAS_DisplayStyle.DS_Date1_Style || this.das_DisplayStyle_0 == DAS_DisplayStyle.DS_Date2_Style || this.das_DisplayStyle_0 == DAS_DisplayStyle.DS_Time24_Date1_Style || this.das_DisplayStyle_0 == DAS_DisplayStyle.DS_TimeAP_Date1_Style || this.das_DisplayStyle_0 == DAS_DisplayStyle.DS_Time24_Date2_Style || this.das_DisplayStyle_0 == DAS_DisplayStyle.DS_TimeAP_Date2_Style)
                     {
                         year = (long)this.dateTime_0.Year;
@@ -1705,11 +1705,11 @@ namespace HslScada.Controls_Binding.Segment
                             pen2.Dispose();
                             goto Label2;
                         }
-                        Label7:
+                    Label7:
                         Rectangle rectangle2 = new Rectangle(x.Right - int11 - this.size_0.Width, top1 - this.int_11 / 2, this.size_0.Width, this.int_11);
                         paintEventArgs_0.Graphics.FillRectangle(solidBrush2, rectangle2);
                         paintEventArgs_0.Graphics.DrawRectangle(pen1, rectangle2);
-                        Label2:
+                    Label2:
                         int11 = int11 + this.size_0.Width + int12 / 2;
                         year = (long)this.dateTime_0.Month;
                         left = x.Right - int11 - this.size_0.Width;
@@ -1732,11 +1732,11 @@ namespace HslScada.Controls_Binding.Segment
                             pen3.Dispose();
                             goto Label4;
                         }
-                        Label8:
+                    Label8:
                         Rectangle rectangle3 = new Rectangle(x.Right - int11 - this.size_0.Width, top1 - this.int_11 / 2, this.size_0.Width, this.int_11);
                         paintEventArgs_0.Graphics.FillRectangle(solidBrush2, rectangle3);
                         paintEventArgs_0.Graphics.DrawRectangle(pen1, rectangle3);
-                        Label4:
+                    Label4:
                         int11 = int11 + this.size_0.Width + int12 / 2;
                         year = (long)this.dateTime_0.Day;
                         left = x.Right - int11 - this.size_0.Width;
@@ -1826,7 +1826,7 @@ namespace HslScada.Controls_Binding.Segment
                         year = (year - (long)num) / (long)10;
                         this.method_1(paintEventArgs_0.Graphics, left, height, num, false);
                     }
-                    Label0:
+                Label0:
                     solidBrush2.Dispose();
                     pen1.Dispose();
                     if (this.das_BorderStyle_0 == DAS_BorderStyle.BS_RoundRect)

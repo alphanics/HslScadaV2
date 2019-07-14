@@ -11,7 +11,7 @@ namespace HslScada.Controls_Binding.DigitalDisplay
 {
     public class HMITempController : HslScada.Controls_Net45.TempController
     {
- 
+
 
         //*****************************************
         //* Property - What to do to bit in PLC

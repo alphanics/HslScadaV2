@@ -317,7 +317,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                         return;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -778,7 +778,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                         goto Label0;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -1006,7 +1006,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                     region21.Dispose();
                 }
             }
-            Label0:
+        Label0:
             if (int_3 > 0)
             {
                 SolidBrush solidBrush8 = new SolidBrush(color_5);
@@ -1336,7 +1336,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                         goto Label0;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -1564,7 +1564,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                     region21.Dispose();
                 }
             }
-            Label0:
+        Label0:
             if (m_BorderExteriorLength > 0)
             {
                 SolidBrush solidBrush8 = new SolidBrush(m_BorderExteriorColor);
@@ -2154,7 +2154,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                         goto Label0;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -2382,7 +2382,7 @@ namespace HslScada.Controls_Binding.Leds.DrawAll
                     region21.Dispose();
                 }
             }
-            Label0:
+        Label0:
             if (m_BorderExteriorLength > 0)
             {
                 SolidBrush solidBrush8 = new SolidBrush(m_BorderExteriorColor);

@@ -2,12 +2,9 @@
 using AdvancedScada.DriverBase;
 using HslScada.Controls_Binding.DialogEditor;
 using HslScada.Controls_Net45;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Drawing.Design;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace HslScada.Controls_Binding.LED
@@ -15,9 +12,9 @@ namespace HslScada.Controls_Binding.LED
     public class HMISimpleLED : HslScada.Controls_Net45.SimpleLED
     {
 
- 
-       
-        
+
+
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;
@@ -292,7 +289,7 @@ namespace HslScada.Controls_Binding.LED
             }
         }
 
-       
+
 
         #region "Basic Properties"
 

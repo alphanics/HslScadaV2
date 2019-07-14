@@ -1820,7 +1820,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                             return;
                         }
                     }
-                    Label5:
+                Label5:
                     GraphicsPath graphicsPath1 = new GraphicsPath();
                     int num = 0;
                     if (bool_7)
@@ -1850,7 +1850,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                     graphics_0.ResetTransform();
                     return;
                 }
-                Label4:
+            Label4:
                 Rectangle rectangle = new Rectangle(-Math.Abs(int_23) / 2, -int_24 / 2, Math.Abs(int_23), int_24);
                 if (!bool_7)
                 {
@@ -1906,7 +1906,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                     graphics_0.ResetTransform();
                     return;
                 }
-                Label6:
+            Label6:
                 if (das_TickerShapeStyle_2 == DAS_TickerShapeStyle.Solid_Rectangle)
                 {
                     graphics_0.FillRectangle(solidBrush, rectangle);
@@ -2905,7 +2905,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                                         goto Label2;
                                     }
                                 }
-                                Label16:
+                            Label16:
                                 top1 = rectangle.Top + this.size_0.Height + this.int_21;
                                 bottom = rectangle.Bottom - this.int_22;
                                 goto Label2;
@@ -2917,7 +2917,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                                 goto Label2;
                             }
                         }
-                        Label15:
+                    Label15:
                         top1 = rectangle.Top + int11 + this.int_21;
                         bottom = rectangle.Bottom - this.int_11 - this.int_22;
                     }
@@ -2925,7 +2925,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                     {
                         bottom = rectangle.Bottom - this.int_11 - this.int_22;
                     }
-                    Label2:
+                Label2:
                     double0 = bottom;
                     if (this.double_1 > this.double_2 + 1E-12)
                     {
@@ -2978,22 +2978,22 @@ namespace HslScada.Controls_Binding.ProcessAll
                                         goto Label7;
                                     }
                                 }
-                                Label19:
+                            Label19:
                                 this.method_3(paintEventArgs_0.Graphics, rectangle, double0, (int)((float)top1 - sizeF.Height / 2f - 1f + (float)this.int_13), (int)((float)bottom + sizeF.Height / 2f + 1f + (float)this.int_14));
                                 goto Label7;
                             }
-                            Label18:
+                        Label18:
                             this.method_2(paintEventArgs_0.Graphics, rectangle, double0, int11);
                             goto Label7;
                         }
-                        Label17:
+                    Label17:
                         this.method_1(paintEventArgs_0.Graphics, rectangle, double0, int11);
                     }
                     else
                     {
                         this.method_0(paintEventArgs_0.Graphics, rectangle, double0, int11);
                     }
-                    Label7:
+                Label7:
                     string str = "0";
                     if (this.int_8 > 0)
                     {
@@ -3056,7 +3056,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                                     goto Label11;
                                 }
                             }
-                            Label20:
+                        Label20:
                             point.X = num;
                             if (this.das_TickerAlignmentStyle_0 != DAS_TickerAlignmentStyle.TAS_Text_Left)
                             {
@@ -3071,7 +3071,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                                 stringFormat.Alignment = StringAlignment.Far;
                             }
                             this.method_10(paintEventArgs_0.Graphics, this.das_TickerShapeStyle_0, point, false, int20, this.int_17, true, this.color_14, this.color_16);
-                            Label11:
+                        Label11:
                             double double2 = this.double_2 + double1 * (double)i;
                             string str3 = double2.ToString(str);
                             int18.Y = (float)(bottom - (int)((double)i * int15)) - sizeF.Height / 2f;
@@ -3105,7 +3105,7 @@ namespace HslScada.Controls_Binding.ProcessAll
 
                                         }
                                     }
-                                    Label21:
+                                Label21:
                                     point.X = num;
                                     int20 = (this.das_TickerAlignmentStyle_0 != DAS_TickerAlignmentStyle.TAS_Text_Left ? this.int_20 : -this.int_20);
                                     this.method_10(paintEventArgs_0.Graphics, this.das_TickerShapeStyle_1, point, false, int20, this.int_19, true, this.color_14, this.color_17);

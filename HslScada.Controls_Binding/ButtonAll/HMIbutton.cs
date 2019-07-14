@@ -1,6 +1,8 @@
-﻿using DriverBase;
+﻿using AdvancedScada.DriverBase;
+using AdvancedScada.Monitor;
 using HslScada.Controls_Binding.DialogEditor;
 using HslScada.Controls_Binding.Display;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -9,13 +11,11 @@ using System.Drawing.Design;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using TagCollectionMonitor;
-using TagCollectionMonitor.Monitor;
 
-namespace HslScada.Controls_Binding.Button
+namespace HslScada.Controls_Binding.ButtonAll
 {
     [Designer(typeof(HMIbuttonDesigner))]
-    public class HMIbutton : Button
+    public class HMIbutton : System.Windows.Forms.Button
     {
         public HMIbutton()
         {

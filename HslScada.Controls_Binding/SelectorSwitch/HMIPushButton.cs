@@ -15,7 +15,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
     [Designer(typeof(HMIPushButtonDesigner))]
     public class HMIPushButton : HslScada.Controls_Net45.MomentaryButton
     {
-        
+
         #region PLC Properties
 
 

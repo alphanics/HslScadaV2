@@ -9,7 +9,7 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace HslScada.Controls_Binding.Image
+namespace HslScada.Controls_Binding.ImageAll
 {
     [Designer(typeof(ImageContainerDesigner))]
     [ToolboxItem(true)]

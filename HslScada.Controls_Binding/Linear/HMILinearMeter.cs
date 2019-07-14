@@ -3,14 +3,11 @@ using AdvancedScada.DriverBase;
 using AdvancedScada.Monitor;
 using HslScada.Controls_Binding.DialogEditor;
 using HslScada.Controls_Net45;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -21,7 +18,7 @@ namespace HslScada.Controls_Binding.Linear
     [Designer(typeof(HMILinearMeterDesigner))]
     public class HMILinearMeter : HslScada.Controls_Net45.LinearMeter
     {
-      
+
         private string OriginalText;
 
         #region propartas

@@ -1,6 +1,7 @@
 ﻿using AdvancedScada.DriverBase;
 using AdvancedScada.Monitor;
 using HslScada.Controls_Binding.DialogEditor;
+using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -730,7 +731,7 @@ namespace HslScada.Controls_Binding.Display
             if (KeypadPopUp == null)
             {
                 if (KeypadAlphaNumeric)
-                    KeypadPopUp = new AlphaKeyboard3(m_KeypadWidth);
+                    KeypadPopUp = new AlphaKeyboard_v3();
                 else
                     KeypadPopUp = new Keypad_v3(m_KeypadWidth);
                 KeypadPopUp.ButtonClick += KeypadPopUp_ButtonClick;

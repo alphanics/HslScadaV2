@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace HslScada.Controls_Binding.Enum
+﻿namespace HslScada.Controls_Binding.Enum
 {
     public enum HMITankColorFour
     {

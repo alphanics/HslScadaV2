@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace HslScada.Controls_Binding.Image
+namespace HslScada.Controls_Binding.ImageAll
 {
     public class HMIImageSelectByBit : PictureBox
     {

@@ -3,30 +3,20 @@ using AdvancedScada.DriverBase;
 using HslScada.Controls_Binding.DialogEditor;
 using HslScada.Controls_Net45;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-
-using System.Drawing;
 using System.Drawing.Design;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace HslScada.Controls_Binding.Hydraulic
 {
     public class HMIPneumaticBallVave : HslScada.Controls_Net45.PneumaticBallValve
     {
 
-        
+
         private OutputType m_OutputType;
 
-       
-     
+
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;
@@ -233,7 +223,7 @@ namespace HslScada.Controls_Binding.Hydraulic
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-            
+
 
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled && PLCAddressClick != null)
             {
@@ -278,7 +268,7 @@ namespace HslScada.Controls_Binding.Hydraulic
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-           
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled)
             {
                 try

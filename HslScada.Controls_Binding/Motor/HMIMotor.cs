@@ -6,7 +6,6 @@ using HslScada.Controls_Net45;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
-using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
@@ -17,10 +16,10 @@ namespace HslScada.Controls_Binding.Motor
     public class HMIMotor : HslScada.Controls_Net45.Motor
     {
 
-       
+
         private OutputType m_OutputType;
 
-      
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;
@@ -229,7 +228,7 @@ namespace HslScada.Controls_Binding.Motor
         {
             base.OnMouseDown(e);
 
-          
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled && PLCAddressClick != null)
             {
                 try
@@ -277,7 +276,7 @@ namespace HslScada.Controls_Binding.Motor
             {
                 try
                 {
-                 
+
                     switch (OutputType)
                     {
                         case OutputType.MomentarySet:
@@ -302,7 +301,7 @@ namespace HslScada.Controls_Binding.Motor
             if (ValueChanged != null) ValueChanged(this, e);
         }
 
-     
+
 
         #region "Error Display"
 

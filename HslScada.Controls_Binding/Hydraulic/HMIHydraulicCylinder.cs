@@ -11,7 +11,7 @@ namespace HslScada.Controls_Binding.Hydraulic
 {
     public class HMIHydraulicCylinder : HslScada.Controls_Net45.HydraulicCylinder
     {
-       
+
         #region PLC
 
 

@@ -1,23 +1,17 @@
-﻿using DriverBase;
+﻿
+using AdvancedScada.DriverBase;
 using HslScada.Controls_Binding.DialogEditor;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace HslScada.Controls_Binding.Button
+namespace HslScada.Controls_Binding.Indicator
 {
-    public class HMICheckBox : System.Windows.Forms.CheckBox
+    public class HMIIndicator : HslScada.Controls_Net45.Indicator
     {
+
         #region PLC Related Properties
-
-        private OutputType m_OutputType = OutputType.MomentarySet;
-
-        public OutputType OutputType
-        {
-            get { return m_OutputType; }
-            set { m_OutputType = value; }
-        }
 
         //*****************************************
         //* Property - Address in PLC to Link to
@@ -40,7 +34,7 @@ namespace HslScada.Controls_Binding.Button
                         //* When address is changed, re-subscribe to new address
                         if (string.IsNullOrEmpty(m_PLCAddressText) || string.IsNullOrWhiteSpace(m_PLCAddressText) ||
                             Licenses.LicenseManager.IsInDesignMode) return;
-                        var bd = new Binding("Text", TagCollection.Tags[m_PLCAddressChecked], "Text", true);
+                        var bd = new Binding("Text", TagCollection.Tags[m_PLCAddressValue], "Text", true);
                         DataBindings.Add(bd);
                     }
                     catch (Exception ex)
@@ -88,25 +82,25 @@ namespace HslScada.Controls_Binding.Button
         //*****************************************
         //* Property - Address in PLC to Link to
         //*****************************************
-        private string m_PLCAddressChecked = string.Empty;
+        private string m_PLCAddressValue = string.Empty;
 
         [Category("PLC Properties")]
         [Editor(typeof(TestDialogEditor), typeof(UITypeEditor))]
-        public string PLCAddressChecked
+        public string PLCAddressValue
         {
-            get { return m_PLCAddressChecked; }
+            get { return m_PLCAddressValue; }
             set
             {
-                if (m_PLCAddressChecked != value)
+                if (m_PLCAddressValue != value)
                 {
-                    m_PLCAddressChecked = value;
+                    m_PLCAddressValue = value;
 
                     try
                     {
                         //* When address is changed, re-subscribe to new address
-                        if (string.IsNullOrEmpty(m_PLCAddressChecked) ||
-                            string.IsNullOrWhiteSpace(m_PLCAddressChecked) || Licenses.LicenseManager.IsInDesignMode) return;
-                        var bd = new Binding("Checked", TagCollection.Tags[m_PLCAddressChecked], "Checked", true);
+                        if (string.IsNullOrEmpty(m_PLCAddressValue) || string.IsNullOrWhiteSpace(m_PLCAddressValue) ||
+                            Licenses.LicenseManager.IsInDesignMode) return;
+                        var bd = new Binding("Value", TagCollection.Tags[m_PLCAddressValue], "Value", true);
                         DataBindings.Add(bd);
                     }
                     catch (Exception ex)
@@ -120,20 +114,21 @@ namespace HslScada.Controls_Binding.Button
         //*****************************************
         //* Property - Address in PLC to Link to
         //*****************************************
-        private string m_PLCAddressCheckChanged = string.Empty;
+        private string m_PLCAddressClick = string.Empty;
 
         [Category("PLC Properties")]
         [Editor(typeof(TestDialogEditor), typeof(UITypeEditor))]
-        public string PLCAddressCheckChanged
+        public string PLCAddressClick
         {
-            get { return m_PLCAddressCheckChanged; }
+            get { return m_PLCAddressClick; }
             set
             {
-                if (m_PLCAddressCheckChanged != value) m_PLCAddressCheckChanged = value;
+                if (m_PLCAddressClick != value) m_PLCAddressClick = value;
             }
         }
 
-        [DefaultValue(false)] public bool SuppressErrorDisplay { get; set; }
+        [DefaultValue(false)]
+        public bool SuppressErrorDisplay { get; set; }
 
 
         //***************************************
@@ -185,22 +180,8 @@ namespace HslScada.Controls_Binding.Button
 
         #endregion
 
-        protected override void OnClick(EventArgs e)
-        {
-            base.OnClick(e);
-            if (!string.IsNullOrEmpty(m_PLCAddressCheckChanged))
-                try
-                {
-                    var WriteValue = "0";
-                    if (Checked) WriteValue = "1";
-                    WCFChannelFactory.Write(m_PLCAddressCheckChanged, WriteValue);
-                }
-                catch (Exception ex)
-                {
-                    DisplayError(ex.Message);
-                }
-        }
-
         #endregion
     }
+
+
 }

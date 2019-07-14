@@ -1,13 +1,10 @@
 ﻿
 using AdvancedScada.DriverBase;
 using AdvancedScada.Monitor;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -20,7 +17,7 @@ namespace HslScada.Controls_Binding.Linear
     {
 
 
-      
+
 
         #region propartas
 

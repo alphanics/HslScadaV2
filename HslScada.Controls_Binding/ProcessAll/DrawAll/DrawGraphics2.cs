@@ -1,11 +1,7 @@
 ﻿using HslScada.Controls_Binding.Enum;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HslScada.Controls_Binding.ProcessAll.DrawAll
 {
@@ -321,7 +317,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                         return;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -782,7 +778,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                         goto Label0;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -1010,7 +1006,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                     region21.Dispose();
                 }
             }
-            Label0:
+        Label0:
             if (int_3 > 0)
             {
                 SolidBrush solidBrush8 = new SolidBrush(color_5);
@@ -1340,7 +1336,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                         goto Label0;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -1568,7 +1564,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                     region21.Dispose();
                 }
             }
-            Label0:
+        Label0:
             if (int_4 > 0)
             {
                 SolidBrush solidBrush8 = new SolidBrush(color_5);
@@ -2158,7 +2154,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                         goto Label0;
                     }
                 }
-                Label2:
+            Label2:
                 Blend float0 = new Blend();
                 bool flag1 = false;
                 float float3 = 0f;
@@ -2386,7 +2382,7 @@ namespace HslScada.Controls_Binding.ProcessAll.DrawAll
                     region21.Dispose();
                 }
             }
-            Label0:
+        Label0:
             if (int_5 > 0)
             {
                 SolidBrush solidBrush8 = new SolidBrush(color_5);

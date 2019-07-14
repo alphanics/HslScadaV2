@@ -15,7 +15,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
     [Designer(typeof(HMIMushroomButtonDesigner))]
     public class HMIMushroomButton : HslScada.Controls_Net45.MushroomButton
     {
-        
+
         #region PLC Properties
 
 
@@ -270,7 +270,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-          
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled)
             {
                 try

@@ -12,7 +12,7 @@ namespace HslScada.Controls_Binding.Thermometer
     public class HMIThermometer2 : HslScada.Controls_Net45.Thermometer2
     {
 
- 
+
         private string OriginalText;
 
         #region propartas

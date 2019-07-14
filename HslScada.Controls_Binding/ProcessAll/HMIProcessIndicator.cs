@@ -5,15 +5,11 @@ using HslScada.Controls_Binding.Enum;
 using HslScada.Controls_Binding.ProcessAll.DrawAll;
 using HslScada.Controls_Net45;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HslScada.Controls_Binding.ProcessAll
@@ -1604,7 +1600,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                             goto Label0;
                         }
                     }
-                    Label2:
+                Label2:
                     float int91 = (float)((double)(this._IndicatorSize + this._IndicatorGap) * this.double_0);
                     if (!this._Vertical)
                     {
@@ -1657,7 +1653,7 @@ namespace HslScada.Controls_Binding.ProcessAll
                             num++;
                         }
                     }
-                    Label0:
+                Label0:
                     if (this._BorderShape != DAS_BorderStyle.BS_RoundRect)
                     {
                         System.Drawing.Region region = new System.Drawing.Region(base.ClientRectangle);

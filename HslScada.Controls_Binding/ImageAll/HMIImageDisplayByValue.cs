@@ -1,7 +1,6 @@
 ﻿using AdvancedScada.DriverBase;
 using HslScada.Controls_Binding.DialogEditor;
 using HslScada.Controls_Net45;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -10,11 +9,11 @@ using System.Drawing.Design;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
-namespace HslScada.Controls_Binding.Image
+namespace HslScada.Controls_Binding.ImageAll
 {
     public class HMIImageDisplayByValue : HslScada.Controls_Net45.ImageDisplayByValue
     {
-        
+
         #region Basic Properties
 
         private Color SavedBackColor;

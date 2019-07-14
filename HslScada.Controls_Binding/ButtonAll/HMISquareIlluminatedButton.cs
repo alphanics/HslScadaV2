@@ -7,15 +7,15 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace HslScada.Controls_Binding.Button
+namespace HslScada.Controls_Binding.ButtonAll
 {
     public class HMISquareIlluminatedButton : HslScada.Controls_Net45.SquareIlluminatedButton
     {
- 
+
 
         private OutputType m_OutputType;
 
-       
+
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;
         private int m_MinimumHoldTime = 500;
@@ -225,7 +225,7 @@ namespace HslScada.Controls_Binding.Button
         {
             base.OnMouseDown(e);
 
-           
+
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled && PLCAddressClick != null)
             {
                 try
@@ -269,7 +269,7 @@ namespace HslScada.Controls_Binding.Button
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-           
+
             this.Invalidate();
             if (!string.IsNullOrWhiteSpace(m_PLCAddressClick) & Enabled)
             {
@@ -308,7 +308,7 @@ namespace HslScada.Controls_Binding.Button
             get { return m_Value; }
             set
             {
-                
+
 
                 if (m_Value != value)
                 {
