@@ -7,7 +7,7 @@ Imports System.Xml
 Public Class ListViewDesignerForm
 #Region "Properties"
     Private inicls As iniClass = New iniClass()
-    Public Property ControlToEdit As DataSubscriberlistView
+    Public Property ControlToEdit As AlarmMan
 
     Private Sub BtnOK_Click(sender As Object, e As EventArgs) Handles BtnOK.Click
         Try

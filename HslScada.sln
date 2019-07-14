@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryImagesAPP", "Library
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForm", "WinForm", "{DEA9333A-5652-41F5-863E-13DA0C93E6D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls_Binding", "HslScada.Controls_Binding\Controls_Binding.csproj", "{593D94F6-E928-4F50-B40B-CFCAA79FCB65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,10 @@ Global
 		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A1BE896-63D8-4BC4-BECC-2209446E2939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{593D94F6-E928-4F50-B40B-CFCAA79FCB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{593D94F6-E928-4F50-B40B-CFCAA79FCB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{593D94F6-E928-4F50-B40B-CFCAA79FCB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{593D94F6-E928-4F50-B40B-CFCAA79FCB65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +153,7 @@ Global
 		{B1BDA788-9E6C-4561-991B-D9E69B227131} = {90A9BE0E-8B2F-4D01-AE2B-23F86332BBF3}
 		{2A1BE896-63D8-4BC4-BECC-2209446E2939} = {90A9BE0E-8B2F-4D01-AE2B-23F86332BBF3}
 		{DEA9333A-5652-41F5-863E-13DA0C93E6D1} = {E7C7AC43-A5DC-4CA6-A9B3-286597E30464}
+		{593D94F6-E928-4F50-B40B-CFCAA79FCB65} = {56C1D13A-575A-413E-A56F-6EB37E978ECF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C9F8F60-8BEB-4669-AAB0-02B189B54E22}

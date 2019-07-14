@@ -35,7 +35,7 @@ namespace AdvancedScada.ImagePicker
             return result;
         }
 
-        public MainView()
+        public MainView(Image imageName=null)
         {
             InitializeComponent();
 

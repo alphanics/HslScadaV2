@@ -13,7 +13,7 @@ namespace AdvancedScada.HMI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm.MainForm());
+            Application.Run(new Form1());
         }
     }
 }

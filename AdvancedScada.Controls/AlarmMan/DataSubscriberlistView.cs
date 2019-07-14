@@ -16,7 +16,7 @@ using System.Xml.Linq;
 namespace AdvancedScada.Controls.AlarmMan
 {
     [DefaultEvent("DataChanged")]
-    public class DataSubscriberlistView : HslScada.Controls_Net45.DataSubscriberlistView
+    public class DataSubscriberlistView : HslScada.Controls_Net45.AlarmMan
     {
         private bool InstanceFieldsInitialized = false;
 
@@ -78,78 +78,83 @@ namespace AdvancedScada.Controls.AlarmMan
 
                 }
             }
-        }
-        private void DataSubscriberlistView_DataChanged(string senderPlcAddress, PlcComEventArgs e)
-        {
-            string LastValue = string.Empty;
-            if (e.PlcAddress == senderPlcAddress)
+            else
             {
-                string[] row0 = { e.PlcAddress, e.Values[0], DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") };
-
-                if (e.Values[0] != LastValue)
-                {
-                    LastValue = e.Values[0];
-                    //* Do something here for the value changed
-                    if (LastValue == "True")
-                    {
-                        bool flag = false;
-                        foreach (ListViewItem listViewItem in this.Items)
-                        {
-                            if (listViewItem.Text == row0[0] && listViewItem.SubItems[2].Text.Substring(14, 2) == row0[2].Substring(14, 2))
-                            {
-                                listViewItem.ForeColor = Color.Red;
-                                if (listViewItem.SubItems[1].Text != row0[1])
-                                {
-                                    listViewItem.SubItems[1].Text = row0[1];
-                                }
-                                if (listViewItem.SubItems[2].Text != row0[2])
-                                {
-                                    listViewItem.SubItems[2].Text = row0[2];
-                                }
-
-                                flag = true;
-                                break;
-                            }
-                        }
-                        if (!flag)
-                        {
-                            ListViewItem item = new ListViewItem(row0);
-                            item.ForeColor = Color.Red;
-                            this.Items.Insert(0, item);
-                        }
-                    }
-                    else if (LastValue == "False")
-                    {
-                        string[] row1 = { e.PlcAddress, e.Values[0], DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") };
-
-                        bool flag = false;
-                        foreach (ListViewItem listViewItem in this.Items)
-                        {
-                            if (listViewItem.Text == row0[0] && listViewItem.SubItems[2].Text.Substring(14, 2) == row0[2].Substring(14, 2))
-                            {
-                                listViewItem.ForeColor = Color.Green;
-                                if (listViewItem.SubItems[1].Text != row1[1])
-                                {
-                                    listViewItem.SubItems[1].Text = row1[1];
-                                }
-                                if (listViewItem.SubItems[2].Text != row1[2])
-                                {
-                                    listViewItem.SubItems[2].Text = row1[2];
-                                }
-                                flag = true;
-                                break;
-                            }
-                        }
-                        if (!flag)
-                        {
-                            ListViewItem item = new ListViewItem(row1);
-                            item.ForeColor = Color.Green;
-                            this.Items.Insert(0, item);
-                        }
-                    }
-                }
+                this.Items.Clear();
+                SubscribeToComDriver();
             }
         }
+        //private void DataSubscriberlistView_DataChanged(string senderPlcAddress, PlcComEventArgs e)
+        //{
+        //    string LastValue = string.Empty;
+        //    if (e.PlcAddress == senderPlcAddress)
+        //    {
+        //        string[] row0 = { e.PlcAddress, e.Values[0], DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") };
+
+        //        if (e.Values[0] != LastValue)
+        //        {
+        //            LastValue = e.Values[0];
+        //            //* Do something here for the value changed
+        //            if (LastValue == "True")
+        //            {
+        //                bool flag = false;
+        //                foreach (ListViewItem listViewItem in this.Items)
+        //                {
+        //                    if (listViewItem.Text == row0[0] && listViewItem.SubItems[2].Text.Substring(14, 2) == row0[2].Substring(14, 2))
+        //                    {
+        //                        listViewItem.ForeColor = Color.Red;
+        //                        if (listViewItem.SubItems[1].Text != row0[1])
+        //                        {
+        //                            listViewItem.SubItems[1].Text = row0[1];
+        //                        }
+        //                        if (listViewItem.SubItems[2].Text != row0[2])
+        //                        {
+        //                            listViewItem.SubItems[2].Text = row0[2];
+        //                        }
+
+        //                        flag = true;
+        //                        break;
+        //                    }
+        //                }
+        //                if (!flag)
+        //                {
+        //                    ListViewItem item = new ListViewItem(row0);
+        //                    item.ForeColor = Color.Red;
+        //                    this.Items.Insert(0, item);
+        //                }
+        //            }
+        //            else if (LastValue == "False")
+        //            {
+        //                string[] row1 = { e.PlcAddress, e.Values[0], DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") };
+
+        //                bool flag = false;
+        //                foreach (ListViewItem listViewItem in this.Items)
+        //                {
+        //                    if (listViewItem.Text == row0[0] && listViewItem.SubItems[2].Text.Substring(14, 2) == row0[2].Substring(14, 2))
+        //                    {
+        //                        listViewItem.ForeColor = Color.Green;
+        //                        if (listViewItem.SubItems[1].Text != row1[1])
+        //                        {
+        //                            listViewItem.SubItems[1].Text = row1[1];
+        //                        }
+        //                        if (listViewItem.SubItems[2].Text != row1[2])
+        //                        {
+        //                            listViewItem.SubItems[2].Text = row1[2];
+        //                        }
+        //                        flag = true;
+        //                        break;
+        //                    }
+        //                }
+        //                if (!flag)
+        //                {
+        //                    ListViewItem item = new ListViewItem(row1);
+        //                    item.ForeColor = Color.Green;
+        //                    this.Items.Insert(0, item);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         //**************************************************
         //* Its purpose is to fetch
@@ -419,7 +424,7 @@ namespace AdvancedScada.Controls.AlarmMan
                             m_PLCAddressValueItems[index].LastValue = e.Values[0];
                             if (!DesignMode)
                             {
-                                DataSubscriberlistView_DataChanged(m_PLCAddressValueItems[index].PLCAddress, e);
+                                AlarmMan_DataChanged(m_PLCAddressValueItems[index].PLCAddress, e);
 
                             }
 

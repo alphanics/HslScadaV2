@@ -24,7 +24,7 @@ namespace AdvancedScada.Controls.Alarm
     [CallbackBehavior]
     [DefaultEvent("DataChanged")]
    
-    public class HMIAlarmMan : DataSubscriberlistView, IServiceCallback
+    public class HMIAlarmMan : HslScada.Controls_Net45.AlarmMan, IServiceCallback
     {
         private string ChannelTypes;
 

@@ -67,7 +67,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlarmMan\DataSubscriberlistView.vb">
+    <Compile Include="AlarmMan\AlarmMan.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AlarmMan\Designers\iniClass.vb" />
@@ -553,6 +553,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DigitalPanelMeterR1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Drivers\AdvancedScada.DriverBase\DriverBase.csproj">
+      <Project>{0c4043a0-522d-456f-82c3-d086bd07ee27}</Project>
+      <Name>DriverBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
