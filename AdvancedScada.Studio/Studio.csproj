@@ -510,10 +510,6 @@
       <Project>{5931d911-82c4-4c91-a32d-94d3dc870156}</Project>
       <Name>ImagePicker</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Drivers\AdvancedScada.DriverBase\DriverBase.csproj">
-      <Project>{0c4043a0-522d-456f-82c3-d086bd07ee27}</Project>
-      <Name>DriverBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AdvancedScada.Management\Management.csproj">
       <Project>{a6981d28-2360-4212-8eef-f78c117eb615}</Project>
       <Name>Management</Name>
@@ -521,6 +517,10 @@
     <ProjectReference Include="..\AdvancedScada.Utils\Utils.csproj">
       <Project>{6892b89e-2cc0-4f7d-95d1-beaa1a21c607}</Project>
       <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Drivers\AdvancedScada.DriverBase\DriverBase.csproj">
+      <Project>{0c4043a0-522d-456f-82c3-d086bd07ee27}</Project>
+      <Name>DriverBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\Drivers\AdvancedScada.IODriver\IODriver.csproj">
       <Project>{09B71D40-9C34-44F8-BC1B-1B3380EAD582}</Project>

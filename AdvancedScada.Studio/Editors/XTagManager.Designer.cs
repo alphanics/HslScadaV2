@@ -33,35 +33,6 @@
             this.TagDockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.vGridDataBlock = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.category = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.row = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.row1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.row2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.row3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.row4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.row5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.vGridDevice = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.catDevice = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.colDeviceName = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colSlaveId = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colDeviceDesp = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.vGridChannel = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.catChannel = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.colConnectionType = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colChannelName = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colDescription2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.vGridSerialPort = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.catSerialPort = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.colPortName = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colBaudRate = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colDataBits = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colStopBits = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colDescription3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.vGridEthernet = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.catEthernet = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.colIPAddress = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colPort = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.colChannel = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -100,14 +71,12 @@
             this.RItemPaste = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.popupMenuRight = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.PvGridChannel = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.PvGridDevice = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.PvGridDataBlock = new DevExpress.XtraVerticalGrid.PropertyGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.TagDockManager)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridDataBlock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridDevice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridChannel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridSerialPort)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridEthernet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
@@ -117,6 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridChannel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDevice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDataBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // TagDockManager
@@ -137,298 +109,32 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("00e97bd8-5c99-4031-8104-2370694232c7");
-            this.dockPanel1.Location = new System.Drawing.Point(823, 31);
+            this.dockPanel1.Location = new System.Drawing.Point(823, 26);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(219, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(219, 594);
+            this.dockPanel1.Size = new System.Drawing.Size(219, 599);
             this.dockPanel1.Text = "Properties";
             // 
             // dockPanel1_Container
             // 
-            this.dockPanel1_Container.Controls.Add(this.vGridDataBlock);
-            this.dockPanel1_Container.Controls.Add(this.vGridDevice);
-            this.dockPanel1_Container.Controls.Add(this.vGridChannel);
-            this.dockPanel1_Container.Controls.Add(this.vGridSerialPort);
-            this.dockPanel1_Container.Controls.Add(this.vGridEthernet);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(5, 23);
+            this.dockPanel1_Container.Controls.Add(this.PvGridDataBlock);
+            this.dockPanel1_Container.Controls.Add(this.PvGridDevice);
+            this.dockPanel1_Container.Controls.Add(this.PvGridChannel);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 29);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(210, 567);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(212, 567);
             this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // vGridDataBlock
-            // 
-            this.vGridDataBlock.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.vGridDataBlock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridDataBlock.Location = new System.Drawing.Point(0, 404);
-            this.vGridDataBlock.Name = "vGridDataBlock";
-            this.vGridDataBlock.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.category,
-            this.row,
-            this.row1,
-            this.row2,
-            this.row3,
-            this.row4,
-            this.row5});
-            this.vGridDataBlock.Size = new System.Drawing.Size(210, 163);
-            this.vGridDataBlock.TabIndex = 32;
-            this.vGridDataBlock.TreeButtonStyle = DevExpress.XtraVerticalGrid.TreeButtonStyle.ExplorerBar;
-            // 
-            // category
-            // 
-            this.category.Height = 18;
-            this.category.Name = "category";
-            this.category.Properties.Caption = "DataBlock";
-            // 
-            // row
-            // 
-            this.row.Appearance.Options.UseTextOptions = true;
-            this.row.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.row.Name = "row";
-            this.row.Properties.Caption = "Description";
-            this.row.Properties.FieldName = "Description";
-            // 
-            // row1
-            // 
-            this.row1.Appearance.Options.UseTextOptions = true;
-            this.row1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.row1.Name = "row1";
-            this.row1.Properties.Caption = "DataType";
-            this.row1.Properties.FieldName = "DataType";
-            // 
-            // row2
-            // 
-            this.row2.Appearance.Options.UseTextOptions = true;
-            this.row2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.row2.Name = "row2";
-            this.row2.Properties.Caption = "AddressLength";
-            this.row2.Properties.FieldName = "Length";
-            // 
-            // row3
-            // 
-            this.row3.Appearance.Options.UseTextOptions = true;
-            this.row3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.row3.Name = "row3";
-            this.row3.Properties.Caption = "StartAddress";
-            this.row3.Properties.FieldName = "StartAddress";
-            // 
-            // row4
-            // 
-            this.row4.Appearance.Options.UseTextOptions = true;
-            this.row4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.row4.Name = "row4";
-            this.row4.Properties.Caption = "DataBlockName";
-            this.row4.Properties.FieldName = "DataBlockName";
-            // 
-            // row5
-            // 
-            this.row5.Appearance.Options.UseTextOptions = true;
-            this.row5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.row5.Name = "row5";
-            this.row5.Properties.Caption = "PrefixName";
-            this.row5.Properties.FieldName = "PrefixName";
-            // 
-            // vGridDevice
-            // 
-            this.vGridDevice.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.vGridDevice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridDevice.Location = new System.Drawing.Point(0, 326);
-            this.vGridDevice.Name = "vGridDevice";
-            this.vGridDevice.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.catDevice,
-            this.colDeviceName,
-            this.colSlaveId,
-            this.colDeviceDesp});
-            this.vGridDevice.Size = new System.Drawing.Size(210, 78);
-            this.vGridDevice.TabIndex = 33;
-            // 
-            // catDevice
-            // 
-            this.catDevice.Height = 18;
-            this.catDevice.Name = "catDevice";
-            this.catDevice.Properties.Caption = "DeviceName";
-            // 
-            // colDeviceName
-            // 
-            this.colDeviceName.Appearance.Options.UseTextOptions = true;
-            this.colDeviceName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDeviceName.Height = 17;
-            this.colDeviceName.Name = "colDeviceName";
-            this.colDeviceName.Properties.Caption = "DeviceName";
-            this.colDeviceName.Properties.FieldName = "DeviceName";
-            // 
-            // colSlaveId
-            // 
-            this.colSlaveId.Appearance.Options.UseTextOptions = true;
-            this.colSlaveId.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSlaveId.Name = "colSlaveId";
-            this.colSlaveId.Properties.Caption = "SlaveId";
-            this.colSlaveId.Properties.FieldName = "SlaveId";
-            // 
-            // colDeviceDesp
-            // 
-            this.colDeviceDesp.Appearance.Options.UseTextOptions = true;
-            this.colDeviceDesp.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDeviceDesp.Height = 14;
-            this.colDeviceDesp.Name = "colDeviceDesp";
-            this.colDeviceDesp.Properties.Caption = "Description";
-            this.colDeviceDesp.Properties.FieldName = "Description";
-            // 
-            // vGridChannel
-            // 
-            this.vGridChannel.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.vGridChannel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridChannel.Location = new System.Drawing.Point(0, 223);
-            this.vGridChannel.Name = "vGridChannel";
-            this.vGridChannel.RowHeaderWidth = 98;
-            this.vGridChannel.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.catChannel,
-            this.colConnectionType,
-            this.colChannelName,
-            this.colDescription2});
-            this.vGridChannel.Size = new System.Drawing.Size(210, 103);
-            this.vGridChannel.TabIndex = 34;
-            // 
-            // catChannel
-            // 
-            this.catChannel.Height = 18;
-            this.catChannel.Name = "catChannel";
-            this.catChannel.Properties.Caption = "Channel";
-            // 
-            // colConnectionType
-            // 
-            this.colConnectionType.Appearance.Options.UseTextOptions = true;
-            this.colConnectionType.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colConnectionType.Height = 16;
-            this.colConnectionType.Name = "colConnectionType";
-            this.colConnectionType.Properties.Caption = "ConnectionType";
-            this.colConnectionType.Properties.FieldName = "ConnectionType";
-            // 
-            // colChannelName
-            // 
-            this.colChannelName.Appearance.Options.UseTextOptions = true;
-            this.colChannelName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colChannelName.Name = "colChannelName";
-            this.colChannelName.Properties.Caption = "ChannelName";
-            this.colChannelName.Properties.FieldName = "ChannelName";
-            // 
-            // colDescription2
-            // 
-            this.colDescription2.Appearance.Options.UseTextOptions = true;
-            this.colDescription2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDescription2.Name = "colDescription2";
-            this.colDescription2.Properties.Caption = "Description";
-            this.colDescription2.Properties.FieldName = "Description";
-            // 
-            // vGridSerialPort
-            // 
-            this.vGridSerialPort.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vGridSerialPort.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridSerialPort.Location = new System.Drawing.Point(0, 84);
-            this.vGridSerialPort.Name = "vGridSerialPort";
-            this.vGridSerialPort.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.catSerialPort,
-            this.colPortName,
-            this.colBaudRate,
-            this.colDataBits,
-            this.colStopBits,
-            this.colDescription3});
-            this.vGridSerialPort.Size = new System.Drawing.Size(210, 139);
-            this.vGridSerialPort.TabIndex = 31;
-            // 
-            // catSerialPort
-            // 
-            this.catSerialPort.Name = "catSerialPort";
-            this.catSerialPort.Properties.Caption = "SerialPort";
-            // 
-            // colPortName
-            // 
-            this.colPortName.Appearance.Options.UseTextOptions = true;
-            this.colPortName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPortName.Name = "colPortName";
-            this.colPortName.Properties.Caption = "PortName:";
-            this.colPortName.Properties.FieldName = "PortName";
-            // 
-            // colBaudRate
-            // 
-            this.colBaudRate.Appearance.Options.UseTextOptions = true;
-            this.colBaudRate.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBaudRate.Name = "colBaudRate";
-            this.colBaudRate.Properties.Caption = "BaudRate:";
-            this.colBaudRate.Properties.FieldName = "BaudRate";
-            // 
-            // colDataBits
-            // 
-            this.colDataBits.Appearance.Options.UseTextOptions = true;
-            this.colDataBits.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDataBits.Name = "colDataBits";
-            this.colDataBits.Properties.Caption = "DataBits:";
-            this.colDataBits.Properties.FieldName = "DataBits";
-            // 
-            // colStopBits
-            // 
-            this.colStopBits.Appearance.Options.UseTextOptions = true;
-            this.colStopBits.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colStopBits.Name = "colStopBits";
-            this.colStopBits.Properties.Caption = "StopBits";
-            this.colStopBits.Properties.FieldName = "StopBits";
-            // 
-            // colDescription3
-            // 
-            this.colDescription3.Appearance.Options.UseTextOptions = true;
-            this.colDescription3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDescription3.Name = "colDescription3";
-            this.colDescription3.Properties.Caption = "Description";
-            this.colDescription3.Properties.FieldName = "Description";
-            // 
-            // vGridEthernet
-            // 
-            this.vGridEthernet.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.vGridEthernet.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridEthernet.Location = new System.Drawing.Point(0, 0);
-            this.vGridEthernet.Name = "vGridEthernet";
-            this.vGridEthernet.OptionsView.AllowGlyphSkinning = true;
-            this.vGridEthernet.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.catEthernet,
-            this.colIPAddress,
-            this.colPort});
-            this.vGridEthernet.Size = new System.Drawing.Size(210, 84);
-            this.vGridEthernet.TabIndex = 30;
-            this.vGridEthernet.TreeButtonStyle = DevExpress.XtraVerticalGrid.TreeButtonStyle.TreeView;
-            // 
-            // catEthernet
-            // 
-            this.catEthernet.Height = 18;
-            this.catEthernet.Name = "catEthernet";
-            this.catEthernet.Properties.Caption = "Ethernet";
-            // 
-            // colIPAddress
-            // 
-            this.colIPAddress.Appearance.Options.UseTextOptions = true;
-            this.colIPAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colIPAddress.Height = 17;
-            this.colIPAddress.Name = "colIPAddress";
-            this.colIPAddress.Properties.Caption = "IPAddress:";
-            this.colIPAddress.Properties.FieldName = "IPAddress";
-            // 
-            // colPort
-            // 
-            this.colPort.Appearance.Options.UseTextOptions = true;
-            this.colPort.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPort.Height = 17;
-            this.colPort.Name = "colPort";
-            this.colPort.Properties.Caption = "Port:";
-            this.colPort.Properties.FieldName = "Port";
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 31);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 26);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.treeList1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(823, 594);
+            this.splitContainerControl1.Size = new System.Drawing.Size(823, 599);
             this.splitContainerControl1.SplitterPosition = 195;
             this.splitContainerControl1.TabIndex = 27;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -440,7 +146,7 @@
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeList1.Location = new System.Drawing.Point(0, 0);
             this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(195, 594);
+            this.treeList1.Size = new System.Drawing.Size(195, 599);
             this.treeList1.StateImageList = this.imageList1;
             this.treeList1.TabIndex = 1;
             this.treeList1.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeList1_FocusedNodeChanged);
@@ -479,7 +185,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(623, 594);
+            this.gridControl1.Size = new System.Drawing.Size(622, 599);
             this.gridControl1.TabIndex = 23;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -593,9 +299,9 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
             this.barDockControlLeft.Manager = null;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 594);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 599);
             // 
             // popupMenuLeft
             // 
@@ -762,7 +468,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1042, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(1042, 26);
             // 
             // barDockControlBottom
             // 
@@ -776,17 +482,17 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 31);
+            this.barDockControl1.Location = new System.Drawing.Point(0, 26);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 594);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 599);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1042, 31);
+            this.barDockControlRight.Location = new System.Drawing.Point(1042, 26);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 594);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 599);
             // 
             // mDeleteTag
             // 
@@ -847,6 +553,31 @@
             this.popupMenuRight.Manager = this.barManager1;
             this.popupMenuRight.Name = "popupMenuRight";
             // 
+            // PvGridChannel
+            // 
+            this.PvGridChannel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PvGridChannel.Location = new System.Drawing.Point(0, 0);
+            this.PvGridChannel.Name = "PvGridChannel";
+            this.PvGridChannel.Size = new System.Drawing.Size(212, 241);
+            this.PvGridChannel.TabIndex = 24;
+            // 
+            // PvGridDevice
+            // 
+            this.PvGridDevice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PvGridDevice.Location = new System.Drawing.Point(0, 241);
+            this.PvGridDevice.Name = "PvGridDevice";
+            this.PvGridDevice.Size = new System.Drawing.Size(212, 110);
+            this.PvGridDevice.TabIndex = 34;
+            // 
+            // PvGridDataBlock
+            // 
+            this.PvGridDataBlock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PvGridDataBlock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PvGridDataBlock.Location = new System.Drawing.Point(0, 351);
+            this.PvGridDataBlock.Name = "PvGridDataBlock";
+            this.PvGridDataBlock.Size = new System.Drawing.Size(212, 216);
+            this.PvGridDataBlock.TabIndex = 35;
+            // 
             // XTagManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,11 +597,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.TagDockManager)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vGridDataBlock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridDevice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridChannel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridSerialPort)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridEthernet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
@@ -880,6 +606,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridChannel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDevice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDataBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -901,35 +630,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDataType;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
         internal DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridDataBlock;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow category;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row1;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row2;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row3;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row4;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow row5;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridDevice;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow catDevice;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDeviceName;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colSlaveId;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDeviceDesp;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridChannel;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow catChannel;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colConnectionType;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colChannelName;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDescription2;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridSerialPort;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow catSerialPort;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colPortName;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colBaudRate;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDataBits;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colStopBits;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDescription3;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridEthernet;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow catEthernet;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colIPAddress;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colPort;
         private System.Windows.Forms.ImageList imageList1;
         private DevExpress.XtraBars.PopupMenu popupMenuLeft;
         private DevExpress.Utils.ImageCollection imageCollection1;
@@ -957,5 +657,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonNew;
         private DevExpress.XtraBars.BarButtonItem barButtonOpen;
         private DevExpress.XtraBars.BarButtonItem barButtonSave;
+        private DevExpress.XtraVerticalGrid.PropertyGridControl PvGridChannel;
+        private DevExpress.XtraVerticalGrid.PropertyGridControl PvGridDataBlock;
+        private DevExpress.XtraVerticalGrid.PropertyGridControl PvGridDevice;
     }
 }

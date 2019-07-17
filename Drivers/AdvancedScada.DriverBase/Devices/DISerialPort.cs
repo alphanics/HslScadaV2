@@ -8,13 +8,13 @@ namespace AdvancedScada.DriverBase.Devices
 {
     [Serializable]
     public sealed class DISerialPort : Channel
-    { 
+    {
         public DISerialPort()
         {
             ConnectionType = "SerialPort";
         }
 
-         
+
         public DISerialPort(int channelId, string channelName, string md,
             string connType = "SerialPort")
         {

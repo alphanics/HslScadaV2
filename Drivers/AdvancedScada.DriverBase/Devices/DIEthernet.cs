@@ -20,7 +20,7 @@ namespace AdvancedScada.DriverBase.Devices
             ConnectionType = "Ethernet";
         }
 
-     
+
         public DIEthernet(int channelId, string channelName, string md, string ip, short port = 102, string desc = null,
             string connType = "Ethernet")
             : this()

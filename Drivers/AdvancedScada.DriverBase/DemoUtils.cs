@@ -5,12 +5,12 @@ namespace AdvancedScada.DriverBase
 {
     public class DemoUtils
     {
-        
+
         public static void ReadResultRender<T>(OperateResult<T> result, string address, string textBox)
         {
             if (result.IsSuccess)
             {
-                textBox=(DateTime.Now.ToString("[HH:mm:ss] ") + $"[{address}] {result.Content}{Environment.NewLine}");
+                textBox = (DateTime.Now.ToString("[HH:mm:ss] ") + $"[{address}] {result.Content}{Environment.NewLine}");
             }
             else
             {
@@ -18,7 +18,7 @@ namespace AdvancedScada.DriverBase
             }
         }
 
-       
+
         public static void WriteResultRender(OperateResult result, string address)
         {
             if (result.IsSuccess)
@@ -31,7 +31,7 @@ namespace AdvancedScada.DriverBase
             }
         }
 
-        
+
         public static void WriteResultRender(Func<OperateResult> write, string address)
         {
             try
@@ -58,17 +58,17 @@ namespace AdvancedScada.DriverBase
             byte[] resultDate = null;
             try
             {
-              
+
                 OperateResult<byte[]> read = readWrite.Read(address, length);
                 if (read.IsSuccess)
                 {
-                    resultDate= read.Content;
+                    resultDate = read.Content;
                 }
                 else
                 {
-                    
+
                 }
-               
+
             }
             catch (Exception ex)
             {

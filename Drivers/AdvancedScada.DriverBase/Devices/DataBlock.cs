@@ -11,13 +11,13 @@ namespace AdvancedScada.DriverBase.Devices
     [DataContract]
     public class DataBlock
     {
-        
+
         public DataBlock()
         {
             Tags = new List<Tag>();
         }
 
-        
+
         public DataBlock(int chId, int dvId, int dbId, string dbName, string typeOfRead, ushort startAddr, ushort length, string dType, string desp)
             : this()
         {
@@ -60,7 +60,7 @@ namespace AdvancedScada.DriverBase.Devices
         [Browsable(true)]
         [Category("DataBlock")]
         public string DataBlockName { get; set; }
- 
+
         [Category("DataBlock")]
         [DataMember]
         [Display(Name = "DataBlockId", Order = 1)]

@@ -4,7 +4,7 @@ namespace AdvancedScada.DriverBase
     public interface IDriverAdapter
     {
         bool IsConnected { get; set; }
-      
+
         void Connection();
 
         void Disconnection();
@@ -16,7 +16,7 @@ namespace AdvancedScada.DriverBase
         TValue[] Read<TValue>(string address, ushort length);
 
         OperateResult<bool[]> ReadDiscrete(string address, ushort length);
-        bool  Write(string address, dynamic value);
+        bool Write(string address, dynamic value);
 
     }
 }

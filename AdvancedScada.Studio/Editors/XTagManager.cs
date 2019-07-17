@@ -19,11 +19,8 @@ namespace AdvancedScada.Studio.Editors
     public partial class XTagManager : XtraForm
     {
         private string _lblValueInfo = string.Empty;
-        private List<Channel> bChannelEthernet;
-        private List<DIEthernet> bDIEthernet;
-        private List<DISerialPort> bDISerialPort;
+      
         private BindingList<Tag> bS7Tags;
-        private List<DataBlock> bvDataBlock;
         private List<Device> bvDevice;
         public bool IsDataChanged;
         private ChannelService objChannelManager;
@@ -202,27 +199,14 @@ namespace AdvancedScada.Studio.Editors
                         switch (chCurrent.ConnectionType)
                         {
                             case "SerialPort":
-                                vGridSerialPort.Visible = true;
-                                bChannelEthernet = new List<Channel>();
-                                bDISerialPort = new List<DISerialPort>();
+                                
                                 var dis = (DISerialPort)chCurrent;
-                                bChannelEthernet.Add(chCurrent);
-                                bDISerialPort.Add(dis);
-                                vGridSerialPort.DataSource = bDISerialPort;
-                                vGridChannel.DataSource = bChannelEthernet;
-                                vGridEthernet.Visible = false;
+                                PvGridChannel.SelectedObject = dis;
                                 break;
                             case "Ethernet":
-                                vGridEthernet.Visible = true;
-                                bChannelEthernet = new List<Channel>();
-                                bDIEthernet = new List<DIEthernet>();
+                             
                                 var die = (DIEthernet)chCurrent;
-                                bChannelEthernet.Add(chCurrent);
-                                bDIEthernet.Add(die);
-                                vGridEthernet.DataSource = bDIEthernet;
-                                vGridChannel.DataSource = bChannelEthernet;
-                                vGridSerialPort.Visible = false;
-
+                                PvGridChannel.SelectedObject = die;
                                 break;
                         }
 
@@ -231,8 +215,8 @@ namespace AdvancedScada.Studio.Editors
                         bvDevice = new List<Device>();
                         chCurrent = objChannelManager.GetByChannelName(treeList1.FocusedNode.ParentNode.GetDisplayText(0));
                         dvCurrent = objDeviceManager.GetByDeviceName(chCurrent, treeList1.FocusedNode.GetDisplayText(0));
-                        bvDevice.Add(dvCurrent);
-                        vGridDevice.DataSource = bvDevice;
+                        PvGridDevice.SelectedObject = dvCurrent;
+                      
                         break;
                     case 2:
                         var dbNode = SelectebNodes[0]; // Node:DataBlock
@@ -249,10 +233,7 @@ namespace AdvancedScada.Studio.Editors
                         dvCurrent = objDeviceManager.GetByDeviceName(chCurrent, DeviceName);
                         dbCurrent = objDataBlockManager.GetByDataBlockName(dvCurrent, DataBlockName);
 
-                        bvDataBlock = new List<DataBlock>();
-                        bvDataBlock.Add(dbCurrent);
-                        vGridDataBlock.DataSource = bvDataBlock;
-
+                        PvGridDataBlock.SelectedObject = dbCurrent;
 
                         bS7Tags = new BindingList<Tag>(dbCurrent.Tags);
                         gridControl1.DataSource = bS7Tags;

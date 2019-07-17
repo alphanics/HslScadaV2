@@ -33,7 +33,7 @@ namespace AdvancedScada.DriverBase.Devices
         private bool m_ValueSelect2;
         public EventValueChanged ValueChanged = null;
 
-      
+
         public Tag()
         {
         }
@@ -79,7 +79,7 @@ namespace AdvancedScada.DriverBase.Devices
         [DataMember]
         public string DataType { get; set; }
 
-       
+
         [DataMember]
         public dynamic Value
         {
@@ -96,11 +96,11 @@ namespace AdvancedScada.DriverBase.Devices
         [DataMember]
         public string Address { get; set; }
 
-       
+
         [DataMember]
         public string TagName { get; set; }
 
-       
+
         [DataMember]
         public int TagId { get; set; }
 
@@ -160,42 +160,42 @@ namespace AdvancedScada.DriverBase.Devices
             if (ValueChanged != null) ValueChanged(Value);
         }
 
-       
+
         public float RLmin
         {
             get { return _RLmin; }
             set { _RLmin = value; }
         }
 
-       
+
         public float RLmax
         {
             get { return _RLmax; }
             set { _RLmax = value; }
         }
 
-       
+
         public ushort AIcurrent
         {
             get { return _AIcurrent; }
             set { _AIcurrent = value; }
         }
 
-        
+
         public ushort AImin
         {
             get { return _AImin; }
             set { _AImin = value; }
         }
 
-       
+
         public ushort AImax
         {
             get { return _AImax; }
             set { _AImax = value; }
         }
 
-       
+
         public bool IsScaled
         {
             get { return _IsScaled; }

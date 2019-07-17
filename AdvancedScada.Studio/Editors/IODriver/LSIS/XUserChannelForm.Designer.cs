@@ -83,7 +83,6 @@
             // 
             // TabControlLSIS
             // 
-            this.TabControlLSIS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlLSIS.Location = new System.Drawing.Point(0, 0);
             this.TabControlLSIS.Name = "TabControlLSIS";
             this.TabControlLSIS.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Center;
@@ -99,7 +98,7 @@
             // 
             this.tabPageChannel.Controls.Add(this.groupBox1);
             this.tabPageChannel.Name = "tabPageChannel";
-            this.tabPageChannel.Size = new System.Drawing.Size(432, 241);
+            this.tabPageChannel.Size = new System.Drawing.Size(434, 243);
             this.tabPageChannel.Text = "Channel";
             // 
             // groupBox1
@@ -219,7 +218,7 @@
             // 
             this.tabPageEthernet.Controls.Add(this.gpDIEChannel);
             this.tabPageEthernet.Name = "tabPageEthernet";
-            this.tabPageEthernet.Size = new System.Drawing.Size(432, 263);
+            this.tabPageEthernet.Size = new System.Drawing.Size(434, 243);
             this.tabPageEthernet.Text = "Ethernet";
             // 
             // gpDIEChannel
@@ -320,7 +319,7 @@
             this.tabPageSerialPort.Controls.Add(this.label1);
             this.tabPageSerialPort.Controls.Add(this.groupBox2);
             this.tabPageSerialPort.Name = "tabPageSerialPort";
-            this.tabPageSerialPort.Size = new System.Drawing.Size(432, 263);
+            this.tabPageSerialPort.Size = new System.Drawing.Size(434, 243);
             this.tabPageSerialPort.Text = "SerialPort";
             // 
             // cboxModeSP
@@ -505,7 +504,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.TabControlLSIS);
             this.Name = "XUserChannelForm";
-            this.Size = new System.Drawing.Size(440, 271);
+            this.Size = new System.Drawing.Size(588, 271);
             this.Load += new System.EventHandler(this.XUserChannelForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TabControlLSIS)).EndInit();
             this.TabControlLSIS.ResumeLayout(false);

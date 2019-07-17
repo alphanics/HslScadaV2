@@ -8,7 +8,7 @@ namespace AdvancedScada.DriverBase.Common
 {
     public class Util
     {
-      
+
         public static float Interpolation(short iaCurrent, ushort iaMin, ushort iaMax, float rlMin, float rlMax)
         {
             float result = 0.0f;
@@ -17,7 +17,7 @@ namespace AdvancedScada.DriverBase.Common
             //return result; // Math.Round(result, 1);
         }
 
-       
+
         public static float Interpolation(ushort iaCurrent, ushort iaMin, ushort iaMax, float rlMin, float rlMax)
         {
             float result = 0.0f;

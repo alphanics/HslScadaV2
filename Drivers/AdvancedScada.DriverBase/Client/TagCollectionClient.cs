@@ -9,5 +9,5 @@ namespace AdvancedScada.DriverBase.Client
     {
         public static Dictionary<string, Tag> Tags { get; set; } = new Dictionary<string, Tag>();
     }
-    
+
 }
