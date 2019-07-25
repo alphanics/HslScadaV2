@@ -17,7 +17,7 @@ Namespace My
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.1.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-    Partial Friend NotInheritable Class MySettings
+    Partial Public NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
         
         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
@@ -52,6 +52,126 @@ Namespace My
 #End If
                 Return defaultInstance
             End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("White")>  _
+        Public Property BackGroundBackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("BackGroundBackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("BackGroundBackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Tag Name.Tag Value.Time")>  _
+        Public Property ListViewColumns() As String
+            Get
+                Return CType(Me("ListViewColumns"),String)
+            End Get
+            Set
+                Me("ListViewColumns") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Red")>  _
+        Public Property Button6BackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Button6BackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Button6BackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Yellow")>  _
+        Public Property Button9BackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Button9BackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Button9BackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("128, 128, 255")>  _
+        Public Property Button7BackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Button7BackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Button7BackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("255, 128, 0")>  _
+        Public Property Button8BackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("Button8BackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("Button8BackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ChkAlarmOff() As Boolean
+            Get
+                Return CType(Me("ChkAlarmOff"),Boolean)
+            End Get
+            Set
+                Me("ChkAlarmOff") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ChkAlarmOn() As Boolean
+            Get
+                Return CType(Me("ChkAlarmOn"),Boolean)
+            End Get
+            Set
+                Me("ChkAlarmOn") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ChkAlarmVariation() As Boolean
+            Get
+                Return CType(Me("ChkAlarmVariation"),Boolean)
+            End Get
+            Set
+                Me("ChkAlarmVariation") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property ChkAlarmAck() As Boolean
+            Get
+                Return CType(Me("ChkAlarmAck"),Boolean)
+            End Get
+            Set
+                Me("ChkAlarmAck") = value
+            End Set
         End Property
     End Class
 End Namespace

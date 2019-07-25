@@ -11,14 +11,6 @@ namespace HslScada.Controls_Binding.SelectorSwitch
 {
     public class HMISelectorSwitch : HslScada.Controls_Net45.SelectorSwitch
     {
-        #region تعريفات
-
-
-        private OutputType m_OutputType;
-
-
-        #endregion
-
 
         #region PLC Properties
 

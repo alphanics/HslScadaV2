@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageChannel = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,7 +63,7 @@
             this.btnBlack = new DevExpress.XtraEditors.SimpleButton();
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPageChannel.SuspendLayout();
@@ -83,7 +84,7 @@
             this.xtraTabControl1.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Center;
             this.xtraTabControl1.SelectedTabPage = this.tabPageChannel;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.xtraTabControl1.Size = new System.Drawing.Size(453, 274);
+            this.xtraTabControl1.Size = new System.Drawing.Size(494, 274);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageChannel,
@@ -94,7 +95,7 @@
             // 
             this.tabPageChannel.Controls.Add(this.groupBox1);
             this.tabPageChannel.Name = "tabPageChannel";
-            this.tabPageChannel.Size = new System.Drawing.Size(448, 269);
+            this.tabPageChannel.Size = new System.Drawing.Size(488, 268);
             this.tabPageChannel.Text = "Channel";
             // 
             // groupBox1
@@ -446,7 +447,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNext);
             this.Name = "XUserChannelForm";
-            this.Size = new System.Drawing.Size(453, 311);
+            this.Size = new System.Drawing.Size(494, 311);
             this.Load += new System.EventHandler(this.XUserChannelForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);

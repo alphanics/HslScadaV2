@@ -18,8 +18,7 @@ namespace HslScada.Controls_Binding.SelectorSwitch
     {
 
 
-        private OutputType m_OutputType;
-
+       
 
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;

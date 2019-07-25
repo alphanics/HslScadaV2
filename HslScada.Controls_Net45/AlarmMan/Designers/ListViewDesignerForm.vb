@@ -6,35 +6,24 @@ Imports System.Xml
 
 Public Class ListViewDesignerForm
 #Region "Properties"
-    Private inicls As iniClass = New iniClass()
     Public Property ControlToEdit As AlarmMan
-
+    Public NListViewColumns() As String
+    Private SetListViewColumns As String
     Private Sub BtnOK_Click(sender As Object, e As EventArgs) Handles BtnOK.Click
         Try
-            ControlToEdit.NListViewColumns.Clear()
-            For i As Integer = 0 To ListBoxSelected.Items.Count - 1
-                ControlToEdit.NListViewColumns.Add(ListBoxSelected.Items(i))
-            Next
-            ' Create a file to write to.
-            If File.Exists(path) = False Then
-                File.CreateText(path)
-                Dim ListBoxSelectedItemsCount As String = ListBoxSelected.Items.Count
-                inicls.SetIniValue("Display Format", " ListBoxSelectedItemsCount", ListBoxSelectedItemsCount, path)
-                For i As Integer = 0 To ListBoxSelected.Items.Count - 1
-                    inicls.SetIniValue("Display Format", "ListBoxSelected.Items" + Convert.ToString(i), ControlToEdit.NListViewColumns(i), path)
-                Next
-            Else
-                Dim ListBoxSelectedItemsCount As String = ListBoxSelected.Items.Count
-                inicls.SetIniValue("Display Format", " ListBoxSelectedItemsCount", ListBoxSelectedItemsCount, path)
-                For i As Integer = 0 To ListBoxSelected.Items.Count - 1
-                    inicls.SetIniValue("Display Format", "ListBoxSelected.Items" + Convert.ToString(i), ControlToEdit.NListViewColumns(i), path)
-                Next
-                inicls.SetIniValue("Alarm Status", ChkAlarmOff.Name, ChkAlarmOff.Checked, path)
-                inicls.SetIniValue("Alarm Status", ChkAlarmOn.Name, ChkAlarmOn.Checked, path)
-                inicls.SetIniValue("Alarm Status", ChkAlarmVariation.Name, ChkAlarmVariation.Checked, path)
-                inicls.SetIniValue("Alarm Status", ChkAlarmAck.Name, ChkAlarmAck.Checked, path)
 
-            End If
+
+            Dim ListBoxSelectedItemsCount As String = ListBoxSelected.Items.Count
+            For i As Integer = 0 To ListBoxSelected.Items.Count - 1
+                SetListViewColumns = String.Format("{0}.", ListBoxSelected.Items(i))
+            Next
+            My.Settings.ChkAlarmOff = ChkAlarmOff.Checked
+            My.Settings.ChkAlarmOn = ChkAlarmOn.Checked
+            My.Settings.ChkAlarmVariation = ChkAlarmVariation.Checked
+            My.Settings.ChkAlarmAck = ChkAlarmAck.Checked
+
+
+            My.Settings.Save()
 
             Close()
         Catch ex As Exception
@@ -120,7 +109,7 @@ Public Class ListViewDesignerForm
         End Try
 
     End Sub
-    Dim path As String = "C:\Settings.ini"
+
     Dim nListBoxSelected As New List(Of String)
     Private Sub ListViewDesignerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -133,24 +122,27 @@ Public Class ListViewDesignerForm
             ListBoxSelected.Items.Clear()
             ' Open the file to read from.
 
-            If File.Exists(path) = True Then
-                Dim ItemsCount = inicls.GetIniValue("Display Format", "ListBoxSelectedItemsCount", path)
-                For i As Integer = 0 To ItemsCount - 1
-                    ListBoxSelected.Items.Add(inicls.GetIniValue("Display Format", "ListBoxSelected.Items" + Convert.ToString(i), path))
-                Next
-                Button6.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "Button6.BackColor", path)))
-                Button7.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "Button7.BackColor", path)))
-                Button8.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "Button8.BackColor", path)))
-                Button9.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "Button9.BackColor", path)))
-                Button5.BackColor = Color.FromArgb(Convert.ToInt32(inicls.GetIniValue("Alarm Type", "BackGround.BackColor", path)))
-                ChkAlarmOff.Checked = inicls.GetIniValue("Alarm Status", "ChkAlarmOff", path)
-                ChkAlarmOn.Checked = inicls.GetIniValue("Alarm Status", "ChkAlarmOn", path)
-                ChkAlarmVariation.Checked = inicls.GetIniValue("Alarm Status", "ChkAlarmVariation", path)
-                ChkAlarmAck.Checked = inicls.GetIniValue("Alarm Status", "ChkAlarmAck", path)
 
-            Else
+            NListViewColumns = My.Settings.ListViewColumns.Split(New [Char]() {"."c})
 
-            End If
+            For Each item As String In NListViewColumns
+                ListBoxSelected.Items.Add(item)
+
+            Next
+
+
+
+            Button6.BackColor = My.Settings.Button6BackColor
+                Button7.BackColor = My.Settings.Button7BackColor
+                Button8.BackColor = My.Settings.Button8BackColor
+                Button9.BackColor = My.Settings.Button9BackColor
+                Button5.BackColor = My.Settings.BackGroundBackColor
+                ChkAlarmOff.Checked = My.Settings.ChkAlarmOff
+                ChkAlarmOn.Checked = My.Settings.ChkAlarmOn
+                ChkAlarmVariation.Checked = My.Settings.ChkAlarmVariation
+                ChkAlarmAck.Checked = My.Settings.ChkAlarmAck
+
+
         Catch ex As Exception
             Exit Sub
         End Try
@@ -165,38 +157,40 @@ Public Class ListViewDesignerForm
 
             If sender.Name = "Button6" Then
                 Button6.BackColor = ColorDialog1.Color
-                ControlToEdit.NListViewColumnsColor.Add(Button6.BackColor.ToArgb)
-                inicls.SetIniValue("Alarm Type", "Button6.BackColor", Button6.BackColor.ToArgb, path)
+                ControlToEdit.NListViewColumnsColor.Add(Button6.BackColor)
+                My.Settings.Button6BackColor = Button6.BackColor
+
 
             End If
 
             If sender.Name = "Button7" Then
                 Button7.BackColor = ColorDialog1.Color
-                ControlToEdit.NListViewColumnsColor.Add(Button7.BackColor.ToArgb)
-                inicls.SetIniValue("Alarm Type", "Button7.BackColor", Button7.BackColor.ToArgb, path)
+                ControlToEdit.NListViewColumnsColor.Add(Button7.BackColor)
+                My.Settings.Button7BackColor = Button7.BackColor
 
             End If
             If sender.Name = "Button8" Then
                 Button8.BackColor = ColorDialog1.Color
-                ControlToEdit.NListViewColumnsColor.Add(Button8.BackColor.ToArgb)
-                inicls.SetIniValue("Alarm Type", "Button8.BackColor", Button8.BackColor.ToArgb, path)
+                ControlToEdit.NListViewColumnsColor.Add(Button8.BackColor)
+                My.Settings.Button8BackColor = Button8.BackColor
 
             End If
             If sender.Name = "Button9" Then
                 Button9.BackColor = ColorDialog1.Color
-                ControlToEdit.NListViewColumnsColor.Add(Button9.BackColor.ToArgb)
-                inicls.SetIniValue("Alarm Type", "Button9.BackColor", Button9.BackColor.ToArgb, path)
+                ControlToEdit.NListViewColumnsColor.Add(Button9.BackColor)
+                My.Settings.Button9BackColor = Button9.BackColor
 
             End If
             If sender.Name = "Button5" Then
                 Button5.BackColor = ColorDialog1.Color
-                ControlToEdit.NListViewColumnsColor.Add(Button5.BackColor.ToArgb)
-                inicls.SetIniValue("Alarm Type", "BackGround.BackColor", Button5.BackColor.ToArgb, path)
+                ControlToEdit.NListViewColumnsColor.Add(Button5.BackColor)
+                My.Settings.BackGroundBackColor = Button5.BackColor
 
             End If
         Catch ex As Exception
             Exit Sub
         End Try
+        My.Settings.Save()
     End Sub
 
 #End Region

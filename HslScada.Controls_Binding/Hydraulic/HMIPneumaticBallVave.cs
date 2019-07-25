@@ -12,10 +12,7 @@ namespace HslScada.Controls_Binding.Hydraulic
     public class HMIPneumaticBallVave : HslScada.Controls_Net45.PneumaticBallValve
     {
 
-
-        private OutputType m_OutputType;
-
-
+ 
 
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;

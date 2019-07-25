@@ -12,9 +12,7 @@ namespace HslScada.Controls_Binding.ButtonAll
     public class HMISquareIlluminatedButton : HslScada.Controls_Net45.SquareIlluminatedButton
     {
 
-
-        private OutputType m_OutputType;
-
+ 
 
         public bool HoldTimeMet;
         private int m_MaximumHoldTime = 3000;

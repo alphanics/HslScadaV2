@@ -10,59 +10,83 @@ Public Class AlarmMan
     Dim nTime As String = "2017/12/18 16:44:02"
     Dim nTagName As String = "TagName"
     Dim nTagValue As String = "15135"
-    Dim nTagStatus() As String = New String(3) {"Alarm On", "Alarm oFF", "Alarm Ack", "Alarm Variation"}
     Dim nColor() As Color = New Color(3) {Color.Red, Color.Green, Color.Blue, Color.Yellow}
-    Private _NListViewColumns As List(Of String)
-    Private _NListViewColumnsColor As List(Of String)
 #Region "Constructor/Destructor"
     Public Sub New()
-        Me.DoubleBuffered = True
+
+    End Sub
+
+    Public NListViewColumns() As String
+
+    Public NListViewColumnsColor As New List(Of Color)
+
+#End Region
+    '********************************************************************
+    '* When an instance is added to the form, set the comm component
+    '* property. If a comm component does not exist, add one to the form
+    '********************************************************************
+    Protected Overrides Sub OnCreateControl()
+        MyBase.OnCreateControl()
+
+        If Me.DesignMode AndAlso Me.Parent IsNot Nothing AndAlso Me.Parent.Site IsNot Nothing Then
+            '********************************************************
+            '* Search for AdvancedHMIDrivers.IComComponent component in parent form
+            '* If one exists, set the client of this component to it
+            '********************************************************
+            Dim i = 0
+            Dim j As Integer = Me.Parent.Site.Container.Components.Count
+
+            Me.DoubleBuffered = True
+            With Me
+                .View = View.Details
+                .FullRowSelect = True
+                .GridLines = True
+                .Columns.Clear()
+                .Items.Clear()
+                .Columns.Add("Tag Name", 130, HorizontalAlignment.Left)
+                .Columns.Add("Tag Value", 130, HorizontalAlignment.Left)
+                .Columns.Add("Time", 130, HorizontalAlignment.Left)
+                .HeaderStyle = ColumnHeaderStyle.Nonclickable
+            End With
+
+            For index = 0 To 19
+                Dim row0 As String() = {nTagName, nTagValue, nTime}
+                Dim item As New ListViewItem(row0)
+                item.ForeColor = nColor(intCount)
+                Me.Items.Insert(0, item)
+                intCount = intCount + 1
+                If intCount = 3 Then
+                    intCount = 0
+                End If
+
+            Next
+
+
+        Else
+            If Not DesignMode And IsHandleCreated Then
+                RListViewColumns()
+                Me.Sorting = SortOrder.Ascending
+            End If
+        End If
+    End Sub
+    Public Sub RListViewColumns()
+
+        NListViewColumns = My.Settings.ListViewColumns.Split(New [Char]() {"."c})
         With Me
             .View = View.Details
             .FullRowSelect = True
             .GridLines = True
             .Columns.Clear()
             .Items.Clear()
-            .Columns.Add("Tag Name", 130, HorizontalAlignment.Left)
-            .Columns.Add("Tag Value", 130, HorizontalAlignment.Left)
-            .Columns.Add("Time", 130, HorizontalAlignment.Left)
-            .Columns.Add("Tag Status", 320, HorizontalAlignment.Left)
             .HeaderStyle = ColumnHeaderStyle.Nonclickable
+            .BackColor = My.Settings.BackGroundBackColor
         End With
 
-        For index = 0 To 19
-            Dim row0 As String() = {nTime, nTagName, nTagValue, nTagStatus(intCount)}
-            Dim item As New ListViewItem(row0)
-            item.ForeColor = nColor(intCount)
-            Me.Items.Insert(0, item)
-            intCount = intCount + 1
-            If intCount = 3 Then
-                intCount = 0
-            End If
-
+        For i As Integer = 0 To NListViewColumns.Count - 1
+            Me.Columns.Add(NListViewColumns(i).ToString, 130, HorizontalAlignment.Left)
         Next
 
     End Sub
-
-    Public Property NListViewColumns As List(Of String)
-        Get
-            Return _NListViewColumns
-        End Get
-        Set
-            _NListViewColumns = Value
-        End Set
-    End Property
-
-    Public Property NListViewColumnsColor As List(Of String)
-        Get
-            Return _NListViewColumnsColor
-        End Get
-        Set
-            _NListViewColumnsColor = Value
-        End Set
-    End Property
-
-#End Region
     Public Sub AlarmMan_DataChanged(senderPlcAddress As String, e As PlcComEventArgs)
         Dim LastValue As String = ""
         If e.PlcAddress = senderPlcAddress Then
