@@ -45,11 +45,11 @@ namespace AdvancedScada.HMI.MainForm
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::AdvancedScada.HMI.SplashScreen1), true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Panel3 = new System.Windows.Forms.Panel();
-            this.hmiLabel54 = new HMILabel();
-            this.hmiLabel20 = new HMILabel();
-            this.hmiLabel19 = new HMILabel();
-            this.hmiLabel18 = new HMILabel();
-            this.hmiLabel17 = new HMILabel();
+            this.hmiLabel54 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel20 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel19 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel18 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel17 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_datar = new System.Windows.Forms.Label();
             this.Label13 = new System.Windows.Forms.Label();
@@ -82,56 +82,56 @@ namespace AdvancedScada.HMI.MainForm
             this.LBL_Name_Silo8 = new System.Windows.Forms.Label();
             this.LBL_Name_Silo1 = new System.Windows.Forms.Label();
             this.Panel14 = new System.Windows.Forms.Panel();
-            this.hmiLabel33 = new HMILabel();
-            this.hmiLabel34 = new HMILabel();
-            this.thnk_rec_4 = new HMILabel();
-            this.thnk_set_4 = new HMILabel();
+            this.hmiLabel33 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel34 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_4 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_4 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel15 = new System.Windows.Forms.Panel();
-            this.hmiLabel41 = new HMILabel();
-            this.hmiLabel42 = new HMILabel();
-            this.thnk_rec_8 = new HMILabel();
-            this.thnk_set_8 = new HMILabel();
+            this.hmiLabel41 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel42 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_8 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_8 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel13 = new System.Windows.Forms.Panel();
-            this.hmiLabel39 = new HMILabel();
-            this.hmiLabel40 = new HMILabel();
-            this.thnk_rec_7 = new HMILabel();
-            this.thnk_set_7 = new HMILabel();
+            this.hmiLabel39 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel40 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_7 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_7 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel12 = new System.Windows.Forms.Panel();
-            this.hmiLabel37 = new HMILabel();
-            this.hmiLabel38 = new HMILabel();
-            this.thnk_rec_6 = new HMILabel();
-            this.thnk_set_6 = new HMILabel();
+            this.hmiLabel37 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel38 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_6 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_6 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel11 = new System.Windows.Forms.Panel();
-            this.hmiLabel35 = new HMILabel();
-            this.hmiLabel36 = new HMILabel();
-            this.thnk_rec_5 = new HMILabel();
-            this.thnk_set_5 = new HMILabel();
+            this.hmiLabel35 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel36 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_5 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_5 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel7 = new System.Windows.Forms.Panel();
-            this.hmiLabel31 = new HMILabel();
-            this.hmiLabel32 = new HMILabel();
-            this.thnk_rec_3 = new HMILabel();
-            this.thnk_set_3 = new HMILabel();
+            this.hmiLabel31 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel32 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_3 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_3 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel10 = new System.Windows.Forms.Panel();
-            this.hmiLabel28 = new HMILabel();
-            this.hmiLabel27 = new HMILabel();
-            this.thnk_rec_1 = new HMILabel();
-            this.thnk_set_1 = new HMILabel();
+            this.hmiLabel28 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel27 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_1 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_1 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel20 = new System.Windows.Forms.Panel();
-            this.hmiLabel29 = new HMILabel();
-            this.hmiLabel30 = new HMILabel();
-            this.thnk_rec_2 = new HMILabel();
-            this.thnk_set_2 = new HMILabel();
+            this.hmiLabel29 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel30 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_2 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_set_2 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Panel2 = new System.Windows.Forms.Panel();
-            this.hmiLabel25 = new HMILabel();
-            this.hmiSevenSegment1 = new HMISevenSegment2();
+            this.hmiLabel25 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiSevenSegment1 = new AdvancedScada.Controls.AHMI.SevenSegment.HMISevenSegment2();
             this.msg_thnk = new System.Windows.Forms.Label();
             this.Panel21 = new System.Windows.Forms.Panel();
-            this.hmiSimpleLED1 = new HMISimpleLED();
-            this.hmiIndicator2 = new HMIIndicator();
-            this.hmiLabel23 = new HMILabel();
-            this.hmiLabel24 = new HMILabel();
-            this.hmiLabel21 = new HMILabel();
-            this.hmiLabel22 = new HMILabel();
+            this.hmiSimpleLED1 = new AdvancedScada.Controls.AHMI.LED.HMISimpleLED();
+            this.hmiIndicator2 = new AdvancedScada.Controls.AHMI.Controls.HMIIndicator();
+            this.hmiLabel23 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel24 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel21 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel22 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Label4 = new System.Windows.Forms.Label();
             this.Label24 = new System.Windows.Forms.Label();
             this.Label23 = new System.Windows.Forms.Label();
@@ -146,65 +146,65 @@ namespace AdvancedScada.HMI.MainForm
             this.P_Frm_Editr = new System.Windows.Forms.Panel();
             this.lbl_frm_Editr = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.LBL_WeightSet = new HMILabel();
+            this.LBL_WeightSet = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.Label38 = new System.Windows.Forms.Label();
             this.Label39 = new System.Windows.Forms.Label();
             this.Label40 = new System.Windows.Forms.Label();
             this.LBL_Weight_old = new System.Windows.Forms.Label();
             this.LBL_WeightFinel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.hmiLabel44 = new HMILabel();
-            this.thnk_rec_oil = new HMILabel();
-            this.hmiLabel46 = new HMILabel();
+            this.hmiLabel44 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.thnk_rec_oil = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel46 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.hmiSimpleLED2 = new HMISimpleLED();
+            this.hmiSimpleLED2 = new AdvancedScada.Controls.AHMI.LED.HMISimpleLED();
             this.Label5 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.hmiLabel53 = new HMILabel();
-            this.hmiLabel52 = new HMILabel();
-            this.hmiLabel51 = new HMILabel();
-            this.hmiLabel50 = new HMILabel();
-            this.hmiLabel49 = new HMILabel();
-            this.hmiLabel48 = new HMILabel();
-            this.hmiLabel47 = new HMILabel();
-            this.hmiLabel43 = new HMILabel();
-            this.hmiPilotLight4 = new HMIPilotLight();
-            this.hmiPilotLight3 = new HMIPilotLight();
-            this.hmiPilotLight2 = new HMIPilotLight();
-            this.hmiPilotLight1 = new HMIPilotLight();
-            this.hmiDigitalPanelMeter1 = new HMIDigitalPanelMeter();
-            this.hmiMushroomButton1 = new HMIMushroomButton();
-            this.hmiWaterPump1 = new HMIWaterPump();
-            this.hmiIndicator1 = new HMIIndicator();
-            this.hmiMotor8 = new HMIMotor();
-            this.hmiMotor7 = new HMIMotor();
-            this.hmiMotor6 = new HMIMotor();
-            this.hmiMotor5 = new HMIMotor();
-            this.hmiMotor4 = new HMIMotor();
-            this.hmiMotor3 = new HMIMotor();
-            this.hmiMotor2 = new HMIMotor();
-            this.hmiMotor1 = new HMIMotor();
+            this.hmiLabel53 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel52 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel51 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel50 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel49 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel48 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel47 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiLabel43 = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiPilotLight4 = new AdvancedScada.Controls.AHMI.SelectorSwitch.HMIPilotLight();
+            this.hmiPilotLight3 = new AdvancedScada.Controls.AHMI.SelectorSwitch.HMIPilotLight();
+            this.hmiPilotLight2 = new AdvancedScada.Controls.AHMI.SelectorSwitch.HMIPilotLight();
+            this.hmiPilotLight1 = new AdvancedScada.Controls.AHMI.SelectorSwitch.HMIPilotLight();
+            this.hmiDigitalPanelMeter1 = new AdvancedScada.Controls.AHMI.DigitalDisplay.HMIDigitalPanelMeter();
+            this.hmiMushroomButton1 = new AdvancedScada.Controls.AHMI.SelectorSwitch.HMIMushroomButton();
+            this.hmiWaterPump1 = new AdvancedScada.Controls.AHMI.Motor.HMIWaterPump();
+            this.hmiIndicator1 = new AdvancedScada.Controls.AHMI.Controls.HMIIndicator();
+            this.hmiMotor8 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor7 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor6 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor5 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor4 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor3 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor2 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
+            this.hmiMotor1 = new AdvancedScada.Controls.AHMI.Motor.HMIMotor();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.LBL_ReportViewer = new HMILabel();
-            this.hmiProcessLevel1 = new HMIProcessIndicator();
-            this.hmiProcessLevel2 = new HMIProcessIndicator();
-            this.hmiProcessLevel3 = new HMIProcessIndicator();
-            this.hmiSevenSegment21 = new HMISevenSegment2();
+            this.LBL_ReportViewer = new AdvancedScada.Controls.AHMI.Display.HMILabel();
+            this.hmiProcessLevel1 = new AdvancedScada.Controls.AHMI.ProcessAll.HMIProcessIndicator();
+            this.hmiProcessLevel2 = new AdvancedScada.Controls.AHMI.ProcessAll.HMIProcessIndicator();
+            this.hmiProcessLevel3 = new AdvancedScada.Controls.AHMI.ProcessAll.HMIProcessIndicator();
+            this.hmiSevenSegment21 = new AdvancedScada.Controls.AHMI.SevenSegment.HMISevenSegment2();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.Panel9 = new System.Windows.Forms.Panel();
             this.Label3 = new System.Windows.Forms.Label();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.hmiLedSingle1 = new HMILedSingle();
-            this.hmiLedSingle2 = new HMILedSingle();
-            this.hmiLedSingle3 = new HMILedSingle();
-            this.hmiLedSingle4 = new HMILedSingle();
-            this.hmiLedSingle5 = new HMILedSingle();
-            this.hmiLedSingle6 = new HMILedSingle();
-            this.hmiLedSingle7 = new HMILedSingle();
-            this.hmiLedSingle8 = new HMILedSingle();
-            this.hmiDigitalPanelMeter2 = new HMIDigitalPanelMeter();
-            this.hmiSimpleWebServer1 = new SimpleWebServer();
+            this.hmiLedSingle1 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle2 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle3 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle4 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle5 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle6 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle7 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiLedSingle8 = new AdvancedScada.Controls.AHMI.Leds.HMILedSingle();
+            this.hmiDigitalPanelMeter2 = new AdvancedScada.Controls.AHMI.DigitalDisplay.HMIDigitalPanelMeter();
+            this.hmiSimpleWebServer1 = new AdvancedScada.Controls.AHMI.Components.SimpleWebServer();
             this.Panel3.SuspendLayout();
             this.Panel14.SuspendLayout();
             this.Panel15.SuspendLayout();
@@ -268,7 +268,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel54
             // 
             this.hmiLabel54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel54.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel54.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel54.DisplayAsTime = false;
             this.hmiLabel54.ForeColor = System.Drawing.Color.Black;
@@ -277,6 +277,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel54.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel54.HighlightKeyCharacter = "!";
             this.hmiLabel54.InterpretValueAsBCD = false;
+            this.hmiLabel54.KeypadAlphanumeric = false;
+            this.hmiLabel54.KeypadAlphaNumeric = false;
             this.hmiLabel54.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel54.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiLabel54.KeypadMaxValue = 0D;
@@ -288,10 +290,9 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel54.Location = new System.Drawing.Point(655, 32);
             this.hmiLabel54.Name = "hmiLabel54";
             this.hmiLabel54.NumericFormat = null;
-            this.hmiLabel54.PLCAddressHighlight = "";
             this.hmiLabel54.PLCAddressKeypad = "";
             this.hmiLabel54.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:92";
-            this.hmiLabel54.PLCAddressVisible = "";
+            this.hmiLabel54.PollRate = 0;
             this.hmiLabel54.Size = new System.Drawing.Size(56, 22);
             this.hmiLabel54.TabIndex = 608;
             this.hmiLabel54.Text = "0";
@@ -307,7 +308,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel20
             // 
             this.hmiLabel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel20.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel20.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel20.DisplayAsTime = false;
             this.hmiLabel20.ForeColor = System.Drawing.Color.Black;
@@ -316,6 +317,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel20.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel20.HighlightKeyCharacter = "!";
             this.hmiLabel20.InterpretValueAsBCD = false;
+            this.hmiLabel20.KeypadAlphanumeric = false;
+            this.hmiLabel20.KeypadAlphaNumeric = false;
             this.hmiLabel20.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel20.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiLabel20.KeypadMaxValue = 0D;
@@ -327,10 +330,9 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel20.Location = new System.Drawing.Point(137, 0);
             this.hmiLabel20.Name = "hmiLabel20";
             this.hmiLabel20.NumericFormat = null;
-            this.hmiLabel20.PLCAddressHighlight = "";
             this.hmiLabel20.PLCAddressKeypad = "";
             this.hmiLabel20.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:128";
-            this.hmiLabel20.PLCAddressVisible = "";
+            this.hmiLabel20.PollRate = 0;
             this.hmiLabel20.Size = new System.Drawing.Size(56, 22);
             this.hmiLabel20.TabIndex = 607;
             this.hmiLabel20.Text = "0";
@@ -346,7 +348,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel19
             // 
             this.hmiLabel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel19.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel19.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel19.DisplayAsTime = false;
             this.hmiLabel19.ForeColor = System.Drawing.Color.Black;
@@ -355,6 +357,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel19.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel19.HighlightKeyCharacter = "!";
             this.hmiLabel19.InterpretValueAsBCD = false;
+            this.hmiLabel19.KeypadAlphanumeric = false;
+            this.hmiLabel19.KeypadAlphaNumeric = false;
             this.hmiLabel19.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel19.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiLabel19.KeypadMaxValue = 0D;
@@ -366,10 +370,9 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel19.Location = new System.Drawing.Point(293, 0);
             this.hmiLabel19.Name = "hmiLabel19";
             this.hmiLabel19.NumericFormat = null;
-            this.hmiLabel19.PLCAddressHighlight = "";
             this.hmiLabel19.PLCAddressKeypad = "TEST.PLC.StartAddress90.StartAddress90:124";
             this.hmiLabel19.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:124";
-            this.hmiLabel19.PLCAddressVisible = "";
+            this.hmiLabel19.PollRate = 0;
             this.hmiLabel19.Size = new System.Drawing.Size(56, 22);
             this.hmiLabel19.TabIndex = 606;
             this.hmiLabel19.Text = "0";
@@ -385,7 +388,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel18
             // 
             this.hmiLabel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel18.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel18.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel18.DisplayAsTime = false;
             this.hmiLabel18.ForeColor = System.Drawing.Color.Black;
@@ -394,6 +397,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel18.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel18.HighlightKeyCharacter = "!";
             this.hmiLabel18.InterpretValueAsBCD = false;
+            this.hmiLabel18.KeypadAlphanumeric = false;
+            this.hmiLabel18.KeypadAlphaNumeric = false;
             this.hmiLabel18.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel18.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiLabel18.KeypadMaxValue = 0D;
@@ -405,10 +410,9 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel18.Location = new System.Drawing.Point(551, 32);
             this.hmiLabel18.Name = "hmiLabel18";
             this.hmiLabel18.NumericFormat = null;
-            this.hmiLabel18.PLCAddressHighlight = "";
             this.hmiLabel18.PLCAddressKeypad = "TEST.PLC.StartAddress90.StartAddress90:90";
             this.hmiLabel18.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:90";
-            this.hmiLabel18.PLCAddressVisible = "";
+            this.hmiLabel18.PollRate = 0;
             this.hmiLabel18.Size = new System.Drawing.Size(56, 22);
             this.hmiLabel18.TabIndex = 605;
             this.hmiLabel18.Text = "0";
@@ -424,7 +428,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel17
             // 
             this.hmiLabel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel17.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel17.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel17.DisplayAsTime = false;
             this.hmiLabel17.ForeColor = System.Drawing.Color.Black;
@@ -433,6 +437,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel17.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel17.HighlightKeyCharacter = "!";
             this.hmiLabel17.InterpretValueAsBCD = false;
+            this.hmiLabel17.KeypadAlphanumeric = false;
             this.hmiLabel17.KeypadAlphaNumeric = false;
             this.hmiLabel17.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel17.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -445,10 +450,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel17.Location = new System.Drawing.Point(760, 30);
             this.hmiLabel17.Name = "hmiLabel17";
             this.hmiLabel17.NumericFormat = null;
-            this.hmiLabel17.PLCAddressHighlight = "";
             this.hmiLabel17.PLCAddressKeypad = "TEST.PLC.StartAddress22.StartAddress22:88";
             this.hmiLabel17.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:88";
-            this.hmiLabel17.PLCAddressVisible = "";
             this.hmiLabel17.PollRate = 0;
             this.hmiLabel17.Size = new System.Drawing.Size(56, 22);
             this.hmiLabel17.TabIndex = 604;
@@ -811,7 +814,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel33
             // 
             this.hmiLabel33.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel33.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel33.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel33.DisplayAsTime = false;
             this.hmiLabel33.ForeColor = System.Drawing.Color.Black;
@@ -820,6 +823,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel33.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel33.HighlightKeyCharacter = "!";
             this.hmiLabel33.InterpretValueAsBCD = false;
+            this.hmiLabel33.KeypadAlphanumeric = false;
             this.hmiLabel33.KeypadAlphaNumeric = false;
             this.hmiLabel33.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel33.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -832,10 +836,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel33.Location = new System.Drawing.Point(23, 88);
             this.hmiLabel33.Name = "hmiLabel33";
             this.hmiLabel33.NumericFormat = null;
-            this.hmiLabel33.PLCAddressHighlight = "";
             this.hmiLabel33.PLCAddressKeypad = "";
             this.hmiLabel33.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:78";
-            this.hmiLabel33.PLCAddressVisible = "";
             this.hmiLabel33.PollRate = 0;
             this.hmiLabel33.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel33.TabIndex = 5;
@@ -852,7 +854,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel34
             // 
             this.hmiLabel34.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel34.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel34.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel34.DisplayAsTime = false;
             this.hmiLabel34.ForeColor = System.Drawing.Color.Black;
@@ -861,6 +863,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel34.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel34.HighlightKeyCharacter = "!";
             this.hmiLabel34.InterpretValueAsBCD = false;
+            this.hmiLabel34.KeypadAlphanumeric = false;
             this.hmiLabel34.KeypadAlphaNumeric = false;
             this.hmiLabel34.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel34.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -873,10 +876,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel34.Location = new System.Drawing.Point(24, 64);
             this.hmiLabel34.Name = "hmiLabel34";
             this.hmiLabel34.NumericFormat = null;
-            this.hmiLabel34.PLCAddressHighlight = "";
             this.hmiLabel34.PLCAddressKeypad = "";
             this.hmiLabel34.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:16";
-            this.hmiLabel34.PLCAddressVisible = "";
             this.hmiLabel34.PollRate = 0;
             this.hmiLabel34.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel34.TabIndex = 4;
@@ -893,7 +894,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_4
             // 
             this.thnk_rec_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_4.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_4.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_4.DisplayAsTime = false;
             this.thnk_rec_4.ForeColor = System.Drawing.Color.Black;
@@ -902,6 +903,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_4.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_4.HighlightKeyCharacter = "!";
             this.thnk_rec_4.InterpretValueAsBCD = false;
+            this.thnk_rec_4.KeypadAlphanumeric = false;
             this.thnk_rec_4.KeypadAlphaNumeric = false;
             this.thnk_rec_4.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_4.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -914,10 +916,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_4.Location = new System.Drawing.Point(9, 36);
             this.thnk_rec_4.Name = "thnk_rec_4";
             this.thnk_rec_4.NumericFormat = null;
-            this.thnk_rec_4.PLCAddressHighlight = "";
             this.thnk_rec_4.PLCAddressKeypad = "";
             this.thnk_rec_4.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:100";
-            this.thnk_rec_4.PLCAddressVisible = "";
             this.thnk_rec_4.PollRate = 0;
             this.thnk_rec_4.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_4.TabIndex = 3;
@@ -934,7 +934,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_4
             // 
             this.thnk_set_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_4.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_4.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_4.DisplayAsTime = false;
             this.thnk_set_4.ForeColor = System.Drawing.Color.Black;
@@ -943,6 +943,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_4.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_4.HighlightKeyCharacter = "!";
             this.thnk_set_4.InterpretValueAsBCD = false;
+            this.thnk_set_4.KeypadAlphanumeric = false;
             this.thnk_set_4.KeypadAlphaNumeric = false;
             this.thnk_set_4.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_4.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -955,10 +956,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_4.Location = new System.Drawing.Point(9, 11);
             this.thnk_set_4.Name = "thnk_set_4";
             this.thnk_set_4.NumericFormat = null;
-            this.thnk_set_4.PLCAddressHighlight = "";
             this.thnk_set_4.PLCAddressKeypad = "";
             this.thnk_set_4.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00020";
-            this.thnk_set_4.PLCAddressVisible = "";
             this.thnk_set_4.PollRate = 0;
             this.thnk_set_4.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_4.TabIndex = 2;
@@ -988,7 +987,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel41
             // 
             this.hmiLabel41.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel41.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel41.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel41.DisplayAsTime = false;
             this.hmiLabel41.ForeColor = System.Drawing.Color.Black;
@@ -997,6 +996,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel41.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel41.HighlightKeyCharacter = "!";
             this.hmiLabel41.InterpretValueAsBCD = false;
+            this.hmiLabel41.KeypadAlphanumeric = false;
             this.hmiLabel41.KeypadAlphaNumeric = false;
             this.hmiLabel41.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel41.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1009,10 +1009,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel41.Location = new System.Drawing.Point(22, 88);
             this.hmiLabel41.Name = "hmiLabel41";
             this.hmiLabel41.NumericFormat = null;
-            this.hmiLabel41.PLCAddressHighlight = "";
             this.hmiLabel41.PLCAddressKeypad = "";
             this.hmiLabel41.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:86";
-            this.hmiLabel41.PLCAddressVisible = "";
             this.hmiLabel41.PollRate = 0;
             this.hmiLabel41.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel41.TabIndex = 5;
@@ -1029,7 +1027,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel42
             // 
             this.hmiLabel42.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel42.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel42.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel42.DisplayAsTime = false;
             this.hmiLabel42.ForeColor = System.Drawing.Color.Black;
@@ -1038,6 +1036,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel42.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel42.HighlightKeyCharacter = "!";
             this.hmiLabel42.InterpretValueAsBCD = false;
+            this.hmiLabel42.KeypadAlphanumeric = false;
             this.hmiLabel42.KeypadAlphaNumeric = false;
             this.hmiLabel42.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel42.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1050,10 +1049,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel42.Location = new System.Drawing.Point(23, 64);
             this.hmiLabel42.Name = "hmiLabel42";
             this.hmiLabel42.NumericFormat = null;
-            this.hmiLabel42.PLCAddressHighlight = "";
             this.hmiLabel42.PLCAddressKeypad = "";
             this.hmiLabel42.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:32";
-            this.hmiLabel42.PLCAddressVisible = "";
             this.hmiLabel42.PollRate = 0;
             this.hmiLabel42.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel42.TabIndex = 4;
@@ -1070,7 +1067,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_8
             // 
             this.thnk_rec_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_8.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_8.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_8.DisplayAsTime = false;
             this.thnk_rec_8.ForeColor = System.Drawing.Color.Black;
@@ -1079,6 +1076,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_8.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_8.HighlightKeyCharacter = "!";
             this.thnk_rec_8.InterpretValueAsBCD = false;
+            this.thnk_rec_8.KeypadAlphanumeric = false;
             this.thnk_rec_8.KeypadAlphaNumeric = false;
             this.thnk_rec_8.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_8.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1091,10 +1089,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_8.Location = new System.Drawing.Point(10, 36);
             this.thnk_rec_8.Name = "thnk_rec_8";
             this.thnk_rec_8.NumericFormat = null;
-            this.thnk_rec_8.PLCAddressHighlight = "";
             this.thnk_rec_8.PLCAddressKeypad = "";
             this.thnk_rec_8.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:108";
-            this.thnk_rec_8.PLCAddressVisible = "";
             this.thnk_rec_8.PollRate = 0;
             this.thnk_rec_8.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_8.TabIndex = 3;
@@ -1111,7 +1107,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_8
             // 
             this.thnk_set_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_8.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_8.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_8.DisplayAsTime = false;
             this.thnk_set_8.ForeColor = System.Drawing.Color.Black;
@@ -1120,6 +1116,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_8.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_8.HighlightKeyCharacter = "!";
             this.thnk_set_8.InterpretValueAsBCD = false;
+            this.thnk_set_8.KeypadAlphanumeric = false;
             this.thnk_set_8.KeypadAlphaNumeric = false;
             this.thnk_set_8.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_8.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1132,10 +1129,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_8.Location = new System.Drawing.Point(10, 11);
             this.thnk_set_8.Name = "thnk_set_8";
             this.thnk_set_8.NumericFormat = null;
-            this.thnk_set_8.PLCAddressHighlight = "";
             this.thnk_set_8.PLCAddressKeypad = "";
             this.thnk_set_8.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00024";
-            this.thnk_set_8.PLCAddressVisible = "";
             this.thnk_set_8.PollRate = 0;
             this.thnk_set_8.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_8.TabIndex = 2;
@@ -1165,7 +1160,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel39
             // 
             this.hmiLabel39.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel39.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel39.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel39.DisplayAsTime = false;
             this.hmiLabel39.ForeColor = System.Drawing.Color.Black;
@@ -1174,6 +1169,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel39.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel39.HighlightKeyCharacter = "!";
             this.hmiLabel39.InterpretValueAsBCD = false;
+            this.hmiLabel39.KeypadAlphanumeric = false;
             this.hmiLabel39.KeypadAlphaNumeric = false;
             this.hmiLabel39.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel39.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1186,10 +1182,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel39.Location = new System.Drawing.Point(22, 88);
             this.hmiLabel39.Name = "hmiLabel39";
             this.hmiLabel39.NumericFormat = null;
-            this.hmiLabel39.PLCAddressHighlight = "";
             this.hmiLabel39.PLCAddressKeypad = "";
             this.hmiLabel39.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:84";
-            this.hmiLabel39.PLCAddressVisible = "";
             this.hmiLabel39.PollRate = 0;
             this.hmiLabel39.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel39.TabIndex = 5;
@@ -1206,7 +1200,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel40
             // 
             this.hmiLabel40.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel40.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel40.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel40.DisplayAsTime = false;
             this.hmiLabel40.ForeColor = System.Drawing.Color.Black;
@@ -1215,6 +1209,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel40.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel40.HighlightKeyCharacter = "!";
             this.hmiLabel40.InterpretValueAsBCD = false;
+            this.hmiLabel40.KeypadAlphanumeric = false;
             this.hmiLabel40.KeypadAlphaNumeric = false;
             this.hmiLabel40.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel40.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1227,10 +1222,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel40.Location = new System.Drawing.Point(23, 64);
             this.hmiLabel40.Name = "hmiLabel40";
             this.hmiLabel40.NumericFormat = null;
-            this.hmiLabel40.PLCAddressHighlight = "";
             this.hmiLabel40.PLCAddressKeypad = "";
             this.hmiLabel40.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:28";
-            this.hmiLabel40.PLCAddressVisible = "";
             this.hmiLabel40.PollRate = 0;
             this.hmiLabel40.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel40.TabIndex = 4;
@@ -1247,7 +1240,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_7
             // 
             this.thnk_rec_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_7.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_7.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_7.DisplayAsTime = false;
             this.thnk_rec_7.ForeColor = System.Drawing.Color.Black;
@@ -1256,6 +1249,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_7.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_7.HighlightKeyCharacter = "!";
             this.thnk_rec_7.InterpretValueAsBCD = false;
+            this.thnk_rec_7.KeypadAlphanumeric = false;
             this.thnk_rec_7.KeypadAlphaNumeric = false;
             this.thnk_rec_7.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_7.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1268,10 +1262,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_7.Location = new System.Drawing.Point(10, 36);
             this.thnk_rec_7.Name = "thnk_rec_7";
             this.thnk_rec_7.NumericFormat = null;
-            this.thnk_rec_7.PLCAddressHighlight = "";
             this.thnk_rec_7.PLCAddressKeypad = "";
             this.thnk_rec_7.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:106";
-            this.thnk_rec_7.PLCAddressVisible = "";
             this.thnk_rec_7.PollRate = 0;
             this.thnk_rec_7.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_7.TabIndex = 3;
@@ -1288,7 +1280,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_7
             // 
             this.thnk_set_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_7.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_7.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_7.DisplayAsTime = false;
             this.thnk_set_7.ForeColor = System.Drawing.Color.Black;
@@ -1297,6 +1289,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_7.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_7.HighlightKeyCharacter = "!";
             this.thnk_set_7.InterpretValueAsBCD = false;
+            this.thnk_set_7.KeypadAlphanumeric = false;
             this.thnk_set_7.KeypadAlphaNumeric = false;
             this.thnk_set_7.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_7.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1309,10 +1302,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_7.Location = new System.Drawing.Point(10, 11);
             this.thnk_set_7.Name = "thnk_set_7";
             this.thnk_set_7.NumericFormat = null;
-            this.thnk_set_7.PLCAddressHighlight = "";
             this.thnk_set_7.PLCAddressKeypad = "";
             this.thnk_set_7.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00023";
-            this.thnk_set_7.PLCAddressVisible = "";
             this.thnk_set_7.PollRate = 0;
             this.thnk_set_7.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_7.TabIndex = 2;
@@ -1342,7 +1333,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel37
             // 
             this.hmiLabel37.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel37.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel37.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel37.DisplayAsTime = false;
             this.hmiLabel37.ForeColor = System.Drawing.Color.Black;
@@ -1351,6 +1342,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel37.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel37.HighlightKeyCharacter = "!";
             this.hmiLabel37.InterpretValueAsBCD = false;
+            this.hmiLabel37.KeypadAlphanumeric = false;
             this.hmiLabel37.KeypadAlphaNumeric = false;
             this.hmiLabel37.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel37.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1363,10 +1355,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel37.Location = new System.Drawing.Point(22, 88);
             this.hmiLabel37.Name = "hmiLabel37";
             this.hmiLabel37.NumericFormat = null;
-            this.hmiLabel37.PLCAddressHighlight = "";
             this.hmiLabel37.PLCAddressKeypad = "";
             this.hmiLabel37.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:82";
-            this.hmiLabel37.PLCAddressVisible = "";
             this.hmiLabel37.PollRate = 0;
             this.hmiLabel37.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel37.TabIndex = 5;
@@ -1383,7 +1373,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel38
             // 
             this.hmiLabel38.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel38.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel38.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel38.DisplayAsTime = false;
             this.hmiLabel38.ForeColor = System.Drawing.Color.Black;
@@ -1392,6 +1382,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel38.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel38.HighlightKeyCharacter = "!";
             this.hmiLabel38.InterpretValueAsBCD = false;
+            this.hmiLabel38.KeypadAlphanumeric = false;
             this.hmiLabel38.KeypadAlphaNumeric = false;
             this.hmiLabel38.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel38.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1404,10 +1395,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel38.Location = new System.Drawing.Point(23, 64);
             this.hmiLabel38.Name = "hmiLabel38";
             this.hmiLabel38.NumericFormat = null;
-            this.hmiLabel38.PLCAddressHighlight = "";
             this.hmiLabel38.PLCAddressKeypad = "";
             this.hmiLabel38.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:24";
-            this.hmiLabel38.PLCAddressVisible = "";
             this.hmiLabel38.PollRate = 0;
             this.hmiLabel38.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel38.TabIndex = 4;
@@ -1424,7 +1413,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_6
             // 
             this.thnk_rec_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_6.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_6.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_6.DisplayAsTime = false;
             this.thnk_rec_6.ForeColor = System.Drawing.Color.Black;
@@ -1433,6 +1422,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_6.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_6.HighlightKeyCharacter = "!";
             this.thnk_rec_6.InterpretValueAsBCD = false;
+            this.thnk_rec_6.KeypadAlphanumeric = false;
             this.thnk_rec_6.KeypadAlphaNumeric = false;
             this.thnk_rec_6.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_6.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1445,10 +1435,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_6.Location = new System.Drawing.Point(10, 36);
             this.thnk_rec_6.Name = "thnk_rec_6";
             this.thnk_rec_6.NumericFormat = null;
-            this.thnk_rec_6.PLCAddressHighlight = "";
             this.thnk_rec_6.PLCAddressKeypad = "";
             this.thnk_rec_6.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:104";
-            this.thnk_rec_6.PLCAddressVisible = "";
             this.thnk_rec_6.PollRate = 0;
             this.thnk_rec_6.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_6.TabIndex = 3;
@@ -1465,7 +1453,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_6
             // 
             this.thnk_set_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_6.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_6.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_6.DisplayAsTime = false;
             this.thnk_set_6.ForeColor = System.Drawing.Color.Black;
@@ -1474,6 +1462,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_6.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_6.HighlightKeyCharacter = "!";
             this.thnk_set_6.InterpretValueAsBCD = false;
+            this.thnk_set_6.KeypadAlphanumeric = false;
             this.thnk_set_6.KeypadAlphaNumeric = false;
             this.thnk_set_6.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_6.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1486,10 +1475,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_6.Location = new System.Drawing.Point(10, 11);
             this.thnk_set_6.Name = "thnk_set_6";
             this.thnk_set_6.NumericFormat = null;
-            this.thnk_set_6.PLCAddressHighlight = "";
             this.thnk_set_6.PLCAddressKeypad = "";
             this.thnk_set_6.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00022";
-            this.thnk_set_6.PLCAddressVisible = "";
             this.thnk_set_6.PollRate = 0;
             this.thnk_set_6.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_6.TabIndex = 2;
@@ -1519,7 +1506,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel35
             // 
             this.hmiLabel35.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel35.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel35.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel35.DisplayAsTime = false;
             this.hmiLabel35.ForeColor = System.Drawing.Color.Black;
@@ -1528,6 +1515,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel35.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel35.HighlightKeyCharacter = "!";
             this.hmiLabel35.InterpretValueAsBCD = false;
+            this.hmiLabel35.KeypadAlphanumeric = false;
             this.hmiLabel35.KeypadAlphaNumeric = false;
             this.hmiLabel35.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel35.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1540,10 +1528,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel35.Location = new System.Drawing.Point(23, 88);
             this.hmiLabel35.Name = "hmiLabel35";
             this.hmiLabel35.NumericFormat = null;
-            this.hmiLabel35.PLCAddressHighlight = "";
             this.hmiLabel35.PLCAddressKeypad = "";
             this.hmiLabel35.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:80";
-            this.hmiLabel35.PLCAddressVisible = "";
             this.hmiLabel35.PollRate = 0;
             this.hmiLabel35.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel35.TabIndex = 5;
@@ -1560,7 +1546,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel36
             // 
             this.hmiLabel36.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel36.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel36.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel36.DisplayAsTime = false;
             this.hmiLabel36.ForeColor = System.Drawing.Color.Black;
@@ -1569,6 +1555,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel36.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel36.HighlightKeyCharacter = "!";
             this.hmiLabel36.InterpretValueAsBCD = false;
+            this.hmiLabel36.KeypadAlphanumeric = false;
             this.hmiLabel36.KeypadAlphaNumeric = false;
             this.hmiLabel36.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel36.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1581,10 +1568,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel36.Location = new System.Drawing.Point(24, 64);
             this.hmiLabel36.Name = "hmiLabel36";
             this.hmiLabel36.NumericFormat = null;
-            this.hmiLabel36.PLCAddressHighlight = "";
             this.hmiLabel36.PLCAddressKeypad = "";
             this.hmiLabel36.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:20";
-            this.hmiLabel36.PLCAddressVisible = "";
             this.hmiLabel36.PollRate = 0;
             this.hmiLabel36.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel36.TabIndex = 4;
@@ -1601,7 +1586,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_5
             // 
             this.thnk_rec_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_5.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_5.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_5.DisplayAsTime = false;
             this.thnk_rec_5.ForeColor = System.Drawing.Color.Black;
@@ -1610,6 +1595,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_5.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_5.HighlightKeyCharacter = "!";
             this.thnk_rec_5.InterpretValueAsBCD = false;
+            this.thnk_rec_5.KeypadAlphanumeric = false;
             this.thnk_rec_5.KeypadAlphaNumeric = false;
             this.thnk_rec_5.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_5.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1622,10 +1608,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_5.Location = new System.Drawing.Point(7, 36);
             this.thnk_rec_5.Name = "thnk_rec_5";
             this.thnk_rec_5.NumericFormat = null;
-            this.thnk_rec_5.PLCAddressHighlight = "";
             this.thnk_rec_5.PLCAddressKeypad = "";
             this.thnk_rec_5.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:102";
-            this.thnk_rec_5.PLCAddressVisible = "";
             this.thnk_rec_5.PollRate = 0;
             this.thnk_rec_5.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_5.TabIndex = 3;
@@ -1642,7 +1626,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_5
             // 
             this.thnk_set_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_5.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_5.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_5.DisplayAsTime = false;
             this.thnk_set_5.ForeColor = System.Drawing.Color.Black;
@@ -1651,6 +1635,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_5.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_5.HighlightKeyCharacter = "!";
             this.thnk_set_5.InterpretValueAsBCD = false;
+            this.thnk_set_5.KeypadAlphanumeric = false;
             this.thnk_set_5.KeypadAlphaNumeric = false;
             this.thnk_set_5.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_5.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1663,10 +1648,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_5.Location = new System.Drawing.Point(7, 11);
             this.thnk_set_5.Name = "thnk_set_5";
             this.thnk_set_5.NumericFormat = null;
-            this.thnk_set_5.PLCAddressHighlight = "";
             this.thnk_set_5.PLCAddressKeypad = "";
             this.thnk_set_5.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00021";
-            this.thnk_set_5.PLCAddressVisible = "";
             this.thnk_set_5.PollRate = 0;
             this.thnk_set_5.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_5.TabIndex = 2;
@@ -1696,7 +1679,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel31
             // 
             this.hmiLabel31.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel31.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel31.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel31.DisplayAsTime = false;
             this.hmiLabel31.ForeColor = System.Drawing.Color.Black;
@@ -1705,6 +1688,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel31.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel31.HighlightKeyCharacter = "!";
             this.hmiLabel31.InterpretValueAsBCD = false;
+            this.hmiLabel31.KeypadAlphanumeric = false;
             this.hmiLabel31.KeypadAlphaNumeric = false;
             this.hmiLabel31.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel31.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1717,10 +1701,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel31.Location = new System.Drawing.Point(23, 88);
             this.hmiLabel31.Name = "hmiLabel31";
             this.hmiLabel31.NumericFormat = null;
-            this.hmiLabel31.PLCAddressHighlight = "";
             this.hmiLabel31.PLCAddressKeypad = "";
             this.hmiLabel31.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:76";
-            this.hmiLabel31.PLCAddressVisible = "";
             this.hmiLabel31.PollRate = 0;
             this.hmiLabel31.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel31.TabIndex = 5;
@@ -1737,7 +1719,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel32
             // 
             this.hmiLabel32.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel32.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel32.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel32.DisplayAsTime = false;
             this.hmiLabel32.ForeColor = System.Drawing.Color.Black;
@@ -1746,6 +1728,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel32.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel32.HighlightKeyCharacter = "!";
             this.hmiLabel32.InterpretValueAsBCD = false;
+            this.hmiLabel32.KeypadAlphanumeric = false;
             this.hmiLabel32.KeypadAlphaNumeric = false;
             this.hmiLabel32.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel32.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1758,10 +1741,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel32.Location = new System.Drawing.Point(24, 64);
             this.hmiLabel32.Name = "hmiLabel32";
             this.hmiLabel32.NumericFormat = null;
-            this.hmiLabel32.PLCAddressHighlight = "";
             this.hmiLabel32.PLCAddressKeypad = "";
             this.hmiLabel32.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:12";
-            this.hmiLabel32.PLCAddressVisible = "";
             this.hmiLabel32.PollRate = 0;
             this.hmiLabel32.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel32.TabIndex = 4;
@@ -1778,7 +1759,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_3
             // 
             this.thnk_rec_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_3.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_3.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_3.DisplayAsTime = false;
             this.thnk_rec_3.ForeColor = System.Drawing.Color.Black;
@@ -1787,6 +1768,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_3.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_3.HighlightKeyCharacter = "!";
             this.thnk_rec_3.InterpretValueAsBCD = false;
+            this.thnk_rec_3.KeypadAlphanumeric = false;
             this.thnk_rec_3.KeypadAlphaNumeric = false;
             this.thnk_rec_3.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_3.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1799,10 +1781,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_3.Location = new System.Drawing.Point(9, 36);
             this.thnk_rec_3.Name = "thnk_rec_3";
             this.thnk_rec_3.NumericFormat = null;
-            this.thnk_rec_3.PLCAddressHighlight = "";
             this.thnk_rec_3.PLCAddressKeypad = "";
             this.thnk_rec_3.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:98";
-            this.thnk_rec_3.PLCAddressVisible = "";
             this.thnk_rec_3.PollRate = 0;
             this.thnk_rec_3.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_3.TabIndex = 3;
@@ -1819,7 +1799,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_3
             // 
             this.thnk_set_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_3.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_3.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_3.DisplayAsTime = false;
             this.thnk_set_3.ForeColor = System.Drawing.Color.Black;
@@ -1828,6 +1808,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_3.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_3.HighlightKeyCharacter = "!";
             this.thnk_set_3.InterpretValueAsBCD = false;
+            this.thnk_set_3.KeypadAlphanumeric = false;
             this.thnk_set_3.KeypadAlphaNumeric = false;
             this.thnk_set_3.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_3.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1840,10 +1821,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_3.Location = new System.Drawing.Point(9, 11);
             this.thnk_set_3.Name = "thnk_set_3";
             this.thnk_set_3.NumericFormat = null;
-            this.thnk_set_3.PLCAddressHighlight = "";
             this.thnk_set_3.PLCAddressKeypad = "";
             this.thnk_set_3.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00019";
-            this.thnk_set_3.PLCAddressVisible = "";
             this.thnk_set_3.PollRate = 0;
             this.thnk_set_3.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_3.TabIndex = 2;
@@ -1873,7 +1852,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel28
             // 
             this.hmiLabel28.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel28.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel28.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel28.DisplayAsTime = false;
             this.hmiLabel28.ForeColor = System.Drawing.Color.Black;
@@ -1882,6 +1861,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel28.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel28.HighlightKeyCharacter = "!";
             this.hmiLabel28.InterpretValueAsBCD = false;
+            this.hmiLabel28.KeypadAlphanumeric = false;
             this.hmiLabel28.KeypadAlphaNumeric = false;
             this.hmiLabel28.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel28.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1894,10 +1874,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel28.Location = new System.Drawing.Point(23, 88);
             this.hmiLabel28.Name = "hmiLabel28";
             this.hmiLabel28.NumericFormat = null;
-            this.hmiLabel28.PLCAddressHighlight = "";
             this.hmiLabel28.PLCAddressKeypad = "";
             this.hmiLabel28.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:72";
-            this.hmiLabel28.PLCAddressVisible = "";
             this.hmiLabel28.PollRate = 0;
             this.hmiLabel28.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel28.TabIndex = 3;
@@ -1914,7 +1892,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel27
             // 
             this.hmiLabel27.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel27.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel27.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel27.DisplayAsTime = false;
             this.hmiLabel27.ForeColor = System.Drawing.Color.Black;
@@ -1923,6 +1901,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel27.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel27.HighlightKeyCharacter = "!";
             this.hmiLabel27.InterpretValueAsBCD = false;
+            this.hmiLabel27.KeypadAlphanumeric = false;
             this.hmiLabel27.KeypadAlphaNumeric = false;
             this.hmiLabel27.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel27.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1935,10 +1914,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel27.Location = new System.Drawing.Point(24, 64);
             this.hmiLabel27.Name = "hmiLabel27";
             this.hmiLabel27.NumericFormat = null;
-            this.hmiLabel27.PLCAddressHighlight = "";
             this.hmiLabel27.PLCAddressKeypad = "";
             this.hmiLabel27.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:8";
-            this.hmiLabel27.PLCAddressVisible = "";
             this.hmiLabel27.PollRate = 0;
             this.hmiLabel27.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel27.TabIndex = 2;
@@ -1955,7 +1932,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_1
             // 
             this.thnk_rec_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_1.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_1.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_1.DisplayAsTime = false;
             this.thnk_rec_1.ForeColor = System.Drawing.Color.Black;
@@ -1964,6 +1941,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_1.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_1.HighlightKeyCharacter = "!";
             this.thnk_rec_1.InterpretValueAsBCD = false;
+            this.thnk_rec_1.KeypadAlphanumeric = false;
             this.thnk_rec_1.KeypadAlphaNumeric = false;
             this.thnk_rec_1.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_1.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -1976,10 +1954,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_1.Location = new System.Drawing.Point(10, 36);
             this.thnk_rec_1.Name = "thnk_rec_1";
             this.thnk_rec_1.NumericFormat = null;
-            this.thnk_rec_1.PLCAddressHighlight = "";
             this.thnk_rec_1.PLCAddressKeypad = "";
             this.thnk_rec_1.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:94";
-            this.thnk_rec_1.PLCAddressVisible = "";
             this.thnk_rec_1.PollRate = 0;
             this.thnk_rec_1.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_1.TabIndex = 1;
@@ -1996,7 +1972,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_1
             // 
             this.thnk_set_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_1.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_1.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_1.DisplayAsTime = false;
             this.thnk_set_1.ForeColor = System.Drawing.Color.Black;
@@ -2005,6 +1981,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_1.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_1.HighlightKeyCharacter = "!";
             this.thnk_set_1.InterpretValueAsBCD = false;
+            this.thnk_set_1.KeypadAlphanumeric = false;
             this.thnk_set_1.KeypadAlphaNumeric = false;
             this.thnk_set_1.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_1.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2017,10 +1994,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_1.Location = new System.Drawing.Point(10, 11);
             this.thnk_set_1.Name = "thnk_set_1";
             this.thnk_set_1.NumericFormat = null;
-            this.thnk_set_1.PLCAddressHighlight = "";
             this.thnk_set_1.PLCAddressKeypad = "";
             this.thnk_set_1.PLCAddressValue = "CH1.PLC1.DataBlock1.TAG00001";
-            this.thnk_set_1.PLCAddressVisible = "";
             this.thnk_set_1.PollRate = 0;
             this.thnk_set_1.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_1.TabIndex = 0;
@@ -2050,7 +2025,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel29
             // 
             this.hmiLabel29.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel29.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel29.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel29.DisplayAsTime = false;
             this.hmiLabel29.ForeColor = System.Drawing.Color.Black;
@@ -2059,6 +2034,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel29.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel29.HighlightKeyCharacter = "!";
             this.hmiLabel29.InterpretValueAsBCD = false;
+            this.hmiLabel29.KeypadAlphanumeric = false;
             this.hmiLabel29.KeypadAlphaNumeric = false;
             this.hmiLabel29.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel29.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2071,10 +2047,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel29.Location = new System.Drawing.Point(23, 88);
             this.hmiLabel29.Name = "hmiLabel29";
             this.hmiLabel29.NumericFormat = null;
-            this.hmiLabel29.PLCAddressHighlight = "";
             this.hmiLabel29.PLCAddressKeypad = "";
             this.hmiLabel29.PLCAddressValue = "TEST.PLC.StartAddress22.StartAddress22:74";
-            this.hmiLabel29.PLCAddressVisible = "";
             this.hmiLabel29.PollRate = 0;
             this.hmiLabel29.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel29.TabIndex = 5;
@@ -2091,7 +2065,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel30
             // 
             this.hmiLabel30.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel30.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel30.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel30.DisplayAsTime = false;
             this.hmiLabel30.ForeColor = System.Drawing.Color.Black;
@@ -2100,6 +2074,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel30.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel30.HighlightKeyCharacter = "!";
             this.hmiLabel30.InterpretValueAsBCD = false;
+            this.hmiLabel30.KeypadAlphanumeric = false;
             this.hmiLabel30.KeypadAlphaNumeric = false;
             this.hmiLabel30.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel30.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2112,10 +2087,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel30.Location = new System.Drawing.Point(24, 64);
             this.hmiLabel30.Name = "hmiLabel30";
             this.hmiLabel30.NumericFormat = null;
-            this.hmiLabel30.PLCAddressHighlight = "";
             this.hmiLabel30.PLCAddressKeypad = "";
             this.hmiLabel30.PLCAddressValue = "TEST.PLC.StartAddressTimer0.StartAddressTimer0:10";
-            this.hmiLabel30.PLCAddressVisible = "";
             this.hmiLabel30.PollRate = 0;
             this.hmiLabel30.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel30.TabIndex = 4;
@@ -2132,7 +2105,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_2
             // 
             this.thnk_rec_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_2.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_2.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_2.DisplayAsTime = false;
             this.thnk_rec_2.ForeColor = System.Drawing.Color.Black;
@@ -2141,6 +2114,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_2.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_2.HighlightKeyCharacter = "!";
             this.thnk_rec_2.InterpretValueAsBCD = false;
+            this.thnk_rec_2.KeypadAlphanumeric = false;
             this.thnk_rec_2.KeypadAlphaNumeric = false;
             this.thnk_rec_2.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_2.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2153,10 +2127,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_2.Location = new System.Drawing.Point(9, 36);
             this.thnk_rec_2.Name = "thnk_rec_2";
             this.thnk_rec_2.NumericFormat = null;
-            this.thnk_rec_2.PLCAddressHighlight = "";
             this.thnk_rec_2.PLCAddressKeypad = "";
             this.thnk_rec_2.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:96";
-            this.thnk_rec_2.PLCAddressVisible = "";
             this.thnk_rec_2.PollRate = 0;
             this.thnk_rec_2.Size = new System.Drawing.Size(51, 19);
             this.thnk_rec_2.TabIndex = 3;
@@ -2173,7 +2145,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_set_2
             // 
             this.thnk_set_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.thnk_set_2.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_set_2.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_set_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_set_2.DisplayAsTime = false;
             this.thnk_set_2.ForeColor = System.Drawing.Color.Black;
@@ -2182,6 +2154,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_2.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_set_2.HighlightKeyCharacter = "!";
             this.thnk_set_2.InterpretValueAsBCD = false;
+            this.thnk_set_2.KeypadAlphanumeric = false;
             this.thnk_set_2.KeypadAlphaNumeric = false;
             this.thnk_set_2.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_set_2.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2194,10 +2167,8 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_set_2.Location = new System.Drawing.Point(9, 11);
             this.thnk_set_2.Name = "thnk_set_2";
             this.thnk_set_2.NumericFormat = null;
-            this.thnk_set_2.PLCAddressHighlight = "";
             this.thnk_set_2.PLCAddressKeypad = "";
             this.thnk_set_2.PLCAddressValue = "CH2.PLC1.DataBlock2.TAG00018";
-            this.thnk_set_2.PLCAddressVisible = "";
             this.thnk_set_2.PollRate = 0;
             this.thnk_set_2.Size = new System.Drawing.Size(51, 19);
             this.thnk_set_2.TabIndex = 2;
@@ -2228,7 +2199,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel25
             // 
             this.hmiLabel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.hmiLabel25.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel25.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel25.DisplayAsTime = false;
             this.hmiLabel25.ForeColor = System.Drawing.Color.Black;
@@ -2237,6 +2208,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel25.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel25.HighlightKeyCharacter = "!";
             this.hmiLabel25.InterpretValueAsBCD = false;
+            this.hmiLabel25.KeypadAlphanumeric = false;
             this.hmiLabel25.KeypadAlphaNumeric = false;
             this.hmiLabel25.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel25.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2249,10 +2221,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel25.Location = new System.Drawing.Point(9, 12);
             this.hmiLabel25.Name = "hmiLabel25";
             this.hmiLabel25.NumericFormat = null;
-            this.hmiLabel25.PLCAddressHighlight = "";
             this.hmiLabel25.PLCAddressKeypad = "";
             this.hmiLabel25.PLCAddressValue = "TEST.PLC.DW.DW3";
-            this.hmiLabel25.PLCAddressVisible = "";
             this.hmiLabel25.PollRate = 0;
             this.hmiLabel25.Size = new System.Drawing.Size(51, 19);
             this.hmiLabel25.TabIndex = 8;
@@ -2270,11 +2240,13 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.hmiSevenSegment1.BackColor = System.Drawing.Color.Transparent;
             this.hmiSevenSegment1.DecimalPosition = 0;
+            this.hmiSevenSegment1.ForeColor = System.Drawing.Color.Empty;
             this.hmiSevenSegment1.ForecolorHighLimitValue = 999999D;
             this.hmiSevenSegment1.ForeColorInLimits = System.Drawing.Color.Blue;
             this.hmiSevenSegment1.ForecolorLowLimitValue = -999999D;
             this.hmiSevenSegment1.ForeColorOverHighLimit = System.Drawing.Color.Red;
             this.hmiSevenSegment1.ForeColorUnderLowLimit = System.Drawing.Color.Yellow;
+            this.hmiSevenSegment1.InsetPercent = 0;
             this.hmiSevenSegment1.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiSevenSegment1.KeypadMaxValue = 0D;
             this.hmiSevenSegment1.KeypadMinValue = 0D;
@@ -2284,7 +2256,11 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSevenSegment1.Location = new System.Drawing.Point(84, 15);
             this.hmiSevenSegment1.Name = "hmiSevenSegment1";
             this.hmiSevenSegment1.NumberOfDigits = 5;
+            this.hmiSevenSegment1.PLCAddressForecolorHighLimitValue = null;
+            this.hmiSevenSegment1.PLCAddressForecolorLowLimitValue = null;
             this.hmiSevenSegment1.PLCAddressKeypad = "CH2.PLC1.DataBlock2.TAG00017";
+            this.hmiSevenSegment1.PLCAddressText = "";
+            this.hmiSevenSegment1.PLCAddressValue = null;
             this.hmiSevenSegment1.PLCAddressVisible = "";
             this.hmiSevenSegment1.ResolutionOfLastDigit = new decimal(new int[] {
             1,
@@ -2295,6 +2271,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSevenSegment1.Size = new System.Drawing.Size(397, 103);
             this.hmiSevenSegment1.TabIndex = 7;
             this.hmiSevenSegment1.Text = "hmiSevenSegment1";
+            this.hmiSevenSegment1.TextCenterLocation = new System.Drawing.Point(0, 0);
+            this.hmiSevenSegment1.TextForeColor = System.Drawing.Color.White;
             this.hmiSevenSegment1.Value = 0D;
             // 
             // msg_thnk
@@ -2342,7 +2320,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSimpleLED1.MinimumHoldTime = 500;
             this.hmiSimpleLED1.MinimumSize = new System.Drawing.Size(27, 27);
             this.hmiSimpleLED1.Name = "hmiSimpleLED1";
-            this.hmiSimpleLED1.OutputType = OutputType.Toggle;
+            this.hmiSimpleLED1.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiSimpleLED1.PLCAddressClick = "";
             this.hmiSimpleLED1.PLCAddressText = "";
             this.hmiSimpleLED1.PLCAddressValue = "";
@@ -2355,6 +2333,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiIndicator2
             // 
             this.hmiIndicator2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hmiIndicator2.Blink = false;
             this.hmiIndicator2.Color1 = System.Drawing.Color.Red;
             this.hmiIndicator2.Color2 = System.Drawing.Color.Green;
             this.hmiIndicator2.Color3 = System.Drawing.Color.Red;
@@ -2362,13 +2341,13 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiIndicator2.Name = "hmiIndicator2";
             this.hmiIndicator2.OutlineColor = System.Drawing.Color.Transparent;
             this.hmiIndicator2.OutlineWidth = 1;
-            this.hmiIndicator2.PLCAddressClick = "";
+            this.hmiIndicator2.OutputType = HslScada.Controls_Net45.OutputType.MomentarySet;
             this.hmiIndicator2.PLCAddressText = "";
             this.hmiIndicator2.PLCAddressValue = "";
             this.hmiIndicator2.PLCAddressVisible = "";
             this.hmiIndicator2.SelectColor2 = false;
             this.hmiIndicator2.SelectColor3 = false;
-            this.hmiIndicator2.Shape = HMIIndicator.ShapeType.Rectangle;
+            this.hmiIndicator2.Shape = HslScada.Controls_Net45.Indicator.ShapeType.Rectangle;
             this.hmiIndicator2.Size = new System.Drawing.Size(131, 12);
             this.hmiIndicator2.TabIndex = 517;
             this.hmiIndicator2.Text = "hmiIndicator2";
@@ -2376,7 +2355,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel23
             // 
             this.hmiLabel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.hmiLabel23.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel23.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel23.DisplayAsTime = false;
             this.hmiLabel23.ForeColor = System.Drawing.Color.Black;
@@ -2385,6 +2364,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel23.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel23.HighlightKeyCharacter = "!";
             this.hmiLabel23.InterpretValueAsBCD = false;
+            this.hmiLabel23.KeypadAlphanumeric = false;
             this.hmiLabel23.KeypadAlphaNumeric = false;
             this.hmiLabel23.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel23.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2397,10 +2377,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel23.Location = new System.Drawing.Point(230, 108);
             this.hmiLabel23.Name = "hmiLabel23";
             this.hmiLabel23.NumericFormat = null;
-            this.hmiLabel23.PLCAddressHighlight = "";
             this.hmiLabel23.PLCAddressKeypad = "";
             this.hmiLabel23.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:122";
-            this.hmiLabel23.PLCAddressVisible = "";
             this.hmiLabel23.PollRate = 0;
             this.hmiLabel23.Size = new System.Drawing.Size(51, 19);
             this.hmiLabel23.TabIndex = 493;
@@ -2417,7 +2395,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel24
             // 
             this.hmiLabel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel24.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel24.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel24.DisplayAsTime = false;
             this.hmiLabel24.ForeColor = System.Drawing.Color.Black;
@@ -2426,6 +2404,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel24.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel24.HighlightKeyCharacter = "!";
             this.hmiLabel24.InterpretValueAsBCD = false;
+            this.hmiLabel24.KeypadAlphanumeric = false;
             this.hmiLabel24.KeypadAlphaNumeric = false;
             this.hmiLabel24.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel24.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2438,10 +2417,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel24.Location = new System.Drawing.Point(230, 83);
             this.hmiLabel24.Name = "hmiLabel24";
             this.hmiLabel24.NumericFormat = null;
-            this.hmiLabel24.PLCAddressHighlight = "";
             this.hmiLabel24.PLCAddressKeypad = "";
             this.hmiLabel24.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:116";
-            this.hmiLabel24.PLCAddressVisible = "";
             this.hmiLabel24.PollRate = 0;
             this.hmiLabel24.Size = new System.Drawing.Size(51, 19);
             this.hmiLabel24.TabIndex = 492;
@@ -2458,7 +2435,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel21
             // 
             this.hmiLabel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.hmiLabel21.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel21.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel21.DisplayAsTime = false;
             this.hmiLabel21.ForeColor = System.Drawing.Color.Black;
@@ -2467,6 +2444,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel21.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel21.HighlightKeyCharacter = "!";
             this.hmiLabel21.InterpretValueAsBCD = false;
+            this.hmiLabel21.KeypadAlphanumeric = false;
             this.hmiLabel21.KeypadAlphaNumeric = false;
             this.hmiLabel21.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel21.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2479,10 +2457,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel21.Location = new System.Drawing.Point(384, 109);
             this.hmiLabel21.Name = "hmiLabel21";
             this.hmiLabel21.NumericFormat = null;
-            this.hmiLabel21.PLCAddressHighlight = "";
             this.hmiLabel21.PLCAddressKeypad = "TEST.PLC.StartAddress90.StartAddress90:118";
             this.hmiLabel21.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:118";
-            this.hmiLabel21.PLCAddressVisible = "";
             this.hmiLabel21.PollRate = 0;
             this.hmiLabel21.Size = new System.Drawing.Size(51, 19);
             this.hmiLabel21.TabIndex = 491;
@@ -2499,7 +2475,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel22
             // 
             this.hmiLabel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel22.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel22.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel22.DisplayAsTime = false;
             this.hmiLabel22.ForeColor = System.Drawing.Color.Black;
@@ -2508,6 +2484,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel22.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel22.HighlightKeyCharacter = "!";
             this.hmiLabel22.InterpretValueAsBCD = false;
+            this.hmiLabel22.KeypadAlphanumeric = false;
             this.hmiLabel22.KeypadAlphaNumeric = false;
             this.hmiLabel22.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel22.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2520,10 +2497,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel22.Location = new System.Drawing.Point(384, 84);
             this.hmiLabel22.Name = "hmiLabel22";
             this.hmiLabel22.NumericFormat = null;
-            this.hmiLabel22.PLCAddressHighlight = "";
             this.hmiLabel22.PLCAddressKeypad = "TEST.PLC.StartAddress90.StartAddress90:114";
             this.hmiLabel22.PLCAddressValue = "TEST.PLC.StartAddress90.StartAddress90:114";
-            this.hmiLabel22.PLCAddressVisible = "";
             this.hmiLabel22.PollRate = 0;
             this.hmiLabel22.Size = new System.Drawing.Size(51, 19);
             this.hmiLabel22.TabIndex = 490;
@@ -2716,7 +2691,7 @@ namespace AdvancedScada.HMI.MainForm
             // LBL_WeightSet
             // 
             this.LBL_WeightSet.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_WeightSet.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.LBL_WeightSet.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.LBL_WeightSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LBL_WeightSet.DisplayAsTime = false;
             this.LBL_WeightSet.ForeColor = System.Drawing.Color.Black;
@@ -2725,6 +2700,7 @@ namespace AdvancedScada.HMI.MainForm
             this.LBL_WeightSet.HighlightForeColor = System.Drawing.Color.White;
             this.LBL_WeightSet.HighlightKeyCharacter = "!";
             this.LBL_WeightSet.InterpretValueAsBCD = false;
+            this.LBL_WeightSet.KeypadAlphanumeric = false;
             this.LBL_WeightSet.KeypadAlphaNumeric = false;
             this.LBL_WeightSet.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.LBL_WeightSet.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2737,10 +2713,8 @@ namespace AdvancedScada.HMI.MainForm
             this.LBL_WeightSet.Location = new System.Drawing.Point(183, 81);
             this.LBL_WeightSet.Name = "LBL_WeightSet";
             this.LBL_WeightSet.NumericFormat = null;
-            this.LBL_WeightSet.PLCAddressHighlight = "";
             this.LBL_WeightSet.PLCAddressKeypad = "";
             this.LBL_WeightSet.PLCAddressValue = "TEST.PLC.DW.DW5";
-            this.LBL_WeightSet.PLCAddressVisible = "";
             this.LBL_WeightSet.PollRate = 0;
             this.LBL_WeightSet.Size = new System.Drawing.Size(18, 19);
             this.LBL_WeightSet.TabIndex = 52;
@@ -2829,7 +2803,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel44
             // 
             this.hmiLabel44.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel44.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel44.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel44.DisplayAsTime = false;
             this.hmiLabel44.ForeColor = System.Drawing.Color.Black;
@@ -2838,6 +2812,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel44.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel44.HighlightKeyCharacter = "!";
             this.hmiLabel44.InterpretValueAsBCD = false;
+            this.hmiLabel44.KeypadAlphanumeric = false;
             this.hmiLabel44.KeypadAlphaNumeric = false;
             this.hmiLabel44.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel44.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2850,10 +2825,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel44.Location = new System.Drawing.Point(39, 69);
             this.hmiLabel44.Name = "hmiLabel44";
             this.hmiLabel44.NumericFormat = null;
-            this.hmiLabel44.PLCAddressHighlight = "";
             this.hmiLabel44.PLCAddressKeypad = "";
-            this.hmiLabel44.PLCAddressValue = "";
-            this.hmiLabel44.PLCAddressVisible = "";
             this.hmiLabel44.PollRate = 0;
             this.hmiLabel44.Size = new System.Drawing.Size(22, 19);
             this.hmiLabel44.TabIndex = 4;
@@ -2870,7 +2842,7 @@ namespace AdvancedScada.HMI.MainForm
             // thnk_rec_oil
             // 
             this.thnk_rec_oil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.thnk_rec_oil.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.thnk_rec_oil.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.thnk_rec_oil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thnk_rec_oil.DisplayAsTime = false;
             this.thnk_rec_oil.ForeColor = System.Drawing.Color.Black;
@@ -2879,6 +2851,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_oil.HighlightForeColor = System.Drawing.Color.White;
             this.thnk_rec_oil.HighlightKeyCharacter = "!";
             this.thnk_rec_oil.InterpretValueAsBCD = false;
+            this.thnk_rec_oil.KeypadAlphanumeric = false;
             this.thnk_rec_oil.KeypadAlphaNumeric = false;
             this.thnk_rec_oil.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.thnk_rec_oil.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2891,10 +2864,7 @@ namespace AdvancedScada.HMI.MainForm
             this.thnk_rec_oil.Location = new System.Drawing.Point(10, 36);
             this.thnk_rec_oil.Name = "thnk_rec_oil";
             this.thnk_rec_oil.NumericFormat = null;
-            this.thnk_rec_oil.PLCAddressHighlight = "";
             this.thnk_rec_oil.PLCAddressKeypad = "";
-            this.thnk_rec_oil.PLCAddressValue = "";
-            this.thnk_rec_oil.PLCAddressVisible = "";
             this.thnk_rec_oil.PollRate = 0;
             this.thnk_rec_oil.Size = new System.Drawing.Size(75, 19);
             this.thnk_rec_oil.TabIndex = 3;
@@ -2911,7 +2881,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel46
             // 
             this.hmiLabel46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.hmiLabel46.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel46.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.hmiLabel46.DisplayAsTime = false;
             this.hmiLabel46.ForeColor = System.Drawing.Color.Black;
@@ -2920,6 +2890,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel46.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel46.HighlightKeyCharacter = "!";
             this.hmiLabel46.InterpretValueAsBCD = false;
+            this.hmiLabel46.KeypadAlphanumeric = false;
             this.hmiLabel46.KeypadAlphaNumeric = false;
             this.hmiLabel46.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel46.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -2932,10 +2903,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel46.Location = new System.Drawing.Point(10, 11);
             this.hmiLabel46.Name = "hmiLabel46";
             this.hmiLabel46.NumericFormat = null;
-            this.hmiLabel46.PLCAddressHighlight = "";
             this.hmiLabel46.PLCAddressKeypad = "";
-            this.hmiLabel46.PLCAddressValue = "";
-            this.hmiLabel46.PLCAddressVisible = "";
             this.hmiLabel46.PollRate = 0;
             this.hmiLabel46.Size = new System.Drawing.Size(75, 19);
             this.hmiLabel46.TabIndex = 2;
@@ -2971,7 +2939,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSimpleLED2.MinimumHoldTime = 500;
             this.hmiSimpleLED2.MinimumSize = new System.Drawing.Size(27, 27);
             this.hmiSimpleLED2.Name = "hmiSimpleLED2";
-            this.hmiSimpleLED2.OutputType = OutputType.Toggle;
+            this.hmiSimpleLED2.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiSimpleLED2.PLCAddressClick = "";
             this.hmiSimpleLED2.PLCAddressText = "";
             this.hmiSimpleLED2.PLCAddressValue = "";
@@ -3006,7 +2974,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel53
             // 
             this.hmiLabel53.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel53.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel53.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel53.DisplayAsTime = false;
             this.hmiLabel53.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel53.Highlight = false;
@@ -3014,6 +2982,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel53.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel53.HighlightKeyCharacter = "!";
             this.hmiLabel53.InterpretValueAsBCD = false;
+            this.hmiLabel53.KeypadAlphanumeric = false;
             this.hmiLabel53.KeypadAlphaNumeric = false;
             this.hmiLabel53.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel53.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3026,10 +2995,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel53.Location = new System.Drawing.Point(722, 76);
             this.hmiLabel53.Name = "hmiLabel53";
             this.hmiLabel53.NumericFormat = null;
-            this.hmiLabel53.PLCAddressHighlight = "";
             this.hmiLabel53.PLCAddressKeypad = "";
             this.hmiLabel53.PLCAddressValue = "TEST.PLC.MB.MB7";
-            this.hmiLabel53.PLCAddressVisible = "";
             this.hmiLabel53.PollRate = 0;
             this.hmiLabel53.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel53.TabIndex = 533;
@@ -3046,7 +3013,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel52
             // 
             this.hmiLabel52.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel52.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel52.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel52.DisplayAsTime = false;
             this.hmiLabel52.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel52.Highlight = false;
@@ -3054,6 +3021,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel52.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel52.HighlightKeyCharacter = "!";
             this.hmiLabel52.InterpretValueAsBCD = false;
+            this.hmiLabel52.KeypadAlphanumeric = false;
             this.hmiLabel52.KeypadAlphaNumeric = false;
             this.hmiLabel52.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel52.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3066,10 +3034,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel52.Location = new System.Drawing.Point(786, 77);
             this.hmiLabel52.Name = "hmiLabel52";
             this.hmiLabel52.NumericFormat = null;
-            this.hmiLabel52.PLCAddressHighlight = "";
             this.hmiLabel52.PLCAddressKeypad = "";
             this.hmiLabel52.PLCAddressValue = "TEST.PLC.MB.MB6";
-            this.hmiLabel52.PLCAddressVisible = "";
             this.hmiLabel52.PollRate = 0;
             this.hmiLabel52.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel52.TabIndex = 532;
@@ -3086,7 +3052,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel51
             // 
             this.hmiLabel51.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel51.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel51.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel51.DisplayAsTime = false;
             this.hmiLabel51.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel51.Highlight = false;
@@ -3094,6 +3060,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel51.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel51.HighlightKeyCharacter = "!";
             this.hmiLabel51.InterpretValueAsBCD = false;
+            this.hmiLabel51.KeypadAlphanumeric = false;
             this.hmiLabel51.KeypadAlphaNumeric = false;
             this.hmiLabel51.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel51.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3106,10 +3073,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel51.Location = new System.Drawing.Point(851, 77);
             this.hmiLabel51.Name = "hmiLabel51";
             this.hmiLabel51.NumericFormat = null;
-            this.hmiLabel51.PLCAddressHighlight = "";
             this.hmiLabel51.PLCAddressKeypad = "";
             this.hmiLabel51.PLCAddressValue = "TEST.PLC.MB.MB5";
-            this.hmiLabel51.PLCAddressVisible = "";
             this.hmiLabel51.PollRate = 0;
             this.hmiLabel51.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel51.TabIndex = 531;
@@ -3126,7 +3091,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel50
             // 
             this.hmiLabel50.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel50.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel50.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel50.DisplayAsTime = false;
             this.hmiLabel50.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel50.Highlight = false;
@@ -3134,6 +3099,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel50.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel50.HighlightKeyCharacter = "!";
             this.hmiLabel50.InterpretValueAsBCD = false;
+            this.hmiLabel50.KeypadAlphanumeric = false;
             this.hmiLabel50.KeypadAlphaNumeric = false;
             this.hmiLabel50.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel50.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3146,10 +3112,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel50.Location = new System.Drawing.Point(925, 77);
             this.hmiLabel50.Name = "hmiLabel50";
             this.hmiLabel50.NumericFormat = null;
-            this.hmiLabel50.PLCAddressHighlight = "";
             this.hmiLabel50.PLCAddressKeypad = "";
             this.hmiLabel50.PLCAddressValue = "TEST.PLC.MB.MB4";
-            this.hmiLabel50.PLCAddressVisible = "";
             this.hmiLabel50.PollRate = 0;
             this.hmiLabel50.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel50.TabIndex = 530;
@@ -3166,7 +3130,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel49
             // 
             this.hmiLabel49.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel49.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel49.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel49.DisplayAsTime = false;
             this.hmiLabel49.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel49.Highlight = false;
@@ -3174,6 +3138,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel49.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel49.HighlightKeyCharacter = "!";
             this.hmiLabel49.InterpretValueAsBCD = false;
+            this.hmiLabel49.KeypadAlphanumeric = false;
             this.hmiLabel49.KeypadAlphaNumeric = false;
             this.hmiLabel49.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel49.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3186,10 +3151,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel49.Location = new System.Drawing.Point(989, 76);
             this.hmiLabel49.Name = "hmiLabel49";
             this.hmiLabel49.NumericFormat = null;
-            this.hmiLabel49.PLCAddressHighlight = "";
             this.hmiLabel49.PLCAddressKeypad = "";
             this.hmiLabel49.PLCAddressValue = "TEST.PLC.MB.MB3";
-            this.hmiLabel49.PLCAddressVisible = "";
             this.hmiLabel49.PollRate = 0;
             this.hmiLabel49.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel49.TabIndex = 529;
@@ -3206,7 +3169,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel48
             // 
             this.hmiLabel48.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel48.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel48.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel48.DisplayAsTime = false;
             this.hmiLabel48.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel48.Highlight = false;
@@ -3214,6 +3177,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel48.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel48.HighlightKeyCharacter = "!";
             this.hmiLabel48.InterpretValueAsBCD = false;
+            this.hmiLabel48.KeypadAlphanumeric = false;
             this.hmiLabel48.KeypadAlphaNumeric = false;
             this.hmiLabel48.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel48.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3226,10 +3190,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel48.Location = new System.Drawing.Point(1060, 77);
             this.hmiLabel48.Name = "hmiLabel48";
             this.hmiLabel48.NumericFormat = null;
-            this.hmiLabel48.PLCAddressHighlight = "";
             this.hmiLabel48.PLCAddressKeypad = "";
             this.hmiLabel48.PLCAddressValue = "TEST.PLC.MB.MB2";
-            this.hmiLabel48.PLCAddressVisible = "";
             this.hmiLabel48.PollRate = 0;
             this.hmiLabel48.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel48.TabIndex = 528;
@@ -3246,7 +3208,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel47
             // 
             this.hmiLabel47.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel47.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel47.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel47.DisplayAsTime = false;
             this.hmiLabel47.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel47.Highlight = false;
@@ -3254,6 +3216,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel47.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel47.HighlightKeyCharacter = "!";
             this.hmiLabel47.InterpretValueAsBCD = false;
+            this.hmiLabel47.KeypadAlphanumeric = false;
             this.hmiLabel47.KeypadAlphaNumeric = false;
             this.hmiLabel47.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel47.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3266,10 +3229,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel47.Location = new System.Drawing.Point(1126, 76);
             this.hmiLabel47.Name = "hmiLabel47";
             this.hmiLabel47.NumericFormat = null;
-            this.hmiLabel47.PLCAddressHighlight = "";
             this.hmiLabel47.PLCAddressKeypad = "";
             this.hmiLabel47.PLCAddressValue = "TEST.PLC.MB.MB1";
-            this.hmiLabel47.PLCAddressVisible = "";
             this.hmiLabel47.PollRate = 0;
             this.hmiLabel47.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel47.TabIndex = 527;
@@ -3286,7 +3247,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiLabel43
             // 
             this.hmiLabel43.BackColor = System.Drawing.Color.Transparent;
-            this.hmiLabel43.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.hmiLabel43.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.hmiLabel43.DisplayAsTime = false;
             this.hmiLabel43.ForeColor = System.Drawing.Color.Black;
             this.hmiLabel43.Highlight = false;
@@ -3294,6 +3255,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel43.HighlightForeColor = System.Drawing.Color.White;
             this.hmiLabel43.HighlightKeyCharacter = "!";
             this.hmiLabel43.InterpretValueAsBCD = false;
+            this.hmiLabel43.KeypadAlphanumeric = false;
             this.hmiLabel43.KeypadAlphaNumeric = false;
             this.hmiLabel43.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.hmiLabel43.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3306,10 +3268,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLabel43.Location = new System.Drawing.Point(1193, 76);
             this.hmiLabel43.Name = "hmiLabel43";
             this.hmiLabel43.NumericFormat = null;
-            this.hmiLabel43.PLCAddressHighlight = "";
             this.hmiLabel43.PLCAddressKeypad = "";
             this.hmiLabel43.PLCAddressValue = "TEST.PLC.MB.MB0";
-            this.hmiLabel43.PLCAddressVisible = "";
             this.hmiLabel43.PollRate = 0;
             this.hmiLabel43.Size = new System.Drawing.Size(53, 19);
             this.hmiLabel43.TabIndex = 526;
@@ -3327,14 +3287,14 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.hmiPilotLight4.Blink = false;
             this.hmiPilotLight4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.hmiPilotLight4.LegendPlate = HMIPilotLight.LegendPlates.Small;
-            this.hmiPilotLight4.LightColor = HMIPilotLight.LightColorOption.Red;
-            this.hmiPilotLight4.LightColorOff = HMIPilotLight.LightColorOption.Yellow;
+            this.hmiPilotLight4.LegendPlate = HslScada.Controls_Net45.PilotLight.LegendPlates.Small;
+            this.hmiPilotLight4.LightColor = HslScada.Controls_Net45.PilotLight.LightColorOption.Red;
+            this.hmiPilotLight4.LightColorOff = HslScada.Controls_Net45.PilotLight.LightColorOption.Yellow;
             this.hmiPilotLight4.Location = new System.Drawing.Point(4, 343);
             this.hmiPilotLight4.MaximumHoldTime = 3000;
             this.hmiPilotLight4.MinimumHoldTime = 500;
             this.hmiPilotLight4.Name = "hmiPilotLight4";
-            this.hmiPilotLight4.OutputType = OutputType.Toggle;
+            this.hmiPilotLight4.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiPilotLight4.PLCAddressClick = "TEST.PLC.MB.MBC";
             this.hmiPilotLight4.PLCAddressText = "";
             this.hmiPilotLight4.PLCAddressValue = "TEST.PLC.MB.MBC";
@@ -3349,14 +3309,14 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.hmiPilotLight3.Blink = false;
             this.hmiPilotLight3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.hmiPilotLight3.LegendPlate = HMIPilotLight.LegendPlates.Small;
-            this.hmiPilotLight3.LightColor = HMIPilotLight.LightColorOption.Red;
-            this.hmiPilotLight3.LightColorOff = HMIPilotLight.LightColorOption.Blue;
+            this.hmiPilotLight3.LegendPlate = HslScada.Controls_Net45.PilotLight.LegendPlates.Small;
+            this.hmiPilotLight3.LightColor = HslScada.Controls_Net45.PilotLight.LightColorOption.Red;
+            this.hmiPilotLight3.LightColorOff = HslScada.Controls_Net45.PilotLight.LightColorOption.Blue;
             this.hmiPilotLight3.Location = new System.Drawing.Point(4, 257);
             this.hmiPilotLight3.MaximumHoldTime = 3000;
             this.hmiPilotLight3.MinimumHoldTime = 500;
             this.hmiPilotLight3.Name = "hmiPilotLight3";
-            this.hmiPilotLight3.OutputType = OutputType.Toggle;
+            this.hmiPilotLight3.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiPilotLight3.PLCAddressClick = "TEST.PLC.MB.MBC";
             this.hmiPilotLight3.PLCAddressText = "";
             this.hmiPilotLight3.PLCAddressValue = "TEST.PLC.MB.MBC";
@@ -3371,14 +3331,14 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.hmiPilotLight2.Blink = false;
             this.hmiPilotLight2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.hmiPilotLight2.LegendPlate = HMIPilotLight.LegendPlates.Small;
-            this.hmiPilotLight2.LightColor = HMIPilotLight.LightColorOption.Red;
-            this.hmiPilotLight2.LightColorOff = HMIPilotLight.LightColorOption.Red;
+            this.hmiPilotLight2.LegendPlate = HslScada.Controls_Net45.PilotLight.LegendPlates.Small;
+            this.hmiPilotLight2.LightColor = HslScada.Controls_Net45.PilotLight.LightColorOption.Red;
+            this.hmiPilotLight2.LightColorOff = HslScada.Controls_Net45.PilotLight.LightColorOption.Red;
             this.hmiPilotLight2.Location = new System.Drawing.Point(4, 171);
             this.hmiPilotLight2.MaximumHoldTime = 3000;
             this.hmiPilotLight2.MinimumHoldTime = 500;
             this.hmiPilotLight2.Name = "hmiPilotLight2";
-            this.hmiPilotLight2.OutputType = OutputType.Toggle;
+            this.hmiPilotLight2.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiPilotLight2.PLCAddressClick = "TEST.PLC.MB.MB9";
             this.hmiPilotLight2.PLCAddressText = "";
             this.hmiPilotLight2.PLCAddressValue = "TEST.PLC.MB.MB9";
@@ -3393,14 +3353,14 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.hmiPilotLight1.Blink = false;
             this.hmiPilotLight1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.hmiPilotLight1.LegendPlate = HMIPilotLight.LegendPlates.Small;
-            this.hmiPilotLight1.LightColor = HMIPilotLight.LightColorOption.Green;
-            this.hmiPilotLight1.LightColorOff = HMIPilotLight.LightColorOption.Green;
+            this.hmiPilotLight1.LegendPlate = HslScada.Controls_Net45.PilotLight.LegendPlates.Small;
+            this.hmiPilotLight1.LightColor = HslScada.Controls_Net45.PilotLight.LightColorOption.Green;
+            this.hmiPilotLight1.LightColorOff = HslScada.Controls_Net45.PilotLight.LightColorOption.Green;
             this.hmiPilotLight1.Location = new System.Drawing.Point(4, 84);
             this.hmiPilotLight1.MaximumHoldTime = 3000;
             this.hmiPilotLight1.MinimumHoldTime = 500;
             this.hmiPilotLight1.Name = "hmiPilotLight1";
-            this.hmiPilotLight1.OutputType = OutputType.Toggle;
+            this.hmiPilotLight1.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiPilotLight1.PLCAddressClick = "TEST.PLC.MB.MBE";
             this.hmiPilotLight1.PLCAddressText = "";
             this.hmiPilotLight1.PLCAddressValue = "TEST.PLC.MB.MBE";
@@ -3414,7 +3374,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiDigitalPanelMeter1
             // 
             this.hmiDigitalPanelMeter1.BackColor = System.Drawing.Color.Transparent;
-             this.hmiDigitalPanelMeter1.DecimalPosition = 0;
+            this.hmiDigitalPanelMeter1.DecimalPosition = 0;
             this.hmiDigitalPanelMeter1.ForeColor = System.Drawing.Color.LightGray;
             this.hmiDigitalPanelMeter1.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiDigitalPanelMeter1.KeypadMaxValue = 0D;
@@ -3422,7 +3382,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiDigitalPanelMeter1.KeypadScaleFactor = 1D;
             this.hmiDigitalPanelMeter1.KeypadText = null;
             this.hmiDigitalPanelMeter1.KeypadWidth = 300;
-             this.hmiDigitalPanelMeter1.Location = new System.Drawing.Point(427, 123);
+            this.hmiDigitalPanelMeter1.Location = new System.Drawing.Point(427, 123);
             this.hmiDigitalPanelMeter1.Name = "hmiDigitalPanelMeter1";
             this.hmiDigitalPanelMeter1.NumberOfDigits = 5;
             this.hmiDigitalPanelMeter1.PLCAddressKeypad = "CH2.PLC1.DataBlock2.TAG00023";
@@ -3434,10 +3394,10 @@ namespace AdvancedScada.HMI.MainForm
             0,
             0,
             0});
-            this.hmiDigitalPanelMeter1.Size = new System.Drawing.Size(147, 65);
+            this.hmiDigitalPanelMeter1.Size = new System.Drawing.Size(150, 65);
             this.hmiDigitalPanelMeter1.TabIndex = 521;
             this.hmiDigitalPanelMeter1.Text = "شاشة الانفارتار";
-            this.hmiDigitalPanelMeter1.Value = 0F;
+            this.hmiDigitalPanelMeter1.Value = 0D;
             this.hmiDigitalPanelMeter1.ValueScaleFactor = new decimal(new int[] {
             1,
             0,
@@ -3451,12 +3411,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMushroomButton1
             // 
-            this.hmiMushroomButton1.LegendPlate = HMIMushroomButton.LegendPlates.Small;
+            this.hmiMushroomButton1.LegendPlate = HslScada.Controls_Net45.MushroomButton.LegendPlates.Small;
             this.hmiMushroomButton1.Location = new System.Drawing.Point(4, 433);
             this.hmiMushroomButton1.MaximumHoldTime = 3000;
             this.hmiMushroomButton1.MinimumHoldTime = 500;
             this.hmiMushroomButton1.Name = "hmiMushroomButton1";
-            this.hmiMushroomButton1.OutputType = HMIMushroomButton.OutputTypes.Toggle;
+            this.hmiMushroomButton1.OutputType = HslScada.Controls_Net45.MushroomButton.OutputTypes.Toggle;
             this.hmiMushroomButton1.PLCAddressClick = "TEST.PLC.MB.MBA";
             this.hmiMushroomButton1.PLCAddressText = "";
             this.hmiMushroomButton1.PLCAddressValue = "TEST.PLC.MB.MBA";
@@ -3473,7 +3433,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiWaterPump1.MaximumHoldTime = 3000;
             this.hmiWaterPump1.MinimumHoldTime = 500;
             this.hmiWaterPump1.Name = "hmiWaterPump1";
-            this.hmiWaterPump1.OutputType = OutputType.Toggle;
+            this.hmiWaterPump1.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiWaterPump1.PLCAddressClick = "CH2.PLC1.DataBlock2.TAG00021";
             this.hmiWaterPump1.PLCAddressText = "";
             this.hmiWaterPump1.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00005";
@@ -3487,6 +3447,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiIndicator1
             // 
             this.hmiIndicator1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hmiIndicator1.Blink = false;
             this.hmiIndicator1.Color1 = System.Drawing.Color.Red;
             this.hmiIndicator1.Color2 = System.Drawing.Color.Green;
             this.hmiIndicator1.Color3 = System.Drawing.Color.Red;
@@ -3494,25 +3455,25 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiIndicator1.Name = "hmiIndicator1";
             this.hmiIndicator1.OutlineColor = System.Drawing.Color.Transparent;
             this.hmiIndicator1.OutlineWidth = 1;
-            this.hmiIndicator1.PLCAddressClick = "";
+            this.hmiIndicator1.OutputType = HslScada.Controls_Net45.OutputType.MomentarySet;
             this.hmiIndicator1.PLCAddressText = "";
             this.hmiIndicator1.PLCAddressValue = "";
             this.hmiIndicator1.PLCAddressVisible = "";
             this.hmiIndicator1.SelectColor2 = false;
             this.hmiIndicator1.SelectColor3 = false;
-            this.hmiIndicator1.Shape = HMIIndicator.ShapeType.Rectangle;
+            this.hmiIndicator1.Shape = HslScada.Controls_Net45.Indicator.ShapeType.Rectangle;
             this.hmiIndicator1.Size = new System.Drawing.Size(256, 12);
             this.hmiIndicator1.TabIndex = 516;
             this.hmiIndicator1.Text = "hmiIndicator1";
             // 
             // hmiMotor8
             // 
-            this.hmiMotor8.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor8.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor8.Location = new System.Drawing.Point(680, 193);
             this.hmiMotor8.MaximumHoldTime = 3000;
             this.hmiMotor8.MinimumHoldTime = 500;
             this.hmiMotor8.Name = "hmiMotor8";
-            this.hmiMotor8.OutputType = OutputType.Toggle;
+            this.hmiMotor8.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor8.PLCAddressClick = "";
             this.hmiMotor8.PLCAddressText = "";
             this.hmiMotor8.PLCAddressValue = "";
@@ -3525,12 +3486,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor7
             // 
-            this.hmiMotor7.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor7.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor7.Location = new System.Drawing.Point(751, 192);
             this.hmiMotor7.MaximumHoldTime = 3000;
             this.hmiMotor7.MinimumHoldTime = 500;
             this.hmiMotor7.Name = "hmiMotor7";
-            this.hmiMotor7.OutputType = OutputType.Toggle;
+            this.hmiMotor7.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor7.PLCAddressClick = "";
             this.hmiMotor7.PLCAddressText = "";
             this.hmiMotor7.PLCAddressValue = "";
@@ -3543,12 +3504,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor6
             // 
-            this.hmiMotor6.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor6.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor6.Location = new System.Drawing.Point(820, 192);
             this.hmiMotor6.MaximumHoldTime = 3000;
             this.hmiMotor6.MinimumHoldTime = 500;
             this.hmiMotor6.Name = "hmiMotor6";
-            this.hmiMotor6.OutputType = OutputType.Toggle;
+            this.hmiMotor6.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor6.PLCAddressClick = "";
             this.hmiMotor6.PLCAddressText = "";
             this.hmiMotor6.PLCAddressValue = "";
@@ -3561,12 +3522,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor5
             // 
-            this.hmiMotor5.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor5.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor5.Location = new System.Drawing.Point(885, 193);
             this.hmiMotor5.MaximumHoldTime = 3000;
             this.hmiMotor5.MinimumHoldTime = 500;
             this.hmiMotor5.Name = "hmiMotor5";
-            this.hmiMotor5.OutputType = OutputType.Toggle;
+            this.hmiMotor5.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor5.PLCAddressClick = "";
             this.hmiMotor5.PLCAddressText = "";
             this.hmiMotor5.PLCAddressValue = "";
@@ -3579,12 +3540,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor4
             // 
-            this.hmiMotor4.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor4.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor4.Location = new System.Drawing.Point(957, 192);
             this.hmiMotor4.MaximumHoldTime = 3000;
             this.hmiMotor4.MinimumHoldTime = 500;
             this.hmiMotor4.Name = "hmiMotor4";
-            this.hmiMotor4.OutputType = OutputType.Toggle;
+            this.hmiMotor4.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor4.PLCAddressClick = "";
             this.hmiMotor4.PLCAddressText = "";
             this.hmiMotor4.PLCAddressValue = "";
@@ -3597,12 +3558,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor3
             // 
-            this.hmiMotor3.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor3.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor3.Location = new System.Drawing.Point(1026, 194);
             this.hmiMotor3.MaximumHoldTime = 3000;
             this.hmiMotor3.MinimumHoldTime = 500;
             this.hmiMotor3.Name = "hmiMotor3";
-            this.hmiMotor3.OutputType = OutputType.Toggle;
+            this.hmiMotor3.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor3.PLCAddressClick = "";
             this.hmiMotor3.PLCAddressText = "";
             this.hmiMotor3.PLCAddressValue = "";
@@ -3615,12 +3576,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor2
             // 
-            this.hmiMotor2.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor2.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor2.Location = new System.Drawing.Point(1094, 192);
             this.hmiMotor2.MaximumHoldTime = 3000;
             this.hmiMotor2.MinimumHoldTime = 500;
             this.hmiMotor2.Name = "hmiMotor2";
-            this.hmiMotor2.OutputType = OutputType.Toggle;
+            this.hmiMotor2.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor2.PLCAddressClick = "";
             this.hmiMotor2.PLCAddressText = "";
             this.hmiMotor2.PLCAddressValue = "";
@@ -3633,12 +3594,12 @@ namespace AdvancedScada.HMI.MainForm
             // 
             // hmiMotor1
             // 
-            this.hmiMotor1.LightColor = HMIMotor.LightColorOption.Green;
+            this.hmiMotor1.LightColor = HslScada.Controls_Net45.Motor.LightColorOption.Green;
             this.hmiMotor1.Location = new System.Drawing.Point(1164, 194);
             this.hmiMotor1.MaximumHoldTime = 3000;
             this.hmiMotor1.MinimumHoldTime = 500;
             this.hmiMotor1.Name = "hmiMotor1";
-            this.hmiMotor1.OutputType = OutputType.Toggle;
+            this.hmiMotor1.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiMotor1.PLCAddressClick = "";
             this.hmiMotor1.PLCAddressText = "";
             this.hmiMotor1.PLCAddressValue = "";
@@ -3658,7 +3619,7 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.LBL_ReportViewer.AutoSize = true;
             this.LBL_ReportViewer.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_ReportViewer.BooleanDisplay = HMILabel.BooleanDisplayOption.TrueFalse;
+            this.LBL_ReportViewer.BooleanDisplay = AdvancedScada.Controls.AHMI.Display.HMILabel.BooleanDisplayOption.TrueFalse;
             this.LBL_ReportViewer.DisplayAsTime = false;
             this.LBL_ReportViewer.ForeColor = System.Drawing.Color.Black;
             this.LBL_ReportViewer.Highlight = false;
@@ -3666,6 +3627,7 @@ namespace AdvancedScada.HMI.MainForm
             this.LBL_ReportViewer.HighlightForeColor = System.Drawing.Color.White;
             this.LBL_ReportViewer.HighlightKeyCharacter = "!";
             this.LBL_ReportViewer.InterpretValueAsBCD = false;
+            this.LBL_ReportViewer.KeypadAlphanumeric = false;
             this.LBL_ReportViewer.KeypadAlphaNumeric = false;
             this.LBL_ReportViewer.KeypadFont = new System.Drawing.Font("Arial", 10F);
             this.LBL_ReportViewer.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
@@ -3678,10 +3640,8 @@ namespace AdvancedScada.HMI.MainForm
             this.LBL_ReportViewer.Location = new System.Drawing.Point(481, 84);
             this.LBL_ReportViewer.Name = "LBL_ReportViewer";
             this.LBL_ReportViewer.NumericFormat = null;
-            this.LBL_ReportViewer.PLCAddressHighlight = "";
             this.LBL_ReportViewer.PLCAddressKeypad = "";
             this.LBL_ReportViewer.PLCAddressValue = "TEST.PLC.StartAddress100bit.StartAddress100bit:100";
-            this.LBL_ReportViewer.PLCAddressVisible = "";
             this.LBL_ReportViewer.PollRate = 0;
             this.LBL_ReportViewer.Size = new System.Drawing.Size(69, 13);
             this.LBL_ReportViewer.TabIndex = 534;
@@ -3901,11 +3861,13 @@ namespace AdvancedScada.HMI.MainForm
             // 
             this.hmiSevenSegment21.BackColor = System.Drawing.Color.Transparent;
             this.hmiSevenSegment21.DecimalPosition = 0;
+            this.hmiSevenSegment21.ForeColor = System.Drawing.Color.Empty;
             this.hmiSevenSegment21.ForecolorHighLimitValue = 999999D;
             this.hmiSevenSegment21.ForeColorInLimits = System.Drawing.Color.Blue;
             this.hmiSevenSegment21.ForecolorLowLimitValue = -999999D;
             this.hmiSevenSegment21.ForeColorOverHighLimit = System.Drawing.Color.Red;
             this.hmiSevenSegment21.ForeColorUnderLowLimit = System.Drawing.Color.Yellow;
+            this.hmiSevenSegment21.InsetPercent = 0;
             this.hmiSevenSegment21.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiSevenSegment21.KeypadMaxValue = 0D;
             this.hmiSevenSegment21.KeypadMinValue = 0D;
@@ -3915,7 +3877,11 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSevenSegment21.Location = new System.Drawing.Point(386, 293);
             this.hmiSevenSegment21.Name = "hmiSevenSegment21";
             this.hmiSevenSegment21.NumberOfDigits = 5;
+            this.hmiSevenSegment21.PLCAddressForecolorHighLimitValue = null;
+            this.hmiSevenSegment21.PLCAddressForecolorLowLimitValue = null;
             this.hmiSevenSegment21.PLCAddressKeypad = "";
+            this.hmiSevenSegment21.PLCAddressText = "";
+            this.hmiSevenSegment21.PLCAddressValue = null;
             this.hmiSevenSegment21.PLCAddressVisible = "";
             this.hmiSevenSegment21.ResolutionOfLastDigit = new decimal(new int[] {
             1,
@@ -3926,6 +3892,8 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSevenSegment21.Size = new System.Drawing.Size(169, 44);
             this.hmiSevenSegment21.TabIndex = 538;
             this.hmiSevenSegment21.Text = "hmiSevenSegment21";
+            this.hmiSevenSegment21.TextCenterLocation = new System.Drawing.Point(0, 0);
+            this.hmiSevenSegment21.TextForeColor = System.Drawing.Color.White;
             this.hmiSevenSegment21.Value = 0D;
             // 
             // Label6
@@ -4011,7 +3979,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle1.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle1.OuterBorderLength = 2;
             this.hmiLedSingle1.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle1.OutputType = OutputType.Toggle;
+            this.hmiLedSingle1.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiLedSingle1.PLCAddressClick = "CH2.PLC1.DataBlock1.TAG00001";
             this.hmiLedSingle1.PLCAddressText = "";
             this.hmiLedSingle1.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00001";
@@ -4061,7 +4029,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle2.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle2.OuterBorderLength = 2;
             this.hmiLedSingle2.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle2.OutputType = OutputType.Toggle;
+            this.hmiLedSingle2.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiLedSingle2.PLCAddressClick = "CH2.PLC1.DataBlock1.TAG00002";
             this.hmiLedSingle2.PLCAddressText = "";
             this.hmiLedSingle2.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00002";
@@ -4111,7 +4079,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle3.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle3.OuterBorderLength = 2;
             this.hmiLedSingle3.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle3.OutputType = OutputType.Toggle;
+            this.hmiLedSingle3.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiLedSingle3.PLCAddressClick = "CH1.PLC1.DataBlock2.TAG00069";
             this.hmiLedSingle3.PLCAddressText = "";
             this.hmiLedSingle3.PLCAddressValue = "CH1.PLC1.DataBlock2.TAG00069";
@@ -4161,7 +4129,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle4.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle4.OuterBorderLength = 2;
             this.hmiLedSingle4.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle4.OutputType = OutputType.Toggle;
+            this.hmiLedSingle4.OutputType = HslScada.Controls_Net45.OutputType.Toggle;
             this.hmiLedSingle4.PLCAddressClick = "CH2.PLC1.DataBlock1.TAG00003";
             this.hmiLedSingle4.PLCAddressText = "";
             this.hmiLedSingle4.PLCAddressValue = "CH2.PLC1.DataBlock1.TAG00003";
@@ -4211,7 +4179,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle5.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle5.OuterBorderLength = 2;
             this.hmiLedSingle5.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle5.OutputType = OutputType.MomentarySet;
+            this.hmiLedSingle5.OutputType = HslScada.Controls_Net45.OutputType.MomentarySet;
             this.hmiLedSingle5.PLCAddressClick = "";
             this.hmiLedSingle5.PLCAddressText = "";
             this.hmiLedSingle5.PLCAddressValue = "";
@@ -4261,7 +4229,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle6.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle6.OuterBorderLength = 2;
             this.hmiLedSingle6.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle6.OutputType = OutputType.MomentarySet;
+            this.hmiLedSingle6.OutputType = HslScada.Controls_Net45.OutputType.MomentarySet;
             this.hmiLedSingle6.PLCAddressClick = "";
             this.hmiLedSingle6.PLCAddressText = "";
             this.hmiLedSingle6.PLCAddressValue = "";
@@ -4311,7 +4279,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle7.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle7.OuterBorderLength = 2;
             this.hmiLedSingle7.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle7.OutputType = OutputType.MomentarySet;
+            this.hmiLedSingle7.OutputType = HslScada.Controls_Net45.OutputType.MomentarySet;
             this.hmiLedSingle7.PLCAddressClick = "";
             this.hmiLedSingle7.PLCAddressText = "";
             this.hmiLedSingle7.PLCAddressValue = "";
@@ -4319,7 +4287,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle7.RoundRadius = 30;
             this.hmiLedSingle7.Shape = AdvancedScada.Controls.Enum.DAS_ShapeStyle.SS_Circle;
             this.hmiLedSingle7.ShinePosition = 0.5F;
-            this.hmiLedSingle7.Size = new System.Drawing.Size(23, 28);
+            this.hmiLedSingle7.Size = new System.Drawing.Size(26, 28);
             this.hmiLedSingle7.TabIndex = 549;
             this.hmiLedSingle7.Text = "hmiLedSingle7";
             this.hmiLedSingle7.TextPosition = AdvancedScada.Controls.Enum.DAS_TextPosStyle.TPS_Left;
@@ -4361,7 +4329,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiLedSingle8.OuterBorderDarkColor = System.Drawing.Color.DimGray;
             this.hmiLedSingle8.OuterBorderLength = 2;
             this.hmiLedSingle8.OuterBorderLightColor = System.Drawing.Color.White;
-            this.hmiLedSingle8.OutputType = OutputType.MomentarySet;
+            this.hmiLedSingle8.OutputType = HslScada.Controls_Net45.OutputType.MomentarySet;
             this.hmiLedSingle8.PLCAddressClick = "";
             this.hmiLedSingle8.PLCAddressText = "";
             this.hmiLedSingle8.PLCAddressValue = "";
@@ -4380,7 +4348,7 @@ namespace AdvancedScada.HMI.MainForm
             // hmiDigitalPanelMeter2
             // 
             this.hmiDigitalPanelMeter2.BackColor = System.Drawing.Color.Transparent;
-             this.hmiDigitalPanelMeter2.DecimalPosition = 0;
+            this.hmiDigitalPanelMeter2.DecimalPosition = 0;
             this.hmiDigitalPanelMeter2.ForeColor = System.Drawing.Color.LightGray;
             this.hmiDigitalPanelMeter2.KeypadFontColor = System.Drawing.Color.WhiteSmoke;
             this.hmiDigitalPanelMeter2.KeypadMaxValue = 0D;
@@ -4388,7 +4356,7 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiDigitalPanelMeter2.KeypadScaleFactor = 1D;
             this.hmiDigitalPanelMeter2.KeypadText = null;
             this.hmiDigitalPanelMeter2.KeypadWidth = 300;
-             this.hmiDigitalPanelMeter2.Location = new System.Drawing.Point(539, 371);
+            this.hmiDigitalPanelMeter2.Location = new System.Drawing.Point(539, 371);
             this.hmiDigitalPanelMeter2.Name = "hmiDigitalPanelMeter2";
             this.hmiDigitalPanelMeter2.NumberOfDigits = 5;
             this.hmiDigitalPanelMeter2.PLCAddressKeypad = "CH3.PLC1.DataBlock2.TAG00019";
@@ -4400,10 +4368,10 @@ namespace AdvancedScada.HMI.MainForm
             0,
             0,
             0});
-            this.hmiDigitalPanelMeter2.Size = new System.Drawing.Size(152, 67);
+            this.hmiDigitalPanelMeter2.Size = new System.Drawing.Size(154, 67);
             this.hmiDigitalPanelMeter2.TabIndex = 551;
             this.hmiDigitalPanelMeter2.Text = "hmiDigitalPanelMeter2";
-            this.hmiDigitalPanelMeter2.Value = 0F;
+            this.hmiDigitalPanelMeter2.Value = 0D;
             this.hmiDigitalPanelMeter2.ValueScaleFactor = new decimal(new int[] {
             1,
             0,

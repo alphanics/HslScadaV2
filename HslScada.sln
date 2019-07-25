@@ -61,6 +61,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{F68950BB-9C3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HslScada.Scada", "WPF\HslScada.Scada\HslScada.Scada.csproj", "{95299DFD-A767-4B89-944E-E7253428C161}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HslScada.Controls", "WPF\HslScada.Controls\HslScada.Controls.csproj", "{9945610D-D7D3-4FB3-8148-A68016F06BED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{95299DFD-A767-4B89-944E-E7253428C161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95299DFD-A767-4B89-944E-E7253428C161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95299DFD-A767-4B89-944E-E7253428C161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9945610D-D7D3-4FB3-8148-A68016F06BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9945610D-D7D3-4FB3-8148-A68016F06BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9945610D-D7D3-4FB3-8148-A68016F06BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9945610D-D7D3-4FB3-8148-A68016F06BED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{DEA9333A-5652-41F5-863E-13DA0C93E6D1} = {E7C7AC43-A5DC-4CA6-A9B3-286597E30464}
 		{593D94F6-E928-4F50-B40B-CFCAA79FCB65} = {56C1D13A-575A-413E-A56F-6EB37E978ECF}
 		{95299DFD-A767-4B89-944E-E7253428C161} = {F68950BB-9C33-40DC-A8DB-17CF4489FA54}
+		{9945610D-D7D3-4FB3-8148-A68016F06BED} = {F68950BB-9C33-40DC-A8DB-17CF4489FA54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C9F8F60-8BEB-4669-AAB0-02B189B54E22}
