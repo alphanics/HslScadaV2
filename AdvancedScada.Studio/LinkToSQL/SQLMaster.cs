@@ -116,27 +116,25 @@ namespace AdvancedScada.Studio.DriverLinkToSQL
                 switch (Level)
                 {
                     case 0:
-                        bvServer = new List<Server>();
+                       
                         chCurrent = objServerManager.GetBySQLServerName(SelectebNodesHelpr[0]);
-                        bvServer.Add(chCurrent);
-                        vGridSQLServer.DataSource = bvServer;
+                        vGridSQLServer.SelectedObject = chCurrent;
+                     
                         break;
                     case 1:
                         bvDataBase = new List<DataBase>();
                         chCurrent = objServerManager.GetBySQLServerName(SelectebNodesHelpr[0]);
                         dvCurrent = DataBaseManager.GetByDataBaseName(chCurrent, SelectebNodesHelpr[1]);
 
-                        bvDataBase.Add(dvCurrent);
-                        VGridSQLDataBase.DataSource = bvDataBase;
+                      
+                        VGridSQLDataBase.SelectedObject = dvCurrent;
                         break;
                     case 2:
                         chCurrent = objServerManager.GetBySQLServerName(SelectebNodesHelpr[0]);
                         dvCurrent = DataBaseManager.GetByDataBaseName(chCurrent, SelectebNodesHelpr[1]);
                         dbCurrent = TableManager.GetByTableName(dvCurrent, SelectebNodesHelpr[2]);
-                        bvTable = new List<Table>();
-
-                        bvTable.Add(dbCurrent);
-                        vGridTable.DataSource = bvTable;
+                        
+                        vGridTable.SelectedObject = dbCurrent;
                         gridControl1.DataSource = dbCurrent.Columns;
                         gridView1.Invalidate();
 

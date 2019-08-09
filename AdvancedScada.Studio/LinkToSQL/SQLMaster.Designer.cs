@@ -68,24 +68,11 @@
             this.S7DockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.vGridTable = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.categoryRow1 = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.editorRow1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.editorRow2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.editorRow3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.VGridSQLDataBase = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.catSQLDataBase = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.colDataBaseId = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colDataBaseName = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colDescription3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.vGridSQLServer = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.catSQLServer = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
-            this.colDescription = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colServerId = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colServerName = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.colUserName = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.popupMenuRight = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barLinkContainerItem1 = new DevExpress.XtraBars.BarLinkContainerItem();
+            this.vGridSQLServer = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.VGridSQLDataBase = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.vGridTable = new DevExpress.XtraVerticalGrid.PropertyGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
@@ -96,10 +83,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.S7DockManager)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VGridSQLDataBase)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridSQLServer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridSQLServer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VGridSQLDataBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridTable)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -487,7 +474,6 @@
             this.dockPanel1.Location = new System.Drawing.Point(1015, 31);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(215, 200);
-            this.dockPanel1.SavedSizeFactor = 0D;
             this.dockPanel1.Size = new System.Drawing.Size(215, 515);
             this.dockPanel1.Text = "dockPanel1";
             // 
@@ -500,147 +486,6 @@
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(206, 488);
             this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // vGridTable
-            // 
-            this.vGridTable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridTable.Location = new System.Drawing.Point(0, 260);
-            this.vGridTable.Name = "vGridTable";
-            this.vGridTable.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.categoryRow1,
-            this.editorRow1,
-            this.editorRow2,
-            this.editorRow3});
-            this.vGridTable.Size = new System.Drawing.Size(206, 134);
-            this.vGridTable.TabIndex = 37;
-            // 
-            // categoryRow1
-            // 
-            this.categoryRow1.Name = "categoryRow1";
-            this.categoryRow1.Properties.Caption = "SQL Table";
-            // 
-            // editorRow1
-            // 
-            this.editorRow1.Appearance.Options.UseTextOptions = true;
-            this.editorRow1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.editorRow1.Name = "editorRow1";
-            this.editorRow1.Properties.Caption = "Table Id:";
-            this.editorRow1.Properties.FieldName = "TableId";
-            // 
-            // editorRow2
-            // 
-            this.editorRow2.Appearance.Options.UseTextOptions = true;
-            this.editorRow2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.editorRow2.Height = 17;
-            this.editorRow2.Name = "editorRow2";
-            this.editorRow2.Properties.Caption = "Table Name:";
-            this.editorRow2.Properties.FieldName = "TableName";
-            // 
-            // editorRow3
-            // 
-            this.editorRow3.Appearance.Options.UseTextOptions = true;
-            this.editorRow3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.editorRow3.Name = "editorRow3";
-            this.editorRow3.Properties.Caption = "Description";
-            this.editorRow3.Properties.FieldName = "Description";
-            // 
-            // VGridSQLDataBase
-            // 
-            this.VGridSQLDataBase.Cursor = System.Windows.Forms.Cursors.Default;
-            this.VGridSQLDataBase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VGridSQLDataBase.Location = new System.Drawing.Point(0, 126);
-            this.VGridSQLDataBase.Name = "VGridSQLDataBase";
-            this.VGridSQLDataBase.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.catSQLDataBase,
-            this.colDataBaseId,
-            this.colDataBaseName,
-            this.colDescription3});
-            this.VGridSQLDataBase.Size = new System.Drawing.Size(206, 134);
-            this.VGridSQLDataBase.TabIndex = 36;
-            // 
-            // catSQLDataBase
-            // 
-            this.catSQLDataBase.Name = "catSQLDataBase";
-            this.catSQLDataBase.Properties.Caption = "SQL DataBase";
-            // 
-            // colDataBaseId
-            // 
-            this.colDataBaseId.Appearance.Options.UseTextOptions = true;
-            this.colDataBaseId.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDataBaseId.Name = "colDataBaseId";
-            this.colDataBaseId.Properties.Caption = "DataBase Id:";
-            this.colDataBaseId.Properties.FieldName = "DataBaseId";
-            // 
-            // colDataBaseName
-            // 
-            this.colDataBaseName.Appearance.Options.UseTextOptions = true;
-            this.colDataBaseName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDataBaseName.Height = 17;
-            this.colDataBaseName.Name = "colDataBaseName";
-            this.colDataBaseName.Properties.Caption = "DataBase Name:";
-            this.colDataBaseName.Properties.FieldName = "DataBaseName";
-            // 
-            // colDescription3
-            // 
-            this.colDescription3.Appearance.Options.UseTextOptions = true;
-            this.colDescription3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDescription3.Name = "colDescription3";
-            this.colDescription3.Properties.Caption = "Description";
-            this.colDescription3.Properties.FieldName = "Description";
-            // 
-            // vGridSQLServer
-            // 
-            this.vGridSQLServer.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.vGridSQLServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vGridSQLServer.Location = new System.Drawing.Point(0, 0);
-            this.vGridSQLServer.Name = "vGridSQLServer";
-            this.vGridSQLServer.OptionsView.AllowGlyphSkinning = true;
-            this.vGridSQLServer.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.catSQLServer,
-            this.colDescription,
-            this.colServerId,
-            this.colServerName,
-            this.colUserName});
-            this.vGridSQLServer.Size = new System.Drawing.Size(206, 126);
-            this.vGridSQLServer.TabIndex = 35;
-            this.vGridSQLServer.TreeButtonStyle = DevExpress.XtraVerticalGrid.TreeButtonStyle.TreeView;
-            // 
-            // catSQLServer
-            // 
-            this.catSQLServer.Height = 18;
-            this.catSQLServer.Name = "catSQLServer";
-            this.catSQLServer.Properties.Caption = "SQL Server";
-            // 
-            // colDescription
-            // 
-            this.colDescription.Appearance.Options.UseTextOptions = true;
-            this.colDescription.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDescription.Height = 17;
-            this.colDescription.Name = "colDescription";
-            this.colDescription.Properties.Caption = "Description:";
-            this.colDescription.Properties.FieldName = "Description";
-            // 
-            // colServerId
-            // 
-            this.colServerId.Appearance.Options.UseTextOptions = true;
-            this.colServerId.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colServerId.Height = 17;
-            this.colServerId.Name = "colServerId";
-            this.colServerId.Properties.Caption = "Server Id:";
-            this.colServerId.Properties.FieldName = "ServerId";
-            // 
-            // colServerName
-            // 
-            this.colServerName.Height = 17;
-            this.colServerName.Name = "colServerName";
-            this.colServerName.Properties.Caption = "Server Name";
-            this.colServerName.Properties.FieldName = "ServerName";
-            // 
-            // colUserName
-            // 
-            this.colUserName.Name = "colUserName";
-            this.colUserName.Properties.Caption = "User Name";
-            this.colUserName.Properties.FieldName = "UserName";
             // 
             // popupMenuRight
             // 
@@ -662,6 +507,32 @@
             this.barLinkContainerItem1.Caption = "-";
             this.barLinkContainerItem1.Id = 2;
             this.barLinkContainerItem1.Name = "barLinkContainerItem1";
+            // 
+            // vGridSQLServer
+            // 
+            this.vGridSQLServer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vGridSQLServer.Location = new System.Drawing.Point(0, 0);
+            this.vGridSQLServer.Name = "vGridSQLServer";
+            this.vGridSQLServer.Size = new System.Drawing.Size(206, 168);
+            this.vGridSQLServer.TabIndex = 37;
+            // 
+            // VGridSQLDataBase
+            // 
+            this.VGridSQLDataBase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VGridSQLDataBase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VGridSQLDataBase.Location = new System.Drawing.Point(0, 168);
+            this.VGridSQLDataBase.Name = "VGridSQLDataBase";
+            this.VGridSQLDataBase.Size = new System.Drawing.Size(206, 154);
+            this.VGridSQLDataBase.TabIndex = 38;
+            // 
+            // vGridTable
+            // 
+            this.vGridTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vGridTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vGridTable.Location = new System.Drawing.Point(0, 322);
+            this.vGridTable.Name = "vGridTable";
+            this.vGridTable.Size = new System.Drawing.Size(206, 165);
+            this.vGridTable.TabIndex = 39;
             // 
             // SQLMaster
             // 
@@ -689,10 +560,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.S7DockManager)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vGridTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VGridSQLDataBase)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridSQLServer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridSQLServer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VGridSQLDataBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -717,21 +588,10 @@
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraBars.PopupMenu popupMenuRight;
-        private DevExpress.XtraVerticalGrid.VGridControl VGridSQLDataBase;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow catSQLDataBase;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDataBaseId;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDataBaseName;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDescription3;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridSQLServer;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow catSQLServer;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colDescription;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colServerId;
         private DevExpress.XtraGrid.Columns.GridColumn ColChannel2;
         private DevExpress.XtraGrid.Columns.GridColumn ColMode;
         private DevExpress.XtraGrid.Columns.GridColumn ColTriggerType;
         private DevExpress.XtraGrid.Columns.GridColumn ColDescripton;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colServerName;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow colUserName;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -749,11 +609,9 @@
         private DevExpress.XtraBars.BarLinkContainerItem barLinkContainerItem1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem barSave;
-        private DevExpress.XtraVerticalGrid.VGridControl vGridTable;
-        private DevExpress.XtraVerticalGrid.Rows.CategoryRow categoryRow1;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow editorRow1;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow editorRow2;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow editorRow3;
         private DevExpress.XtraBars.BarButtonItem ItemOpen;
+        private DevExpress.XtraVerticalGrid.PropertyGridControl vGridSQLServer;
+        private DevExpress.XtraVerticalGrid.PropertyGridControl vGridTable;
+        private DevExpress.XtraVerticalGrid.PropertyGridControl VGridSQLDataBase;
     }
 }
