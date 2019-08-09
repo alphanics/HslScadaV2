@@ -47,32 +47,17 @@ namespace AdvancedScada.Studio.Editors
             switch (cboxSelectedDrivers.SelectedIndex)
             {
                 case 0:
-                case 1:
                     picSelectedDrivers.Image= AdvancedScada.Studio.Properties.Resources._0000157_xbc_dn32ua_500;
                     break;
-                case 2:
-                case 3:
+                case 1:
                     picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources.PLC_SIEMENS;
                     break;
-                case 4:
+                case 2:
                     picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources.Modbus;
                     break;
-                case 5:
-                    picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources.plc_Cimon;
-                    break;
-                case 6:
-                    picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources.DVP10MC11T_300x300;
-                    break;
-                case 7:
-                    picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources._515Oof_jXUL__AC_SY400_;
-                    break;
-                case 8:
+                case 3:
                     picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources.Panasonic;
                     break;
-                case 9:
-                    picSelectedDrivers.Image = AdvancedScada.Studio.Properties.Resources.OPC;
-                    break;
-
                  
                 default:
                     break;

@@ -4,7 +4,7 @@ using AdvancedScada.DriverBase.Devices;
 using AdvancedScada.IBaseService.Common;
 using AdvancedScada.Management;
 using DevExpress.XtraEditors;
-
+using static AdvancedScada.IBaseService.Common.XCollection;
 namespace AdvancedScada.Studio.Editors
 {
     public partial class XTagForm : XtraForm
@@ -50,6 +50,7 @@ namespace AdvancedScada.Studio.Editors
                     default:
                         break;
                 }
+                EventscadaLogger.Invoke(1, "TagManager", $"{DateTime.Now}", "Add Tag");
 
             }
 
@@ -73,9 +74,11 @@ namespace AdvancedScada.Studio.Editors
                     default:
                         break;
                 }
+                EventscadaLogger.Invoke(1, "TagManager", $"{DateTime.Now}", "Editor Tag");
+
             }
-          
-           
+
+
             newObject.eventTagChanged += (tg, isNew) =>
             {
                 eventTagChanged?.Invoke(tg, isNew);

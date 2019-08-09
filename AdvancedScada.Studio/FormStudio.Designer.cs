@@ -57,13 +57,6 @@ namespace AdvancedScada.Studio
             this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
             this.bar4 = new DevExpress.XtraBars.Bar();
-            this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
-            this.mailGroup = new DevExpress.XtraNavBar.NavBarGroup();
-            this.ServiceItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.TagManagerItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.SQLItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.SQLiteItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.navFrameMonitor = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             this.popupMenuNotifyIcon = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -84,9 +77,21 @@ namespace AdvancedScada.Studio
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gpLogging = new DevExpress.XtraEditors.GroupControl();
             this.txtHistory = new System.Windows.Forms.TextBox();
+            this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
+            this.Main = new DevExpress.XtraNavBar.NavBarGroup();
+            this.ServiceItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.LoggingItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.TagManagerItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.SQLManagerItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.SQL = new DevExpress.XtraNavBar.NavBarGroup();
+            this.SQLItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.SQLiteItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.Monitor = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navFrameMonitor = new DevExpress.XtraNavBar.NavBarItem();
+            this.mSQLServerUtils = new DevExpress.XtraBars.BarButtonItem();
+            this.mPCControllercs = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuNotifyIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -95,6 +100,7 @@ namespace AdvancedScada.Studio
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gpLogging)).BeginInit();
             this.gpLogging.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
             this.SuspendLayout();
             // 
             // mnMonioring
@@ -260,73 +266,6 @@ namespace AdvancedScada.Studio
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.Text = "Custom 5";
             // 
-            // navBarControl
-            // 
-            this.navBarControl.ActiveGroup = this.mailGroup;
-            this.navBarControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.navBarControl.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.mailGroup});
-            this.navBarControl.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.ServiceItem,
-            this.SQLItem,
-            this.SQLiteItem,
-            this.TagManagerItem,
-            this.navFrameMonitor});
-            this.navBarControl.LargeImages = this.imageList1;
-            this.navBarControl.Location = new System.Drawing.Point(0, 147);
-            this.navBarControl.Name = "navBarControl";
-            this.navBarControl.OptionsNavPane.ExpandedWidth = 166;
-            this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl.Size = new System.Drawing.Size(166, 315);
-            this.navBarControl.SmallImages = this.imageList1;
-            this.navBarControl.StoreDefaultPaintStyleName = true;
-            this.navBarControl.TabIndex = 34;
-            this.navBarControl.Text = "navBarControl1";
-            // 
-            // mailGroup
-            // 
-            this.mailGroup.Caption = "Management";
-            this.mailGroup.Expanded = true;
-            this.mailGroup.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.ServiceItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.TagManagerItem)});
-            this.mailGroup.Name = "mailGroup";
-            // 
-            // ServiceItem
-            // 
-            this.ServiceItem.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("ServiceItem.Appearance.Image")));
-            this.ServiceItem.Appearance.Options.UseImage = true;
-            this.ServiceItem.Caption = "Service";
-            this.ServiceItem.ImageOptions.SmallImageIndex = 0;
-            this.ServiceItem.Name = "ServiceItem";
-            this.ServiceItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.ServiceItem_LinkClicked);
-            // 
-            // TagManagerItem
-            // 
-            this.TagManagerItem.Caption = "Tag Manager";
-            this.TagManagerItem.ImageOptions.SmallImageIndex = 5;
-            this.TagManagerItem.Name = "TagManagerItem";
-            this.TagManagerItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.TagManagerItem_LinkClicked);
-            // 
-            // SQLItem
-            // 
-            this.SQLItem.Caption = "Microsoft SQL Server";
-            this.SQLItem.ImageOptions.SmallImageIndex = 7;
-            this.SQLItem.Name = "SQLItem";
-             // 
-            // SQLiteItem
-            // 
-            this.SQLiteItem.Caption = "SQLite";
-            this.SQLiteItem.ImageOptions.SmallImageIndex = 7;
-            this.SQLiteItem.Name = "SQLiteItem";
-            // 
-            // navFrameMonitor
-            // 
-            this.navFrameMonitor.Caption = "FormFrameMonitor";
-            this.navFrameMonitor.ImageOptions.SmallImageIndex = 0;
-            this.navFrameMonitor.Name = "navFrameMonitor";
-             // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
@@ -355,6 +294,7 @@ namespace AdvancedScada.Studio
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
             this.mConfiguration,
             this.barCheckEnabele,
             this.barStaticItem1,
@@ -365,9 +305,10 @@ namespace AdvancedScada.Studio
             this.ItemExit,
             this.barItemClear,
             this.skinRibbonGalleryBarItem1,
-            this.ribbonControl1.SearchEditItem});
+            this.mSQLServerUtils,
+            this.mPCControllercs});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -401,6 +342,8 @@ namespace AdvancedScada.Studio
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barCheckEnabele);
             this.ribbonPageGroup3.ItemLinks.Add(this.mConfiguration);
+            this.ribbonPageGroup3.ItemLinks.Add(this.mSQLServerUtils);
+            this.ribbonPageGroup3.ItemLinks.Add(this.mPCControllercs);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Option";
             // 
@@ -515,6 +458,126 @@ namespace AdvancedScada.Studio
             this.txtHistory.Size = new System.Drawing.Size(1106, 79);
             this.txtHistory.TabIndex = 33;
             // 
+            // navBarControl
+            // 
+            this.navBarControl.ActiveGroup = this.Main;
+            this.navBarControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navBarControl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.navBarControl.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.Main,
+            this.SQL,
+            this.Monitor});
+            this.navBarControl.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.ServiceItem,
+            this.SQLItem,
+            this.SQLiteItem,
+            this.LoggingItem,
+            this.TagManagerItem,
+            this.SQLManagerItem,
+            this.navFrameMonitor});
+            this.navBarControl.Location = new System.Drawing.Point(0, 147);
+            this.navBarControl.Name = "navBarControl";
+            this.navBarControl.OptionsNavPane.ExpandedWidth = 166;
+            this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
+            this.navBarControl.Size = new System.Drawing.Size(166, 315);
+            this.navBarControl.SmallImages = this.imageList1;
+            this.navBarControl.StoreDefaultPaintStyleName = true;
+            this.navBarControl.TabIndex = 39;
+            this.navBarControl.Text = "navBarControl1";
+            // 
+            // Main
+            // 
+            this.Main.Caption = "Management";
+            this.Main.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.ServiceItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.LoggingItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.TagManagerItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.SQLManagerItem)});
+            this.Main.Name = "Main";
+            // 
+            // ServiceItem
+            // 
+            this.ServiceItem.Appearance.Options.UseImage = true;
+            this.ServiceItem.Caption = "Service";
+            this.ServiceItem.ImageOptions.SmallImageIndex = 0;
+            this.ServiceItem.Name = "ServiceItem";
+            this.ServiceItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.ServiceItem_LinkClicked);
+            // 
+            // LoggingItem
+            // 
+            this.LoggingItem.Caption = "Logging";
+            this.LoggingItem.ImageOptions.SmallImageIndex = 4;
+            this.LoggingItem.Name = "LoggingItem";
+            this.LoggingItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.LoggingItem_LinkClicked);
+            // 
+            // TagManagerItem
+            // 
+            this.TagManagerItem.Caption = "Tag Manager";
+            this.TagManagerItem.ImageOptions.SmallImageIndex = 5;
+            this.TagManagerItem.Name = "TagManagerItem";
+            this.TagManagerItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.TagManagerItem_LinkClicked);
+            // 
+            // SQLManagerItem
+            // 
+            this.SQLManagerItem.Caption = "SQLManager";
+            this.SQLManagerItem.ImageOptions.SmallImageIndex = 6;
+            this.SQLManagerItem.Name = "SQLManagerItem";
+            this.SQLManagerItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.SQLManagerItem_LinkClicked);
+            // 
+            // SQL
+            // 
+            this.SQL.Caption = "Database";
+            this.SQL.Expanded = true;
+            this.SQL.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.SQLItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.SQLiteItem)});
+            this.SQL.Name = "SQL";
+            // 
+            // SQLItem
+            // 
+            this.SQLItem.Caption = "Microsoft SQL Server";
+            this.SQLItem.ImageOptions.SmallImageIndex = 7;
+            this.SQLItem.Name = "SQLItem";
+            this.SQLItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.SQLItem_LinkClicked);
+            // 
+            // SQLiteItem
+            // 
+            this.SQLiteItem.Caption = "SQLite";
+            this.SQLiteItem.ImageOptions.SmallImageIndex = 7;
+            this.SQLiteItem.Name = "SQLiteItem";
+            this.SQLiteItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.SQLiteItem_LinkClicked);
+            // 
+            // Monitor
+            // 
+            this.Monitor.Caption = "FrameMonitor";
+            this.Monitor.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navFrameMonitor)});
+            this.Monitor.Name = "Monitor";
+            // 
+            // navFrameMonitor
+            // 
+            this.navFrameMonitor.Caption = "FormFrameMonitor";
+            this.navFrameMonitor.ImageOptions.SmallImageIndex = 0;
+            this.navFrameMonitor.Name = "navFrameMonitor";
+            // 
+            // mSQLServerUtils
+            // 
+            this.mSQLServerUtils.Caption = "SQLUtils";
+            this.mSQLServerUtils.Id = 3;
+            this.mSQLServerUtils.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mSQLServerUtils.ImageOptions.Image")));
+            this.mSQLServerUtils.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mSQLServerUtils.ImageOptions.LargeImage")));
+            this.mSQLServerUtils.Name = "mSQLServerUtils";
+            this.mSQLServerUtils.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mSQLServerUtils_ItemClick);
+            // 
+            // mPCControllercs
+            // 
+            this.mPCControllercs.Caption = "PCControllercs";
+            this.mPCControllercs.Id = 4;
+            this.mPCControllercs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mPCControllercs.ImageOptions.Image")));
+            this.mPCControllercs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mPCControllercs.ImageOptions.LargeImage")));
+            this.mPCControllercs.Name = "mPCControllercs";
+            this.mPCControllercs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mPCControllercs_ItemClick);
+            // 
             // FormStudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,7 +600,6 @@ namespace AdvancedScada.Studio
             this.Resize += new System.EventHandler(this.FormStudio_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.document1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuNotifyIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -547,6 +609,7 @@ namespace AdvancedScada.Studio
             ((System.ComponentModel.ISupportInitialize)(this.gpLogging)).EndInit();
             this.gpLogging.ResumeLayout(false);
             this.gpLogging.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,12 +626,6 @@ namespace AdvancedScada.Studio
         private ImageList imageList1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document document1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup documentGroup1;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl;
-        private DevExpress.XtraNavBar.NavBarGroup mailGroup;
-        private DevExpress.XtraNavBar.NavBarItem ServiceItem;
-        private DevExpress.XtraNavBar.NavBarItem TagManagerItem;
-        private DevExpress.XtraNavBar.NavBarItem SQLItem;
-        private DevExpress.XtraNavBar.NavBarItem SQLiteItem;
         private DevExpress.XtraBars.Bar bar4;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
@@ -579,7 +636,6 @@ namespace AdvancedScada.Studio
         private DevExpress.XtraBars.PopupMenu popupMenuNotifyIcon;
         private NotifyIcon notifyIcon1;
         private DevExpress.XtraBars.BarButtonItem barItemClear;
-        private DevExpress.XtraNavBar.NavBarItem navFrameMonitor;
         private DevExpress.XtraBars.BarSubItem mCommands;
         private DevExpress.Utils.Taskbar.TaskbarAssistant taskbarAssistant1;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
@@ -597,6 +653,19 @@ namespace AdvancedScada.Studio
         private GroupControl gpLogging;
         private TextBox txtHistory;
         private DevExpress.XtraBars.Docking.DockManager LoggingDockManager;
+        private DevExpress.XtraNavBar.NavBarControl navBarControl;
+        private DevExpress.XtraNavBar.NavBarGroup Main;
+        private DevExpress.XtraNavBar.NavBarItem ServiceItem;
+        private DevExpress.XtraNavBar.NavBarItem LoggingItem;
+        private DevExpress.XtraNavBar.NavBarItem TagManagerItem;
+        private DevExpress.XtraNavBar.NavBarItem SQLManagerItem;
+        private DevExpress.XtraNavBar.NavBarGroup SQL;
+        private DevExpress.XtraNavBar.NavBarItem SQLItem;
+        private DevExpress.XtraNavBar.NavBarItem SQLiteItem;
+        private DevExpress.XtraNavBar.NavBarGroup Monitor;
+        private DevExpress.XtraNavBar.NavBarItem navFrameMonitor;
+        private DevExpress.XtraBars.BarButtonItem mSQLServerUtils;
+        private DevExpress.XtraBars.BarButtonItem mPCControllercs;
 
         public IContainer Components
         {

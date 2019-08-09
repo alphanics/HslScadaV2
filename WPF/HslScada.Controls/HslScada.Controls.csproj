@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HslControls, Version=2.1.7.0, Culture=neutral, PublicKeyToken=a3ad7c5c937ec0c0, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HslControls.2.1.7\lib\net45\HslControls.dll</HintPath>
+    <Reference Include="HslControls, Version=2.1.9.0, Culture=neutral, PublicKeyToken=a3ad7c5c937ec0c0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HslControls.2.1.9\lib\net45\HslControls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Drawing">
       <HintPath>..\Microsoft.Expression.Drawing.dll</HintPath>
@@ -90,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SelectorSwitch\PilotLightSmall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SelectorSwitch\Tank.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +118,7 @@
     </Compile>
     <Compile Include="HMIArrow.cs" />
     <Compile Include="CircleButton.cs" />
+    <Compile Include="HMILable.cs" />
     <Compile Include="HMIMotor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -143,6 +148,7 @@
     <Compile Include="SegmentsControls\Segments\SegmentsEnum.cs" />
     <Compile Include="SegmentsControls\Segments\SevenSegments.cs" />
     <Compile Include="SegmentsControls\Segments\SixteenSegments.cs" />
+    <Compile Include="SelectorSwitch\ColorLightConverter.cs" />
     <Compile Include="SelectorSwitch\HMISwitchButton.xaml.cs">
       <DependentUpon>HMISwitchButton.xaml</DependentUpon>
     </Compile>
@@ -153,6 +159,9 @@
       <DependentUpon>HMIVacuumPump.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelectorSwitch\PilotLight.cs" />
+    <Compile Include="SelectorSwitch\PilotLightSmall.xaml.cs">
+      <DependentUpon>PilotLightSmall.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectorSwitch\Tank.xaml.cs">
       <DependentUpon>Tank.xaml</DependentUpon>
     </Compile>

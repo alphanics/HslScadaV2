@@ -6,7 +6,7 @@ using AdvancedScada.Management;
 using AdvancedScada.Management.BLManager;
 using DevExpress.XtraEditors;
 using Microsoft.Win32;
-
+using static AdvancedScada.IBaseService.Common.XCollection;
 namespace AdvancedScada.Studio.Editors
 {
     public partial class XChannelForm : XtraForm
@@ -92,12 +92,16 @@ namespace AdvancedScada.Studio.Editors
             {
                 GetForm(_DriverTypes, "XUserChannelForm");
                 Text = _DriverTypes + "   Add Channel";
+                EventscadaLogger.Invoke(1, "ChannelManager", $"{DateTime.Now}", "Add Channel");
+
             }
             else
             {
                
                 GetForm(_DriverTypes, "XUserChannelForm");
                 Text = ch.ChannelTypes + "   Edit Channel";
+                EventscadaLogger.Invoke(1, "ChannelManager", $"{DateTime.Now}", "Editor Channel");
+
             }
 
 

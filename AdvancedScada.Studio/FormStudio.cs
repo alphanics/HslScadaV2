@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using AdvancedScada.IBaseService;
 using AdvancedScada.IBaseService.Common;
 using AdvancedScada.ImagePicker;
 using AdvancedScada.Management.BLManager;
@@ -11,6 +10,8 @@ using AdvancedScada.Studio.IE;
 using AdvancedScada.Studio.Monitor;
 using AdvancedScada.Studio.Properties;
 using AdvancedScada.Studio.Service;
+using AdvancedScada.Studio.DB;
+using AdvancedScada.Studio.DB.SQLite;
 using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
@@ -21,10 +22,12 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
 using DevExpress.XtraSplashScreen;
 using Microsoft.Win32;
+using AdvancedScada.Studio.DriverLinkToSQL;
+using HslScada.Studio.Logging;
 
 namespace AdvancedScada.Studio
 {
-   
+
     public partial class FormStudio
     {
          public bool IsDataChanged;
@@ -85,6 +88,11 @@ namespace AdvancedScada.Studio
 
             XCollection.eventLoggingMessage += ServiceBase_eventChannelCount;
            XCollection.EventscadaException += ServiceBase_eventChannelCount;
+            XCollection.EventscadaLogger += (_Id, _logType, _time, _message) =>
+            {
+                Logger logger = new Logger { ID = Logger.Loggers.Count + 1, LogType = _logType, TIME = _time, MESSAGE = _message };
+                Logger.Loggers.Add(logger);
+            };
             var objChannelManager = ChannelService.GetChannelManager();
 
             try
@@ -302,5 +310,94 @@ namespace AdvancedScada.Studio
                 popupMenuNotifyIcon.ShowPopup(MousePosition);
         }
         #endregion
+
+        private void LoggingItem_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(XtraFormLogging))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            XtraFormLogging child = new XtraFormLogging() { Padding = new Padding(0), MdiParent = this };
+            child.Show();
+            OpenWaitForm();
+        }
+
+        private void SQLManagerItem_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(SQLMaster))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            SQLMaster child = new SQLMaster() { Padding = new Padding(0), MdiParent = this };
+            child.Show();
+            OpenWaitForm();
+        }
+
+        private void SQLItem_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(SQLFormCreate))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            SQLFormCreate child = new SQLFormCreate() { Padding = new Padding(0), MdiParent = this };
+            child.Show();
+            OpenWaitForm();
+        }
+
+        private void SQLiteItem_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(SQLiteFormCreate))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            SQLiteFormCreate child = new SQLiteFormCreate() { Padding = new Padding(0), MdiParent = this };
+            child.Show();
+            OpenWaitForm();
+        }
+
+        private void mSQLServerUtils_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(FormSQLServerUtils))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FormSQLServerUtils child = new FormSQLServerUtils() { Padding = new Padding(0), MdiParent = this };
+            child.Show();
+            OpenWaitForm();
+        }
+
+        private void mPCControllercs_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(FormPCControllercs))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            FormPCControllercs child = new FormPCControllercs();
+            child.Show();
+        }
     }
 }

@@ -2270,7 +2270,6 @@ namespace AdvancedScada.HMI.MainForm
             this.hmiSevenSegment1.ShowOffSegments = true;
             this.hmiSevenSegment1.Size = new System.Drawing.Size(397, 103);
             this.hmiSevenSegment1.TabIndex = 7;
-            this.hmiSevenSegment1.Text = "hmiSevenSegment1";
             this.hmiSevenSegment1.TextCenterLocation = new System.Drawing.Point(0, 0);
             this.hmiSevenSegment1.TextForeColor = System.Drawing.Color.White;
             this.hmiSevenSegment1.Value = 0D;

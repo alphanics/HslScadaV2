@@ -4,7 +4,7 @@ using AdvancedScada.DriverBase.Devices;
 using AdvancedScada.IBaseService.Common;
 using AdvancedScada.Management;
 using DevExpress.XtraEditors;
-
+using static AdvancedScada.IBaseService.Common.XCollection;
 namespace AdvancedScada.Studio.Editors
 {
     public partial class XDataBlockForm : XtraForm
@@ -50,6 +50,7 @@ namespace AdvancedScada.Studio.Editors
                     default:
                         break;
                 }
+                EventscadaLogger.Invoke(1, "DataBlockManager", $"{DateTime.Now}", "Add DataBlock");
 
             }
 
@@ -73,6 +74,8 @@ namespace AdvancedScada.Studio.Editors
                     default:
                         break;
                 }
+                EventscadaLogger.Invoke(1, "DataBlockManager", $"{DateTime.Now}", "Editor DataBlock");
+
             }
             newObject.eventDataBlockChanged += (db, isNew) =>
            {

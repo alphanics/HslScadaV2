@@ -20,8 +20,8 @@ using AdvancedScada.Studio.Editors;
 using AdvancedScada.IBaseService.Common;
 using AdvancedScada.Studio.DB;
 using AdvancedScada.Studio.DB.SQLite;
-using AdvancedScada.Studio.Logging;
 using AdvancedScada.Studio.DriverLinkToSQL;
+using HslScada.Studio.Logging;
 
 namespace TagManagerLibrary.Studio
 {

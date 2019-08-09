@@ -50,6 +50,7 @@ namespace AdvancedScada.Studio.Editors
                         dvNew.DeviceName = txtDeviceName.Text;
                         dvNew.Description = txtDesp.Text;
                         dvNew.DataBlocks = new List<DataBlock>();
+                        EventscadaLogger.Invoke(1, "DeviceManager", $"{DateTime.Now}", "Add Device");
 
                         if (eventDeviceChanged != null) eventDeviceChanged(dvNew, true);
 
@@ -59,6 +60,7 @@ namespace AdvancedScada.Studio.Editors
                         dv.SlaveId = (short)txtSlaveId.Value;
                         dv.DeviceName = txtDeviceName.Text;
                         dv.Description = txtDesp.Text;
+                        EventscadaLogger.Invoke(1, "DeviceManager", $"{DateTime.Now}", "Editor Device");
 
                         if (eventDeviceChanged != null) eventDeviceChanged(dv, false);
                     }

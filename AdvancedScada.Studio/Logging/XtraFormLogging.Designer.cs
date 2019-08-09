@@ -1,4 +1,4 @@
-﻿namespace AdvancedScada.Studio.Logging
+﻿namespace HslScada.Studio.Logging
 {
     partial class XtraFormLogging
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormLogging));
             this.GridControl1 = new DevExpress.XtraGrid.GridControl();
             this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
@@ -45,9 +44,6 @@
             // 
             this.GridControl1.DataSource = this.realTimeSource1;
             this.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.GridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.GridControl1.Location = new System.Drawing.Point(0, 0);
             this.GridControl1.MainView = this.GridView1;
             this.GridControl1.Name = "GridControl1";
