@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,7 @@ namespace HslScada.Controls.SelectorSwitch
         /// <summary>
         /// Color
         /// </summary>
+        [Category("HMI")]
         public Color PilotLightSmallColor
         {
             set { SetValue(PilotLightSmallColorProperty, value); }
@@ -50,6 +52,7 @@ namespace HslScada.Controls.SelectorSwitch
         /// <summary>
         /// string
         /// </summary>
+        [Category("HMI")]
         public string PilotLightSmallText
         {
             set { SetValue(PilotLightSmallTextProperty, value); }
