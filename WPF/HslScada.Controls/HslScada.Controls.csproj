@@ -90,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SelectorSwitch\MushroomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SelectorSwitch\PilotLightSmall.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +161,9 @@
     </Compile>
     <Compile Include="SelectorSwitch\HMIVacuumPump.xaml.cs">
       <DependentUpon>HMIVacuumPump.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectorSwitch\MushroomButton.xaml.cs">
+      <DependentUpon>MushroomButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelectorSwitch\PilotLight.cs" />
     <Compile Include="SelectorSwitch\PilotLightSmall.xaml.cs">

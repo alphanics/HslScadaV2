@@ -32,13 +32,25 @@ namespace AdvancedScada.HMI
         /// </summary>
         private void InitializeComponent()
         {
+            this.mushroomButton1 = new HslScada.Controls_Net45.MushroomButton();
             this.SuspendLayout();
+            // 
+            // mushroomButton1
+            // 
+            this.mushroomButton1.LegendPlate = HslScada.Controls_Net45.MushroomButton.LegendPlates.Large;
+            this.mushroomButton1.Location = new System.Drawing.Point(367, 36);
+            this.mushroomButton1.Name = "mushroomButton1";
+            this.mushroomButton1.OutputType = HslScada.Controls_Net45.MushroomButton.OutputTypes.MomentarySet;
+            this.mushroomButton1.Size = new System.Drawing.Size(274, 401);
+            this.mushroomButton1.TabIndex = 0;
+            this.mushroomButton1.Text = "mushroomButton1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 504);
+            this.Controls.Add(this.mushroomButton1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -48,5 +60,7 @@ namespace AdvancedScada.HMI
         }
 
         #endregion
+
+        private HslScada.Controls_Net45.MushroomButton mushroomButton1;
     }
 }

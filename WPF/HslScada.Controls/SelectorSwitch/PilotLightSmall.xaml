@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HslScada.Controls.SelectorSwitch"
-             mc:Ignorable="d" d:DesignWidth="100" Height="100">
+             mc:Ignorable="d" d:DesignWidth="110" Height="110">
     <Viewbox Stretch="Fill">
-        <Canvas Width="100" Height="127">
+        <Canvas Width="120" Height="148">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="28"/>
@@ -26,7 +26,7 @@
                 <Grid Grid.RowSpan="1" Grid.Row="1">
                     <Border BorderBrush="{x:Null}" Grid.Row="0" Background="#FF414051"/>
                     <!--Step 1-->
-                    <Ellipse Canvas.Left="0" Canvas.Top="0" Width="100" Height="100" StrokeThickness="1" Stroke="Gray">
+                    <Ellipse Canvas.Left="0" Canvas.Top="0" Width="100" Height="100" StrokeThickness="0.5" Stroke="#FFACABAE" Margin="10">
                         <Ellipse.Fill>
                             <RadialGradientBrush Center="0.5,0.5" GradientOrigin="0.5,0.5" RadiusX="0.5" RadiusY="0.5" Opacity="1" SpreadMethod="Reflect">
                                 <GradientStop Color="#FF071923" Offset="0"/>
