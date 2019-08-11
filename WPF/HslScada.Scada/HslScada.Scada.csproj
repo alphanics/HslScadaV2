@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>C:\AdvancedScadaCS\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -141,6 +141,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AdvancedScada.BaseService\BaseService.csproj">
+      <Project>{FE960C7A-E85B-48ED-9BCA-9BE1A6A1CB0B}</Project>
+      <Name>BaseService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AdvancedScada.IBaseService\IBaseService.csproj">
+      <Project>{4BA1E9C3-F791-458C-B4F7-3B7943E8DE10}</Project>
+      <Name>IBaseService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Drivers\AdvancedScada.DriverBase\DriverBase.csproj">
+      <Project>{0C4043A0-522D-456F-82C3-D086BD07EE27}</Project>
+      <Name>DriverBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Drivers\AdvancedScada.IODriver\IODriver.csproj">
+      <Project>{09B71D40-9C34-44F8-BC1B-1B3380EAD582}</Project>
+      <Name>IODriver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HslScada.Controls\HslScada.Controls.csproj">
       <Project>{9945610D-D7D3-4FB3-8148-A68016F06BED}</Project>
       <Name>HslScada.Controls</Name>

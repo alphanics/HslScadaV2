@@ -49,6 +49,7 @@ namespace AdvancedScada.BaseService
                                 {
 
                                     EventDataChanged?.DataTags(TagCollection.Tags);
+                                    EventDataChanged?.DataDevices(DeviceCollection.Devices);
                                 }
                             }
                             Thread.Sleep(100);

@@ -3,17 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
-        xmlns:local="clr-namespace:HslScada.Scada"
-        xmlns:Controls="clr-namespace:HslScada.Scada.Controls" 
-        xmlns:Controls1="clr-namespace:HslScada.Controls;assembly=HslScada.Controls" 
-        xmlns:SegmentsControls="clr-namespace:SegmentsControls;assembly=HslScada.Controls" 
+    xmlns:local="clr-namespace:HslScada.Scada"
+    xmlns:Controls="clr-namespace:HslScada.Scada.Controls"
+    xmlns:Controls1="clr-namespace:HslScada.Controls;assembly=HslScada.Controls"
+    xmlns:SegmentsControls="clr-namespace:SegmentsControls;assembly=HslScada.Controls" 
         xmlns:SelectorSwitch="clr-namespace:HslScada.Controls.SelectorSwitch;assembly=HslScada.Controls" 
         xmlns:HMIControl="clr-namespace:HMIControl;assembly=HslScada.Controls" 
         x:Class="HslScada.Scada.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1292">
-
+        Title="MainWindow" Height="750" Width="1292" Loaded="Window_Loaded">
     <Grid Background="#FFFFE0C0">
         <Grid.RowDefinitions>
             <RowDefinition Height="29"/>
@@ -42,17 +40,21 @@
         <Controls1:HMIMotor HorizontalAlignment="Right" Height="24" Margin="0,118,472,0" Grid.Row="2" VerticalAlignment="Top" Width="44" RenderTransformOrigin="0.636,-0.042"/>
         <Controls1:HMIMotor HorizontalAlignment="Right" Height="24" Margin="0,118,543,0" Grid.Row="2" VerticalAlignment="Top" Width="44" RenderTransformOrigin="0.636,-0.042"/>
         <Controls1:HMIVacuumPump HorizontalAlignment="Left" Height="106" Margin="162,531,0,0" Grid.Row="2" VerticalAlignment="Top" Width="51"/>
-        <SegmentsControls:SevenSegmentsStack HorizontalAlignment="Left" Height="91" Margin="768,209,0,0" Grid.Row="2" VerticalAlignment="Top" Width="440" Value="888" VertSegDivider="8" ElementsCount="5" SelectedFillBrush="Blue" FillBrush="#FFBCBCF7" HorizSegDivider="8"/>
+        <SegmentsControls:SevenSegmentsStack x:Name="st1" HorizontalAlignment="Left" Height="91" Margin="768,209,0,0" Grid.Row="2" VerticalAlignment="Top" Width="440" Value="888" VertSegDivider="8" ElementsCount="5" SelectedFillBrush="Blue" FillBrush="#FFBCBCF7" HorizSegDivider="8" PLCAddressValue="CH1.PLC1.DataBlock1.TAG00003"/>
         <Image HorizontalAlignment="Left" Height="56" Margin="1132,589,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-4.bmp" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="56" Margin="998,589,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-2.bmp" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="56" Margin="864,590,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-5.bmp" Stretch="Fill"/>
         <Image HorizontalAlignment="Left" Height="56" Margin="678,590,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-1.bmp" Stretch="Fill"/>
-        <SegmentsControls:SevenSegmentsStack HorizontalAlignment="Left" Height="44" Margin="383,218,0,0" Grid.Row="2" VerticalAlignment="Top" Width="169" Value="888" VertSegDivider="12" ElementsCount="5" SelectedFillBrush="Blue" FillBrush="#FFBCBCF7"/>
+        <SegmentsControls:SevenSegmentsStack HorizontalAlignment="Left" Height="44" Margin="383,218,0,0" Grid.Row="2" VerticalAlignment="Top" Width="169" Value="888" VertSegDivider="12" ElementsCount="5" SelectedFillBrush="Blue" FillBrush="#FFBCBCF7" PLCAddressValue="CH1.PLC1.DataBlock1.TAG00002"/>
         <local:HMIHopper HorizontalAlignment="Left" Height="114" Margin="437,267,0,0" Grid.Row="2" VerticalAlignment="Top" Width="68"/>
         <SelectorSwitch:PilotLightSmall HorizontalAlignment="Left" Height="83" Margin="20,26,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" PilotLightSmallColor="#FF0E8404" PilotLightSmallText="تشغيل"/>
         <SelectorSwitch:PilotLightSmall HorizontalAlignment="Left" Height="83" Margin="20,114,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" PilotLightSmallColor="#FFA41C20" PilotLightSmallText="ايقاف"/>
         <SelectorSwitch:PilotLightSmall HorizontalAlignment="Left" Height="83" Margin="20,202,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" PilotLightSmallColor="#FF1B0484" PilotLightSmallText="ايقاف مؤقت"/>
         <SelectorSwitch:PilotLightSmall HorizontalAlignment="Left" Height="83" Margin="20,290,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" PilotLightSmallColor="#FF847804" PilotLightSmallText="يدوى"/>
         <SelectorSwitch:MushroomButton HorizontalAlignment="Left" Height="77" Margin="20,378,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71"/>
+        <HMIControl:HMILable x:Name="trd" HorizontalAlignment="Left" Height="46" Margin="283,63,0,0" Grid.Row="2" VerticalAlignment="Top" Width="194" PLCAddressValue="CH1.PLC1.DataBlock1.TAG00001" Text="555"/>
+        <HMIControl:HMILable x:Name="trd_Copy" HorizontalAlignment="Left" Height="46" Margin="358,409,0,0" Grid.Row="2" VerticalAlignment="Top" Width="194" PLCAddressValue="CH1.PLC1.DataBlock1.TAG00001" Text="999"/>
+
     </Grid>
+
 </Window>

@@ -22,8 +22,29 @@ namespace AdvancedScada.IODriver.Siemens
             this.serialPort = serialPort;
             siemensPPI = new SiemensPPI();
         }
+        /// <summary>
+        /// Returns true if a connection to the PLC can be established
+        /// </summary>
+        public bool IsAvailable
+        {
+            //TODO: Fix This
+            get
+            {
+                try
+                {
+                    Connection();
 
-        
+                    return IsConnected;
+
+
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
         private bool _IsConnected;
 
         public void Connection()

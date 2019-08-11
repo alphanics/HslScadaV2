@@ -23,7 +23,7 @@ namespace AdvancedScada.IODriver
 {
     public class DriverHelper
     {
-         
+
         public static List<Channel> Channels;
         //==================================Modbus===================================================
         private static Dictionary<string, ModbusTCPMaster> mbe = null;
@@ -140,7 +140,7 @@ namespace AdvancedScada.IODriver
                                 break;
 
                         }
-
+                        DeviceCollection.Devices.Add($"{ch.ChannelName}.{dv.DeviceName}", dv);
                         foreach (var db in dv.DataBlocks)
                         {
 
@@ -157,8 +157,8 @@ namespace AdvancedScada.IODriver
             }
             catch (Exception ex)
             {
-               EventscadaException?.Invoke(this.GetType().Name, ex.Message);
-                throw new PLCDriverException( ex.Message);
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+                throw new PLCDriverException(ex.Message);
             }
         }
 
@@ -225,48 +225,60 @@ namespace AdvancedScada.IODriver
                                 break;
                         }
 
-                       
-                        DriverAdapter.Connection();
-                        IsConnected = DriverAdapter.IsConnected;
+
+
                         while (IsConnected)
                         {
                             foreach (Device dv in ch.Devices)
                             {
-                                foreach (DataBlock db in dv.DataBlocks)
+                                if (DriverAdapter.IsAvailable)
                                 {
-                                    if (!IsConnected) break;
-                                    switch (ch.ChannelTypes)
-                                    {
-                                        case "Modbus":
-                                            SendPackageModbus(DriverAdapter, dv, db);
-                                            break;
-                                        case "LSIS":
-                                            SendPackageLSIS(DriverAdapter, ch, dv, db);
-                                            break;
-                                        case "Panasonic":
-                                            SendPackagePanasonic(DriverAdapter, dv, db);
-                                            break;
-                                        case "Siemens":
-                                            SendPackageSiemens(DriverAdapter, dv, db);
-                                            break;
+                                    dv.Status = "Connection";
 
-                                        default:
-                                            break;
+                                    foreach (DataBlock db in dv.DataBlocks)
+                                    {
+                                        if (!IsConnected) break;
+                                        switch (ch.ChannelTypes)
+                                        {
+                                            case "Modbus":
+                                                SendPackageModbus(DriverAdapter, dv, db);
+                                                break;
+                                            case "LSIS":
+                                                SendPackageLSIS(DriverAdapter, ch, dv, db);
+                                                break;
+                                            case "Panasonic":
+                                                SendPackagePanasonic(DriverAdapter, dv, db);
+                                                break;
+                                            case "Siemens":
+                                                SendPackageSiemens(DriverAdapter, dv, db);
+                                                break;
+
+                                            default:
+                                                break;
+                                        }
+
                                     }
-                                   
                                 }
+                                else
+                                {
+
+                                    dv.Status = "Disconnection";
+                                }
+
                             }
                         }
 
-                    });
-                    threads[i].IsBackground = true;
+                    })
+                    {
+                        IsBackground = true
+                    };
                     threads[i].Start(Channels[i]);
                 }
 
             }
             catch (Exception ex)
             {
-               EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
             }
         }
 
@@ -284,134 +296,147 @@ namespace AdvancedScada.IODriver
             try
             {
 
-                switch (db.DataType)
+                if (DriverAdapter.IsAvailable)
                 {
-                    case "Bit":
+                    dv.Status = "Connection";
+                    switch (db.DataType)
+                    {
+                        case "Bit":
 
-                        lock (DriverAdapter)
-                        {
-
-                            bool[] bitRs = DriverAdapter.Read<bool>($"{db.StartAddress}", db.Length);
-
-                            int length = bitRs.Length;
-                            if (bitRs.Length > db.Tags.Count) length = db.Tags.Count;
-                            for (int j = 0; j < length; j++)
+                            lock (DriverAdapter)
                             {
-                                db.Tags[j].Value = bitRs[j];
-                                db.Tags[j].Checked = bitRs[j];
-                                db.Tags[j].Enabled = bitRs[j];
-                                db.Tags[j].Visible = bitRs[j];
-                                db.Tags[j].ValueSelect1 = bitRs[j];
-                                db.Tags[j].ValueSelect2 = bitRs[j];
-                                db.Tags[j].Timestamp = DateTime.Now;
-                            }
-                        }
-                        break;
-                    case "Int":
 
-                        lock (DriverAdapter)
-                        {
-                            short[] IntRs = DriverAdapter.Read<Int16>($"{db.StartAddress}", db.Length);
-                            if (IntRs.Length > db.Tags.Count) return;
-                            for (int j = 0; j < IntRs.Length; j++)
-                            {
-                                if (db.Tags[j].IsScaled)
+                                bool[] bitRs = DriverAdapter.Read<bool>($"{db.StartAddress}", db.Length);
+                                if (bitRs == null) return;
+                                int length = bitRs.Length;
+                                if (bitRs.Length > db.Tags.Count) length = db.Tags.Count;
+                                for (int j = 0; j < length; j++)
                                 {
-                                    db.Tags[j].Value = Util.Interpolation(IntRs[j], db.Tags[j].AImin, db.Tags[j].AImax, db.Tags[j].RLmin, db.Tags[j].RLmax);
+                                    db.Tags[j].Value = bitRs[j];
+                                    db.Tags[j].Checked = bitRs[j];
+                                    db.Tags[j].Enabled = bitRs[j];
+                                    db.Tags[j].Visible = bitRs[j];
+                                    db.Tags[j].ValueSelect1 = bitRs[j];
+                                    db.Tags[j].ValueSelect2 = bitRs[j];
+                                    db.Tags[j].Timestamp = DateTime.Now;
                                 }
-                                else
+                            }
+                            break;
+                        case "Int":
+
+                            lock (DriverAdapter)
+                            {
+                                short[] IntRs = DriverAdapter.Read<Int16>($"{db.StartAddress}", db.Length);
+                                if (IntRs == null) return;
+                                if (IntRs.Length > db.Tags.Count) return;
+                                for (int j = 0; j < IntRs.Length; j++)
                                 {
-                                    db.Tags[j].Value = IntRs[j];
+                                    if (db.Tags[j].IsScaled)
+                                    {
+                                        db.Tags[j].Value = Util.Interpolation(IntRs[j], db.Tags[j].AImin, db.Tags[j].AImax, db.Tags[j].RLmin, db.Tags[j].RLmax);
+                                    }
+                                    else
+                                    {
+                                        db.Tags[j].Value = IntRs[j];
+                                    }
+
+                                    db.Tags[j].Timestamp = DateTime.Now;
                                 }
-
-                                db.Tags[j].Timestamp = DateTime.Now;
                             }
-                        }
-                        break;
-                    case "DInt":
+                            break;
+                        case "DInt":
 
-                        lock (DriverAdapter)
-                        {
-                            int[] DIntRs = DriverAdapter.Read<Int32>(string.Format("{0}", db.StartAddress), db.Length);
-                            if (DIntRs.Length > db.Tags.Count) return;
-                            for (int j = 0; j < DIntRs.Length; j++)
+                            lock (DriverAdapter)
                             {
-                                db.Tags[j].Value = DIntRs[j];
-                                db.Tags[j].Timestamp = DateTime.Now;
-                            }
-                        }
-                        break;
-                    case "Word":
-
-                        lock (DriverAdapter)
-                        {
-                            var wdRs = DriverAdapter.Read<UInt16>($"{db.StartAddress}", db.Length);
-                            if (wdRs == null) return;
-                            if (wdRs.Length > db.Tags.Count) return;
-                            for (int j = 0; j < wdRs.Length; j++)
-                            {
-                                if (db.Tags[j].IsScaled)
+                                int[] DIntRs = DriverAdapter.Read<Int32>(string.Format("{0}", db.StartAddress), db.Length);
+                                if (DIntRs == null) return;
+                                if (DIntRs.Length > db.Tags.Count) return;
+                                for (int j = 0; j < DIntRs.Length; j++)
                                 {
-                                    db.Tags[j].Value = Util.Interpolation(wdRs[j], db.Tags[j].AImin, db.Tags[j].AImax, db.Tags[j].RLmin, db.Tags[j].RLmax);
+                                    db.Tags[j].Value = DIntRs[j];
+                                    db.Tags[j].Timestamp = DateTime.Now;
                                 }
-                                else
+                            }
+                            break;
+                        case "Word":
+
+                            lock (DriverAdapter)
+                            {
+                                var wdRs = DriverAdapter.Read<UInt16>($"{db.StartAddress}", db.Length);
+
+                                if (wdRs == null) return;
+                                if (wdRs.Length > db.Tags.Count) return;
+                                for (int j = 0; j < wdRs.Length; j++)
                                 {
-                                    db.Tags[j].Value = wdRs[j];
+                                    if (db.Tags[j].IsScaled)
+                                    {
+                                        db.Tags[j].Value = Util.Interpolation(wdRs[j], db.Tags[j].AImin, db.Tags[j].AImax, db.Tags[j].RLmin, db.Tags[j].RLmax);
+                                    }
+                                    else
+                                    {
+                                        db.Tags[j].Value = wdRs[j];
+                                    }
+                                    db.Tags[j].Timestamp = DateTime.Now;
                                 }
-                                db.Tags[j].Timestamp = DateTime.Now;
                             }
-                        }
-                        break;
-                    case "DWord":
+                            break;
+                        case "DWord":
 
-                        lock (DriverAdapter)
-                        {
-                            uint[] dwRs = DriverAdapter.Read<UInt32>(string.Format("{0}", db.StartAddress), (ushort)db.Length);
-
-                            for (int j = 0; j < dwRs.Length; j++)
+                            lock (DriverAdapter)
                             {
-                                db.Tags[j].Value = dwRs[j];
-                                db.Tags[j].Timestamp = DateTime.Now;
+                                uint[] dwRs = DriverAdapter.Read<UInt32>(string.Format("{0}", db.StartAddress), (ushort)db.Length);
+                                if (dwRs == null) return;
+                                for (int j = 0; j < dwRs.Length; j++)
+                                {
+                                    db.Tags[j].Value = dwRs[j];
+                                    db.Tags[j].Timestamp = DateTime.Now;
+                                }
                             }
-                        }
-                        break;
-                    case "Real1":
+                            break;
+                        case "Real1":
 
-                        lock (DriverAdapter)
-                        {
-                            float[] rl1Rs = DriverAdapter.Read<float>(string.Format("{0}", db.StartAddress), (ushort)db.Length);
-
-                            for (int j = 0; j < rl1Rs.Length; j++)
+                            lock (DriverAdapter)
                             {
-                                db.Tags[j].Value = rl1Rs[j];
-                                db.Tags[j].Timestamp = DateTime.Now;
+                                float[] rl1Rs = DriverAdapter.Read<float>(string.Format("{0}", db.StartAddress), (ushort)db.Length);
+                                if (rl1Rs == null) return;
+                                for (int j = 0; j < rl1Rs.Length; j++)
+                                {
+                                    db.Tags[j].Value = rl1Rs[j];
+                                    db.Tags[j].Timestamp = DateTime.Now;
+                                }
                             }
-                        }
-                        break;
-                    case "Real2":
+                            break;
+                        case "Real2":
 
-                        lock (DriverAdapter)
-                        {
-                            double[] rl2Rs = DriverAdapter.Read<double>(string.Format("{0}", db.StartAddress), (ushort)db.Length);
-
-                            for (int j = 0; j < rl2Rs.Length; j++)
+                            lock (DriverAdapter)
                             {
-                                db.Tags[j].Value = rl2Rs[j];
-                                db.Tags[j].Timestamp = DateTime.Now;
+                                double[] rl2Rs = DriverAdapter.Read<double>(string.Format("{0}", db.StartAddress), (ushort)db.Length);
+                                if (rl2Rs == null) return;
+                                for (int j = 0; j < rl2Rs.Length; j++)
+                                {
+                                    db.Tags[j].Value = rl2Rs[j];
+                                    db.Tags[j].Timestamp = DateTime.Now;
+                                }
                             }
-                        }
-                        break;
+                            break;
+                    }
                 }
+                else
+                {
+
+                    dv.Status = "Disconnection";
+                }
+
             }
             catch (SocketException ex)
             {
                 Disconnect();
-               EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
             }
             catch (Exception ex)
             {
                 Disconnect();
-               EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
             }
         }
         private void SendPackageLSIS(IDriverAdapter ILSIS, Channel ch, Device dv, DataBlock db)
@@ -541,7 +566,7 @@ namespace AdvancedScada.IODriver
                 Disconnect();
                 if (ex.Message == "Hex Character Count Not Even") return;
                 IsConnected = false;
-               EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
             }
             catch (Exception ex)
             {
@@ -834,7 +859,7 @@ namespace AdvancedScada.IODriver
                         if (string.Format("{0}.{1}", ch.ChannelName, dv.DeviceName).Equals(tagDevice))
                         {
                             IDriverAdapter DriverAdapter = null;
-                           
+
                             switch (ch.ChannelTypes)
                             {
                                 case "Modbus":
@@ -881,7 +906,7 @@ namespace AdvancedScada.IODriver
                                 default:
                                     break;
                             }
-                            
+
                             if (DriverAdapter == null) return;
                             lock (DriverAdapter)
                                 switch (TagCollection.Tags[tagName].DataType)
@@ -914,7 +939,7 @@ namespace AdvancedScada.IODriver
             }
             catch (Exception ex)
             {
-               EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
             }
         }
     }

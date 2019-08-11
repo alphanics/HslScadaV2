@@ -8,6 +8,10 @@ namespace AdvancedScada.IBaseService
     public interface IServiceCallback
     {
         [OperationContract(IsOneWay = true)]
+        void DataDevices(Dictionary<string, Device> Devices);
+
+        [OperationContract(IsOneWay = true)]
         void DataTags(Dictionary<string, Tag> Tags);
+
     }
 }

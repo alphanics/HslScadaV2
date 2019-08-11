@@ -296,6 +296,12 @@
       <DependentUpon>XtraFormLogging.cs</DependentUpon>
     </Compile>
     <Compile Include="Message.cs" />
+    <Compile Include="Monitor\Frm_DeviceTraffc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor\Frm_DeviceTraffc.Designer.cs">
+      <DependentUpon>Frm_DeviceTraffc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Monitor\PLC_MonitorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logging\XtraFormLogging.resx">
       <DependentUpon>XtraFormLogging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor\Frm_DeviceTraffc.resx">
+      <DependentUpon>Frm_DeviceTraffc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Monitor\PLC_MonitorForm.resx">
       <DependentUpon>PLC_MonitorForm.cs</DependentUpon>

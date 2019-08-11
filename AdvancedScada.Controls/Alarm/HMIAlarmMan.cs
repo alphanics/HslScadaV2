@@ -364,7 +364,12 @@ namespace AdvancedScada.Controls.Alarm
 
         public void DataTags(Dictionary<string, Tag> Tags)
         {
-            throw new NotImplementedException();
+             
+        }
+
+        public void DataDevices(Dictionary<string, Device> Devices)
+        {
+            
         }
     }
 }

@@ -14,36 +14,56 @@ namespace AdvancedScada.BaseService
     {
         public static bool LoadTagCollection()
         {
-            
-           var  objChannelManager = ChannelService.GetChannelManager();
 
-                try
+            var objChannelManager = ChannelService.GetChannelManager();
+
+            try
+            {
+
+                var xmlFile = objChannelManager.ReadKey(objChannelManager.XML_NAME_DEFAULT);
+                if (string.IsNullOrEmpty(xmlFile) || string.IsNullOrWhiteSpace(xmlFile))
                 {
+                    return false;
+                }
 
-                    var xmlFile = objChannelManager.ReadKey(objChannelManager.XML_NAME_DEFAULT);
-                    if (string.IsNullOrEmpty(xmlFile) || string.IsNullOrWhiteSpace(xmlFile))
+                objChannelManager.Channels.Clear();
+                TagCollectionClient.Tags.Clear();
+                DeviceCollectionClient.Devices.Clear();
+                var channels = objChannelManager.GetChannels(xmlFile);
+
+                foreach (var ch in channels)
+                    foreach (var dv in ch.Devices)
                     {
-                        return false;
+                        DeviceCollectionClient.Devices.Add($"{ch.ChannelName}.{dv.DeviceName}", dv);
+                        foreach (var db in dv.DataBlocks)
+                            foreach (var tg in db.Tags)
+                                TagCollectionClient.Tags.Add(
+                                    $"{ch.ChannelName}.{dv.DeviceName}.{db.DataBlockName}.{tg.TagName}", tg);
                     }
 
-                    objChannelManager.Channels.Clear();
-                    TagCollectionClient.Tags.Clear();
-                    var channels = objChannelManager.GetChannels(xmlFile);
+            }
+            catch (Exception ex)
+            {
+                EventscadaException?.Invoke("ReadServiceCallbackClient", ex.Message);
+            }
 
-                    foreach (var ch in channels)
-                        foreach (var dv in ch.Devices)
-                            foreach (var db in dv.DataBlocks)
-                                foreach (var tg in db.Tags)
-                                    TagCollectionClient.Tags.Add(
-                                        $"{ch.ChannelName}.{dv.DeviceName}.{db.DataBlockName}.{tg.TagName}", tg);
-                }
-                catch (Exception ex)
-                {
-               EventscadaException?.Invoke("ReadServiceCallbackClient", ex.Message);
-                }
-           
 
             return true;
+        }
+
+        public void DataDevices(Dictionary<string, Device> Devices)
+        {
+            var DevicesClient = DeviceCollectionClient.Devices;
+            if (DevicesClient == null) throw new ArgumentNullException(nameof(DevicesClient));
+            foreach (var author in Devices)
+                if (DevicesClient.ContainsKey(author.Key))
+                {
+                    DevicesClient[author.Key].ChannelId = author.Value.ChannelId;
+                    DevicesClient[author.Key].DeviceId = author.Value.DeviceId;
+                    DevicesClient[author.Key].DeviceName = author.Value.DeviceName;
+                    DevicesClient[author.Key].SlaveId = author.Value.SlaveId;
+                    DevicesClient[author.Key].Status = author.Value.Status;
+                }
         }
 
         public void DataTags(Dictionary<string, Tag> Tags)

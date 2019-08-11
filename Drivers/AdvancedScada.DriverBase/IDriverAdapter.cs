@@ -4,7 +4,10 @@ namespace AdvancedScada.DriverBase
     public interface IDriverAdapter
     {
         bool IsConnected { get; set; }
-
+         bool IsAvailable
+        {
+            get;
+        }
         void Connection();
 
         void Disconnection();

@@ -23,4 +23,8 @@ namespace AdvancedScada.DriverBase
     {
         public static Dictionary<string, Tag> Tags { get; set; } = new Dictionary<string, Tag>();
     }
+    public static class DeviceCollection
+    {
+        public static Dictionary<string, Device> Devices { get; set; } = new Dictionary<string, Device>();
+    }
 }

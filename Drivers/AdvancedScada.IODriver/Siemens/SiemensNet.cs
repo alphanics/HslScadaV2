@@ -24,7 +24,28 @@ namespace AdvancedScada.IODriver.Siemens
         public bool IsConnected { get => _IsConnected; set => _IsConnected = value; }
         public byte Station { get => station; set => station = value; }
 
- 
+        /// <summary>
+        /// Returns true if a connection to the PLC can be established
+        /// </summary>
+        public bool IsAvailable
+        {
+            //TODO: Fix This
+            get
+            {
+                try
+                {
+                    Connection();
+
+                    return IsConnected;
+
+
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
         public SiemensNet()
         {
         }

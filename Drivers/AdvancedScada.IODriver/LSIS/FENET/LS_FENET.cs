@@ -98,7 +98,28 @@ namespace AdvancedScada.IODriver.FENET
         }
 
         #endregion
-  
+        /// <summary>
+        /// Returns true if a connection to the PLC can be established
+        /// </summary>
+        public bool IsAvailable
+        {
+            //TODO: Fix This
+            get
+            {
+                try
+                {
+                    Connection();
+
+                    return IsConnected;
+
+
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
         public byte[] BuildReadByte(byte station, string address, ushort length)
         {
             var frame = DemoUtils.BulkReadRenderResult(fastEnet, address, length);

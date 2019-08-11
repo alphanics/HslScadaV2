@@ -5,12 +5,21 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Input;
 using System.Windows.Controls;
+using System.Windows.Data;
+using AdvancedScada.DriverBase;
+using AdvancedScada.DriverBase.Client;
 
 namespace HMIControl
 {
-    
-    public class HMILable : Control
+
+    public class HMILable : Label
     {
+        public HMILable()
+        {
+
+
+        }
+       
         public static DependencyProperty BorderStyleProperty = DependencyProperty.Register("BorderStyle", typeof(BorderStyle), typeof(HMILable),
              new FrameworkPropertyMetadata(BorderStyle.None, FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -25,7 +34,10 @@ namespace HMIControl
 
         public static DependencyProperty StringFormatProperty = DependencyProperty.Register("StringFormat", typeof(string), typeof(HMILable));
 
-      
+        public static readonly DependencyProperty PLCAddressValueProperty = DependencyProperty.Register("PLCAddressValue", typeof(string), typeof(HMILable),
+        new FrameworkPropertyMetadata("0"));
+
+
 
         protected override void OnRender(DrawingContext drawingContext)
         {
@@ -40,14 +52,14 @@ namespace HMIControl
             switch (this.BorderStyle)
             {
                 case BorderStyle.Fixed3D:
-                   
+
                     break;
                 case BorderStyle.FixedSingle:
                     drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
                     break;
-                //default:
-                //    drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
-                //    break;
+                    //default:
+                    //    drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
+                    //    break;
             }
             string txt = this.Text;
             if (!string.IsNullOrEmpty(txt))
@@ -59,6 +71,30 @@ namespace HMIControl
                 drawingContext.DrawText(formattedText, pt);
             }
         }
+        protected override void OnInitialized(EventArgs e)
+        {
+            base.OnInitialized(e);
+            Boolean isInWpfDesignerMode = (LicenseManager.UsageMode == LicenseUsageMode.Designtime);
+            Boolean isInFormsDesignerMode = (System.Diagnostics.Process.GetCurrentProcess().ProcessName == "devenv");
+
+            if (isInWpfDesignerMode || isInFormsDesignerMode)
+            {
+                // is in any designer mode
+            }
+            else
+            {
+                // not in designer mode
+                //* When address is changed, re-subscribe to new address
+                if (string.IsNullOrEmpty(PLCAddressValue) || string.IsNullOrWhiteSpace(PLCAddressValue) ||
+                    HslScada.Controls.Licenses.LicenseManager.IsInDesignMode) return;
+                Binding binding = new Binding("Value");
+                binding.Source = TagCollectionClient.Tags[PLCAddressValue];
+                this.SetBinding(TextProperty, binding);
+            }
+
+
+        }
+
 
         [Category("HMI")]
         public BorderStyle BorderStyle
@@ -98,7 +134,21 @@ namespace HMIControl
                 base.SetValue(TextProperty, value);
             }
         }
+        [Category("HMI")]
+        public string PLCAddressValue
+        {
+            get
+            {
+                return (string)base.GetValue(PLCAddressValueProperty);
+            }
+            set
+            {
+                base.SetValue(PLCAddressValueProperty, value);
 
+
+
+            }
+        }
         [Category("HMI")]
         public string Unit
         {
@@ -125,10 +175,10 @@ namespace HMIControl
             }
         }
 
-       
+
     }
 
-   
+
 
     public enum BorderStyle
     {

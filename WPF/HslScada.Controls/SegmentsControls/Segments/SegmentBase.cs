@@ -37,9 +37,10 @@ namespace SegmentsControls
         public static DependencyProperty SegmentsBrushProperty;
         public static DependencyProperty VertSegDividerProperty;
         public static DependencyProperty HorizSegDividerProperty;
+        public static DependencyProperty PLCAddressValueProperty;
 
 
-        
+
         static SegmentBase()
         {
             PenThicknessProperty = DependencyProperty.Register("PenThickness", typeof(Double),
@@ -92,6 +93,9 @@ namespace SegmentsControls
 
             HorizSegDividerProperty = DependencyProperty.Register("HorizSegDivider", typeof(double),
                 typeof(SegmentBase), new PropertyMetadata(9.0, VisualChanged));
+            PLCAddressValueProperty = DependencyProperty.Register("PLCAddressValue", typeof(string),
+                typeof(SegmentBase), new PropertyMetadata(string.Empty, VisualChanged));
+
         }
 
         /// <summary>
@@ -257,6 +261,7 @@ namespace SegmentsControls
             SegmentBase segments = (SegmentBase)sender;
             segments.PropertyChanged(sender, e);
         }
+       
 
 
     }

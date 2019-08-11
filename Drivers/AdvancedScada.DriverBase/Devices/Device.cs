@@ -8,8 +8,10 @@ namespace AdvancedScada.DriverBase.Devices
 {
     [Serializable]
     [DataContract]
-    public class Device
+    public class Device : INotifyPropertyChanged
     {
+        private string m_Status= "Disconnection";
+
         public Device()
         {
             DataBlocks = new List<DataBlock>();
@@ -27,6 +29,20 @@ namespace AdvancedScada.DriverBase.Devices
         [Browsable(true)]
         [Category("Device")]
         public string DeviceName { get; set; }
+
+        [DataMember]
+        public string  Status
+        {
+            get { return m_Status; }
+
+            set
+            {
+                m_Status = value;
+                OnPropertyChanged("Status");
+            }
+        }
+
+
         [Category("Device")]
         [DataMember]
         [Browsable(true)]
@@ -40,6 +56,12 @@ namespace AdvancedScada.DriverBase.Devices
         [Browsable(false)]
         [Category("Device")]
         public List<DataBlock> DataBlocks { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        protected virtual void OnPropertyChanged(string newName)
+        {
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(newName));
+         
+        }
     }
 }

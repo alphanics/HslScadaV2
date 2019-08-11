@@ -540,5 +540,10 @@ namespace AdvancedScada.Monitor
         {
             //  throw new NotImplementedException();
         }
+
+        public void DataDevices(Dictionary<string, Device> Devices)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

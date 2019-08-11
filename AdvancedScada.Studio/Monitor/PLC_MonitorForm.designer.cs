@@ -55,6 +55,9 @@ namespace AdvancedScada.Studio.Monitor
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dockPanel4 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel4_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.PvGridDataBlock = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.PvGridDevice = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.PvGridChannel = new DevExpress.XtraVerticalGrid.PropertyGridControl();
             this.RealTimeSource1 = new DevExpress.Data.RealTimeSource();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,10 +68,8 @@ namespace AdvancedScada.Studio.Monitor
             this.colValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTimestamp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.PvGridChannel = new DevExpress.XtraVerticalGrid.PropertyGridControl();
-            this.PvGridDevice = new DevExpress.XtraVerticalGrid.PropertyGridControl();
-            this.PvGridDataBlock = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btn_DeviceTraffc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.DockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
@@ -78,11 +79,11 @@ namespace AdvancedScada.Studio.Monitor
             ((System.ComponentModel.ISupportInitialize)(this.TreeList1)).BeginInit();
             this.dockPanel4.SuspendLayout();
             this.dockPanel4_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDataBlock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDevice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridChannel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PvGridChannel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PvGridDevice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PvGridDataBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // DockManager1
@@ -102,7 +103,8 @@ namespace AdvancedScada.Studio.Monitor
             // BarManager1
             // 
             this.BarManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.Bar3});
+            this.Bar3,
+            this.bar1});
             this.BarManager1.DockControls.Add(this.barDockControlTop);
             this.BarManager1.DockControls.Add(this.barDockControlBottom);
             this.BarManager1.DockControls.Add(this.barDockControlLeft);
@@ -116,8 +118,9 @@ namespace AdvancedScada.Studio.Monitor
             this.lblSelectedTag,
             this.mWriteTagValue,
             this.mSetON,
-            this.mSetOFF});
-            this.BarManager1.MaxItemId = 13;
+            this.mSetOFF,
+            this.btn_DeviceTraffc});
+            this.BarManager1.MaxItemId = 14;
             this.BarManager1.StatusBar = this.Bar3;
             // 
             // Bar3
@@ -153,7 +156,7 @@ namespace AdvancedScada.Studio.Monitor
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.BarManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1276, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1276, 31);
             // 
             // barDockControlBottom
             // 
@@ -167,17 +170,17 @@ namespace AdvancedScada.Studio.Monitor
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
             this.barDockControlLeft.Manager = this.BarManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 593);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 562);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1276, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1276, 31);
             this.barDockControlRight.Manager = this.BarManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 593);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 562);
             // 
             // imageCollection1
             // 
@@ -231,10 +234,10 @@ namespace AdvancedScada.Studio.Monitor
             this.DockPanel2.Controls.Add(this.DockPanel2_Container);
             this.DockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.DockPanel2.ID = new System.Guid("b9eb39e1-9505-4ba9-8dfd-d64503fc6df7");
-            this.DockPanel2.Location = new System.Drawing.Point(0, 0);
+            this.DockPanel2.Location = new System.Drawing.Point(0, 31);
             this.DockPanel2.Name = "DockPanel2";
             this.DockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
-            this.DockPanel2.Size = new System.Drawing.Size(200, 593);
+            this.DockPanel2.Size = new System.Drawing.Size(200, 562);
             this.DockPanel2.Text = "ChannelList";
             // 
             // DockPanel2_Container
@@ -242,7 +245,7 @@ namespace AdvancedScada.Studio.Monitor
             this.DockPanel2_Container.Controls.Add(this.TreeList1);
             this.DockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.DockPanel2_Container.Name = "DockPanel2_Container";
-            this.DockPanel2_Container.Size = new System.Drawing.Size(191, 566);
+            this.DockPanel2_Container.Size = new System.Drawing.Size(191, 535);
             this.DockPanel2_Container.TabIndex = 0;
             // 
             // TreeList1
@@ -253,7 +256,7 @@ namespace AdvancedScada.Studio.Monitor
             this.TreeList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TreeList1.Location = new System.Drawing.Point(0, 0);
             this.TreeList1.Name = "TreeList1";
-            this.TreeList1.Size = new System.Drawing.Size(191, 566);
+            this.TreeList1.Size = new System.Drawing.Size(191, 535);
             this.TreeList1.StateImageList = this.imageList1;
             this.TreeList1.TabIndex = 0;
             this.TreeList1.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.TreeList1_FocusedNodeChanged);
@@ -283,10 +286,10 @@ namespace AdvancedScada.Studio.Monitor
             this.dockPanel4.Controls.Add(this.dockPanel4_Container);
             this.dockPanel4.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel4.ID = new System.Guid("312e91b5-f979-4dce-9bf1-458563cefc59");
-            this.dockPanel4.Location = new System.Drawing.Point(1061, 0);
+            this.dockPanel4.Location = new System.Drawing.Point(1061, 31);
             this.dockPanel4.Name = "dockPanel4";
             this.dockPanel4.OriginalSize = new System.Drawing.Size(215, 200);
-            this.dockPanel4.Size = new System.Drawing.Size(215, 593);
+            this.dockPanel4.Size = new System.Drawing.Size(215, 562);
             this.dockPanel4.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Right;
             this.dockPanel4.Text = "Properties";
             // 
@@ -297,8 +300,32 @@ namespace AdvancedScada.Studio.Monitor
             this.dockPanel4_Container.Controls.Add(this.PvGridChannel);
             this.dockPanel4_Container.Location = new System.Drawing.Point(5, 23);
             this.dockPanel4_Container.Name = "dockPanel4_Container";
-            this.dockPanel4_Container.Size = new System.Drawing.Size(206, 566);
+            this.dockPanel4_Container.Size = new System.Drawing.Size(206, 535);
             this.dockPanel4_Container.TabIndex = 0;
+            // 
+            // PvGridDataBlock
+            // 
+            this.PvGridDataBlock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PvGridDataBlock.Location = new System.Drawing.Point(0, 351);
+            this.PvGridDataBlock.Name = "PvGridDataBlock";
+            this.PvGridDataBlock.Size = new System.Drawing.Size(206, 216);
+            this.PvGridDataBlock.TabIndex = 39;
+            // 
+            // PvGridDevice
+            // 
+            this.PvGridDevice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PvGridDevice.Location = new System.Drawing.Point(0, 241);
+            this.PvGridDevice.Name = "PvGridDevice";
+            this.PvGridDevice.Size = new System.Drawing.Size(206, 110);
+            this.PvGridDevice.TabIndex = 39;
+            // 
+            // PvGridChannel
+            // 
+            this.PvGridChannel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PvGridChannel.Location = new System.Drawing.Point(0, 0);
+            this.PvGridChannel.Name = "PvGridChannel";
+            this.PvGridChannel.Size = new System.Drawing.Size(206, 241);
+            this.PvGridChannel.TabIndex = 36;
             // 
             // RealTimeSource1
             // 
@@ -308,11 +335,11 @@ namespace AdvancedScada.Studio.Monitor
             // 
             this.gridControl1.DataSource = this.RealTimeSource1;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(200, 0);
+            this.gridControl1.Location = new System.Drawing.Point(200, 31);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.BarManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(861, 593);
+            this.gridControl1.Size = new System.Drawing.Size(861, 562);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -334,6 +361,7 @@ namespace AdvancedScada.Studio.Monitor
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowViewCaption = true;
+            this.gridView1.ViewCaption = "TagList";
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridView1_FocusedRowChanged);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridControl1_MouseClick);
@@ -453,53 +481,34 @@ namespace AdvancedScada.Studio.Monitor
             this.colDescription.VisibleIndex = 6;
             this.colDescription.Width = 113;
             // 
-            // labelControl1
+            // bar1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl1.Location = new System.Drawing.Point(200, 0);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(861, 35);
-            this.labelControl1.TabIndex = 29;
-            this.labelControl1.Text = "TagList";
+            this.bar1.BarName = "Custom 3";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_DeviceTraffc, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.OptionsBar.UseWholeRow = true;
+            this.bar1.Text = "Custom 3";
             // 
-            // PvGridChannel
+            // btn_DeviceTraffc
             // 
-            this.PvGridChannel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PvGridChannel.Location = new System.Drawing.Point(0, 0);
-            this.PvGridChannel.Name = "PvGridChannel";
-            this.PvGridChannel.Size = new System.Drawing.Size(206, 241);
-            this.PvGridChannel.TabIndex = 36;
-            // 
-            // PvGridDevice
-            // 
-            this.PvGridDevice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PvGridDevice.Location = new System.Drawing.Point(0, 241);
-            this.PvGridDevice.Name = "PvGridDevice";
-            this.PvGridDevice.Size = new System.Drawing.Size(206, 110);
-            this.PvGridDevice.TabIndex = 39;
-            // 
-            // PvGridDataBlock
-            // 
-            this.PvGridDataBlock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PvGridDataBlock.Location = new System.Drawing.Point(0, 351);
-            this.PvGridDataBlock.Name = "PvGridDataBlock";
-            this.PvGridDataBlock.Size = new System.Drawing.Size(206, 216);
-            this.PvGridDataBlock.TabIndex = 39;
+            this.btn_DeviceTraffc.Caption = "DeviceTraffc";
+            this.btn_DeviceTraffc.Id = 13;
+            this.btn_DeviceTraffc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btn_DeviceTraffc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btn_DeviceTraffc.Name = "btn_DeviceTraffc";
+            this.btn_DeviceTraffc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeviceTraffc_ItemClick);
             // 
             // PLC_MonitorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 618);
-            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.DockPanel2);
             this.Controls.Add(this.dockPanel4);
+            this.Controls.Add(this.DockPanel2);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -519,11 +528,11 @@ namespace AdvancedScada.Studio.Monitor
             ((System.ComponentModel.ISupportInitialize)(this.TreeList1)).EndInit();
             this.dockPanel4.ResumeLayout(false);
             this.dockPanel4_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDataBlock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridDevice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PvGridChannel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PvGridChannel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PvGridDevice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PvGridDataBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,7 +564,6 @@ namespace AdvancedScada.Studio.Monitor
         private DevExpress.XtraGrid.Columns.GridColumn colTimestamp;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
         private DevExpress.Data.RealTimeSource RealTimeSource1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel4;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel4_Container;
         private DevExpress.XtraBars.BarButtonItem mSetON;
@@ -565,6 +573,8 @@ namespace AdvancedScada.Studio.Monitor
         private DevExpress.XtraVerticalGrid.PropertyGridControl PvGridDataBlock;
         private DevExpress.XtraVerticalGrid.PropertyGridControl PvGridDevice;
         private DevExpress.XtraVerticalGrid.PropertyGridControl PvGridChannel;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem btn_DeviceTraffc;
     }
 
 }

@@ -20,7 +20,28 @@ namespace AdvancedScada.IODriver.Cnet
             Station = (byte)slaveId;
             this.serialPort = serialPort;
         }
+        /// <summary>
+        /// Returns true if a connection to the PLC can be established
+        /// </summary>
+        public bool IsAvailable
+        {
+            //TODO: Fix This
+            get
+            {
+                try
+                {
+                    Connection();
 
+                    return IsConnected;
+
+
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
         #region IReadWritePLC
         public bool IsConnected { get; set; } = false;
         public byte Station { get; set; }

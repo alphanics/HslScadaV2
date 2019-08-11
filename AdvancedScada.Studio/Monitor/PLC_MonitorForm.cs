@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms;
 using AdvancedScada.BaseService.Client;
 using AdvancedScada.DriverBase;
+using AdvancedScada.DriverBase.Client;
 using AdvancedScada.DriverBase.Devices;
 using AdvancedScada.IBaseService;
 using AdvancedScada.IBaseService.Common;
@@ -33,7 +34,7 @@ namespace AdvancedScada.Studio.Monitor
         private List<string> _SelectedTag;
        
         private BindingList<Tag> bS7Tags;
-     
+        private BindingList<Device> bS7Device;
         private bool IsConnected;
         public bool IsDataChanged = false;
         private ChannelService objChannelManager;
@@ -56,6 +57,8 @@ namespace AdvancedScada.Studio.Monitor
             TreeListNode node = null;
             TreeListNode node2 = null;
             TreeListNode node3 = null;
+            bS7Device = new BindingList<Device>();
+           
             objChannelManager.Channels.Clear();
             objChannelManager.XmlPath = xmlPath;
             var chList = objChannelManager.GetChannels(xmlPath);
@@ -70,6 +73,15 @@ namespace AdvancedScada.Studio.Monitor
                 {
                     node2 = TreeList1.AppendNode(new object[] { dv.DeviceName }, node);
                     node2.StateImageIndex = 0;
+                    Device sendTo = new Device() ;
+                    sendTo.DeviceId = bS7Device.Count+ 1;
+                    sendTo.ChannelId = dv.ChannelId;
+                    sendTo.DeviceName = dv.DeviceName;
+                    sendTo.SlaveId = dv.SlaveId;
+                    sendTo.Status = dv.Status;
+                    sendTo.Description = dv.Description;
+                    sendTo.DataBlocks = dv.DataBlocks;
+                    bS7Device.Add(sendTo);
                     foreach (var db in dv.DataBlocks)
                     {
                         node3 = TreeList1.AppendNode(new object[] { db.DataBlockName }, node2);
@@ -622,5 +634,37 @@ namespace AdvancedScada.Studio.Monitor
             }
         }
         #endregion
+
+        private void btn_DeviceTraffc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (bS7Device == null) return;
+            Frm_DeviceTraffc _DeviceTraffc = new Frm_DeviceTraffc(bS7Device);
+            _DeviceTraffc.Show();
+        }
+
+        public void DataDevices(Dictionary<string, Device> Devices)
+        {
+            var DevicesClient = bS7Device;
+            if (DevicesClient == null) throw new ArgumentNullException(nameof(DevicesClient));
+            foreach (var author in Devices)
+            {
+                foreach (var dv in bS7Device)
+                {
+                    if(author.Value.ChannelId==dv.ChannelId && author.Value.SlaveId == dv.SlaveId)
+                    {
+                        dv.ChannelId = author.Value.ChannelId;
+                        dv.DeviceId = author.Value.DeviceId;
+                        dv.DeviceName = author.Value.DeviceName;
+                        dv.SlaveId = author.Value.SlaveId;
+                        dv.Status = author.Value.Status;
+                        break;
+                    }
+               
+                }
+              
+            }
+
+
+        }
     }
 }

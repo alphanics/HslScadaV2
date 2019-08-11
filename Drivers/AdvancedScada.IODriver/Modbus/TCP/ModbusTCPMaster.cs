@@ -25,8 +25,29 @@ namespace AdvancedScada.IODriver.TCP
             Port = port;
            
         }
-
-       
+        
+        /// <summary>
+        /// Returns true if a connection to the PLC can be established
+        /// </summary>
+        public bool IsAvailable
+        {
+            //TODO: Fix This
+            get
+            {
+                try
+                {
+                      Connection();
+                   
+                    return IsConnected;
+                    
+                    
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
         public void Connection()
         {
           
@@ -51,7 +72,8 @@ namespace AdvancedScada.IODriver.TCP
                     }
                     else
                     {
-                        IsConnected = false;                    }
+                        IsConnected = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -134,6 +156,8 @@ namespace AdvancedScada.IODriver.TCP
 
         public TValue[] Read<TValue>(string address, ushort length)
         {
+            if (!IsAvailable) return null;
+        
             if (typeof(TValue) == typeof(bool))
             {
                 var b = busTcpClient.ReadCoil(address, length).Content;

@@ -19,7 +19,28 @@ namespace AdvancedScada.IODriver.ASCII
         }
 
         private ModbusAscii busAsciiClient = null;
+        /// <summary>
+        /// Returns true if a connection to the PLC can be established
+        /// </summary>
+        public bool IsAvailable
+        {
+            //TODO: Fix This
+            get
+            {
+                try
+                {
+                    Connection();
 
+                    return IsConnected;
+
+
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
         public void Connection()
         {
            

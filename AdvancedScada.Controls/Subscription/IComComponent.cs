@@ -304,6 +304,11 @@ namespace AdvancedScada.Controls.Subscription
                 }
             }
         }
+
+        public void DataDevices(Dictionary<string, Device> Devices)
+        {
+             
+        }
     }
 
 }
