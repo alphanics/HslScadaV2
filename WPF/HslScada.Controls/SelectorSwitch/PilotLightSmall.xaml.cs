@@ -35,11 +35,37 @@ namespace HslScada.Controls.SelectorSwitch
 
         public static readonly DependencyProperty PilotLightSmallTextProperty = DependencyProperty.Register(
            "PilotLightSmallText", typeof(string), typeof(PilotLightSmall), new PropertyMetadata("Name"));
+        // Using a DependencyProperty as the backing store for OutputTypes.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty OutputTypesProperty =
+            DependencyProperty.Register("OutputTypes", typeof(OutputType), typeof(PilotLightSmall), new PropertyMetadata(OutputType.MomentarySet));
+
+        public static readonly DependencyProperty PLCAddressValueProperty = DependencyProperty.Register(
+          "PLCAddressValue", typeof(string), typeof(PilotLightSmall), new PropertyMetadata("0"));
 
         #endregion
 
         #region Public Properties
+        [Category("HMI")]
+        public string PLCAddressValue
+        {
+            get
+            {
+                return (string)base.GetValue(PLCAddressValueProperty);
+            }
+            set
+            {
+                base.SetValue(PLCAddressValueProperty, value);
 
+
+
+            }
+        }
+        [Category("HMI")]
+        public OutputType OutputTypes
+        {
+            get { return (OutputType)GetValue(OutputTypesProperty); }
+            set { SetValue(OutputTypesProperty, value); }
+        }
         /// <summary>
         /// Color
         /// </summary>

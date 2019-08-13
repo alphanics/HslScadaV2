@@ -50,8 +50,12 @@ namespace SegmentsControls
 
         public ObservableCollection<CharItem> GetCharsArray()
         {
+            ObservableCollection<CharItem> valueChars=null;
+            try
+            {
+            
             // converts value to char array
-            char[] charArray = Value.ToCharArray();
+            char[] charArray =  Value.ToCharArray();
             // the dots count
             var dotCount = charArray.Where(c => c == '.').Count();
             // the colons count
@@ -60,7 +64,7 @@ namespace SegmentsControls
             // the chars count without dots and colons
             var charCount = charArray.Count() - dotCount;
             
-            var valueChars = new ObservableCollection<CharItem>();
+             valueChars = new ObservableCollection<CharItem>();
             int index = 0;
 
             if (charArray.Count() > 0)
@@ -134,6 +138,13 @@ namespace SegmentsControls
 
             }
 
+           
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+               
+            }
             return valueChars;
         }
 

@@ -2,6 +2,7 @@
 using HslCommunication;
 using HslCommunication.ModBus;
 using System;
+using System.Data;
 using System.Net.Sockets;
 using static AdvancedScada.IBaseService.Common.XCollection;
 namespace AdvancedScada.IODriver.TCP
@@ -214,6 +215,11 @@ namespace AdvancedScada.IODriver.TCP
             }
             
             throw new InvalidOperationException(string.Format("type '{0}' not supported.", typeof(TValue)));
+        }
+
+        public virtual ConnectionState GetConnectionState()
+        {
+            return ConnectionState.Broken;
         }
     }
 }

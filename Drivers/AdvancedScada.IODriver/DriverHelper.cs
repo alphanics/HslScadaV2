@@ -12,6 +12,7 @@ using AdvancedScada.IODriver.TCP;
 using HslCommunication.Profinet.Siemens;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO.Ports;
 using System.Linq;
 using System.Net.Sockets;
@@ -40,7 +41,7 @@ namespace AdvancedScada.IODriver
 
         private static int COUNTER;
         private static bool IsConnected;
-
+        public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
 
 
         #region IServiceDriver
@@ -48,7 +49,7 @@ namespace AdvancedScada.IODriver
 
         public void InitializeService(List<Channel> chns)
         {
-
+            Devices.Clear();
             try
             {
                 //===============================================================
@@ -72,75 +73,91 @@ namespace AdvancedScada.IODriver
 
                     foreach (var dv in ch.Devices)
                     {
-                        switch (ch.ConnectionType)
+                        try
                         {
-                            case "SerialPort":
-                                var dis = (DISerialPort)ch;
-                                var sp = new SerialPort(dis.PortName, dis.BaudRate, dis.Parity, dis.DataBits, dis.StopBits);
-                                sp.Handshake = dis.Handshake;
-                                switch (ch.ChannelTypes)
-                                {
-                                    case "Modbus":
-                                        switch (dis.Mode)
-                                        {
-                                            case "RTU":
-                                                DriverAdapter = new ModbusRTUMaster(dv.SlaveId, sp);
+                            switch (ch.ConnectionType)
+                            {
+                                case "SerialPort":
+                                    var dis = (DISerialPort)ch;
+                                    var sp = new SerialPort(dis.PortName, dis.BaudRate, dis.Parity, dis.DataBits, dis.StopBits);
+                                    sp.Handshake = dis.Handshake;
+                                    switch (ch.ChannelTypes)
+                                    {
+                                        case "Modbus":
+                                            switch (dis.Mode)
+                                            {
+                                                case "RTU":
+                                                    DriverAdapter = new ModbusRTUMaster(dv.SlaveId, sp);
 
-                                                rtu.Add(ch.ChannelName, (ModbusRTUMaster)DriverAdapter);
-                                                break;
-                                            case "ASCII":
-                                                DriverAdapter = new ModbusASCIIMaster(dv.SlaveId, sp);
+                                                    rtu.Add(ch.ChannelName, (ModbusRTUMaster)DriverAdapter);
+                                                    break;
+                                                case "ASCII":
+                                                    DriverAdapter = new ModbusASCIIMaster(dv.SlaveId, sp);
 
-                                                ascii.Add(ch.ChannelName, (ModbusASCIIMaster)DriverAdapter);
-                                                break;
-                                        }
-                                        break;
-                                    case "LSIS":
-                                        DriverAdapter = new LS_CNET(dv.SlaveId, sp);
-                                        cnet.Add(ch.ChannelName, (LS_CNET)DriverAdapter);
-                                        break;
-                                    case "Panasonic":
-                                        DriverAdapter = new PanasonicSerialReader(dv.SlaveId, sp);
-                                        Panasonic.Add(ch.ChannelName, (PanasonicSerialReader)DriverAdapter);
-                                        break;
-                                    case "Siemens":
-                                        DriverAdapter = new SiemensComPPI(dv.SlaveId, sp);
-                                        _PLCPPI.Add(ch.ChannelName, (SiemensComPPI)DriverAdapter);
-                                        break;
+                                                    ascii.Add(ch.ChannelName, (ModbusASCIIMaster)DriverAdapter);
+                                                    break;
+                                            }
+                                            break;
+                                        case "LSIS":
+                                            DriverAdapter = new LS_CNET(dv.SlaveId, sp);
+                                            cnet.Add(ch.ChannelName, (LS_CNET)DriverAdapter);
+                                            break;
+                                        case "Panasonic":
+                                            DriverAdapter = new PanasonicSerialReader(dv.SlaveId, sp);
+                                            Panasonic.Add(ch.ChannelName, (PanasonicSerialReader)DriverAdapter);
+                                            break;
+                                        case "Siemens":
+                                            DriverAdapter = new SiemensComPPI(dv.SlaveId, sp);
+                                            _PLCPPI.Add(ch.ChannelName, (SiemensComPPI)DriverAdapter);
+                                            break;
 
-                                    default:
-                                        break;
-                                }
-                                break;
-                            case "Ethernet":
-                                var die = (DIEthernet)ch;
-                                switch (ch.ChannelTypes)
-                                {
-                                    case "Modbus":
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                case "Ethernet":
+                                    var die = (DIEthernet)ch;
+                                    switch (ch.ChannelTypes)
+                                    {
+                                        case "Modbus":
+                                            dv.PLC = new ModbusTCPMaster(dv.SlaveId, die.IPAddress, die.Port);
+                                            DriverAdapter = new ModbusTCPMaster(dv.SlaveId, die.IPAddress, die.Port);
+                                            mbe.Add(ch.ChannelName, (ModbusTCPMaster)DriverAdapter);
+                                            break;
+                                        case "LSIS":
 
-                                        DriverAdapter = new ModbusTCPMaster(dv.SlaveId, die.IPAddress, die.Port);
-                                        mbe.Add(ch.ChannelName, (ModbusTCPMaster)DriverAdapter);
-                                        break;
-                                    case "LSIS":
+                                            DriverAdapter = new LS_FENET(die.IPAddress, die.Port, die.Slot);
+                                            FENET.Add(ch.ChannelName, (LS_FENET)DriverAdapter);
+                                            break;
+                                        case "Panasonic":
+                                            break;
+                                        case "Siemens":
+                                            var cpu = (SiemensPLCS)Enum.Parse(typeof(SiemensPLCS), die.CPU);
+                                            DriverAdapter = new SiemensNet(cpu, die.IPAddress, (short)die.Rack, (short)die.Slot);
+                                            _PLCS7.Add(ch.ChannelName, (SiemensNet)DriverAdapter);
+                                            break;
 
-                                        DriverAdapter = new LS_FENET(die.IPAddress, die.Port, die.Slot);
-                                        FENET.Add(ch.ChannelName, (LS_FENET)DriverAdapter);
-                                        break;
-                                    case "Panasonic":
-                                        break;
-                                    case "Siemens":
-                                        var cpu = (SiemensPLCS)Enum.Parse(typeof(SiemensPLCS), die.CPU);
-                                        DriverAdapter = new SiemensNet(cpu, die.IPAddress, (short)die.Rack, (short)die.Slot);
-                                        _PLCS7.Add(ch.ChannelName, (SiemensNet)DriverAdapter);
-                                        break;
+                                        default:
+                                            break;
+                                    }
+                                    break;
 
-                                    default:
-                                        break;
-                                }
-                                break;
+                            }
+                            DeviceCollection.Devices.Add($"{ch.ChannelName}.{dv.DeviceName}", dv);
+                            dv.DeviceState = ((dv.PLC.GetConnectionState() != ConnectionState.Open) ? DeviceState.Disconnected : DeviceState.Connected);
+
 
                         }
-                        DeviceCollection.Devices.Add($"{ch.ChannelName}.{dv.DeviceName}", dv);
+                        catch (Exception)
+                        {
+
+                            dv.DeviceState = DeviceState.Disconnected;
+                        }
+                        finally
+                        {
+                            Devices.Add(dv.DeviceId, dv);
+                        }
+
                         foreach (var db in dv.DataBlocks)
                         {
 
@@ -162,12 +179,23 @@ namespace AdvancedScada.IODriver
             }
         }
 
-
+        public static Device CurrentPLC = null;
         private static Thread[] threads;
         public void Connect()
         {
+           
             try
             {
+                foreach (Channel channel in Channels)
+                {
+                    using (List<Device>.Enumerator enumerator2 = channel.Devices.GetEnumerator())
+                    {
+                        if (enumerator2.MoveNext())
+                        {
+                            CurrentPLC = enumerator2.Current;
+                        }
+                    }
+                }
                 IsConnected = true;
                 Console.WriteLine(string.Format("STARTED: {0}", ++COUNTER));
                 threads = new Thread[Channels.Count];

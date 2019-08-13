@@ -1,4 +1,6 @@
 ﻿using HslCommunication;
+using System.Data;
+
 namespace AdvancedScada.DriverBase
 {
     public interface IDriverAdapter
@@ -11,7 +13,7 @@ namespace AdvancedScada.DriverBase
         void Connection();
 
         void Disconnection();
-
+        ConnectionState GetConnectionState();
         byte[] BuildReadByte(byte station, string address, ushort length);
 
         byte[] BuildWriteByte(byte station, string address, byte[] value);

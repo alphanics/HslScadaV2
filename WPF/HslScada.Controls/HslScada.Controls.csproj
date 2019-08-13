@@ -70,6 +70,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Indicator\HMIIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyPad\Keypad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyPad\VirtualKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SegmentsControls\SegmentsStack\SevenSegmentsStack.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -108,6 +120,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonAll\HMIAnnunciator.cs" />
     <Compile Include="ButtonAll\HMIButton1.xaml.cs">
       <DependentUpon>HMIButton1.xaml</DependentUpon>
     </Compile>
@@ -120,11 +133,26 @@
     <Compile Include="ButtonAll\HMIButton4.xaml.cs">
       <DependentUpon>HMIButton4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EnumAll.cs" />
     <Compile Include="HMIArrow.cs" />
     <Compile Include="CircleButton.cs" />
     <Compile Include="HMILable.cs" />
     <Compile Include="HMIMotor.cs" />
+    <Compile Include="KeyPad\Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="KeyPad\Keypad.xaml.cs">
+      <DependentUpon>Keypad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyPad\VirtualKeyboard.xaml.cs">
+      <DependentUpon>VirtualKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\ConverterHelper.cs" />
+    <Compile Include="Motor\HMIMotor2.cs" />
+    <Compile Include="Indicator\ConverterHelper.cs" />
+    <Compile Include="Indicator\HMIIndicator.xaml.cs">
+      <DependentUpon>HMIIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\LicenseManager.cs" />
+    <Compile Include="Motor\Utilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -173,6 +201,7 @@
     <Compile Include="SelectorSwitch\Tank.xaml.cs">
       <DependentUpon>Tank.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Motor\WaterPump.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -184,10 +213,38 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AdvancedScada.BaseService\BaseService.csproj">
+      <Project>{fe960c7a-e85b-48ed-9bca-9be1a6a1cb0b}</Project>
+      <Name>BaseService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AdvancedScada.IBaseService\IBaseService.csproj">
+      <Project>{4ba1e9c3-f791-458c-b4f7-3b7943e8de10}</Project>
+      <Name>IBaseService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Drivers\AdvancedScada.DriverBase\DriverBase.csproj">
       <Project>{0C4043A0-522D-456F-82C3-D086BD07EE27}</Project>
       <Name>DriverBase</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AnnunciatorOff.png" />
+    <Resource Include="Images\AnnunciatorOn.png" />
+    <Resource Include="Images\PneumaticBallValveOff.png" />
+    <Resource Include="Images\PneumaticBallValveOn.png" />
+    <Resource Include="Images\RSCorPumpOff.png" />
+    <Resource Include="Images\RSCorPumpOn.png" />
+    <Resource Include="Images\SquareButtonBlueOff.png" />
+    <Resource Include="Images\SquareButtonBlueOn.png" />
+    <Resource Include="Images\SquareButtonGreenOff.png" />
+    <Resource Include="Images\SquareButtonGreenOn.png" />
+    <Resource Include="Images\SquareButtonRedOff.png" />
+    <Resource Include="Images\SquareButtonRedOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MotorGray.png" />
+    <Resource Include="Images\MotorGreen.png" />
+    <Resource Include="Images\MotorRed.png" />
+    <Resource Include="Images\MotorYellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

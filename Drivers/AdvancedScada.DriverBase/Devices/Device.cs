@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 
@@ -11,6 +12,9 @@ namespace AdvancedScada.DriverBase.Devices
     public class Device : INotifyPropertyChanged
     {
         private string m_Status= "Disconnection";
+        private DeviceState _DeviceState = DeviceState.Disconnected;
+        private IDriverAdapter _PLC;
+        private bool _IsActived = true;
 
         public Device()
         {
@@ -41,8 +45,52 @@ namespace AdvancedScada.DriverBase.Devices
                 OnPropertyChanged("Status");
             }
         }
-
-
+        [Browsable(false)]
+        [Display(Name = "PLC")]
+        [Category("Device")]
+        public IDriverAdapter PLC
+        {
+            get
+            {
+                return _PLC;
+            }
+            set
+            {
+                _PLC = value;
+            }
+        }
+        [Browsable(true)]
+        [DataMember]
+        [Category("Device")]
+        [DisplayName("DeviceState")]
+        public DeviceState DeviceState
+        {
+            get
+            {
+                return _DeviceState;
+            }
+            set
+            {
+                _DeviceState = value;
+                OnPropertyChanged("DeviceState");
+            }
+        }
+        [Browsable(true)]
+        [Category("Device")]
+        [Display(Name = "IsActived", Order = 7)]
+        [DataMember]
+        public bool IsActived
+        {
+            get
+            {
+                return _IsActived;
+            }
+            set
+            {
+                _IsActived = value;
+                OnPropertyChanged("IsActived");
+            }
+        }
         [Category("Device")]
         [DataMember]
         [Browsable(true)]

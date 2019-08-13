@@ -3,6 +3,7 @@ using AdvancedScada.DriverBase;
 using HslCommunication;
 using HslCommunication.ModBus;
 using System;
+using System.Data;
 using System.IO.Ports;
 using static AdvancedScada.IBaseService.Common.XCollection;
 namespace AdvancedScada.IODriver.RTU
@@ -189,6 +190,11 @@ namespace AdvancedScada.IODriver.RTU
             }
 
             throw new InvalidOperationException(string.Format("type '{0}' not supported.", typeof(TValue)));
+        }
+
+        public ConnectionState GetConnectionState()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows;
-
+using static AdvancedScada.IBaseService.Common.XCollection;
 namespace HslScada.Scada
 {
     /// <summary>
@@ -18,30 +18,66 @@ namespace HslScada.Scada
         public IReadService client = null;
         public MainWindow()
         {
-            ReadServiceCallbackClient.LoadTagCollection();
-            XCollection.CURRENT_MACHINE = new Machine
+            try
             {
-                MachineName = Environment.MachineName,
-                Description = "Free"
-            };
-            IPAddress[] hostAddresses = Dns.GetHostAddresses(Dns.GetHostName());
-            foreach (IPAddress iPAddress in hostAddresses)
-            {
-                if (iPAddress.AddressFamily == AddressFamily.InterNetwork)
+                ReadServiceCallbackClient.LoadTagCollection();
+                XCollection.CURRENT_MACHINE = new Machine
                 {
-                    XCollection.CURRENT_MACHINE.IPAddress = $"{iPAddress}";
-                    break;
+                    MachineName = Environment.MachineName,
+                    Description = "Free"
+                };
+                IPAddress[] hostAddresses = Dns.GetHostAddresses(Dns.GetHostName());
+                foreach (IPAddress iPAddress in hostAddresses)
+                {
+                    if (iPAddress.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        XCollection.CURRENT_MACHINE.IPAddress = $"{iPAddress}";
+                        break;
+                    }
                 }
+                client = DriverHelper.GetInstance().GetReadService();
+                client.Connect(XCollection.CURRENT_MACHINE);
             }
-            client = DriverHelper.GetInstance().GetReadService();
-            client.Connect(XCollection.CURRENT_MACHINE);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Application.Current.Shutdown(0);
+            }
+
 
             InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //st1.PLCAddressValue = "CH1.PLC1.DataBlock1.TAG00003";
+            //m1.PLCAddressValue = "CH1.PLC1.DataBlock2.TAG00021";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            t8.Value = true;
+           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            t8.Value = false;
+            
+        }
+
+        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                client?.Disconnect(XCollection.CURRENT_MACHINE);
+                // client?.Stop();
+
+            }
+            catch (Exception ex)
+            {
+
+                EventscadaException?.Invoke(this.GetType().Name, ex.Message);
+            }
         }
     }
 }

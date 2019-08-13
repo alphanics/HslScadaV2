@@ -400,31 +400,11 @@ namespace AdvancedScada.Controls.AHMI.Motor
         //********************************************************
         //* Show an error via the text property for a short time
         //********************************************************
-        [System.Runtime.CompilerServices.AccessedThroughProperty(nameof(ErrorDisplayTime))]
-        private System.Windows.Forms.Timer _ErrorDisplayTime;
+       
+        private System.Windows.Forms.Timer ErrorDisplayTime;
         private OutputType m_OutputType;
 
-        private System.Windows.Forms.Timer ErrorDisplayTime
-        {
-            get
-            {
-                return _ErrorDisplayTime;
-            }
-            set
-            {
-                if (_ErrorDisplayTime != null)
-                {
-                    _ErrorDisplayTime.Tick -= ErrorDisplay_Tick;
-                }
-
-                _ErrorDisplayTime = value;
-
-                if (value != null)
-                {
-                    _ErrorDisplayTime.Tick += ErrorDisplay_Tick;
-                }
-            }
-        }
+      
         private void DisplayError(string ErrorMessage)
         {
             if (!SuppressErrorDisplay)

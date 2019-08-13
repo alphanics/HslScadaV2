@@ -8,11 +8,13 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using AdvancedScada.DriverBase;
 using AdvancedScada.DriverBase.Client;
+using KeyPad;
+using HslScada.Controls;
 
 namespace HMIControl
 {
 
-    public class HMILable : Label
+    public class HMILable : Control
     {
         public HMILable()
         {
@@ -30,14 +32,16 @@ namespace HMIControl
           new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.AffectsRender));
 
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register("Unit", typeof(string), typeof(HMILable),
-    new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.AffectsRender));
+        new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.AffectsRender));
 
         public static DependencyProperty StringFormatProperty = DependencyProperty.Register("StringFormat", typeof(string), typeof(HMILable));
 
-        public static readonly DependencyProperty PLCAddressValueProperty = DependencyProperty.Register("PLCAddressValue", typeof(string), typeof(HMILable),
+        public static readonly DependencyProperty PLCAddressValueProperty = DependencyProperty.Register("PLCAddressValue", typeof(string),
+            typeof(HMILable),
         new FrameworkPropertyMetadata("0"));
 
 
+      
 
         protected override void OnRender(DrawingContext drawingContext)
         {
@@ -57,9 +61,9 @@ namespace HMIControl
                 case BorderStyle.FixedSingle:
                     drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
                     break;
-                    //default:
-                    //    drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
-                    //    break;
+                default:
+                    drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
+                    break;
             }
             string txt = this.Text;
             if (!string.IsNullOrEmpty(txt))
@@ -175,7 +179,35 @@ namespace HMIControl
             }
         }
 
+        #region "Keypad popup for data entry"
 
+        [Category("HMI")]
+        public string PLCAddressKeypad
+        {
+            get { return (string)GetValue(PLCAddressKeypadProperty); }
+            set { SetValue(PLCAddressKeypadProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PLCAddressKeypad.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PLCAddressKeypadProperty =
+            DependencyProperty.Register("PLCAddressKeypad", typeof(string), typeof(HMILable), new PropertyMetadata(string.Empty));
+
+
+        protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
+        {
+            base.OnPreviewMouseDown(e);
+            if (PLCAddressKeypad != null && (string.Compare(PLCAddressKeypad, string.Empty) != 0) & IsEnabled)
+            {
+                Keypad keypadWindow = new Keypad(this, null);
+                if (keypadWindow.ShowDialog() == true)
+                {
+                    Utilities.Write(PLCAddressKeypad, keypadWindow.Result);
+                }
+                    //this.Text = keypadWindow.Result;
+            }
+        }
+
+        #endregion
     }
 
 
@@ -186,4 +218,5 @@ namespace HMIControl
         FixedSingle,
         None
     }
+   
 }

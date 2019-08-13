@@ -2,6 +2,7 @@
 using HslCommunication;
 using HslCommunication.Profinet.Siemens;
 using System;
+using System.Data;
 using System.Diagnostics;
 using System.IO.Ports;
 using static AdvancedScada.IBaseService.Common.XCollection;
@@ -191,6 +192,11 @@ namespace AdvancedScada.IODriver.Siemens
         }
 
         public OperateResult<bool[]> ReadDiscrete(string address, ushort length)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ConnectionState GetConnectionState()
         {
             throw new NotImplementedException();
         }

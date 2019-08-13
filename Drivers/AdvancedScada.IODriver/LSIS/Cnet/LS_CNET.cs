@@ -3,6 +3,7 @@ using AdvancedScada.DriverBase.Common;
 using HslCommunication;
 using HslCommunication.Profinet.LSIS;
 using System;
+using System.Data;
 using System.IO.Ports;
 using static AdvancedScada.IBaseService.Common.XCollection;
 namespace AdvancedScada.IODriver.Cnet
@@ -224,6 +225,11 @@ namespace AdvancedScada.IODriver.Cnet
         }
 
         public OperateResult<bool[]> ReadDiscrete(string address, ushort length)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ConnectionState GetConnectionState()
         {
             throw new NotImplementedException();
         }

@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using AdvancedScada.DriverBase;
 using AdvancedScada.DriverBase.Client;
 using AdvancedScada.DriverBase.Devices;
 using AdvancedScada.IBaseService;
+using AdvancedScada.IBaseService.Common;
 using AdvancedScada.Management.BLManager;
 using static AdvancedScada.IBaseService.Common.XCollection;
 
 namespace AdvancedScada.BaseService
 {
+    public delegate void EventDeviceStateChanged(Device dv);
+
     [CallbackBehavior(UseSynchronizationContext = true)]
     public class ReadServiceCallbackClient : IServiceCallback
     {
+        public static event EventDeviceStateChanged eventDeviceStateChanged;
         public static bool LoadTagCollection()
         {
 
@@ -50,20 +55,30 @@ namespace AdvancedScada.BaseService
 
             return true;
         }
-
+        [OperationContract(IsOneWay = true)]
         public void DataDevices(Dictionary<string, Device> Devices)
         {
             var DevicesClient = DeviceCollectionClient.Devices;
             if (DevicesClient == null) throw new ArgumentNullException(nameof(DevicesClient));
-            foreach (var author in Devices)
-                if (DevicesClient.ContainsKey(author.Key))
+            foreach (var dv in Devices)
+                if (DevicesClient.ContainsKey(dv.Key) && DevicesClient[dv.Key].DeviceState != dv.Value.DeviceState)
                 {
-                    DevicesClient[author.Key].ChannelId = author.Value.ChannelId;
-                    DevicesClient[author.Key].DeviceId = author.Value.DeviceId;
-                    DevicesClient[author.Key].DeviceName = author.Value.DeviceName;
-                    DevicesClient[author.Key].SlaveId = author.Value.SlaveId;
-                    DevicesClient[author.Key].Status = author.Value.Status;
+                    DevicesClient[dv.Key].ChannelId = dv.Value.ChannelId;
+                    DevicesClient[dv.Key].DeviceId = dv.Value.DeviceId;
+                    DevicesClient[dv.Key].DeviceName = dv.Value.DeviceName;
+                    DevicesClient[dv.Key].SlaveId = dv.Value.SlaveId;
+                    DevicesClient[dv.Key].Status = dv.Value.Status;
+                    DevicesClient[dv.Key].DeviceState = dv.Value.DeviceState;
+                    DevicesClient[dv.Key].IsActived = dv.Value. IsActived;
+
+                    if (ReadServiceCallbackClient.eventDeviceStateChanged != null)
+                    {
+                        ReadServiceCallbackClient.eventDeviceStateChanged(dv.Value);
+                    }
+                    
                 }
+
+          
         }
 
         public void DataTags(Dictionary<string, Tag> Tags)
