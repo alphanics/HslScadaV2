@@ -42,10 +42,10 @@
         <Controls1:HMIMotor2 HorizontalAlignment="Right" Height="24" Margin="0,118,543,0" Grid.Row="2" VerticalAlignment="Top" Width="44" RenderTransformOrigin="0.636,-0.042" PLCAddressValue="CH1.PLC1.DataBlock2.TAG00021" PLCAddressClick="CH1.PLC1.DataBlock2.TAG00021" OutputTypes="Toggle" />
         <Controls1:HMIVacuumPump HorizontalAlignment="Left" Height="106" Margin="162,531,0,0" Grid.Row="2" VerticalAlignment="Top" Width="51"/>
         <SegmentsControls:SevenSegmentsStack x:Name="st1" HorizontalAlignment="Left" Height="91" Margin="768,209,0,0" Grid.Row="2" VerticalAlignment="Top" Width="440" Value="888" VertSegDivider="8" ElementsCount="5" SelectedFillBrush="#FF0023FF" FillBrush="#FFBCBCF7" HorizSegDivider="8" PLCAddressValue="CH1.PLC1.DataBlock1.TAG00003" PLCAddressKeypad="CH1.PLC1.DataBlock1.TAG00003"/>
-        <Image HorizontalAlignment="Left" Height="56" Margin="1132,589,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-4.bmp" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="56" Margin="998,589,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-2.bmp" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="56" Margin="864,590,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-5.bmp" Stretch="Fill"/>
-        <Image HorizontalAlignment="Left" Height="56" Margin="678,590,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" Source="Resources/17-1.bmp" Stretch="Fill"/>
+        <Controls:HMIButton1 HorizontalAlignment="Left" Height="56" Margin="1132,589,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" ButtonColors="Orange" Text="اضافة وتركيبة" FontSize="18" />
+        <Controls:HMIButton1 HorizontalAlignment="Left" Height="56" Margin="998,589,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" ButtonColors="Green" Text="اعدادات" FontSize="18"/>
+        <Controls:HMIButton1 HorizontalAlignment="Left" Height="56" Margin="864,590,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" ButtonColors="Yellow" Text="خيارات" FontSize="18" />
+        <Controls:HMIButton1 HorizontalAlignment="Left" Height="56" Margin="678,590,0,0" Grid.Row="2" VerticalAlignment="Top" Width="129" ButtonColors="Red" Text="خروج" FontSize="18"/>
         <SegmentsControls:SevenSegmentsStack HorizontalAlignment="Left" Height="44" Margin="383,218,0,0" Grid.Row="2" VerticalAlignment="Top" Width="169" Value="888" VertSegDivider="12" ElementsCount="5" SelectedFillBrush="Blue" FillBrush="#FFBCBCF7" PLCAddressValue="CH1.PLC1.DataBlock1.TAG00002" PLCAddressKeypad="CH1.PLC1.DataBlock1.TAG00003"/>
         <local:HMIHopper HorizontalAlignment="Left" Height="114" Margin="419,267,0,0" Grid.Row="2" VerticalAlignment="Top" Width="115"/>
         <SelectorSwitch:PilotLightSmall HorizontalAlignment="Left" Height="83" Margin="20,26,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" PilotLightSmallColor="#FF0E8404" PilotLightSmallText="تشغيل"/>

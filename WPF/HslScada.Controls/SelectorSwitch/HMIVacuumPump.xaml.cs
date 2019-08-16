@@ -21,11 +21,11 @@ namespace HslScada.Controls
     /// </summary>
     public partial class HMIVacuumPump : UserControl
     {
-        private DoubleAnimation doubleAnimation;
+        
         public HMIVacuumPump()
         {
             InitializeComponent();
-            doubleAnimation = new DoubleAnimation(0, 360, TimeSpan.FromSeconds(3.3333333d));
+            doubleAnimation = new DoubleAnimation(0, 360, TimeSpan.FromSeconds(3.33333d));
             doubleAnimation.RepeatBehavior = RepeatBehavior.Forever;
             BeginAnimation(StartAngleProperty, doubleAnimation);
         }
@@ -41,6 +41,11 @@ namespace HslScada.Controls
         // Using a DependencyProperty as the backing store for StartAngle.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StartAngleProperty =
             DependencyProperty.Register("StartAngle", typeof(double), typeof(HMIVacuumPump), new PropertyMetadata(0d));
+
+        private DoubleAnimation doubleAnimation;
+
+        private Storyboard storyboard = new Storyboard();
+
         /// <summary>
         /// 转动速度
         /// </summary>

@@ -68,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\HMIButton1.cs" />
+    <Compile Include="FRM_Editr.xaml.cs">
+      <DependentUpon>FRM_Editr.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -88,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\GlossyButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FRM_Editr.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,49 +182,31 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CPU.ico" />
-    <Content Include="Resources\17-1.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\17-1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\17-2.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\17-2.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\17-3.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\17-3.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\17-4.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\17-4.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\17-5.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\17-5.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\17-6.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\17-6.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\18-3.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\18-3.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\18-4.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\18-4.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\18-6.bmp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resources\18-6.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

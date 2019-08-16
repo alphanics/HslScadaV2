@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HslScada.Scada"
-        xmlns:Controls="clr-namespace:HslScada.Controls;assembly=HslScada.Controls" xmlns:ButtonAll="clr-namespace:HslScada.Controls.ButtonAll;assembly=HslScada.Controls" x:Class="HslScada.Scada.Window1"
+        xmlns:Controls1="clr-namespace:HslScada.Scada.Controls" x:Class="HslScada.Scada.Window1"
         mc:Ignorable="d"
         Title="Window1" Height="300" Width="300">
-    <Controls:HMIVacuumPump HorizontalAlignment="Left" Height="200" Margin="21,29,0,0" VerticalAlignment="Top" Width="153" MoveSpeed="0"/>
+    <Controls1:HMIButton1 HorizontalAlignment="Left" Height="75" Margin="43,56,0,0" VerticalAlignment="Top" Width="176" ButtonColors="Yellow" Text="التقرير" FontSize="18"/>
 </Window>

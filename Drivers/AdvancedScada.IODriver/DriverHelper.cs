@@ -497,7 +497,7 @@ namespace AdvancedScada.IODriver
 
                         lock (ILSIS)
                         {
-                            short[] IntRs = ILSIS.Read<Int16>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", db.Length);
+                            short[] IntRs = ILSIS.Read<Int16>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}",(ushort)(2 * db.Length));
                             if (IntRs.Length > db.Tags.Count) return;
                             for (int j = 0; j < IntRs.Length; j++)
                             {
@@ -518,7 +518,7 @@ namespace AdvancedScada.IODriver
 
                         lock (ILSIS)
                         {
-                            int[] DIntRs = ILSIS.Read<Int32>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", db.Length);
+                            int[] DIntRs = ILSIS.Read<Int32>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)(2 * db.Length));
                             if (DIntRs.Length > db.Tags.Count) return;
                             for (int j = 0; j < DIntRs.Length; j++)
                             {
@@ -531,7 +531,7 @@ namespace AdvancedScada.IODriver
 
                         lock (ILSIS)
                         {
-                            var wdRs = ILSIS.Read<Int16>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", db.Length);
+                            var wdRs = ILSIS.Read<Int16>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)(2 * db.Length));
                             if (wdRs == null) return;
                             if (wdRs.Length > db.Tags.Count) return;
                             for (int j = 0; j < wdRs.Length; j++)
@@ -552,7 +552,7 @@ namespace AdvancedScada.IODriver
 
                         lock (ILSIS)
                         {
-                            uint[] dwRs = ILSIS.Read<UInt32>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)db.Length);
+                            uint[] dwRs = ILSIS.Read<UInt32>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)(2 * db.Length));
 
                             for (int j = 0; j < dwRs.Length; j++)
                             {
@@ -565,7 +565,7 @@ namespace AdvancedScada.IODriver
 
                         lock (ILSIS)
                         {
-                            float[] rl1Rs = ILSIS.Read<float>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)db.Length);
+                            float[] rl1Rs = ILSIS.Read<float>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)(2 * db.Length));
 
                             for (int j = 0; j < rl1Rs.Length; j++)
                             {
@@ -578,7 +578,7 @@ namespace AdvancedScada.IODriver
 
                         lock (ILSIS)
                         {
-                            double[] rl2Rs = ILSIS.Read<double>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)db.Length);
+                            double[] rl2Rs = ILSIS.Read<double>($"{db.MemoryType.Substring(0, 1)}{2 * db.StartAddress}", (ushort)(2 * db.Length));
 
                             for (int j = 0; j < rl2Rs.Length; j++)
                             {
