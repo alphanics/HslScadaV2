@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using AdvancedScada.DriverBase.Devices;
 using AdvancedScada.Utils.Excel;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraSplashScreen;
+using OfficeOpenXml;
 using static AdvancedScada.IBaseService.Common.XCollection;
 
 namespace AdvancedScada.Studio.IE
@@ -92,10 +94,19 @@ namespace AdvancedScada.Studio.IE
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 btnPathFile.Text = openFileDialog.FileName;
-                var sheetNames = new string[100];
-                sheetNames = ExcelHelper.getExcelSheets(openFileDialog.FileName);
-                cboxSheet.Properties.Items.Clear();
-                cboxSheet.Properties.Items.AddRange(sheetNames);
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileInfo fileInfo = new FileInfo(openFileDialog.FileName);
+                  
+                    var excel = new ExcelPackage(fileInfo);
+
+                    foreach (var worksheet in excel.Workbook.Worksheets)
+                    {
+                        cboxSheet.Properties.Items.Add(worksheet.Name);
+                    }
+
+                }
+               
             }
         }
 

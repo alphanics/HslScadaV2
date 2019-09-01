@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Advanced.Programming.Control.Utils.Excel
+namespace AdvancedScada.Utils.Excel
 {
     public class ExcelUtil
     {
