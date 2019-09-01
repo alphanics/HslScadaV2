@@ -59,11 +59,11 @@
             this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutAddressLength = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutMemoryType = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutCreateTag = new DevExpress.XtraLayout.LayoutControlItem();
             this.LayoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.LayoutStartAddress = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutMemoryType = new DevExpress.XtraLayout.LayoutControlItem();
             this.DxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControl1)).BeginInit();
             this.LayoutControl1.SuspendLayout();
@@ -93,11 +93,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutAddressLength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutMemoryType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutCreateTag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutMemoryType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DxErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -449,18 +449,6 @@
             this.layoutAddressLength.Text = "Length:";
             this.layoutAddressLength.TextSize = new System.Drawing.Size(78, 13);
             // 
-            // layoutMemoryType
-            // 
-            this.layoutMemoryType.Control = this.txtDomain;
-            this.layoutMemoryType.CustomizationFormText = "MemoryType:";
-            this.layoutMemoryType.Location = new System.Drawing.Point(167, 100);
-            this.layoutMemoryType.Name = "layoutMemoryType";
-            this.layoutMemoryType.Size = new System.Drawing.Size(193, 24);
-            this.layoutMemoryType.Text = "MemoryType:";
-            this.layoutMemoryType.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutMemoryType.TextSize = new System.Drawing.Size(66, 13);
-            this.layoutMemoryType.TextToControlDistance = 5;
-            // 
             // layoutCreateTag
             // 
             this.layoutCreateTag.Control = this.chkCreateTag;
@@ -507,6 +495,18 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // layoutMemoryType
+            // 
+            this.layoutMemoryType.Control = this.txtDomain;
+            this.layoutMemoryType.CustomizationFormText = "MemoryType:";
+            this.layoutMemoryType.Location = new System.Drawing.Point(167, 100);
+            this.layoutMemoryType.Name = "layoutMemoryType";
+            this.layoutMemoryType.Size = new System.Drawing.Size(193, 24);
+            this.layoutMemoryType.Text = "MemoryType:";
+            this.layoutMemoryType.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutMemoryType.TextSize = new System.Drawing.Size(66, 13);
+            this.layoutMemoryType.TextToControlDistance = 5;
+            // 
             // DxErrorProvider1
             // 
             this.DxErrorProvider1.ContainerControl = this;
@@ -547,11 +547,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutAddressLength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutMemoryType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutCreateTag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutStartAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutMemoryType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DxErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 

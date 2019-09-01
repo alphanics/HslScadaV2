@@ -62,6 +62,8 @@ namespace AdvancedScada.Studio
             this.popupMenuNotifyIcon = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.mSQLServerUtils = new DevExpress.XtraBars.BarButtonItem();
+            this.mPCControllercs = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,8 +90,6 @@ namespace AdvancedScada.Studio
             this.SQLiteItem = new DevExpress.XtraNavBar.NavBarItem();
             this.Monitor = new DevExpress.XtraNavBar.NavBarGroup();
             this.navFrameMonitor = new DevExpress.XtraNavBar.NavBarItem();
-            this.mSQLServerUtils = new DevExpress.XtraBars.BarButtonItem();
-            this.mPCControllercs = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -322,6 +322,24 @@ namespace AdvancedScada.Studio
             this.skinRibbonGalleryBarItem1.Id = 1;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // mSQLServerUtils
+            // 
+            this.mSQLServerUtils.Caption = "SQLUtils";
+            this.mSQLServerUtils.Id = 3;
+            this.mSQLServerUtils.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mSQLServerUtils.ImageOptions.Image")));
+            this.mSQLServerUtils.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mSQLServerUtils.ImageOptions.LargeImage")));
+            this.mSQLServerUtils.Name = "mSQLServerUtils";
+            this.mSQLServerUtils.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mSQLServerUtils_ItemClick);
+            // 
+            // mPCControllercs
+            // 
+            this.mPCControllercs.Caption = "PCControllercs";
+            this.mPCControllercs.Id = 4;
+            this.mPCControllercs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mPCControllercs.ImageOptions.Image")));
+            this.mPCControllercs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mPCControllercs.ImageOptions.LargeImage")));
+            this.mPCControllercs.Name = "mPCControllercs";
+            this.mPCControllercs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mPCControllercs_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -488,6 +506,7 @@ namespace AdvancedScada.Studio
             // Main
             // 
             this.Main.Caption = "Management";
+            this.Main.Expanded = true;
             this.Main.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.ServiceItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.LoggingItem),
@@ -527,7 +546,6 @@ namespace AdvancedScada.Studio
             // SQL
             // 
             this.SQL.Caption = "Database";
-            this.SQL.Expanded = true;
             this.SQL.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.SQLItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.SQLiteItem)});
@@ -559,24 +577,6 @@ namespace AdvancedScada.Studio
             this.navFrameMonitor.Caption = "FormFrameMonitor";
             this.navFrameMonitor.ImageOptions.SmallImageIndex = 0;
             this.navFrameMonitor.Name = "navFrameMonitor";
-            // 
-            // mSQLServerUtils
-            // 
-            this.mSQLServerUtils.Caption = "SQLUtils";
-            this.mSQLServerUtils.Id = 3;
-            this.mSQLServerUtils.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mSQLServerUtils.ImageOptions.Image")));
-            this.mSQLServerUtils.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mSQLServerUtils.ImageOptions.LargeImage")));
-            this.mSQLServerUtils.Name = "mSQLServerUtils";
-            this.mSQLServerUtils.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mSQLServerUtils_ItemClick);
-            // 
-            // mPCControllercs
-            // 
-            this.mPCControllercs.Caption = "PCControllercs";
-            this.mPCControllercs.Id = 4;
-            this.mPCControllercs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mPCControllercs.ImageOptions.Image")));
-            this.mPCControllercs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("mPCControllercs.ImageOptions.LargeImage")));
-            this.mPCControllercs.Name = "mPCControllercs";
-            this.mPCControllercs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mPCControllercs_ItemClick);
             // 
             // FormStudio
             // 

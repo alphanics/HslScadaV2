@@ -113,11 +113,11 @@
             // 
             // txtDesp
             // 
-            this.txtDesp.Location = new System.Drawing.Point(12, 101);
+            this.txtDesp.Location = new System.Drawing.Point(12, 102);
             this.txtDesp.Multiline = true;
             this.txtDesp.Name = "txtDesp";
             this.txtDesp.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtDesp.Size = new System.Drawing.Size(431, 84);
+            this.txtDesp.Size = new System.Drawing.Size(431, 83);
             this.txtDesp.TabIndex = 8;
             // 
             // txtSlaveId
@@ -127,7 +127,7 @@
             0,
             0,
             0});
-            this.txtSlaveId.Location = new System.Drawing.Point(88, 61);
+            this.txtSlaveId.Location = new System.Drawing.Point(88, 62);
             this.txtSlaveId.Name = "txtSlaveId";
             this.txtSlaveId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -231,7 +231,7 @@
             // 
             this.LayoutControlItem7.Control = this.txtSlaveId;
             this.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7";
-            this.LayoutControlItem7.Location = new System.Drawing.Point(0, 49);
+            this.LayoutControlItem7.Location = new System.Drawing.Point(0, 50);
             this.LayoutControlItem7.Name = "LayoutControlItem7";
             this.LayoutControlItem7.Size = new System.Drawing.Size(435, 24);
             this.LayoutControlItem7.Text = "SlaveId:";
@@ -241,9 +241,9 @@
             // 
             this.LayoutControlItem10.Control = this.txtDesp;
             this.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10";
-            this.LayoutControlItem10.Location = new System.Drawing.Point(0, 73);
+            this.LayoutControlItem10.Location = new System.Drawing.Point(0, 74);
             this.LayoutControlItem10.Name = "LayoutControlItem10";
-            this.LayoutControlItem10.Size = new System.Drawing.Size(435, 104);
+            this.LayoutControlItem10.Size = new System.Drawing.Size(435, 103);
             this.LayoutControlItem10.Text = "Description:";
             this.LayoutControlItem10.TextLocation = DevExpress.Utils.Locations.Top;
             this.LayoutControlItem10.TextSize = new System.Drawing.Size(73, 13);
@@ -283,7 +283,7 @@
             this.SimpleSeparator1.CustomizationFormText = "SimpleSeparator1";
             this.SimpleSeparator1.Location = new System.Drawing.Point(0, 48);
             this.SimpleSeparator1.Name = "SimpleSeparator1";
-            this.SimpleSeparator1.Size = new System.Drawing.Size(435, 1);
+            this.SimpleSeparator1.Size = new System.Drawing.Size(435, 2);
             // 
             // DxErrorProvider1
             // 

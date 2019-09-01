@@ -174,11 +174,11 @@
     <Compile Include="Editors\IODriver\LSIS\LSISTagForm.Designer.cs">
       <DependentUpon>LSISTagForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editors\IODriver\LSIS\XUserChannelForm.cs">
+    <Compile Include="Editors\IODriver\LSIS\LSISChannelForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Editors\IODriver\LSIS\XUserChannelForm.Designer.cs">
-      <DependentUpon>XUserChannelForm.cs</DependentUpon>
+    <Compile Include="Editors\IODriver\LSIS\LSISChannelForm.Designer.cs">
+      <DependentUpon>LSISChannelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Editors\IODriver\Modbus\ModbusChannelForm.cs">
       <SubType>UserControl</SubType>
@@ -384,8 +384,8 @@
     <EmbeddedResource Include="Editors\IODriver\LSIS\LSISTagForm.resx">
       <DependentUpon>LSISTagForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editors\IODriver\LSIS\XUserChannelForm.resx">
-      <DependentUpon>XUserChannelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Editors\IODriver\LSIS\LSISChannelForm.resx">
+      <DependentUpon>LSISChannelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editors\IODriver\Modbus\ModbusChannelForm.resx">
       <DependentUpon>ModbusChannelForm.cs</DependentUpon>
